@@ -583,7 +583,7 @@ cm_acronym (arg)
      int arg;
 {
   if (html)
-    insert_html_tag (arg, small_tag);
+    insert_html_tag (arg, "acronym");
   else if (xml)
     xml_insert_element (ACRONYM, arg);
 }
