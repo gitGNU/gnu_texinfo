@@ -3438,7 +3438,19 @@ cm_uref (arg)
       char *desc = get_xref_token (0);
       char *replacement = get_xref_token (0);
 
-      if (xml)
+      if (docbook)
+        {
+          xml_insert_element_with_attribute (UREF, START, "url=\"%s\"",
+              text_expansion (url));
+          if (*replacement)
+            execute_string (replacement);
+          else if (*desc)
+            execute_string (desc);
+          else
+            execute_string (url);
+          xml_insert_element (UREF, END);
+        }
+      else if (xml)
         {
           xml_insert_element (UREF, START);
           xml_insert_element (UREFURL, START);

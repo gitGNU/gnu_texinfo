@@ -338,7 +338,7 @@ element docbook_element_list [] = {
   { "",                    0, 1, 0 }, /* INFOREFREFNAME */
   { "",                    0, 1, 0 }, /* INFOREFINFONAME */
 
-  { "",                    0, 1, 0 }, /* UREF */
+  { "ulink",               0, 1, 0 }, /* UREF */
   { "",                    0, 1, 0 }, /* UREFURL */
   { "",                    0, 1, 0 }, /* UREFDESC */
   { "",                    0, 1, 0 }, /* UREFREPLACEMENT */
