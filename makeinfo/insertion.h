@@ -55,6 +55,9 @@ extern int in_detailmenu;
 extern int had_menu_commentary;
 extern int in_paragraph;
 
+extern int headitem_flag;
+extern int after_headitem;
+
 extern void command_name_condition ();
 extern void cm_ifdocbook (), cm_ifnotdocbook(), cm_docbook ();
 extern void cm_ifhtml (), cm_ifnothtml(), cm_html ();

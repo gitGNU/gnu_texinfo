@@ -1880,3 +1880,12 @@ cm_itemx ()
   cm_item ();
   itemx_flag--;
 }
+
+int headitem_flag = 0;
+
+void
+cm_headitem ()
+{
+  headitem_flag = 1;
+  cm_item ();
+}

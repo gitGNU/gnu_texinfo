@@ -239,8 +239,10 @@
 <!ELEMENT tableitem (tableterm+, item)>
 <!ELEMENT tableterm (#PCDATA | %Inline.phrase;)*>
 
-<!ELEMENT multitable (columnfraction*, row*)>
+<!ELEMENT multitable (columnfraction*, thead?, tbody)>
 <!ELEMENT columnfraction (#PCDATA)>
+<!ELEMENT thead (row+)>
+<!ELEMENT tbody (row+)>
 <!ELEMENT row (entry*)>
 <!ELEMENT entry (#PCDATA | %Inline.phrase;)*>
 
