@@ -38,6 +38,8 @@ convenience, here's a url to one of the relevant sections:
   . new option --infodir synonym for --info-dir, for compatibility with
     the Debian install-info.
   . support for bzip2-compressed files.
+* texindex:
+  . omit initial if the entire index is under one characters.
 * Distribution:
  . development sources now available under CVS, see
    http://savannah.gnu.org/projects/texinfo/
