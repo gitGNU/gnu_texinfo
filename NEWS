@@ -41,7 +41,7 @@ convenience, here's a url to one of the relevant sections:
     the Debian install-info.
   . support for bzip2-compressed files.
 * texindex:
-  . omit initial if the entire index is under one characters.
+  . omit initial if the entire index is under one character.
 * Distribution:
  . development sources now available under CVS, see
    http://savannah.gnu.org/projects/texinfo/
