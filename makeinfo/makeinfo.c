@@ -1359,7 +1359,7 @@ convert_from_file (char *name)
       strcpy (filename, name);
       strcat (filename, suffixes[i]);
 
-      if (find_and_load (filename))
+      if (find_and_load (filename, 1))
         break;
 
       if (!suffixes[i][0] && strrchr (filename, '.'))

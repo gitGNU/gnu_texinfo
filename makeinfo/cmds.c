@@ -1665,7 +1665,7 @@ handle_include (int verbatim_include)
       fflush (stdout);
     }
 
-  if (!find_and_load (filename))
+  if (!find_and_load (filename, 1))
     {
       popfile ();
       line_number--;
