@@ -1152,11 +1152,6 @@ cm_settitle ()
       execute_string ("%s", title);
       xml_in_book_title = 0;
       xml_insert_element (SETTITLE, END);
-      if (docbook && !xml_in_bookinfo)
-	{
-	  xml_insert_element (BOOKINFO, START);
-	  xml_in_bookinfo = 1;
-	}
     }
   else
     get_rest_of_line (0, &title);
