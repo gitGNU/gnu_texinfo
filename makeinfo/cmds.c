@@ -94,6 +94,7 @@ COMMAND command_table[] = {
   { ",", cm_accent_cedilla, MAYBE_BRACE_ARGS },
   { "-", cm_no_op, NO_BRACE_ARGS },
   { ".", insert_self, NO_BRACE_ARGS },
+  { "/", cm_no_op, NO_BRACE_ARGS },
   { ":", cm_no_op, NO_BRACE_ARGS },
   { "=", cm_accent, MAYBE_BRACE_ARGS },
   { "?", insert_self, NO_BRACE_ARGS },

@@ -836,7 +836,7 @@ self_delimiting (character)
 {
   /* @; and @\ are not Texinfo commands, but they are listed here
      anyway.  I don't know why.  --karl, 10aug96.  */
-  return strchr ("~{|}`^\\@?=;:.-,*\'\" !\n\t", character) != NULL;
+  return strchr ("~{|}`^\\@?=;:./-,*\'\" !\n\t", character) != NULL;
 }
 
 /* Clear whitespace from the front and end of string. */
