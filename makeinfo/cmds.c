@@ -175,6 +175,8 @@ COMMAND command_table[] = {
   { "defspecx", cm_defun, NO_BRACE_ARGS },
   { "deftp", cm_defun, NO_BRACE_ARGS },
   { "deftpx", cm_defun, NO_BRACE_ARGS },
+  { "deftypecv", cm_defun, NO_BRACE_ARGS },
+  { "deftypecvx", cm_defun, NO_BRACE_ARGS },
   { "deftypefn", cm_defun, NO_BRACE_ARGS },
   { "deftypefnx", cm_defun, NO_BRACE_ARGS },
   { "deftypefun", cm_defun, NO_BRACE_ARGS },
