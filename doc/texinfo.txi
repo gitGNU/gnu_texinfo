@@ -9246,7 +9246,7 @@ emacs, The GNU Emacs Manual}).
 Do not put braces after any of these commands.
 
 
-@node Multiple Spaces, dmn, Ending a Sentence, Inserting Space
+@node Multiple Spaces
 @subsection Multiple Spaces
 
 @cindex Multiple spaces
@@ -9291,7 +9291,7 @@ Other possible uses of @code{@@@kbd{SPACE}} have been subsumed by
 
 Do not follow any of these commands with braces.
 
-To produce a non-breakable space, see @ref{w, non-breakable space}.
+To produce a non-breakable space, see @ref{tie, @code{@@tie}}.
 
 
 @node dmn
