@@ -125,13 +125,15 @@ if test -n "$ac_cv_var_ospeed" \
 fi
 AC_SUBST(TERMLIBS)dnl
 
-dnl i18n support.
+dnl i18n support.  To update to a new version of gettext, run:
+dnl  gettextize -f -c --intl
+AM_GNU_GETTEXT_VERSION(0.11.5)
 AM_GNU_GETTEXT()
 
 AC_CONFIG_FILES([Makefile          \
            doc/Makefile            \
            info/Makefile           \
-           intl/Makefile	   \
+           intl/Makefile           \
            lib/Makefile            \
            m4/Makefile		   \
            makeinfo/Makefile       \

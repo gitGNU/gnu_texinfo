@@ -30,6 +30,6 @@ SUBDIRS = intl m4 lib info makeinfo po util doc
 # for gettext.
 ACLOCAL_AMFLAGS = -I m4
 
-# One special target for them to use by hand.
+# One special target for installers to use by hand if desired.
 install-tex:
 	cd doc && $(MAKE) TEXMF=$(TEXMF) install-tex
