@@ -1397,7 +1397,7 @@ For more information about these matters, see the files named COPYING.\n"),
                       }
                     if (!spec || spec == entry->entry_sections_tail)
                       continue;
-                    
+
                     /* Subtract one because dir_lines is zero-based,
                        but the `end_line' and `start_line' members are
                        one-based.  */
@@ -1441,7 +1441,7 @@ For more information about these matters, see the files named COPYING.\n"),
   output_dirfile (opened_dirfilename, dir_nlines, dir_lines, n_entries_to_add,
                   entries_to_add, input_sections, compression_program);
 
-  xexit (0);
+  return 0;
 }
 
 /* Divide the text at DATA (of SIZE bytes) into lines.

@@ -101,7 +101,7 @@ format_node_info (node)
   if (node->filename && *(node->filename))
     {
       len = pad_to (51, line_buffer);
-      sprintf (line_buffer + len, node->filename);
+      strcpy (line_buffer + len, node->filename);
     }
 
   return xstrdup (line_buffer);
