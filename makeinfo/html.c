@@ -605,6 +605,14 @@ add_escaped_anchor_name (char *name, int old)
 {
   canon_white (name);
 
+  if (!old && !strchr ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                       *name))
+    { /* XHTML does not allow anything but an ASCII letter to start an
+         identifier.  Therefore kludge in this constant string if we
+         have a nonletter.  */
+      add_word ("g_t");
+    }
+
   for (; *name; name++)
     {
       if (cr_or_whitespace (*name))
