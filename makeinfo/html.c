@@ -204,12 +204,21 @@ process_css_file (filename)
         {
         case null_state: /* between things */
           if (c == '@')
-            {
-              /* If there's some other @command, just call it an
-                 import, it's all the same to us.  So don't bother
-                 looking for the `import'.  */
-              append_char (import_text, c);
-              state = import_state;
+            { /* Only an @import should switch into import_state, other
+                 @-commands, such as @media, should put us into
+                 inline_state.  I don't think any other css @-commands
+                 start with `i'.  */
+              int nextchar = getc (f);
+              if (nextchar == 'i')
+                {
+                  append_char (import_text, c);
+                  state = import_state;
+                }
+              else
+                {
+                  ungetc (nextchar, f);  /* wasn't an @import */
+                  state = inline_state;
+                }
             }
           else if (c == '/')
             { /* possible start of a comment */
