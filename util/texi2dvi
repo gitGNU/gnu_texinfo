@@ -818,29 +818,36 @@ $textra" "$filename_input" >"$filename_xtr"
      && grep 'thumbpdf\.sty'  "$filename_noext.log" >&6 2>&1; \
   then
     verbose "Running $thumbpdf $filename_noext ..."
-    $thumbpdf "$filename_noext" >&5 ||
-      fatal 1 "$thumbpdf exited with bad status, quitting."
-    run_tex
+    if $thumbpdf "$filename_noext" >&5; then
+      run_tex
+    else
+      report "$thumbpdf exited with bad status." \
+	     "Ignoring its output."
+    fi
   fi
 
+  # Honor the actual output destination.
+  case $clean:$oname in
+    :) dest=;;
 
-  # If we were in clean mode, compilation was in a tmp directory.
-  # Copy the DVI (or PDF) file into the directory where the compilation
-  # has been done.  (The temp dir is about to get removed anyway.)
-  # We also return to the original directory so that
-  # - the next file is processed in correct conditions
-  # - the temporary file can be removed
-  if test -n "$clean"; then
-    if test -n "$oname"; then
-       dest=$oname
-    else
-       dest=$orig_pwd
-    fi
+    t:)  # If we were in clean mode, compilation was in a tmp
+	 # directory.  Copy the DVI (or PDF) file into the directory
+	 # where the compilation has been done.  (The temp dir is
+	 # about to get removed anyway.)
+	 dest=$orig_pwd;;
+
+    *:*) dest=$oname;;
+  esac
+  if test -n "$dest"; then
     verbose "Copying $oformat file from `pwd` to $dest"
     cp -p "./$filename_noext.$oformat" "$dest"
-    cd / # in case $orig_pwd is on a different drive (for DOS)
-    cd $orig_pwd || exit 1
   fi
+
+  # Return to the original directory so that
+  # - the next file is processed in correct conditions
+  # - the temporary file can be removed
+  cd / # in case $orig_pwd is on a different drive (for DOS)
+  cd $orig_pwd || exit 1
 
   # Remove temporary files.
   if test "x$debug" = "x"; then
