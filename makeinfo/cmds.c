@@ -280,7 +280,6 @@ COMMAND command_table[] = {
   { "ringaccent", cm_accent, MAYBE_BRACE_ARGS },
   { "rmacro", cm_rmacro, NO_BRACE_ARGS },
   { "samp", cm_code, BRACE_ARGS },
-  { "s", cm_s, BRACE_ARGS },
   { "sc", cm_sc, BRACE_ARGS },
   { "section", cm_section, NO_BRACE_ARGS },
   { "set", cm_set, NO_BRACE_ARGS },
@@ -293,6 +292,7 @@ COMMAND command_table[] = {
   { "shortcaption", cm_caption, BRACE_ARGS },
   { "shortcontents", cm_contents, NO_BRACE_ARGS },
   { "shorttitlepage", cm_ignore_line, NO_BRACE_ARGS },
+  { "slanted", cm_slanted, BRACE_ARGS },
   { "smallbook", cm_ignore_line, NO_BRACE_ARGS },
   { "smalldisplay", cm_smalldisplay, NO_BRACE_ARGS },
   { "smallexample", cm_smallexample, NO_BRACE_ARGS },
@@ -1138,7 +1138,7 @@ cm_i (int arg)
 }
 
 void
-cm_s (int arg)
+cm_slanted (int arg)
 {
   /* Make use of <lineannotation> of Docbook, if we are
      inside an @example or similar.  */
