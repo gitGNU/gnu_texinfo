@@ -250,6 +250,7 @@ Other things
 * GIMP: (pdb).                  The GIMP procedural database.
 * HTML: (snafu).                Hypertext Markup Language 2.0 specification.
 * Jargon: (jargon).             The jargon file.
+* Netpbm: (netpbm).             Images/graphics manipulation programs.
 * JED: (jed).                   JED editor documentation.
 * octave: (octave).             Octave - A language for numerical computation.
 * Perl: (perl).                 Practical extraction and report language.
