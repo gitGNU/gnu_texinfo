@@ -437,6 +437,8 @@ Conditional processing in input:\n\
   --no-ifplaintext  do not process @ifplaintext text.\n\
   --no-iftex        do not process @iftex and @tex text.\n\
   --no-ifxml        do not process @ifxml and @xml text.\n\
+\n\
+  Also, for the --no-ifFORMAT options, do process @ifnotFORMAT text.\n\
 "));
 
     puts (_("\
