@@ -653,7 +653,7 @@ define_macro (mactype, recursive)
           depth--;
           last_end = "macro";
         }
-      if (*line == COMMAND_PREFIX && strncmp (line + 1, "end rmacro", 9) == 0)
+      if (*line == COMMAND_PREFIX && strncmp (line + 1, "end rmacro", 10) == 0)
         {
           depth--;
           last_end = "rmacro";
