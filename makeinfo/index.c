@@ -837,8 +837,9 @@ cm_printindex ()
 
                       if (number_sections)
                         {
-                          if (strncmp (section_name, "Appendix", 8) == 0)
-                            idx = 10;
+                          char *trans = (char *) _("Appendix");
+                          if (strncmp (section_name, trans, strlen (trans)) == 0)
+                            idx = strlen (trans) + 2;
                           else
                             while (section_name[idx]
                                 && (isdigit (section_name[idx])
