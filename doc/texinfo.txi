@@ -8165,14 +8165,12 @@ for emphasis.
 For example,
 
 @example
-@group
 @@cartouche
 @@example
 % pwd
 /usr/local/share/emacs
 @@end example
 @@end cartouche
-@end group
 @end example
 
 @noindent
@@ -8182,19 +8180,18 @@ printed manual.
 In a printed manual or in HTML output, the example looks like this (if
 you're reading this in Info, you'll see the @code{@@cartouche} had no effect):
 
-@group
 @cartouche
 @example
 % pwd
 /usr/local/lib/emacs/info
 @end example
 @end cartouche
-@end group
 
 For proper output in HTML, it's necessary to put the
 @code{@@cartouche} around the @code{@@example}, and not the other way
 around.  This limitation of @command{makeinfo} may be removed one day.
 
+@code{@@cartouche} also implies @code{@@group} (@pxref{group}).
 
 @node Lists and Tables
 @chapter Lists and Tables
