@@ -23,7 +23,9 @@ convenience, here's a url to one of the relevant sections:
 -------------------------------------------------------------------------------
 
 * Language:
-  . new commands @docbook, @ifdocbook, @ifnotdocbook, @registeredsymbol.
+  . new commands @docbook, @ifdocbook, @ifnotdocbook
+    for conditional Docbook text.
+  . new command @registeredsymbol for the r-in-a-circle symbol.
 * makeinfo:
   . improved XML, Docbook and HTML output.
 * texi2dvi:
