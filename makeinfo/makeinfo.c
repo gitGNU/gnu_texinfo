@@ -737,11 +737,11 @@ For more information about these matters, see the files named COPYING.\n"),
 
   if (no_headers)
     {
-      if (html && splitting)
+      if (html && splitting && !STREQ (command_output_filename, "-"))
         { /* --no-headers --no-split --html indicates confusion. */
           fprintf (stderr,
-                   "%s: --no-headers conflicts with --no-split for --html.\n",
-                   progname);
+                  "%s: can't split --html output to `%s' with --no-headers.\n",
+                   progname, command_output_filename);
           usage (1);
         }
 
