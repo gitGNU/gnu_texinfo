@@ -543,7 +543,9 @@ main (int argc, char **argv)
   /* Do not use LC_ALL, because LC_NUMERIC screws up the scanf parsing
      of the argument to @multicolumn.  */
   setlocale (LC_TIME, "");
+#ifdef LC_MESSAGES /* ultrix */
   setlocale (LC_MESSAGES, "");
+#endif
   setlocale (LC_CTYPE, "");
   setlocale (LC_COLLATE, "");
 #endif
