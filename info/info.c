@@ -129,7 +129,7 @@ static char *short_options = "d:n:f:ho:ORs";
 int info_windows_initialized_p = 0;
 
 /* Some "forward" declarations. */
-static void info_short_help (), remember_info_program_name ();
+static void info_short_help ();
 static void init_messages ();
 extern void add_file_directory_to_path ();
 
