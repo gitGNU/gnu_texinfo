@@ -79,6 +79,7 @@ extern language_type language_table[];
  */
 typedef enum {
     no_encoding,
+    US_ASCII,
     ISO_8859_1,    /* default for en, de, */
     ISO_8859_2,    /* actualy not supported like the rest below */
     ISO_8859_3,
