@@ -4,6 +4,7 @@
 # segmentation fault.
 # From: Arkadiusz Miskiewicz <misiek@pld.ORG.PL>, 15 Feb 2003 13:22:49 +0100.
 
+unset TEXINFO_OUTPUT
 : ${srcdir=.}
 
 outfile=outfile

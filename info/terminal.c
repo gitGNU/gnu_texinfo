@@ -2,7 +2,7 @@
    $Id$
 
    Copyright (C) 1988, 1989, 1990, 1991, 1992, 1993, 1996, 1997, 1998,
-   1999, 2001, 2002 Free Software Foundation, Inc.
+   1999, 2001, 2002, 2004 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
    along with this program; if not, write to the Free Software
    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-   Written by Brian Fox (bfox@ai.mit.edu). */
+   Originally written by Brian Fox (bfox@ai.mit.edu). */
 
 #include "info.h"
 #include "terminal.h"
@@ -103,9 +103,6 @@ static char *visible_bell;
 /* The string to write to turn on the meta key, if this term has one. */
 static char *term_mm;
 
-/* The string to write to turn off the meta key, if this term has one. */
-static char *term_mo;
-
 /* The string to turn on inverse mode, if this term has one. */
 static char *term_invbeg;
 
@@ -133,7 +130,7 @@ output_character_function (int c)
 static void
 terminal_begin_using_terminal (void)
 {
-  RETSIGTYPE (*sigsave) ();
+  RETSIGTYPE (*sigsave) (int signum);
 
   if (term_keypad_on)
       send_to_terminal (term_keypad_on);
@@ -164,7 +161,7 @@ terminal_begin_using_terminal (void)
 static void
 terminal_end_using_terminal (void)
 {
-  RETSIGTYPE (*sigsave) ();
+  RETSIGTYPE (*sigsave) (int signum);
 
   if (term_keypad_off)
       send_to_terminal (term_keypad_off);
@@ -622,12 +619,10 @@ terminal_initialize_terminal (char *terminal_name)
   if (terminal_has_meta_p)
     {
       term_mm = tgetstr ("mm", &buffer);
-      term_mo = tgetstr ("mo", &buffer);
     }
   else
     {
       term_mm = NULL;
-      term_mo = NULL;
     }
 
   /* Attempt to find the arrow keys.  */

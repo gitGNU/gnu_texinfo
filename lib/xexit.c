@@ -1,7 +1,7 @@
 /* xexit.c -- exit with attention to return values and closing stdout.
    $Id$
 
-   Copyright (C) 1999, 2003 Free Software Foundation, Inc.
+   Copyright (C) 1999, 2003, 2004 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -47,8 +47,7 @@
    unsuccessfully.  */
 
 void
-xexit (exit_status)
-     int exit_status;
+xexit (int exit_status)
 {
   if (ferror (stdout))
     {

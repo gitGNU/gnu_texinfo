@@ -1,7 +1,7 @@
-/* pc_term.c -- How to handle the PC terminal for Info under MS-DOS/MS-Windows.
+/* pcterm.c -- How to handle the PC terminal for Info under MS-DOS/MS-Windows.
    $Id$
 
-   Copyright (C) 1998, 1999, 2003 Free Software Foundation, Inc.
+   Copyright (C) 1998, 1999, 2003, 2004 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -662,7 +662,7 @@ int
 kill (pid_t pid, int sig)
 {
   static char interrupted_msg[] = "Interrupted\r\n";
-  static char stopped_msg[] = "Stopped.  Type \"exit RET\" to return.\r\n";
+  static char stopped_msg[] = "Stopped.  Type `exit RET' to return.\r\n";
   char cwd[PATH_MAX + 1];
 
   if (pid == getpid ()

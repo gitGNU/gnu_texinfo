@@ -1,7 +1,8 @@
 /* terminal.h -- The external interface to terminal I/O.
    $Id$
 
-   Copyright (C) 1993, 1996, 1997, 2001, 2002 Free Software Foundation, Inc.
+   Copyright (C) 1993, 1996, 1997, 2001, 2002, 2004 Free Software
+   Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -61,8 +62,11 @@ extern void terminal_get_screen_size (void);
 extern VFunction *terminal_get_screen_size_hook;
 
 /* Save and restore tty settings. */
-extern void terminal_prep_terminal (void), terminal_unprep_terminal (void);
-extern VFunction *terminal_prep_terminal_hook, *terminal_unprep_terminal_hook;
+extern void terminal_prep_terminal (void);
+extern void terminal_unprep_terminal (void);
+
+extern VFunction *terminal_prep_terminal_hook;
+extern VFunction *terminal_unprep_terminal_hook;
 
 /* Re-initialize the terminal to TERMINAL_NAME. */
 extern void terminal_new_terminal (char *terminal_name);
