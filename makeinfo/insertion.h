@@ -61,5 +61,5 @@ extern void cm_ifhtml (), cm_ifnothtml(), cm_html ();
 extern void cm_ifinfo (), cm_ifnotinfo ();
 extern void cm_ifplaintext (), cm_ifnotplaintext();
 extern void cm_iftex (), cm_ifnottex (), cm_tex ();
-extern void cm_ifxml (), cm_ifnotxml ();
+extern void cm_ifxml (), cm_ifnotxml (), cm_xml ();
 #endif /* !INSERTION_H */

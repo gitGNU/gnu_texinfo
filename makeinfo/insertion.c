@@ -1367,7 +1367,16 @@ cm_group ()
 void
 cm_html (arg)
 {
-  if (process_html || process_xml)
+  if (process_html)
+    begin_insertion (rawhtml);
+  else
+    command_name_condition ();
+}
+
+void
+cm_xml (arg)
+{
+  if (process_xml)
     begin_insertion (rawhtml);
   else
     command_name_condition ();

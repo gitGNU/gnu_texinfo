@@ -367,7 +367,7 @@ COMMAND command_table[] = {
   { "vtable", cm_vtable, NO_BRACE_ARGS },
   { "vskip", cm_ignore_line, NO_BRACE_ARGS },
   { "w", cm_w, BRACE_ARGS },
-  { "xml", cm_html, NO_BRACE_ARGS },
+  { "xml", cm_xml, NO_BRACE_ARGS },
   { "xref", cm_xref, BRACE_ARGS },
 
   /* Deprecated commands.  These used to be for italics.  */

@@ -120,7 +120,7 @@
 
 <!-- meta-information -->
 <!ELEMENT setfilename (#PCDATA)>
-<!ELEMENT settitle    (#PCDATA)>
+<!ELEMENT settitle    (#PCDATA | %Inline.phrase; | footnote)*>
 <!ELEMENT dircategory (#PCDATA)>
 
 <!ELEMENT setvalue    (#PCDATA | %Inline.phrase;)*>
