@@ -17482,7 +17482,7 @@ Highlight @var{text} that is a literal example of a sequence of
 characters.  Used for single characters, for statements, and often for
 entire shell commands.  @xref{samp, , @code{@@samp}}.@refill
 
-@item @@sansserif@@var{text}@}
+@item @@sansserif@{@var{text}@}
 Print @var{text} in a @sansserif{sans serif} font if possible.  No
 effect in Info.  @xref{Fonts}.
 
