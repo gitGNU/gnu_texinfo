@@ -1662,7 +1662,7 @@ split_file (filename, size)
     TAG_ENTRY *tags = tag_table;
     char *indirect_info = NULL;
 
-    /* Maybe we want a Local Variables: section.  */
+    /* Maybe we want a Local Variables section.  */
     char *trailer = info_trailer ();
     int trailer_len = trailer ? strlen (trailer) : 0;
 
@@ -1837,7 +1837,7 @@ split_file (filename, size)
       /* Write the indirect tag table.  */
       write_tag_table_indirect ();
 
-      /* preserve local variables: in info output.  */
+      /* preserve local variables in info output.  */
       if (trailer)
         {
           insert_string (trailer);

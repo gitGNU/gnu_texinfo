@@ -1626,7 +1626,7 @@ finished:
           close_paragraph ();
         }
 
-      /* maybe we want local variables: in info output.  */
+      /* maybe we want local variables in info output.  */
       {
         char *trailer = info_trailer ();
         if (trailer)
@@ -1669,7 +1669,7 @@ finished:
 
 
 /* If enable_encoding and document_encoding are both set, return a Local
-   Variables: section (as a malloc-ed string) so that Emacs' locale
+   Variables section (as a malloc-ed string) so that Emacs' locale
    features can work.  Else return NULL.  */
 
 char *

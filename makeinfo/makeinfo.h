@@ -293,7 +293,7 @@ DECLARE (int, splitting, 1);    /* Defaults to true for now. */
 #define looking_at(string) \
   (strncmp (input_text + input_text_offset, string, strlen (string)) == 0)
 
-/* Possibly return Local Variables: trailer for Info output.  */
+/* Possibly return Local Variables trailer for Info output.  */
 extern char *info_trailer ();
 
 #endif /* not MAKEINFO_H */
