@@ -110,7 +110,6 @@ Software development
 * Gprof: (gprof).               Profiler.
 * Guile Reference: (guile).     The Guile reference manual.
 * Guile Tutorial: (guile-tut).	The Guile Tutorial.
-* help2man: (help2man).         Automatic manual page generation from --help.
 * Identifier DB: (id-utils).    Identifier database utilities.
 * Indent: (indent).             Prettyprinter for programs.
 * Ld: (ld).                     Linker.
@@ -119,6 +118,7 @@ Software development
 * Remsync: (remsync).           Remote synchronization of directory trees.
 * Send PR: (send-pr).           Cygnus bug reporting for Gnats.
 * Source config: (cfg-paper).   Some theory on configuring source packages.
+* help2man: (help2man).         Automatic manual page generation from -help.
 
 Emacs
 * Ada mode: (ada-mode). The GNU Emacs mode for editing Ada.
