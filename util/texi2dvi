@@ -358,12 +358,11 @@ get_xref_files ()
 {
   # Find all files having root filename with a two-letter extension,
   # saves the ones that are really Texinfo-related files.
-  # Use `ls' because some patterns are likely not to match.
   # - .?o?
   #   .toc, .log, LaTeX tables and lists, FiXme's .lox, maybe more.
   # - bu[0-9]*.aux
   #   Sub bibliography when using the LaTeX bibunits package.
-  for this_file in `(ls "$1".?o? "$1".aux bu[0-9]*.aux "$1".?? "$1".idx) 2>&6`
+  for this_file in "$1".?o? "$1".aux bu[0-9]*.aux "$1".?? "$1".idx
   do
     # If file is empty, skip it.
     test -s "$this_file" || continue
