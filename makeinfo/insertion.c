@@ -909,22 +909,22 @@ end_insertion (type)
           break;
         case example:
           xml_insert_element (EXAMPLE, END);
-          if (docbook && is_in_insertion_of_type (floatenv))
+          if (docbook && current_insertion_type () == floatenv)
             xml_insert_element (FLOATEXAMPLE, END);
           break;
         case smallexample:
           xml_insert_element (SMALLEXAMPLE, END);
-          if (docbook && is_in_insertion_of_type (floatenv))
+          if (docbook && current_insertion_type () == floatenv)
             xml_insert_element (FLOATEXAMPLE, END);
           break;
         case lisp:
           xml_insert_element (LISP, END);
-          if (docbook && is_in_insertion_of_type (floatenv))
+          if (docbook && current_insertion_type () == floatenv)
             xml_insert_element (FLOATEXAMPLE, END);
           break;
         case smalllisp:
           xml_insert_element (SMALLLISP, END);
-          if (docbook && is_in_insertion_of_type (floatenv))
+          if (docbook && current_insertion_type () == floatenv)
             xml_insert_element (FLOATEXAMPLE, END);
           break;
         case cartouche:
@@ -1217,7 +1217,7 @@ cm_quotation ()
 void
 cm_example ()
 {
-  if (docbook && is_in_insertion_of_type (floatenv))
+  if (docbook && current_insertion_type () == floatenv)
     xml_begin_docbook_float (FLOATEXAMPLE);
 
   if (xml)
@@ -1228,7 +1228,7 @@ cm_example ()
 void
 cm_smallexample ()
 {
-  if (docbook && is_in_insertion_of_type (floatenv))
+  if (docbook && current_insertion_type () == floatenv)
     xml_begin_docbook_float (FLOATEXAMPLE);
 
   if (xml)
@@ -1239,7 +1239,7 @@ cm_smallexample ()
 void
 cm_lisp ()
 {
-  if (docbook && is_in_insertion_of_type (floatenv))
+  if (docbook && current_insertion_type () == floatenv)
     xml_begin_docbook_float (FLOATEXAMPLE);
 
   if (xml)
@@ -1250,7 +1250,7 @@ cm_lisp ()
 void
 cm_smalllisp ()
 {
-  if (docbook && is_in_insertion_of_type (floatenv))
+  if (docbook && current_insertion_type () == floatenv)
     xml_begin_docbook_float (FLOATEXAMPLE);
 
   if (xml)
@@ -1261,6 +1261,9 @@ cm_smalllisp ()
 void
 cm_cartouche ()
 {
+  if (docbook && current_insertion_type () == floatenv)
+    xml_begin_docbook_float (CARTOUCHE);
+
   if (xml)
     xml_insert_element (CARTOUCHE, START);
   begin_insertion (cartouche);
@@ -1727,7 +1730,7 @@ cm_caption (arg)
     return;
 
   /* Check if it's mislocated.  */
-  if (!is_in_insertion_of_type (floatenv))
+  if (current_insertion_type () != floatenv)
     line_error (_("%c%s not meaningful outside `%cfloat' environment"),
         COMMAND_PREFIX, command, COMMAND_PREFIX);
 

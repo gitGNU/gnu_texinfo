@@ -177,6 +177,7 @@ element texinfoml_element_list [] = {
   { "",                    0, 0, 0 }, /* TABLE (docbook) */
   { "",                    0, 0, 0 }, /* FIGURE (docbook) */
   { "",                    0, 0, 0 }, /* EXAMPLE (docbook) */
+  { "",                    1, 0, 0 }, /* SIDEBAR (docbook) */
 
   { "printindex",          0, 0, 0 },
   { "listoffloats",        0, 0, 0 },
@@ -315,8 +316,8 @@ element docbook_element_list [] = {
   { "",                    1, 0, 0 }, /* COPYING */
   { "screen",              0, 1, 0 }, /* FORMAT */
   { "screen",              0, 1, 0 }, /* SMALLFORMAT */
-  { "screen",              0, 1, 0 }, /* DISPLAY */
-  { "screen",              0, 1, 0 }, /* SMALLDISPLAY */
+  { "literallayout",       0, 1, 0 }, /* DISPLAY */
+  { "literallayout",       0, 1, 0 }, /* SMALLDISPLAY */
   { "screen",              0, 0, 0 }, /* VERBATIM */
   { "footnote",            0, 1, 0 },
   { "lineannotation",      0, 1, 0 },
@@ -368,6 +369,7 @@ element docbook_element_list [] = {
   { "table",               0, 1, 0 },
   { "figure",              0, 1, 0 },
   { "example",             1, 1, 0 },
+  { "sidebar",             1, 0, 0 },
 
   { "index",               0, 1, 0 }, /* PRINTINDEX */
   { "",                    0, 1, 0 }, /* LISTOFFLOATS */
@@ -465,6 +467,7 @@ replace_element replace_elements [] = {
   /* Formal versions of table and image elements.  */
   { MULTITABLE, FLOAT, FLOATTABLE },
   { INFORMALFIGURE, FLOAT, FLOATFIGURE },
+  { CARTOUCHE, FLOAT, FLOATCARTOUCHE },
   /* Add your elements to replace here */
   {-1, 0, 0}
 };
@@ -1294,7 +1297,15 @@ void
 xml_begin_docbook_float (elt)
     int elt;
 {
-  if (strlen (current_float_id ()) == 0)
+  if (elt == CARTOUCHE)    /* no labels on <sidebar> */
+    {
+       if (strlen (current_float_id ()) == 0)
+          xml_insert_element (elt, START);
+       else
+          xml_insert_element_with_attribute (elt, START,
+              "id=\"%s\"", xml_id (current_float_id ()));
+    }
+  else if (strlen (current_float_id ()) == 0)
     xml_insert_element_with_attribute (elt, START, "label=\"\"");
   else
     xml_insert_element_with_attribute (elt, START,
