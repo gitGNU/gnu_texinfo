@@ -664,7 +664,7 @@ DECLARE_INFO_COMMAND (info_index_apropos,
 
           initialize_message_buffer ();
           printf_to_message_buffer
-            (_("\n* Menu: Nodes whoses indices contain \"%s\":\n"), line);
+            (_("\n* Menu: Nodes whose indices contain \"%s\":\n"), line);
           line_buffer = (char *)xmalloc (500);
 
           for (i = 0; apropos_list[i]; i++)
