@@ -428,7 +428,10 @@ sectioning_html (level, cmd)
                               output_paragraph + output_paragraph_offset);
       /* This must be added after toc_anchor is extracted, since
          toc_anchor cannot include the closing </a>.  For details,
-         see toc.c:toc_add_entry and toc.c:contents_update_html.  */
+         see toc.c:toc_add_entry and toc.c:contents_update_html.
+         
+         Also, the anchor close must be output before the section name
+         in case the name itself contains an anchor. */
       add_word ("</a>");
     }
   starting_pos = output_paragraph + output_paragraph_offset;
