@@ -1242,6 +1242,7 @@ cm_exdent ()
 
   current_indent = save_indent;
   in_fixed_width_font = save_in_fixed_width_font;
+  start_paragraph ();
 }
 
 /* 
