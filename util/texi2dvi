@@ -91,7 +91,7 @@ quiet=          # by default let the tools' message be displayed
 set_language=
 textra=
 tmpdir=${TMPDIR:-/tmp}/t2d$$  # avoid collisions on 8.3 filesystems.
-txincludes=     # TEXINPUTS extensions
+txincludes=     # TEXINPUTS extensions, with trailing colon
 txiprereq=19990129 # minimum texinfo.tex version to have macro expansion
 verbose=false   # echo for verbose mode
 
@@ -148,7 +148,7 @@ while test x"$1" != x"$arg_sep"; do
     -I | --I*)
       shift
       miincludes="$miincludes -I $1"
-      txincludes="$txincludes$path_sep$1"
+      txincludes="$txincludes$1$path_sep"
       ;;
     -l | --l*) shift; set_language=$1;;
     -o | --o*)
@@ -352,8 +352,8 @@ for command_line_filename in ${1+"$@"}; do
   # etc. files in ${directory} don't get used in preference to fresher
   # files in `.'.  Include orig_pwd in case we are in clean mode, where
   # we've cd'd to a temp directory.
-  common=".$path_sep$orig_pwd$path_sep$filename_dir$path_sep$txincludes$path_sep"
-   TEXINPUTS="$common$TEXINPUTS_orig"
+  common=".$path_sep$orig_pwd$path_sep$filename_dir$path_sep$txincludes"
+   TEXINPUTS="$common$TEXINPUTS_orig:"
   INDEXSTYLE="$common$INDEXSTYLE_orig"
 
   # If the user explicitly specified the language, use that.
