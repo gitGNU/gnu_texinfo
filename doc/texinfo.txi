@@ -3995,9 +3995,9 @@ texi2dvi --texinfo=@@setcontentsaftertitlepage foo.texi
 @section @code{@@bye} File Ending
 @findex bye
 
-An @code{@@bye} command terminates @TeX{} or Info formatting.  None of
-the formatting commands reading anything following @code{@@bye}.  The
-@code{@@bye} command should be on a line by itself.
+An @code{@@bye} command terminates Texinfo processing.  None of the
+formatters read anything following @code{@@bye}.  The @code{@@bye}
+command should be on a line by itself.
 
 If you wish, you may follow the @code{@@bye} line with notes. These
 notes will not be formatted and will not appear in either Info or a
