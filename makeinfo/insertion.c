@@ -526,18 +526,20 @@ begin_insertion (type)
       current_indent += default_indentation_increment;
       break;
 
-    case display:
-    case smalldisplay:
     case example:
     case smallexample:
     case lisp:
     case smalllisp:
+      in_fixed_width_font++;
+
+      /* Like @example but no fixed width font.
+    case display:
+    case smalldisplay:
       /* Like @display but without indentation. */
     case smallformat:
     case format:
       close_single_paragraph ();
       inhibit_paragraph_indentation = 1;
-      in_fixed_width_font++;
       filling_enabled = 0;
       last_char_was_newline = 0;
 
