@@ -1476,8 +1476,8 @@ cm_end ()
 
   if (type == bad_type)
     {
-      line_error (_("Bad argument to `%s', `%s', using `%s'"),
-           command, temp, insertion_type_pname (current_insertion_type ()));
+      line_error (_("Bad argument `%s' to `@%s', using `%s'"),
+           temp, command, insertion_type_pname (current_insertion_type ()));
     }
   if (xml && type == menu) /* fixme */
     {
