@@ -23,6 +23,7 @@ convenience, here's a url to one of the relevant sections:
 
 * texinfo.tex:
   . new Italian translations, txi-it.tex.
+  . pdf bookmarks for unnumbered sections work.
 * info:
   . crash when MALLOC_CHECK_=2 fixed.
 * Distribution:
