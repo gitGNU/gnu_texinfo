@@ -68,6 +68,9 @@ Compression
 * bzip2: (bzip2).               General (de)compression of files (blocksort).
 * Gzip: (gzip).                 General (de)compression of files (lzw).
 
+Email
+* Anubis: (anubis).             The GNU outgoing mail processor.
+
 Typesetting
 * Groff: (groff).               The GNU troff document formatting system.
 
