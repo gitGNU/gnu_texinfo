@@ -22,6 +22,10 @@ convenience, here's a url to one of the relevant sections:
 
 -------------------------------------------------------------------------------
 
+* makeinfo:
+  . under --html, @cartouche outputs a <table> with a border.
+
+
 4.5 (4 February 2003)
 * info:
   . a bug in 4.4 prevented compressed info files from being found.
