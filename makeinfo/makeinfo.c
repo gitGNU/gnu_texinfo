@@ -3146,7 +3146,7 @@ cm_xref (arg)
               char *arg1_id = xml_id (arg1);
 
               if (!*arg2 && !*arg3)
-                arg3 = xml_get_assoc_for_id (arg1_id);
+                arg3 = xstrdup (xml_get_assoc_for_id (arg1_id));
 
               if (*arg2 || *arg3)
                 {
