@@ -32,7 +32,7 @@ pkgdata_DATA = texinfo.cat
 # we don't actually use version.texi in the rule, but it's one way of
 # noticing when the version changes.
 texinfo.cat: texinfo-cat.in $(top_srcdir)/doc/version.texi
-	sed 's/__VERSION__/@VERSION@/g' $< >$@
+	sed 's/__VERSION__/@VERSION@/g' texinfo-cat.in >$@
 
 # Most of these are for fun.  The only one that's really supported is texi2dvi.
 # 
