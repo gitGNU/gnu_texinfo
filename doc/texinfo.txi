@@ -871,7 +871,7 @@ invocation,,, dvips, Dvips}) and Xdvi for viewing on an X display
 (Generated via @command{texi2dvi --pdf}.)  This is a format developed
 by Adobe which is intended to be platform-independent and easily
 viewable, among other design goals; for a discussion, see
-@uref{http://tug.org/tugboat/Articles/tb22-3/beebeI.pdf}.  Texinfo
+@uref{http://tug.org/tugboat/Articles/tb22-3/tb72beebeI.pdf}.  Texinfo
 uses the @command{pdftex} program to output pdf; see
 @uref{http://tug.org/applications/pdftex}.
 
