@@ -12,9 +12,9 @@ echo "Bootstrapping CVS Texinfo with:"
 #cmd="autoreconf --verbose --force --install --include=m4"
 
 # So instead:
-cmd="automake && autoconf"
+cmd="autoheader && aclocal -I m4 && automake && autoconf"
 echo $cmd
-$cmd || exit 1
+eval $cmd || exit 1
 
 echo "Now run configure with your desired options, for instance:"
 echo "  configure CFLAGS=-g --enable-maintainer-mode"
