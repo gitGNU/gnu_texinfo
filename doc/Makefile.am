@@ -73,12 +73,5 @@ texindex.1: $(top_srcdir)/util/texindex.c $(common_mandeps)
 	$(HELP2MAN) --name="sort Texinfo index files" `basename $< .c` >$@
 endif
 
-# Do not create info files for distribution, but do create man pages.
+# Do not create info files for distribution.
 dist-info:
-
-# is this really fixed?
-## Do not try to build the info files in $(srcdir), since we don't
-## distribute them.  (This will be fixed for no-suffix info files such as
-## `texinfo' in automake 1.7.2, and is already fixed for normal info files.)
-#texinfo: $(srcdir)/texinfo.txi version.texi
-#	$(MAKEINFO) -I$(srcdir) texinfo.txi
