@@ -1112,9 +1112,40 @@ cm_insert_copying ()
     {
       if (xml)
         xml_end_para ();
+
       /* insert_string rather than add_word because we've already done
          full expansion on copying_text when we saved it.  */
-      insert_string (copying_text);
+
+      if (docbook && xml_in_bookinfo)
+        { /* Remove blockquote if we are inside bookinfo, because we have
+             legalnotice there so quotation is unnecessary.  */
+          char *temp;
+          int start_pos = 0;
+          int end_pos = 0;
+          int len = strlen (copying_text);
+
+          /* Go to the start of first tag.  */
+          while (copying_text[start_pos] != '<')
+            start_pos++;
+          start_pos++;
+          /* Skip the first tag.  */
+          while (copying_text[start_pos] != '<')
+            start_pos++;
+          /* Find the start of last tag.  */
+          while (copying_text[len-end_pos] != '<')
+            end_pos++;
+
+          temp = xmalloc (len - start_pos - end_pos);
+          strncpy (temp, copying_text + start_pos, len - start_pos - end_pos);
+          temp[len - start_pos - end_pos] = '\0';
+
+          insert_string (temp);
+
+          free (temp);
+        }
+      else
+        insert_string (copying_text);
+
       insert ('\n');
       
       /* Update output_position so that the node positions in the tag
