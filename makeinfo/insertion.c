@@ -735,11 +735,11 @@ begin_insertion (type)
         start_of_end = get_until ("\n@end float", &text);
 
         /* Get the @anchor before the end of @float.  */
-        i = search_forward_until_pos ("@anchor{",
+        i = search_forward_until_pos ("\n@anchor{",
             save_input_text_offset, start_of_end);
         if (i > -1)
           {
-            input_text_offset = i + 8;
+            input_text_offset = i + 9;
             get_until_in_braces ("\n@end float", &anchor);
             input_text_offset = save_input_text_offset;
           }
@@ -747,11 +747,11 @@ begin_insertion (type)
           anchor = "";
 
         /* Get also the @caption.  */
-        i = search_forward_until_pos ("@caption{",
+        i = search_forward_until_pos ("\n@caption{",
             save_input_text_offset, start_of_end);
         if (i > -1)
           {
-            input_text_offset = i + 9;
+            input_text_offset = i + 10;
             get_until_in_braces ("\n@end float", &caption);
             input_text_offset = save_input_text_offset;
           }
