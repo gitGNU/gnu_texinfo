@@ -561,7 +561,7 @@ defun_internal (type, x_p)
           break;
         case deftypefn:
         case deftypevr:
-          execute_string ("%s", type_name);
+          execute_string ("%s ", type_name);
 	  xml_insert_element (FUNCTION, START);
           execute_string ("%s", defined_name);
 	  xml_insert_element (FUNCTION, END);
@@ -569,7 +569,7 @@ defun_internal (type, x_p)
         case deftypemethod:
         case deftypeop:
         case deftypeivar:
-          execute_string ("%s", type_name2);
+          execute_string ("%s ", type_name2);
 	  xml_insert_element (FUNCTION, START);
           execute_string ("%s", defined_name);
 	  xml_insert_element (FUNCTION, END);
