@@ -10373,7 +10373,7 @@ You can insert an image given in an external file with the
 Here is the basic synopsis of the @code{@@image} command:
 
 @example
-@@image@{@var{filename}, @r{[}@var{width}@r{]}, @r{[}@var{height}@r{]}, @r{[}@var{alttext}@r{]}, @r{[}@var{extension}@r{]}@}
+@@image@{@var{filename} @r{[,}@var{width}@r{]} @r{[,}@var{height}@r{]} @r{[,}@var{alttext}@r{]} @r{[,}@var{extension}@r{]}@}
 @end example
 
 @cindex Formats for images
