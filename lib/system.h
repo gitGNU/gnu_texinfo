@@ -44,7 +44,10 @@
 #endif
 
 /* For gettext (NLS).  */
+#define const
 #include "gettext.h"
+#undef const
+
 #define _(String) gettext (String)
 #define N_(String) (String)
 
