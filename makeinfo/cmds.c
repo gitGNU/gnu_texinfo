@@ -428,7 +428,7 @@ cm_dots (arg)
         xml_insert_entity ("hellip");
       else
         add_word (html && !in_fixed_width_font
-                  ? "<small>...</small>" : "...");
+                  ? "<small class=\"dots\">...</small>" : "...");
     }
 }
 
@@ -448,7 +448,7 @@ cm_enddots (arg)
 	}
       else
 	add_word (html && !in_fixed_width_font 
-                  ? "<small>...</small>." : "....");
+                  ? "<small class=\"enddots\">....</small>" : "....");
     }
 }
 

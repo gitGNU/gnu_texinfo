@@ -504,7 +504,7 @@ begin_insertion (type)
         /* Kludge alert: if <pre> is followed by a newline, IE3
            renders an extra blank line before the pre-formatted block.
            Other browsers seem to not mind one way or the other.  */
-        add_word ("<pre>");
+        add_word_args ("<pre class=\"%s\">", command);
 
       if (type != format && type != smallformat)
         {
@@ -1151,7 +1151,7 @@ handle_verbatim_environment (find_end_verbatim)
    */
 
   if (html)
-    add_word ("<pre>");
+    add_word ("<pre class=\"verbatim\">");
 
   while (input_text_offset < input_text_length)
     {

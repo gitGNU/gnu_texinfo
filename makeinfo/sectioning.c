@@ -413,7 +413,8 @@ sectioning_html (level, cmd)
   old_no_indent = no_indent;
   no_indent = 1;
 
-  add_word_args ("<h%d>", level + 2); /* level 0 (chapter) is <h2> */
+  /* level 0 (chapter) is <h2> */
+  add_word_args ("<h%d class=\"%s\">", level + 2, cmd);
 
   /* If we are outside of any node, produce an anchor that
      the TOC could refer to.  */

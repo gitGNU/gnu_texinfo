@@ -1716,7 +1716,7 @@ handle_menu_entry ()
 
       if (had_menu_commentary)
         {
-          add_word ("<ul>\n");
+          add_word ("<ul class=\"menu\">\n");
           had_menu_commentary = 0;
           in_paragraph = 0;
         }
@@ -1736,7 +1736,7 @@ handle_menu_entry ()
       if (next_menu_item_number <= 9)
 	{
 	  add_word(" accesskey=");
-	  add_word_args("%d", next_menu_item_number);
+	  add_word_args("\"%d\"", next_menu_item_number);
 	  next_menu_item_number++;
 	}
       add_word (" href=\"");

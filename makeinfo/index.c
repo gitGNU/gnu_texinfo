@@ -682,7 +682,7 @@ cm_printindex ()
       xml_sort_index = 0;
       close_paragraph ();
       if (html)
-	add_word ("<ul compact>");
+	add_word_args ("<ul class=\"index-%s\" compact>", index_name);
       else if (!no_headers && !docbook)
 	add_word ("* Menu:\n\n");
       
