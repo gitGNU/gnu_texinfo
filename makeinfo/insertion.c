@@ -1049,6 +1049,9 @@ end_insertion (type)
           if (strlen (current_float_title ()) > 0)
             execute_string (" - %s", current_float_title ());
 
+          /* Indent the following paragraph. */
+          inhibit_paragraph_indentation = 0;
+
           if (html)
             add_word ("</strong></p></div>\n");
           else
