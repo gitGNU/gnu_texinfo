@@ -2307,7 +2307,10 @@ add_char (character)
     {
       if (html || docbook)
         { /* Seems cleaner to use &nbsp; than an 8-bit char.  */
+	  int saved_escape_html = escape_html;
+	  escape_html = 0;
           add_word ("&nbsp");
+	  escape_html = saved_escape_html;
           character = ';';
         }
       else
