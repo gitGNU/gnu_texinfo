@@ -23,6 +23,8 @@ convenience, here's a url to one of the relevant sections:
 -------------------------------------------------------------------------------
 
 * Language:
+  . The ' (ASCII apostrophe/right quote) character is finally allowed in
+    node and anchor names.
   . @value constructs are now expanded in the filename arguments to
     @include and @verbatiminclude.
   . @smallexample and the like now output in a smaller font (9pt) in all
