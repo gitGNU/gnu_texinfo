@@ -283,7 +283,7 @@ element docbook_element_list [] = {
   { "firstterm",           0, 1, 0 }, /* DFN */
   { "emphasis",            0, 1, 0 }, /* EMPH */
   { "emphasis",            0, 1, 0 }, /* STRONG */
-  { "citation",            0, 1, 0 }, /* CITE */
+  { "citetitle",           0, 1, 0 }, /* CITE */
   { "",                    0, 1, 0 }, /* NOTFIXEDWIDTH */
   { "wordasword",          0, 1, 0 }, /* I */
   { "emphasis",            0, 1, 0 }, /* B */
