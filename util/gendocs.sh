@@ -44,7 +44,7 @@ usage="Usage: $prog [OPTION]... PACKAGE MANUAL-TITLE
 Generate various output formats from PACKAGE.texinfo (or .texi or .txi) source.
 
 Options:
-  -o OUTDIR   write to OUTDIR, instead of manual/.
+  -o OUTDIR   write files into OUTDIR, instead of manual/.
   --help      display this help and exit successfully.
   --version   display version information and exit successfully.
 
