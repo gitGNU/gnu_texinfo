@@ -209,10 +209,10 @@ extern int strcoll ();
 # ifdef __CYGWIN__
 #  define DEFAULT_TMPDIR	"/tmp/"
 #  define PATH_SEP	":"
-# else  /* O_BINARY && !__unix__ */
+# else  /* O_BINARY && !__CYGWIN__ */
 #  define DEFAULT_TMPDIR	"c:/"
 #  define PATH_SEP	";"
-# endif /* O_BINARY && !__unix__ */
+# endif /* O_BINARY && !__CYGWIN__ */
   /* Back to any O_BINARY system.  */
 # define FILENAME_CMP	strcasecmp
 # define FILENAME_CMPN	strncasecmp
