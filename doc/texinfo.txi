@@ -15370,11 +15370,11 @@ each usage specifies the `current' category; any subsequent
 @cindex Free Software Directory
 @cindex Dir categories, choosing
 @cindex Categories, choosing
-When choosing the categories for @code{@@dircategory}, we recommend
-consulting the @uref{Free Sofware Directory,
-http://www.gnu.org/directory}.  If your program is not listed there, or
-listed incorrectly or incompletely, please report the situation to the
-directory maintainers (@email{bug-directory@@gnu.org}) so that the
+When choosing a category name for the @code{@@dircategory} command, we
+recommend consulting the @uref{Free Sofware Directory,
+http://www.gnu.org/directory}.  If your program is not listed there,
+or listed incorrectly or incompletely, please report the situation to
+the directory maintainers (@email{bug-directory@@gnu.org}) so that the
 category names can be kept in sync.
 
 Here are a few examples (see the @file{util/dir-example} file in the
