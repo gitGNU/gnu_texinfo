@@ -581,7 +581,10 @@ begin_insertion (type)
       filling_enabled = indented_fill = 1;
 
       if (html)
-        enum_html ();
+        {
+          enum_html ();
+          in_paragraph = 0;
+        }
 
       if (xml)
         xml_begin_enumerate (enumeration_arg);
