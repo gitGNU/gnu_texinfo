@@ -12824,13 +12824,16 @@ Twice: a,b & a,b.
 @cindex Macro details
 @cindex Details of macro usage
 
-Due to unavoidable disparities in the @TeX{} and @command{makeinfo}
-implementations, Texinfo macros have the following limitations.
+Due to unavoidable limitations, certain macro-related constructs cause
+problems with @TeX{}.  If you get macro-related errors when producing
+the printed version of a manual, try expanding the macros with
+@command{makeinfo} by invoking @command{texi2dvi} with the @samp{-E}
+option (@ref{Format with texi2dvi}).
 
 @itemize @bullet
 @item
 All macros are expanded inside at least one @TeX{} group.  This means
-that @code{@@set} and other such commands will have no effect inside a
+that @code{@@set} and other such commands have no effect inside a
 macro.
 
 @item
@@ -12842,9 +12845,14 @@ Commas in macro arguments, even if escaped by a backslash, don't
 always work.
 
 @item
-The @TeX{} implementation cannot construct macros that define macros in
-the natural way.  To do this, you must use conditionals and raw @TeX{}.
-For example:
+It is best to avoid comments inside macro definitions.
+
+@item
+Macro arguments cannot cross lines.
+
+@item
+Macros cannot define macros in the natural way.  To do this, you must
+use conditionals and raw @TeX{}.  For example:
 
 @example
 @@ifnottex
@@ -12860,15 +12868,8 @@ something involving \arg\ somehow
 @@end tex
 @end example
 
-@item
-It is best to avoid comments inside macro definitions.
-
 @end itemize
 
-If some macro feature causes errors when producing the printed version
-of a manual, try expanding the macros with @command{makeinfo} by
-invoking @command{texi2dvi} with the @samp{-E} option; see @ref{Format
-with texi2dvi}.
 
 @node alias
 @section @samp{@@alias @var{new}=@var{existing}}
