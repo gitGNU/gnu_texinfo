@@ -234,7 +234,7 @@ Other things
 * Screen: (screen).             Terminal multiplexer.
 
 Individual utilities
-* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4
+* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4.
 * aid: (id-utils)aid invocation.                Matching strings.
 * ar: (binutils)ar.                             Create/modify/extract archives.
 * at-pr: (gnats)at-pr.                          Bug report timely reminders.
