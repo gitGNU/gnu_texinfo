@@ -1,7 +1,7 @@
 /* system.h: system-dependent declarations; include this first.
    $Id$
 
-   Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002 Free Software
+   Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003 Free Software
    Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
@@ -257,5 +257,16 @@ extern void xexit ();
 
 /* For convenience.  */
 #define STREQ(s1,s2) (strcmp (s1, s2) == 0)
+
+/* We don't need anything fancy.  If we did need something fancy, gnulib
+   has it.  */
+#ifdef MIN
+#undef MIN
+#endif
+#define MIN(a,b) ((a) < (b) ? (a) : (b))
+#ifdef MAX
+#undef MAX
+#endif
+#define MAX(a,b) ((a) > (b) ? (a) : (b))
 
 #endif /* TEXINFO_SYSTEM_H */
