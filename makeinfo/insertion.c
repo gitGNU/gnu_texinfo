@@ -1150,7 +1150,13 @@ handle_verbatim_environment (find_end_verbatim)
 	  break;
 	}
 
-      add_char (character);
+      if (html && character == '&' && escape_html)
+	add_word ("&amp;");
+      else if (html && character == '<' && escape_html)
+	add_word ("&lt;");
+      else
+	add_char (character);
+
       input_text_offset++;
     }
 
