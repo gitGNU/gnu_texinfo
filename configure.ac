@@ -119,7 +119,7 @@ short ospeed;
 #endif
 #endif
 /* Make sure all variables actually exist.  AIX 4.3 has ospeed but no BC.
-   --Andreas Ley <andy@rz.uni-karlsruhe.de>, 24 Aug 2000.  */
+   --Andreas Ley <andy@rz.uni-karlsruhe.de> 24 Aug 2000.  */
 BC++;
 UP++;
 PC++;
