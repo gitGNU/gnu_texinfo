@@ -32,7 +32,7 @@ ones, you very likely have to update your ls-R file; do this with the
 mktexlsr command.  In older versions, this was named MakeTeXls-R.
 
 You can get the latest texinfo.tex from
-ftp://ftp.gnu.org/gnu/texinfo.tex (and all GNU mirrors)
+ftp://ftp.gnu.org/gnu/texinfo/texinfo.tex (and all GNU mirrors)
 ftp://tug.org/tex/texinfo.tex (and all CTAN mirrors)
 or on the FSF machines in /home/gd/gnu/doc/texinfo.tex.
 If you have problems with the version in this distribution, please check

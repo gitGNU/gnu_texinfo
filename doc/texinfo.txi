@@ -980,7 +980,7 @@ file @file{texinfo.tex} that contains information (definitions or
 to @TeX{} commands, which @TeX{} can then process to create the typeset
 document.)  @file{texinfo.tex} contains the specifications for printing
 a document.  You can get the latest version of @file{texinfo.tex} from
-@uref{ftp://ftp.gnu.org/gnu/texinfo.tex}.
+@uref{ftp://ftp.gnu.org/gnu/texinfo/texinfo.tex}.
 
 In the United States, documents are most often printed on 8.5 inch by 11
 inch pages (216@dmn{mm} by 280@dmn{mm}); this is the default size.  But
