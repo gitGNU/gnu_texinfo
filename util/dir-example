@@ -43,10 +43,11 @@ Text creation and manipulation
 * Diff: (diff).                 Comparing and merging programs.
 * Ed: (ed).                     Line editor.
 * Gawk: (gawk).                 A text scanning and processing language.
+* Wdiff: (wdiff).               Word difference finder.
 * grep: (grep).                 Print lines matching a pattern.
 * m4: (m4).			General-purpose text macro processor.
 * sed: (sed).                   Stream EDitor.
-* Wdiff: (wdiff).               Word difference finder.
+
 
 Texinfo documentation system
 * Info: (info).                 Documentation browsing system.
