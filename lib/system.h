@@ -29,8 +29,9 @@
 #include <gnu-miktex.h>
 #define S_ISDIR(x) ((x)&_S_IFDIR) 
 #else
-/* Annoyingly, substring is defined in a Microsoft DLL, so it has its
-   own __declspec declaration.  */
+/* MiKTeX defines substring() in a separate DLL, where it has its
+   own __declspec declaration.  We don't want to try to duplicate 
+   this Microsoft-ism here.  */
 extern char *substring ();
 #endif
 
