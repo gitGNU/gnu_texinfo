@@ -28,7 +28,7 @@ convenience, here's a url to one of the relevant sections:
   . calls recode if installed and @documentencoding is specified.
 * Distribution:
   . new convenience script texi2pdf, equivalent to texi2dvi --pdf (from tetex).
-  . automake 1.9.1.
+  . automake 1.9.2.
 
 4.7 (9 April 2004)
 * Language:
