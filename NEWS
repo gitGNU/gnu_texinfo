@@ -24,6 +24,8 @@ convenience, here's a url to one of the relevant sections:
 * Language:
   . new command @abbr for general abbreviations.
   . new command @slanted to typeset text with a slanted font.
+* texi2dvi:
+  . calls recode if installed and @documentencoding is specified.
 * Distribution:
   . new convenience script texi2pdf, equivalent to texi2dvi --pdf (from tetex).
   . automake 1.8.5.
