@@ -7859,10 +7859,8 @@ the margins are closer to the center of the page, so the whole of the
 quotation is indented;
 
 @item
-the first lines of paragraphs are indented no more than other lines;
+and the first lines of paragraphs are indented no more than other lines.
 
-@item
-in the printed output, interparagraph spacing is reduced.
 @end itemize
 
 @quotation
