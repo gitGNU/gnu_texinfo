@@ -97,9 +97,6 @@ long nlines;
 /* Directory to use for temporary files.  On Unix, it ends with a slash.  */
 char *tempdir;
 
-/* Start of filename to use for temporary files.  */
-char *tempbase;
-
 /* Number of last temporary file.  */
 int tempcount;
 
@@ -183,8 +180,6 @@ main (argc, argv)
   keyfields[2].endchars = -1;
 
   decode_command (argc, argv);
-
-  tempbase = mktemp (concat ("txiXXXXXX", "", ""));
 
   /* Process input files completely, one by one.  */
 
@@ -384,16 +379,32 @@ For more information about these matters, see the files named COPYING.\n"),
     usage (1);
 }
 
-/* Return a name for a temporary file. */
+/* Return a name for temporary file COUNT. */
 
 static char *
 maketempname (count)
      int count;
 {
+  static char *tempbase = NULL;
   char tempsuffix[10];
+
+  if (!tempbase)
+    {
+      int fd;
+      char *tmpdir = getenv ("TEMPDIR");
+      if (!tmpdir)
+        tmpdir = "/tmp";
+      tempbase = concat (tmpdir, "/txidxXXXXXX");
+
+      fd = mkstemp (tempbase);
+      if (fd == -1) 
+        pfatal_with_name (tempbase);
+    }
+
   sprintf (tempsuffix, ".%d", count);
   return concat (tempdir, tempbase, tempsuffix);
 }
+
 
 /* Delete all temporary files up to TO_COUNT. */
 

@@ -32,7 +32,7 @@ ACLOCAL_AMFLAGS = -I m4
 # In case TEXINFO_MAINT is set during make distcheck; in this case, the
 # simple doc-related files generated in info/ make distcleancheck fail.
 distcleancheck_listfiles = \
-  find -type f -exec sh -c 'test -f $(srcdir)/{} || echo {}'
+  find -type f -exec sh -c 'test -f $(srcdir)/{} || echo {}' ';'
 
 # One special target for installers to use by hand if desired.
 install-tex:
