@@ -73,6 +73,24 @@ rel=\"generator-home\">\n");
       insert_string ("-->\n");
     }
 
+  /* Put the style definitions in a comment for the sake of browsers
+     that don't support <style>.  */
+  add_word ("<meta http-equiv=\"Content-Style-Type\" content=\"text/css\">\n");
+  add_word ("<style type=\"text/css\"><!--\n");
+  /* This seems cleaner than adding <br>'s at the end of each line.
+     It's not exactly the end of the world if the browser doesn't do
+     <style>s, either; they'll just come out in typewriter.  */
+  add_word ("  pre.display { font-family: serif }\n");
+  add_word ("  pre.format  { font-family: serif }\n");
+
+  /* Alternatively, we could do <font size=-1> in insertion.c, but this
+     way makes it easier to override.  */
+  add_word ("  pre.smalldisplay { font-size: smaller; font-family: serif }\n");
+  add_word ("  pre.smallformat  { font-size: smaller; font-family: serif }\n");
+  add_word ("  pre.smallexample { font-size: smaller }\n");
+  add_word ("  pre.smalllisp    { font-size: smaller }\n");
+  add_word ("--></style>\n");
+
   add_word ("</head>\n<body>\n");
 
   if (title && !html_title_written && titlepage_cmd_present)
