@@ -1,8 +1,8 @@
 /* insertion.c -- insertions for Texinfo.
    $Id$
 
-   Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003, 2004 Free Software
-   Foundation, Inc.
+   Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 Free
+   Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -1651,8 +1651,6 @@ handle_verbatim_environment (int find_end_verbatim)
   else if (xml)
     {
       xml_insert_element (VERBATIM, START);
-      escape_html = 0;
-      add_word ("<![CDATA[");
     }
 
   while (input_text_offset < input_text_length)
@@ -1693,9 +1691,7 @@ handle_verbatim_environment (int find_end_verbatim)
     }
   else if (xml)
     {
-      add_word ("]]>");
       xml_insert_element (VERBATIM, END);
-      escape_html = save_escape_html;
     }
   
   in_fixed_width_font--;
