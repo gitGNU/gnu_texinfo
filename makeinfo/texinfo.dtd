@@ -98,7 +98,7 @@
 <!-- NODES -->
 <!-- ***** -->
 <!ELEMENT node (nodename, nodenext?, nodeprev?, nodeup?, 
-                (para | menu | %section.all;)*) >
+                (%section.all; | %block;)*) >
 
 <!ELEMENT nodename (#PCDATA)>
 <!ELEMENT nodenext (#PCDATA)>
@@ -227,7 +227,7 @@
 
 <!ELEMENT indexterm (#PCDATA | %Inline.phrase;)*>
 <!ATTLIST indexterm
-          INDEX CDATA #IMPLIED>
+          index CDATA #IMPLIED>
 
 <!ELEMENT email (emailaddress, emailname?)>
 <!ELEMENT emailaddress (#PCDATA | %Inline.phrase;)*>
