@@ -2196,11 +2196,10 @@ This updates all the nodes and menus.@refill
 The @code{texinfo-column-for-description} variable specifies the
 column to which menu descriptions are indented.  By default, the value
 is 32 although it is often useful to reduce it to as low as 24.  You
-can set the variable with the @kbd{M-x edit-options} command
-(@pxref{Edit Options, , Editing Variable Values, emacs, The GNU Emacs
-Manual}) or with the @kbd{M-x set-variable} command (@pxref{Examining,
-, Examining and Setting Variables, emacs, The GNU Emacs
-Manual}).@refill
+can set the variable via customization (@pxref{Changing an Option,,,
+emacs, The GNU Emacs Manual}) or with the @kbd{M-x set-variable}
+command (@pxref{Examining, , Examining and Setting Variables, emacs,
+The GNU Emacs Manual}).
 
 Also, the @code{texinfo-indent-menu-description} command may be used to
 indent existing menu descriptions to a specified column.  Finally, if
