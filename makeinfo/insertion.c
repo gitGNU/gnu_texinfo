@@ -645,7 +645,7 @@ begin_insertion (type)
 
     case cartouche:
       if (html)
-	add_word ("<table border=1><tr><td>\n");
+	add_word ("<table class=\"cartouche\" border=1><tr><td>\n");
       if (in_menu)
         no_discard++;
       break;
