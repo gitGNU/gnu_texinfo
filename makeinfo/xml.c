@@ -91,6 +91,10 @@ element texinfoml_element_list [] = {
   { "acronymword",         0, 1, 0 },
   { "acronymdesc",         0, 1, 0 },
 
+  { "abbrev",              0, 1, 0 },
+  { "abbrevword",          0, 1, 0 },
+  { "abbrevdesc",          0, 1, 0 },
+
   { "tt",                  0, 1, 0 },
   { "code",                0, 1, 0 },
   { "command",             0, 1, 0 },
@@ -296,6 +300,10 @@ element docbook_element_list [] = {
   { "acronym",             0, 1, 0 },
   { "",                    0, 1, 0 }, /* ACRONYMWORD */
   { "",                    0, 1, 0 }, /* ACRONYMDESC */
+
+  { "abbrev",              0, 1, 0 },
+  { "",                    0, 1, 0 }, /* ABBREVWORD */
+  { "",                    0, 1, 0 }, /* ABBREVDESC */
 
   { "literal",             0, 1, 0 }, /* TT */
   { "literal",             0, 1, 0 }, /* CODE */

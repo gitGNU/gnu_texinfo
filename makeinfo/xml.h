@@ -1,7 +1,7 @@
 /* xml.h -- xml output declarations.
    $Id$
 
-   Copyright (C) 2001, 2002, 2003 Free Software Foundation, Inc.
+   Copyright (C) 2001, 2002, 2003, 2004 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
    along with this program; if not, write to the Free Software
    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-   Written by Philippe Martin <feloy@free.fr>.  */
+   Originally written by Philippe Martin <feloy@free.fr>.  */
 
 #ifndef XML_H
 #define XML_H
@@ -65,6 +65,7 @@ enum xml_element
   NODENAME,
   /* -- */
   ACRONYM/* 37 */, ACRONYMWORD, ACRONYMDESC,
+  ABBREV, ABBREVWORD, ABBREVDESC,
   TT, CODE, COMMAND_TAG, ENV, FILE_TAG, OPTION, SAMP, KBD, URL, KEY,
   VAR, SC, DFN, EMPH, STRONG, CITE, NOTFIXEDWIDTH, I, B, R,
   EXDENT,

@@ -109,6 +109,7 @@ extern void cm_LaTeX (int arg),
 
 /* Emphasis and markup.  */
 extern void cm_acronym (int arg),
+  cm_abbr (int arg),
   cm_b (int arg),
   cm_cite (int arg, int position),
   cm_code (int arg),
