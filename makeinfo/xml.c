@@ -177,6 +177,7 @@ element texinfoml_element_list [] = {
   { "",                    0, 0, 0 }, /* EXAMPLE (docbook) */
 
   { "printindex",          0, 0, 0 },
+  { "listoffloats",        0, 0, 0 },
   { "anchor",              0, 1, 0 },
   { "image",               0, 1, 0 },
   { "",                    0, 1, 0 }, /* PRIMARY (docbook) */
@@ -365,6 +366,7 @@ element docbook_element_list [] = {
   { "example",             1, 1, 0 },
 
   { "index",               0, 1, 0 }, /* PRINTINDEX */
+  { "",                    0, 1, 0 }, /* LISTOFFLOATS */
   { "",                    0, 1, 0 }, /* ANCHOR */
   { "",                    0, 1, 0 }, /* IMAGE */
   { "primary",             0, 1, 0 }, /* PRIMARY */
