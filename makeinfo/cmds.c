@@ -1330,7 +1330,9 @@ handle_include (verbatim_include)
   if (macro_expansion_output_stream && !executing_string)
     me_append_before_this_command ();
 
-  close_paragraph ();
+  if (!insertion_stack)
+    close_paragraph ();  /* No blank lines etc. if not at outer level.  */
+    
   get_rest_of_line (0, &arg);
   /* We really only want to expand @value, but it's easier to just do
      everything.  TeX will only work with @value.  */
