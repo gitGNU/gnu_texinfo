@@ -482,6 +482,52 @@ set_current_output_filename (const char *fname)
   current_output_filename = xstrdup (fname);
 }
 
+
+/* Output the <a name="..."></a> constructs for NODE.  We output both
+   the new-style conversion and the old-style, if they are different.
+   See comments at `add_escaped_anchor_name' in html.c.  */
+
+static void
+add_html_names (char *node)
+{
+  char *tem = expand_node_name (node);
+  char *otem = xstrdup (tem);
+
+  /* Determine if the old and new schemes come up with different names;
+     only output the old scheme if that is so.  We don't want to output
+     the same name twice.  */
+  canon_white (otem);
+  {
+    char *optr = otem;
+    int need_old = 0;
+    
+    for (; *optr; optr++)
+      {
+        if (!cr_or_whitespace (*optr) && !URL_SAFE_CHAR (*optr))
+          {
+            need_old = 1;
+            break;
+          }
+      }
+    
+    if (need_old)
+      {
+        add_word ("<a name=\"");
+        add_anchor_name (otem, -1);  /* old anchor name conversion */
+        add_word ("\"></a>\n");
+      }
+    free (otem);
+  }
+
+  /* Always output the new scheme.  */
+  add_word ("<a name=\"");
+  add_anchor_name (tem, 0);
+  add_word ("\"></a>\n");
+
+  free (tem);
+}
+
+
 /* The order is: nodename, nextnode, prevnode, upnode.
    If all of the NEXT, PREV, and UP fields are empty, they are defaulted.
    You must follow a node command which has those fields defaulted
@@ -922,12 +968,8 @@ cm_node (void)
         }
 
       if (!splitting && no_headers)
-	{ /* cross refs need a name="#anchor" even if we're not writing headers*/
-          add_word ("<a name=\"");
-          tem = expand_node_name (node);
-          add_anchor_name (tem, 0);
-          add_word ("\"></a>");
-          free (tem);
+	{ /* cross refs need a name="#anchor" even if not writing headers */ 
+          add_html_names (node);
 	}
 
       if (splitting || !no_headers)
@@ -935,11 +977,7 @@ cm_node (void)
           add_html_block_elt ("<div class=\"node\">\n");
           /* The <p> avoids the links area running on with old Lynxen. */
           add_word_args ("<p>%s\n", splitting ? "" : "<hr>");
-          add_word ("<a name=\"");
-          tem = expand_node_name (node);
-          add_anchor_name (tem, 0);
-          free (tem);
-          add_word ("\"></a>");
+          add_html_names (node);
 
           if (next)
             {

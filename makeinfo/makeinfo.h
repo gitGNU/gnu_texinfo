@@ -269,8 +269,15 @@ DECLARE (int, expensive_validation, 0);
 #define digit_value(c) ((c) - '0')
 #endif
 
-/* #define HTML_SAFE "$-_.+!*'()" */
-/* #define URL_SAFE_CHAR(ch) (isalnum (ch) || strchr (HTML_SAFE, ch)) */
+/* These characters are not really HTML-safe (with strict XHTML),
+   and also there are possible collisions.  That's the whole reason we
+   designed a new conversion scheme in the first place.  But we
+   nevertheless need to generate the old names.  See
+   `add_escaped_anchor_name' in html.c.  */
+#define OLD_HTML_SAFE "$-_.+!*'()"
+#define OLD_URL_SAFE_CHAR(ch) (strchr (OLD_HTML_SAFE, ch))
+
+/* For the current/stable scheme.  */
 #define URL_SAFE_CHAR(ch) (isalnum (ch))
 
 #define COMMAND_PREFIX '@'

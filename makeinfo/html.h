@@ -46,8 +46,8 @@ extern void insert_html_tag (int start_or_end, char *tag);
 /* Output HTML <link> to NODE, plus extra ATTRIBUTES.  */
 extern void add_link (char *nodename, char *attributes);
 
-/* Escape URL-special characters as %xy.  */
-extern void add_escaped_anchor_name (char *name);
+/* Escape URL-special characters.  */
+extern void add_escaped_anchor_name (char *name, int old);
 
 /* See html.c.  */
 extern void add_anchor_name (char *nodename, int href);

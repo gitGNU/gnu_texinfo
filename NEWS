@@ -27,6 +27,10 @@ convenience, here's a url to one of the relevant sections:
   . new command @abbr for general abbreviations.
   . new command @slanted to typeset text in a slanted font,
     and @sansserif to typeset in a sans serif font.
+* makeinfo:
+  . HTML output: <a name="..."> constructs are added for the old-style
+    conversion of node names to HTML names, so that external references
+    to them can continue to work.
 * texi2dvi:
   . calls recode if installed and @documentencoding is specified.
 * Distribution:
