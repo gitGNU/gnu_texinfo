@@ -24,7 +24,9 @@ convenience, here's a url to one of the relevant sections:
 
 * Language:
   . The ' (ASCII apostrophe/right quote) character is finally allowed in
-    node and anchor names.
+    node and anchor names.  Thus, after installing this texinfo.tex,
+    existing .aux files will cause errors!  Remove them and rerun TeX to
+    generate good ones.
   . @value constructs are now expanded in the filename arguments to
     @include and @verbatiminclude.
   . @smallexample and the like now output in a smaller font (9pt) in all
