@@ -864,7 +864,7 @@ end_insertion (type)
 
     case menu:
       in_menu--;                /* No longer hacking menus. */
-      if (html)
+      if (html && !no_headers)
         add_word ("</ul>\n");
       else if (!no_headers)
         close_insertion_paragraph ();
