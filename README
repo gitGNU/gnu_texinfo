@@ -142,7 +142,8 @@ Here's the order in which to run the tools for a fresh build:
   configure CFLAGS=-g
   make
 
-(with arguments to taste, of course.)
+(with arguments to taste, of course.)  Or you can run autoreconf -fvi
+instead of the various auto* tools.
 
 If you want to rebuild the man pages and other generated files, set
 the environment variable TEXINFO_MAINT.  You'll need help2man installed.
