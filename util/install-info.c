@@ -465,7 +465,7 @@ The first time you invoke Info you start off looking at this node.\n\
 %s\n\
 "), "File: dir,\tNode: Top",  /* These keywords must not be translated.  */
     "* Menu:"
-); /* This part must not be translated.  */
+);
           if (fclose (f) < 0)
             pfatal_with_name (dirfile);
         }
