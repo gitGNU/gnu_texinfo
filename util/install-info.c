@@ -120,6 +120,7 @@ struct option longopts[] =
   { "dir-file",  required_argument, NULL, 'd' },
   { "entry",     required_argument, NULL, 'e' },
   { "help",      no_argument, NULL, 'h' },
+  { "infodir",   required_argument, NULL, 'D' },
   { "info-dir",  required_argument, NULL, 'D' },
   { "info-file", required_argument, NULL, 'i' },
   { "item",      required_argument, NULL, 'e' },
