@@ -23,6 +23,7 @@ Not all of the topics shown below may be available on this system.
 * Menu:
 Basics
 * Bash: (bash).                 Bourne-Again SHell.
+* BC: (bc).                     Arbitrary precision calculator language.
 * Coreutils: (coreutils).       Core GNU (file, text, shell) utilities.
 * Cpio: (cpio).                 Copy-in-copy-out archiver to tape or disk.
 * DC: (dc).                     Postfix desk calculator.
