@@ -634,8 +634,9 @@ sort_index (index)
   make_index_entries_unique (array, count);
 
   /* Replace the original index with the sorted one, in case the
-     document wants to print it again.  */
-  *index = **array;
+     document wants to print it again.  If the index wasn't empty.  */
+  if (index)
+    *index = **array;
 
   return array;
 }
