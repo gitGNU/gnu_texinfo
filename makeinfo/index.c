@@ -342,9 +342,14 @@ init_indices ()
              here; otherwise, when we try to define the pg index again
              just below, it will still point to cp.  */
           undefindex (name_index_alist[i]->name);
-          free (name_index_alist[i]->name);
-          free (name_index_alist[i]);
-          name_index_alist[i] = NULL;
+          
+          /* undefindex sets all this to null in some cases.  */
+          if (name_index_alist[i])
+            {
+              free (name_index_alist[i]->name);
+              free (name_index_alist[i]);
+              name_index_alist[i] = NULL;
+            }
         }
     }
 
