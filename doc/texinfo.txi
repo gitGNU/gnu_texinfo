@@ -11742,10 +11742,6 @@ particular object that has the type of the class.  An instance
 variable is a variable that belongs to the class but for which each
 instance has its own value.
 
-In a definition, if the name of a class is truly a name defined in the
-programming system, then you should mark it with @code{@@code}.  By
-default, it is printed in the usual text font.
-
 @menu
 * Variables: Object-Oriented Variables:
 * Methods: Object-Oriented Methods:
