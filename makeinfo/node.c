@@ -306,7 +306,12 @@ remember_node (node, prev, next, up, position, line_no, fname, flags)
         node_number++;
         new->number = node_number;
       }
-    new->html_fname = fname;
+    if (fname)
+      new->html_fname = fname;
+    else
+      /* This happens for Top node under split-HTML, for example.  */
+      new->html_fname
+	= normalize_filename (filename_part (current_output_filename));
     new->next_ent = tag_table;
     tag_table = new;
   }
