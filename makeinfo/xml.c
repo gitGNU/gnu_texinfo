@@ -146,6 +146,8 @@ element texinfoml_element_list [] = {
 
   { "indexterm",           0, 1, 0 },
 
+  { "math",                0, 1, 0 },
+
   { "xref",                0, 1, 0 },
   { "xrefnodename",        0, 1, 0 },
   { "xrefinfoname",        0, 1, 0 },
@@ -334,6 +336,8 @@ element docbook_element_list [] = {
   { "term",                0, 0, 0 }, /* TABLETERM */
 
   { "indexterm",           0, 1, 0 }, /* INDEXTERM */
+
+  { "",                    0, 1, 0 }, /* MATH */
 
   { "xref",                0, 1, 0 }, /* XREF */
   { "link",                0, 1, 0 }, /* XREFNODENAME */
