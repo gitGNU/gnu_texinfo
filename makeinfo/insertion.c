@@ -915,7 +915,14 @@ end_insertion (type)
         current_indent -= default_indentation_increment;
 
       if (html)
-        add_word (type == quotation ? "</blockquote>\n" : "</pre>\n");
+        { /* The complex code in close_paragraph that kills whitespace
+             does not function here, since we've inserted non-whitespace
+             (the </whatever>) before it.  The indentation already got
+             inserted at the end of the last example line, so we have to
+             delete it, or browsers wind up showing an extra blank line.  */
+          kill_self_indent (default_indentation_increment);
+          add_word (type == quotation ? "</blockquote>\n" : "</pre>\n");
+        }
 
       /* The ending of one of these insertions always marks the
          start of a new paragraph. */
