@@ -137,7 +137,7 @@ get_item_function ()
   /* If the document erroneously says
        @itemize @bullet @item foobar
      it's nicer to give an error up front than repeat `@bullet expected
-     braces' until we give up.  */
+     braces' until we get a segmentation fault.  */
   item_loc = strstr (item_function, "@item");
   if (item_loc)
     {
