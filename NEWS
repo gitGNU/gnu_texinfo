@@ -26,6 +26,7 @@ convenience, here's a url to one of the relevant sections:
   . new command @tie{} to do a real tie (unbreakable interword space).
 * makeinfo:
   . html output for @defun and friends now has font changes.
+  . html output has some class attributes.
 * texinfo.tex:
   . new Italian translations, txi-it.tex.
   . pdf bookmarks for unnumbered sections work.
