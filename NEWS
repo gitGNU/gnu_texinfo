@@ -35,7 +35,7 @@ convenience, here's a url to one of the relevant sections:
 * Distribution:
   . getopt and other common library files updated from gnulib
     (http://savannah.gnu.org/projects/gnulib/).
-  . autoconf 2.56.
+  . autoconf 2.57, automake 1.7.2.
   
 4.3 (14 November 2002)
 * Language:
