@@ -1224,8 +1224,9 @@ xml_asterisk ()
 /*
  *     INDEX
  */
-/* Used to separate primary and secondary entries in an index */
-#define INDEX_SEP ", "
+/* Used to separate primary and secondary entries in an index -- we need
+   to have real multilivel indexing support, not just string analysis.  */
+#define INDEX_SEP "@this string will never appear@" /* was , */
 
 xml_insert_indexterm (indexterm, index)
     char *indexterm;
