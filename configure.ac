@@ -79,6 +79,24 @@ gl_STRCASE
 # term library.
 AC_CANONICAL_BUILD
 
+if test "$cross_compiling" = no; then
+    native_tools=
+else
+    # Make twice, once locally, then with host compiler.
+    native_tools=tools
+    test -d "$native_tools" || mkdir "$native_tools"
+    confdir=`(cd "$srcdir";pwd)`
+    rm -f config.status
+    # Make sure the secondary configure won't complain
+    # that it's "already configured."
+    cd "$native_tools"
+    tools_only=1 $confdir/configure --build=${build} --host=${build} \
+	--disable-rpath --disable-nls
+    cd ..
+fi
+AC_SUBST(native_tools)
+AM_CONDITIONAL(TOOLS_ONLY, [[test "x$tools_only" = x1]])
+
 # Some GNU/Linux systems (e.g., SuSE 4.3, 1996) don't have curses, but
 # rather ncurses.  So we check for it.
 TERMLIBS=

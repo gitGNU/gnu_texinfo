@@ -57,4 +57,4 @@ cmd_sources = $(srcdir)/session.c $(srcdir)/echo-area.c $(srcdir)/infodoc.c \
 # The $(EXEEXT) should be added by Automake, but isn't. Fine.
 $(BUILT_SOURCES): makedoc$(EXEEXT) $(cmd_sources)
 	rm -f $(BUILT_SOURCES)
-	./makedoc $(cmd_sources)
+	$(top_builddir)/$(native_tools)/info/makedoc $(cmd_sources)
