@@ -27,7 +27,7 @@ Not all of the topics shown below may be available on this system.
 * Menu:
 
 Basics
-* Bash: (bash).                 Bourne-Again SHell.
+* Bash: (bash).                 The GNU Bourne-Again SHell.
 * BC: (bc).                     Arbitrary precision calculator language.
 * Common options: (coreutils)Common options.      Common options.
 * Coreutils: (coreutils).       Core GNU (file, text, shell) utilities.
