@@ -1013,7 +1013,7 @@ cm_r (arg)
   else if (html)
     {
       if (arg == START)
-        add_word ("<span style=\"font-family: serif;\">");
+        add_word ("<span style=\"font-family: serif; font-weight: normal;\">");
       else
         add_word ("</span>");
     }
