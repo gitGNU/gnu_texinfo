@@ -33,6 +33,11 @@
 /* Options */
 int xml_index_divisions = 1;
 
+#if !__OPTIMIZE__
+/* To make enum names available to debugger. */
+static enum xml_element xml_element_dummy;
+#endif
+
 typedef struct _element
 {
   char name[32];

@@ -4038,6 +4038,7 @@ maybe_escaped_expansion (char *str, int implicit_code, int do_html_escape)
   indented_fill = 0;
   no_indent = 1;
   escape_html = do_html_escape;
+  xml_no_para++;
 
   result = full_expansion (str, implicit_code);
 
@@ -4045,6 +4046,7 @@ maybe_escaped_expansion (char *str, int implicit_code, int do_html_escape)
   indented_fill = saved_indented_fill;
   no_indent = saved_no_indent;
   escape_html = saved_escape_html;
+  xml_no_para--;
 
   return result;
 }
