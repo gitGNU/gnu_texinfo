@@ -250,10 +250,10 @@ handle_enum_increment (level, index)
      int level;
      int index;
 {
-  /* Here's is how TeX handles enumeration:
+  /* Here is how TeX handles enumeration:
      - Anything below @unnumbered is not enumerated.
      - Counters are incremented below @chapter and @appendix, but not
-       printed with their @unnumbered* children.  */
+       printed for their @unnumbered* children.  */
   int i;
 
   if (!number_sections && !docbook)
