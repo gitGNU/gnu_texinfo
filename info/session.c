@@ -2544,7 +2544,8 @@ info_follow_menus (initial_node, menus, errstr, errarg1, errarg2)
               if (strcasecmp (entry->label, arg) == 0)
                 break;
               else
-                if (strncasecmp (entry->label, arg, strlen (arg)) == 0)
+                if ((best_guess == -1)
+                    && (strncasecmp (entry->label, arg, strlen (arg)) == 0))
                   best_guess = i;
             }
 
