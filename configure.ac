@@ -105,7 +105,7 @@ for trylib in $termlib ${TERMLIB_VARIANTS}; do
      LIBS="$oldLIBS -l$termlib"
    fi
    AC_TRY_LINK(, 
-#ifdef HAVE_NCURSES_TERMCAP_H
+[#ifdef HAVE_NCURSES_TERMCAP_H
 #include <ncurses/termcap.h>
 #else
 #ifdef HAVE_TERMCAP_H
@@ -121,10 +121,10 @@ short ospeed;
 /* Make sure all variables actually exist.  AIX 4.3 has ospeed but no BC.
    --Andreas Ley <andy@rz.uni-karlsruhe.de>, 24 Aug 2000.  */
 BC++;
-UP++
+UP++;
 PC++;
 return ospeed != 0;
-, ac_cv_var_ospeed=$trylib; break)
+], ac_cv_var_ospeed=$trylib; break)
 done
 LIBS=$oldLIBS
 )
