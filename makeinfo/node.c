@@ -1715,7 +1715,7 @@ split_file (char *filename, int size)
     return;
   file_size = (long) fileinfo.st_size;
 
-  the_file = find_and_load (filename, 1);
+  the_file = find_and_load (filename, 0);
   if (!the_file)
     return;
 
