@@ -9606,7 +9606,9 @@ command.  Write the mathematical expression between braces, like this:
 (a + b)(a + b) = a^2 + 2ab + b^2
 @end example
 
-Thus, the @code{@@math} command has no effect on the Info output.
+Thus, the @code{@@math} command has no effect on the Info output;
+@program{makeinfo} just reproduces the input, it does not try to
+interpret the mathematics in any way.
 
 @code{@@math} implies @code{@@tex}.  This not only makes it possible to
 write superscripts and subscripts (as in the above example), but also
