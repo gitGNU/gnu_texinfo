@@ -68,7 +68,7 @@ pc_up_line (void)
 {
   int x, y;
   ScreenGetCursor (&y, &x);
-  ScreenSetCursor (max (y-1, 0), x);
+  ScreenSetCursor (MAX (y-1, 0), x);
 }
 
 /* Move the cursor down one line. */
