@@ -639,7 +639,7 @@ compile (FILE *fp, const char *filename, struct sect *sections)
 		{
 		  syntax_error (filename, lnum,
                       (char *) _("NUL character (^%c) not permitted"),
-                      (void *)((intptr_t)c), NULL, NULL, NULL);
+                      (void *) (c), NULL, NULL, NULL);
 		  error = 1;
 		}
 	      seqstate = normal;
@@ -663,7 +663,7 @@ compile (FILE *fp, const char *filename, struct sect *sections)
 	      if (alen == 0)
 		{
 		  syntax_error (filename, lnum, (char *) _("missing action name"),
-                      (void *)((intptr_t)c), NULL, NULL, NULL);
+                      (void *) (c), NULL, NULL, NULL);
 		  error = 1;
 		}
 	      else
