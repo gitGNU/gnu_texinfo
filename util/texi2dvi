@@ -222,7 +222,7 @@ while test x"$1" != x"$arg_sep"; do
     -l | --l*) shift; set_language=$1;;
     -o | --o*)
       shift
-      clean=t
+      # just in case we also have --clean, or whatever.
       case "$1" in
         /* | ?:/*) oname=$1;;
                 *) oname="$orig_pwd/$1";;
