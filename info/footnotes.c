@@ -21,8 +21,8 @@
 
 #include "info.h"
 
-/* Non-zero means attempt to show footnotes when displaying a new window. */
-int auto_footnotes_p = 1;
+/* Nonzero means attempt to show footnotes when displaying a new window. */
+int auto_footnotes_p = 0;
 
 static char *footnote_nodename = "*Footnotes*";
 
