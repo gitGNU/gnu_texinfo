@@ -1545,7 +1545,7 @@ cm_item ()
                 output_paragraph_offset = 0;
 
               /* Force the browser to render one blank line before
-                 each new @item in a table.  But don't do that unless
+                 each new @item in a table.  But don't do that if
                  this is the first <dt> after the <dl>, or if we are
                  converting @itemx.
 
