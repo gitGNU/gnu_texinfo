@@ -2147,12 +2147,18 @@ reader_loop (void)
                   {
                     if (dash_count >= 2)
                       {
-                        html ? add_word ("&mdash;") : xml_insert_entity ("mdash");
+                        if (html)
+                          add_word ("&mdash;<wbr>");
+                        else
+                          xml_insert_entity ("mdash");
                         dash_count -= 2;
                       }
                     else if (dash_count >= 1)
                       {
-                        html ? add_word ("&ndash;") : xml_insert_entity ("ndash");
+                        if (html)
+                          add_word ("&ndash;");
+                        else
+                          xml_insert_entity ("ndash");
                         dash_count--;
                       }
                   }
