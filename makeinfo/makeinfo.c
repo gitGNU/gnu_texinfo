@@ -789,7 +789,8 @@ For more information about these matters, see the files named COPYING.\n"),
   else
     convert_from_stream (stdin, "stdin");
 
-  return errors_printed ? 2 : 0;
+  xexit (errors_printed ? 2 : 0);
+  return 0; /* Avoid bogus warnings.  */
 }
 
 

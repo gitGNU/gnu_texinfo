@@ -166,7 +166,7 @@ main (argc, argv)
 
   /* In case we write to a redirected stdout that fails.  */
   /* not ready atexit (close_stdout); */
-  
+
   /* Describe the kind of sorting to do. */
   /* The first keyfield uses the first braced field and folds case. */
   keyfields[0].braced = 1;
@@ -232,7 +232,6 @@ main (argc, argv)
 
   flush_tempfiles (tempcount);
   xexit (0);
-
   return 0; /* Avoid bogus warnings.  */
 }
 
@@ -402,7 +401,7 @@ maketempname (count)
       tempbase = concat (tempdir, "txidxXXXXXX");
 
       fd = mkstemp (tempbase);
-      if (fd == -1) 
+      if (fd == -1)
         pfatal_with_name (tempbase);
     }
 
@@ -1135,7 +1134,7 @@ parsefile (filename, nextline, data, size)
         }
       else
         first_initial = toupper (*p);
-      
+
       while (*p && *p != '\n')
         p++;
       if (p != end)

@@ -41,8 +41,10 @@
 #endif /* not EXIT_SUCCESS */
 
 
-/* Flush stdout first, exit if failure.  Otherwise, if EXIT_STATUS is
-   zero, exit successfully, else unsuccessfully.  */
+/* Flush stdout first, exit if failure (therefore, xexit should be
+   called to exit every program, not just `return' from main).
+   Otherwise, if EXIT_STATUS is zero, exit successfully, else
+   unsuccessfully.  */
 
 void
 xexit (exit_status)
@@ -50,12 +52,12 @@ xexit (exit_status)
 {
   if (ferror (stdout))
     {
-      fputs (stderr, _("ferror on stdout"));
+      fputs (_("ferror on stdout\n"), stderr);
       exit_status = 1;
     }
   else if (fflush (stdout) != 0)
     {
-      fputs (stderr, _("fflush error on stdout"));
+      fputs (_("fflush error on stdout\n"), stderr);
       exit_status = 1;
     }
 

@@ -166,7 +166,7 @@ main (argc, argv)
       option_character = getopt_long
         (argc, argv, short_options, long_options, &getopt_long_index);
 
-      /* getopt_long () returns EOF when there are no more long options. */
+      /* getopt_long returns EOF when there are no more long options. */
       if (option_character == EOF)
         break;
 
@@ -476,8 +476,10 @@ For more information about these matters, see the files named COPYING.\n"),
           begin_info_session (initial_node);
       }
 
-    return 0;
+    xexit (0);
   }
+
+  return 0; /* Avoid bogus warnings.  */
 }
 
 void
