@@ -183,21 +183,15 @@ mv $PACKAGE.txt $outdir/
 
 echo Generating monolithic html...
 rm -rf $PACKAGE.html  # in case a directory is left over
-${MAKEINFO} --no-split --html $html $srcfile
+${MAKEINFO} --no-split --html -o $PACKAGE.html $html $srcfile
 html_mono_size="`calcsize $PACKAGE.html`"
 gzip -f -9 -c $PACKAGE.html >$outdir/$PACKAGE.html.gz
 html_mono_gz_size="`calcsize $outdir/$PACKAGE.html.gz`"
 mv $PACKAGE.html $outdir/
 
 echo Generating html by node...
-${MAKEINFO} --html $html $srcfile
-if test -d $PACKAGE; then
-  split_html_dir=$PACKAGE
-elif test -d $PACKAGE.html; then
-  split_html_dir=$PACKAGE.html
-else 
-  echo "$0: can't find split html dir for $srcfile." >&2
-fi
+${MAKEINFO} --html -o $PACKAGE.html $html $srcfile
+split_html_dir=$PACKAGE.html
 (
   cd ${split_html_dir} || exit 1
   tar -czf ../$outdir/${PACKAGE}_html_node.tar.gz -- *.html
