@@ -443,7 +443,7 @@ Inserting Ellipsis and Bullets
 Inserting @TeX{} and the Copyright Symbol
 
 * tex::                         How to insert the @TeX{} logo.
-* copyright symbol::            How to use @code{@@copyright}@{@}.
+* copyright symbol::            How to use @code{@@copyright@{@}}.
 
 Glyphs for Examples
 
@@ -9505,7 +9505,7 @@ braces.@refill
 
 @menu
 * tex::                         How to insert the @TeX{} logo.
-* copyright symbol::            How to use @code{@@copyright}@{@}.
+* copyright symbol::            How to use @code{@@copyright@{@}}.
 @end menu
 
 
@@ -9521,12 +9521,12 @@ letters.  In Info, it just looks like @samp{TeX}.  The
 
 
 @node copyright symbol
-@subsection @code{@@copyright}@{@} (@copyright{})
+@subsection @code{@@copyright@{@}} (@copyright{})
 @findex copyright
 
 Use the @code{@@copyright@{@}} command to generate `@copyright{}'.  In
 a printed manual, this is a @samp{c} inside a circle, and in Info,
-this is @samp{(C)}.@refill
+this is @samp{(C)}.
 
 
 @node pounds, minus, TeX and copyright, Insertions
@@ -15210,8 +15210,7 @@ menus instead.  @xref{Contents, , Generating a Table of
 Contents}.@refill
 
 @item @@copyright@{@}
-Generate a copyright symbol.  @xref{copyright symbol, ,
-@code{@@copyright}}.@refill
+Generate a copyright symbol.  @xref{copyright symbol,, @code{@@copyright@{@}}}.
 
 @ignore
 @item @@ctrl@{@var{ctrl-char}@}
