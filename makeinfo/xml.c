@@ -435,9 +435,12 @@ replace_element replace_elements [] = {
   { VAR, B, EMPH},
   { B, CODE, ENVAR},
   { CODE, I, EMPH},
+  { SAMP, VAR, -1 },
   { FORMAT, BOOKINFO, ABSTRACT },
   { QUOTATION, ABSTRACT, -1},
   { LINEANNOTATION, LINEANNOTATION, -1 },
+  { LEGALNOTICE, ABSTRACT, -1 },
+  { QUOTATION, QUOTATION, -1 },
   /* Add your elements to replace here */
   {-1, 0, 0}
 };

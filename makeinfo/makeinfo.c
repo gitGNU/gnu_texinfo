@@ -4252,8 +4252,12 @@ execute_string (format, va_alist)
   free (input_filename);
 
   if (xml)
-    while (xml_current_stack_index () > xml_element_stack_start)
-      xml_end_current_element ();
+    {
+      while (xml_current_stack_index () > xml_element_stack_start)
+        xml_end_current_element ();
+      if (xml_in_copying)
+        xml_end_para ();
+    }
 
   popfile ();
   executing_string--;
