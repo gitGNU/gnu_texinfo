@@ -3718,7 +3718,7 @@ cm_image (arg)
               add_word ("\010]");
             }
           else
-            line_error (_("@image file `%s' (for text) unreadable: %s"),
+            warning (_("@image file `%s' (for text) unreadable: %s"),
                         txtname, strerror (errno));
         }
 
