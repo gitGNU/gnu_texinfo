@@ -75,6 +75,9 @@ mask_termsig (set)
 # if defined (SIGWINCH)
   sigaddset (set, SIGWINCH);
 # endif
+#if defined (SIGQUIT)
+  sigaddset (set, SIGQUIT);
+#endif
 #if defined (SIGINT)
   sigaddset (set, SIGINT);
 #endif
@@ -114,6 +117,7 @@ static int term_conf_busy = 0;
 
 static signal_info old_TSTP, old_TTOU, old_TTIN;
 static signal_info old_WINCH, old_INT, old_USR1;
+static signal_info old_QUIT;
 
 void
 initialize_info_signal_handler ()
@@ -132,6 +136,10 @@ initialize_info_signal_handler ()
 
 #if defined (SIGWINCH)
   set_termsig (SIGWINCH, &old_WINCH);
+#endif
+
+#if defined (SIGQUIT)
+  set_termsig (SIGQUIT, &old_QUIT);
 #endif
 
 #if defined (SIGINT)
@@ -195,6 +203,9 @@ info_signal_proc (sig)
     case SIGTTOU:
     case SIGTTIN:
 #endif
+#if defined (SIGQUIT)
+    case SIGQUIT:
+#endif
 #if defined (SIGINT)
     case SIGINT:
 #endif
@@ -207,6 +218,10 @@ info_signal_proc (sig)
         if (sig == SIGTTIN)
           old_signal_handler = &old_TTIN;
 #endif /* SIGTSTP */
+#if defined (SIGQUIT)
+        if (sig == SIGQUIT)
+          old_signal_handler = &old_QUIT;
+#endif /* SIGQUIT */
 #if defined (SIGINT)
         if (sig == SIGINT)
           old_signal_handler = &old_INT;
