@@ -674,7 +674,7 @@ cm_acronym_or_abbr (int arg, int is_abbr)
 
   /* If not enclosed in braces, strip after comma to be compatible
      with texinfo.tex.  */
-  if (description[0] != '{' && index (description, ',') != NULL)
+  if (description[0] != '{' && strchr (description, ',') != NULL)
     {
       int i = 0;
       while (description[i] != ',')
