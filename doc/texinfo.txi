@@ -1275,13 +1275,13 @@ Unicode.
 @cindex En dash, producing
 Use three hyphens in a row, @samp{---}, to produce a long dash---like
 this (called an @dfn{em dash}), used for punctuation in sentences.
-Use two hyphens, @samp{--}, to produce a medium dash--like this
-(called an @dfn{en dash}), used to separate numeric ranges.  Use a
-single hyphen, @samp{-}, to produce a standard hyphen used in compound
-words.  For display on the screen, Info reduces three hyphens to two
-and two hyphens to one (not transitively!).  Of course, any number of
-hyphens in the source remain as they are in literal contexts, such as
-@code{@@code} and @code{@@example}.
+Use two hyphens, @samp{--}, to produce a medium dash (called an
+@dfn{en dash}), used primarily for numeric ranges, as in ``June
+25--26''.  Use a single hyphen, @samp{-}, to produce a standard hyphen
+used in compound words.  For display on the screen, Info reduces three
+hyphens to two and two hyphens to one (not transitively!).  Of course,
+any number of hyphens in the source remain as they are in literal
+contexts, such as @code{@@code} and @code{@@example}.
 
 @item
 @cindex Tabs; don't use!
