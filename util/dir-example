@@ -33,8 +33,6 @@ Basics
 * Date input formats: (coreutils)Date input formats.
 
 GNU Packages
-* Diff: (diff).                 Comparing and merging programs.
-* Ed: (ed).                     Line editor.
 * Emacs: (emacs).               Extensible self-documenting text editor.
 * File utilities: (fileutils).  GNU file utilities.
 * Finding files: (find).        Operating on files matching certain criteria.
@@ -57,6 +55,8 @@ GNU Packages
 * Wget: (wget).                 URL download.
 
 Text creation and manipulation
+* Diff: (diff).                 Comparing and merging programs.
+* Ed: (ed).                     Line editor.
 * Gawk: (gawk).                 A text scanning and processing language.
 * Gawkinet: (gawkinet).         TCP/IP Internetworking With `gawk'.
 * grep: (grep).                 Print lines matching a pattern.
