@@ -585,7 +585,7 @@ cm_comment ()
   if (html || xml)
     {
       char *line;
-      get_rest_of_line (1, &line);
+      get_rest_of_line (0, &line);
 
       if (strlen (line) > 0)
         {
