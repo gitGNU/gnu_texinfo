@@ -7708,10 +7708,9 @@ An @code{@@example} environment has the following characteristics:
 the source text is not filled as it normally is.
 @item Extra spaces and blank lines are significant.
 @item The output is indented.
-@item The output uses a fixed-width font (for formats where this is
-possible and meaningful).
-@item Texinfo commands @emph{are} expanded; if you want the input to
-be the output verbatim, use the @code{@@verbatim} environment instead
+@item The output uses a fixed-width font.
+@item Texinfo commands @emph{are} expanded; if you want the output to
+be the input verbatim, use the @code{@@verbatim} environment instead
 (@pxref{verbatim,,@code{@@verbatim}}).
 @end itemize
 
@@ -7756,6 +7755,9 @@ paragraph (@pxref{noindent,,@code{@@noindent}}.
 If you want to embed code fragments within sentences, instead of
 displaying them, use the @code{@@code} command or its relatives
 (@pxref{code,,@code{@@code}}).
+
+If you wish to write a ``comment'' on a line of an example in the
+normal roman font, you can use the @code{@@r} command (@pxref{Fonts}).
 
 
 @node verbatim
