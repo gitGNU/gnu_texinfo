@@ -13594,9 +13594,10 @@ Twice: a,b & a,b.
 
 
 @node Macro Details
-@section Macro Details
+@section Macro Details and Caveats
 @cindex Macro details
 @cindex Details of macro usage
+@cindex Caveats for macro usage
 
 Due to unavoidable limitations, certain macro-related constructs cause
 problems with @TeX{}.  If you get macro-related errors when producing
@@ -13631,6 +13632,24 @@ It is best to avoid comments inside macro definitions.
 
 @item
 Macro arguments cannot cross lines.
+
+@item
+In general, you can't arbitrarily substitute a macro call for Texinfo
+command arguments, even when the text is the same.  It might work with
+some commands, it fails with others.  Best not to do it at all.  For
+instance, this fails:
+
+@example
+@@macro offmacro
+off
+@@end macro
+@@headings @@offmacro
+@end example
+
+@noindent
+You would expect this to be equivalent to @code{@@headings off}, but
+for @TeX{}nical reasons, it fails with a mysterious error message
+(@code{Paragraph ended before @@headings was complete}).
 
 @item
 Macros cannot define macros in the natural way.  To do this, you must
