@@ -1283,17 +1283,23 @@ cm_w (int arg)
 
 /* An unbreakable word space.  Same as @w{ } for makeinfo, but different
    for TeX (the space stretches and stretches, and does not inhibit
-   hyphenation).  */
+   hyphenation).  For XML and HTML, insert the non-breaking-space
+   character and entity, respectively */
 void
 cm_tie (int arg)
 {
   if (arg == START)
+    if (html)
+      insert_string ("&nbsp;");
+    else if (xml)
+      insert_string ("&#xa0;");
+    else
     {
       cm_w (START);
       add_char (' ');
     }
   else
-    cm_w (END);
+    if (!html && !xml) cm_w (END);
 }
 
 /* Explain that this command is obsolete, thus the user shouldn't
