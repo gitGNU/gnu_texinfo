@@ -29,6 +29,8 @@ typedef struct float_elt
   char *type;
   char *title;
   char *number;
+  char *section;
+  char *section_name;
 } FLOAT_ELT;
 
 /* Information retrieval about the current float env.  */
