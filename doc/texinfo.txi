@@ -7584,10 +7584,11 @@ We recommend using regular mixed case wherever possible.
 @findex b @r{(bold font)}
 @findex t @r{(typewriter font)}
 @findex r @r{(roman font)}
+@findex slanted @r{(slanted font)}
 
-Texinfo provides four font commands that specify font changes in the
+Texinfo provides five font commands that specify font changes in the
 printed manual and (where possible) in the HTML output, but have no
-effect in the Info file.  All four commands apply to an argument that
+effect in the Info file.  All five commands apply to an argument that
 follows, surrounded by braces.
 
 @table @code
@@ -7595,9 +7596,10 @@ follows, surrounded by braces.
 @cindex Italic font
 selects an @i{italic} font;
 
-@item @@s
+@item @@slanted
 @cindex Slanted font
-selects a @s{slanted} font;
+selects a @slanted{slanted} font (this command name is longer than the
+other font-change commands because it was invented much later);
 
 @item @@b
 @cindex Bold font
@@ -17284,8 +17286,9 @@ glyph: @samp{@result{}}.  @xref{result, , @code{@@result}}.@refill
 Generate a ring accent over the next character, as in @ringaccent{o}.
 @xref{Inserting Accents}.
 
-@item @@s@{@var{text}@}
-Print @var{text} in @s{slanted} font.  No effect in Info.  @xref{Fonts}.
+@item @@slanted@{@var{text}@}
+Print @var{text} in @slanted{slanted} font.  No effect in Info.
+@xref{Fonts}.
 
 @item @@samp@{@var{text}@}
 Highlight @var{text} that is a literal example of a sequence of

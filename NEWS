@@ -22,7 +22,7 @@ convenience, here's a url to one of the relevant sections:
 
 -------------------------------------------------------------------------------
 * Language:
-  . new command @s to typeset text with a slanted font.
+  . new command @slanted to typeset text with a slanted font.
 * Distribution:
   . new convenience script texi2pdf, equivalent to texi2dvi --pdf (from tetex).
   . automake 1.8.5.
