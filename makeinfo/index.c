@@ -837,10 +837,14 @@ cm_printindex ()
 
                       if (number_sections)
                         {
-                          while (section_name[idx]
-                                 && (isdigit (section_name[idx])
-                                     || (idx && section_name[idx] == '.')))
-                            idx++;
+                          if (strncmp (section_name, "Appendix", 8) == 0)
+                            idx = 10;
+                          else
+                            while (section_name[idx]
+                                && (isdigit (section_name[idx])
+                                  || (!idx && isupper(section_name[idx]))
+                                  || (idx && section_name[idx] == '.')))
+                              idx++;
                         }
                       if (idx)
                         sprintf (line, " See %.*s.\n", idx, section_name);
