@@ -390,8 +390,8 @@ Options for Info and plain text:\n\
       --fill-column=NUM       break Info lines at NUM characters (default %d).\n\
       --footnote-style=STYLE  output footnotes in Info according to STYLE:\n\
                                 `separate' to put them in their own node;\n\
-                                `end' to put them at the end of the node\n\
-                                  in which they are defined (default).\n\
+                                `end' to put them at the end of the node, in\n\
+                                which they are defined (this is the default).\n\
       --paragraph-indent=VAL  indent Info paragraphs by VAL spaces (default %d).\n\
                                 If VAL is `none', do not indent; if VAL is\n\
                                 `asis', preserve existing indentation.\n\
