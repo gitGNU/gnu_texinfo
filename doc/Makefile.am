@@ -60,15 +60,15 @@ install-tex:
 if TEXINFO_MAINT
 common_mandeps = $(top_srcdir)/configure.ac $(HELP2MAN)
 info.1: $(top_srcdir)/info/info.c $(common_mandeps)
-	$(HELP2MAN) --name="read Info documents" $< >$@
+	$(HELP2MAN) --name="read Info documents" `basename $< .c` >$@
 install-info.1: $(top_srcdir)/util/install-info.c $(top_srcdir)/configure.ac $(HELP2MAN)
-	$(HELP2MAN) --name="update info/dir entries" $< >$@
+	$(HELP2MAN) --name="update info/dir entries" `basename $< .c` >$@
 makeinfo.1: $(top_srcdir)/makeinfo/makeinfo.c $(common_mandeps)
-	$(HELP2MAN) --name="translate Texinfo documents" $< >$@
+	$(HELP2MAN) --name="translate Texinfo documents" `basename $< .c` >$@
 texi2dvi.1: $(top_srcdir)/util/texi2dvi $(common_mandeps)
-	$(HELP2MAN) --name="print Texinfo documents" $< >$@
+	$(HELP2MAN) --name="print Texinfo documents" `basename $< .c` >$@
 texindex.1: $(top_srcdir)/util/texindex.c $(common_mandeps)
-	$(HELP2MAN) --name="sort Texinfo index files" $< >$@
+	$(HELP2MAN) --name="sort Texinfo index files" `basename $< .c` >$@
 endif
 
 # Do not create info files for distribution, but do create man pages.
