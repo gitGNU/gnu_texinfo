@@ -25,6 +25,10 @@ convenience, here's a url to one of the relevant sections:
 * texi2dvi:
   . if the input file includes thumbpdf.sty (for LaTeX), then run thumbpdf.
   . more output if --debug.
+* texinfo.tex:
+  . @tex and @iftex code is executed inside a TeX group, so that any
+    changes must be prefixed with \global resp. @global to be effective.
+    (This change was actually made years ago, but never made it into the NEWS.)
 * Distribution:
   . New translation: nb.
   . automake 1.7.6.
