@@ -154,8 +154,8 @@ DECLARE (char *, current_node, NULL);
 /* Command name in the process of being hacked. */
 DECLARE (char *, command, NULL);
 
-/* Nonzero if we are inside an @titlepage block.  */
-DECLARE (int, inside_titlepage_cmd, 0);
+/* Nonzero if we have seen an @titlepage command.  */
+DECLARE (int, titlepage_cmd_present, 0);
 
 /* @copying ... @end copying. */
 DECLARE (char *, copying_text, NULL);

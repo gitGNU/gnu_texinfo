@@ -463,7 +463,6 @@ int xml_in_xref_token = 0;
 int xml_in_bookinfo = 0;
 int xml_in_book_title = 0;
 int xml_in_abstract = 0;
-int xml_in_copying = 0;
 
 /* We need to keep footnote state, because elements inside footnote may try
    to close the previous parent para.  */
@@ -1076,9 +1075,9 @@ xml_add_char (character)
       xml_insert_element (TITLE, START);
     }
 
-  if (!xml_in_copying && !first_section_opened && !xml_in_abstract
-      && !xml_in_book_title && !xml_no_para
-      && character != '\r' && character != '\n' && character != ' ')
+  if ( !first_section_opened && !xml_in_abstract && !xml_in_book_title
+      && !xml_no_para && character != '\r' && character != '\n'
+      && character != ' ' && !is_in_insertion_of_type (copying))
     {
       if (!xml_in_bookinfo)
 	{
@@ -1089,7 +1088,7 @@ xml_add_char (character)
       xml_in_abstract = 1;
     }
 
-  if (xml_in_copying && !xml_in_legalnotice)
+  if (!xml_in_legalnotice && is_in_insertion_of_type (copying))
     {
       xml_in_legalnotice = 1;
       if (docbook)

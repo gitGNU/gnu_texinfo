@@ -47,7 +47,4 @@ typedef struct
 
 extern COMMAND command_table[];
 
-/* Nonzero if we have seen an @titlepage command.  */
-extern int titlepage_cmd_present;
-
 #endif /* !CMDS_H */

@@ -39,7 +39,6 @@ extern int xml_in_xref_token;
 extern int xml_in_bookinfo;
 extern int xml_in_book_title;
 extern int xml_in_abstract;
-extern int xml_in_copying;
 
 enum xml_element
 {
