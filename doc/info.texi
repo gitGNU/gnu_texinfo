@@ -51,7 +51,7 @@ license to the document, as described in section 6 of the license.
 @end titlepage
 
 @ifnottex
-@node Top, Getting Started, (dir), (dir)
+@node Top
 @top Info: An Introduction
 
 The GNU Project distributes most of its on-line manuals in the
@@ -132,7 +132,7 @@ the screen.
 * Help-Q::              Quitting Info
 @end menu
 
-@node Help-Small-Screen, Help, Getting Started, Getting Started
+@node Help-Small-Screen
 @section Starting Info on a Small Screen
 
 @ifnotinfo
