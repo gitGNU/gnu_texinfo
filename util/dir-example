@@ -25,13 +25,13 @@ Basics
 * Bash: (bash).                 Bourne-Again SHell.
 * Coreutils: (coreutils).       Core GNU (file, text, shell) utilities.
 * Cpio: (cpio).                 Copy-in-copy-out archiver to tape or disk.
+* DC: (dc).                     Postfix desk calculator.
 
 * Common options: (coreutils)Common options.      Common options.
 * File permissions: (coreutils)File permissions.  Access modes.
 * Date input formats: (coreutils)Date input formats.
 
 GNU Packages
-* DC: (dc).                     Postfix desk calculator.
 * Diff: (diff).                 Comparing and merging programs.
 * Ed: (ed).                     Line editor.
 * Emacs: (emacs).               Extensible self-documenting text editor.
