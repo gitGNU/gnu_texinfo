@@ -133,6 +133,14 @@ AC_DEFUN([texinfo_gnulib_macros],
 ])dnl
 texinfo_gnulib_macros
 
+# For teTeX and TeX Live.
+AC_CANONICAL_HOST
+AC_ARG_ENABLE(multiplatform,
+  [  --enable-multiplatform  put executables in bin/PLATFORM])
+test "x$enable_multiplatform" = xyes \
+&& test "x$bindir" = 'x${exec_prefix}/bin' \
+&& bindir="$bindir/$host"
+
 dnl i18n support.  To update to a new version of gettext, run:
 dnl  gettextize -f -c --intl
 AM_GNU_GETTEXT_VERSION(0.11.5)
