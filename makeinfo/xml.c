@@ -174,6 +174,7 @@ element texinfoml_element_list [] = {
   { "",                    0, 0 }, /* REPLACEABLE (docbook) */
   { "",                    0, 0 }, /* ENVAR (docbook) */
   { "",                    0, 0 }, /* COMMENT (docbook) */
+  { "",                    0, 0 }, /* FUNCTION (docbook) */
 
   { "para",                0, 0 } /* Must be last */
   /* name / contains para / contained in para */
@@ -312,6 +313,7 @@ element docbook_element_list [] = {
   { "replaceable",         0, 0 },
   { "envar",               0, 1 },
   { "comment",             0, 0 },
+  { "function",            0, 1 },
 
   { "para",                0, 0 } /* Must be last */
   /* name / contains para / contained in para */
