@@ -499,10 +499,13 @@ for command_line_filename in ${1+"$@"}; do
 
     # What we'll run texindex on -- exclude non-index files.
     # Since we know index files are last, it is correct to remove everything
-    # before .aux and .?o?.
+    # before .aux and .?o?.  But don't really do <anything>o<anything>,
+    # since then if orig_xref_files contains something like
+    #   foo.xo foo.whatever
+    # the space after the o will get matched.
     index_files=`echo "$orig_xref_files" \
                  | sed "s!.*\.aux!!g;
-                        s!./$filename_noext\..o.!!g;
+                        s!./$filename_noext\.[^ ]o[^ ]!!g;
                         s/^[ ]*//;s/[ ]*$//"`
     # Run texindex (or makeindex) on current index files.  If they
     # already exist, and after running TeX a first time the index
