@@ -1397,7 +1397,7 @@ validate_file (tag_table)
                   tem1 = expand_node_name (prev);
                   tem2 = expand_node_name (tags->node);
 
-                  if (STREQ (tem1, tem2))
+                  if (tem1 && tem2 && STREQ (tem1, tem2))
                     you_lose = 0;
                   free (tem1);
                   free (tem2);
