@@ -23,6 +23,8 @@ convenience, here's a url to one of the relevant sections:
 -------------------------------------------------------------------------------
 
 * makeinfo:
+  . bug fix: @copying text is now reflected in tag table positions;
+    before, nodes may not have been found with a long-enough @copying.
   . bug fix: html @verb arg is quoted properly, and does not imply
     a paragraph break.
 * texinfo.tex:
