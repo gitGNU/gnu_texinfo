@@ -53,6 +53,9 @@ GNU Packages
 * Wdiff: (wdiff).               Word-by-word comparison.
 * Wget: (wget).                 URL download.
 
+Text creation and manipulation
+* sed: (sed).                   Stream EDitor.
+
 Texinfo documentation system
 * Info: (info).                 Documentation browsing system.
 * Texinfo: (texinfo).           The GNU documentation format.
