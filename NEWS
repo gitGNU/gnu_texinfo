@@ -26,6 +26,8 @@ convenience, here's a url to one of the relevant sections:
   . pdf bookmarks for unnumbered sections work.
 * info:
   . crash when MALLOC_CHECK_=2 fixed.
+* install-info:
+  . support for bzip2-compressed files.
 * Distribution:
  . sources now available under CVS, see
    http://savannah.gnu.org/projects/texinfo/
