@@ -32,6 +32,7 @@ convenience, here's a url to one of the relevant sections:
   . pdf bookmarks for unnumbered sections work.
   . type name for @defun and friends no longer extends into margin.
 * info:
+  . automatic-footnotes now off by default, for emacs compatibility.
   . crash when MALLOC_CHECK_=2 fixed.
 * install-info:
   . new option --infodir synonym for --info-dir, for compatibility with
