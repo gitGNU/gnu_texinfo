@@ -153,16 +153,14 @@ append_char (buf, c)
     buffer_type *buf;
     int c;
 {
-  char str[2] = { 0, 0 };
-  str[0] = c;  /* appease SGI compiler */
-
-  if (buf->length + 1 >= buf->size)
+  buf->length++;
+  if (buf->length >= buf->size)
     {
       buf->size += 100;
       buf->buffer = xrealloc (buf->buffer, buf->size);
-      buf->buffer[buf->length] = 0;  /* in case it was the first alloc */
     }
-  strcat (buf->buffer, str);
+  buf->buffer[buf->length - 1] = c;
+  buf->buffer[buf->length] = 0;
 }
 
 
