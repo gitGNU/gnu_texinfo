@@ -12094,9 +12094,9 @@ Whereas this text will only appear in plain text.
 @@ifxml
 Notwithstanding that this will only appear in XML.
 @@end ifxml
-@@ifxml
+@@ifdocbook
 Nevertheless, this will only appear in Docbook.
-@@end ifxml
+@@end ifdocbook
 @end example
 
 @noindent
@@ -12117,9 +12117,9 @@ Whereas this text will only appear in plain text.
 @ifxml
 Notwithstanding that this will only appear in XML.
 @end ifxml
-@ifxml
+@ifdocbook
 Nevertheless, this will only appear in Docbook.
-@end ifxml
+@end ifdocbook
 
 @noindent
 Notice that you only see one of the input lines, depending on which

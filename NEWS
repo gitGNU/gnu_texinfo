@@ -33,6 +33,9 @@ convenience, here's a url to one of the relevant sections:
   . @tex and @iftex code is executed inside a TeX group, so that any
     changes must be prefixed with \global resp. @global to be effective.
     (This change was actually made years ago, but never made it into the NEWS.)
+* info:
+  . by default, output ANSI terminal escape sequences as-is; new option
+    --no-raw-escapes overrides.
 * Distribution:
   . New translation: nb.
   . automake 1.7.8.

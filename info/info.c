@@ -78,7 +78,7 @@ int dump_subnodes = 0;
 int vi_keys_p = 0;
 
 /* Non-zero means don't remove ANSI escape sequences.  */
-int raw_escapes_p = 0;
+int raw_escapes_p = 1;
 
 #ifdef __MSDOS__
 /* Non-zero indicates that screen output should be made 'speech-friendly'.
@@ -106,6 +106,7 @@ static struct option long_options[] = {
   { "node", 1, 0, 'n' },
   { "output", 1, 0, 'o' },
   { "raw-escapes", 0, &raw_escapes_p, 1 },
+  { "no-raw-escapes", 0, &raw_escapes_p, 0 },
   { "restore", 1, 0, RESTORE_OPTION },
   { "show-options", 0, 0, 'O' },
   { "subnodes", 0, &dump_subnodes, 1 },
@@ -580,7 +581,8 @@ Options:\n\
       --index-search=STRING    go to node pointed by index entry STRING.\n\
   -n, --node=NODENAME          specify nodes in first visited Info file.\n\
   -o, --output=FILENAME        output selected nodes to FILENAME.\n\
-  -R, --raw-escapes            don't remove ANSI escapes.\n\
+  -R, --raw-escapes            output \"raw\" ANSI escapes (default).\n\
+      --no-raw-escapes         output escapes as literal text.\n\
       --restore=FILENAME       read initial keystrokes from FILENAME.\n\
   -O, --show-options, --usage  go to command-line options node.\n%s\
       --subnodes               recursively output menu items.\n\
