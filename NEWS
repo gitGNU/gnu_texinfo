@@ -53,6 +53,8 @@ convenience, here's a url to one of the relevant sections:
   . by default, output ANSI terminal escape sequences as-is; new option
     --no-raw-escapes overrides this.
 * Distribution:
+  . new script gendocs.sh (not installed), for use by GNU maintainers in
+    getting their manuals on the GNU web site.  Documented in maintain.texi.
   . New translation: nb.
   . automake 1.7.9, autoconf 2.59.
 
