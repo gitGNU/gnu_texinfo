@@ -2,6 +2,10 @@
 # $Id$
 # Created 2003-08-29, Karl Berry.  Public domain.
 
+echo "Do not use Texinfo CVS from savannah, get it from berlios.de instead."
+echo "I am waiting until cvs commit email is working again. --karl"
+exit 1
+
 echo "Bootstrapping CVS Texinfo with:"
 
 # This overwrites lots of files with older versions.
