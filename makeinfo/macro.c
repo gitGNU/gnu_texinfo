@@ -1000,14 +1000,15 @@ typedef struct alias_struct
 
 static alias_type *aliases; 
 
-/* @alias */
+/* @alias aname = cmdname */
+
 void
 cm_alias ()
 {
   alias_type *a = xmalloc (sizeof (alias_type));
 
   skip_whitespace ();
-  get_until_in_line (1, "=", &(a->alias));
+  get_until_in_line (0, "=", &(a->alias));
   canon_white (a->alias);
 
   discard_until ("=");
