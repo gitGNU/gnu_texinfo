@@ -11,7 +11,7 @@
 #
 AC_PREREQ(2.59)# Minimum Autoconf version required.
 #
-AC_INIT([GNU Texinfo], [4.7])
+AC_INIT([GNU Texinfo], [4.7.90])
 AC_CONFIG_HEADERS(config.h:config.in)# Keep filename to 8.3 for MS-DOS.
 AC_CONFIG_SRCDIR([makeinfo/makeinfo.c])
 AM_INIT_AUTOMAKE([dist-bzip2])
