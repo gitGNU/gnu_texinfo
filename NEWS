@@ -29,7 +29,7 @@ convenience, here's a url to one of the relevant sections:
 * Distribution:
   . new convenience script texi2pdf, equivalent to texi2dvi --pdf (from tetex).
   . some cross-compiling support in configure && make.
-  . automake 1.9.2.
+  . automake 1.9.3.
 
 4.7 (9 April 2004)
 * Language:
