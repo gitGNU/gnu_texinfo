@@ -66,6 +66,7 @@ If you are interested in working on any of these, email bug-texinfo@gnu.org.
   - Allow @hsep/@vsep at @item, instead of just in template.
   - Support automatic line numbering of examples.
   - Better macro syntax.
+  - Better def... command syntax.
   - Allow : in node names for info files, for names like
     `class::method'.  Likewise index entries.  A quoting mechanism such
     as surrounding node names with SPACE BACKSPACE is probably the best
