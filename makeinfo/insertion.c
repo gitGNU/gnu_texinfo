@@ -531,8 +531,9 @@ begin_insertion (type)
     case lisp:
     case smalllisp:
       in_fixed_width_font++;
+      /* fall through */
 
-      /* Like @example but no fixed width font.
+      /* Like @example but no fixed width font. */
     case display:
     case smalldisplay:
       /* Like @display but without indentation. */
@@ -731,7 +732,6 @@ begin_insertion (type)
 
     default:
       line_error ("begin_insertion internal error: type=%d", type);
-
     }
 
   if (!no_discard)
