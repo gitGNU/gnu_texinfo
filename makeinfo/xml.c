@@ -1555,9 +1555,12 @@ xml_begin_index ()
   while (*p != ' ')
     p++;
   /* ... and its label attribute.  */
-  p++;
-  while (*p != ' ')
-    p++;
+  if (strncmp (p, " label=", 7) == 0)
+    {
+      p++;
+      while (*p != ' ')
+        p++;
+    }
 
   output_paragraph_offset = xml_last_section_output_position;
   xml_last_section_output_position = 0;
