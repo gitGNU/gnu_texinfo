@@ -393,7 +393,7 @@ sectioning_underscore (char *cmd)
 
 	  xml_insert_element (TITLE, START);
 	  xml_open_section (level, secname);
-	  execute_string (temp);
+	  execute_string ("%s", temp);
 	  xml_insert_element (TITLE, END);
 
 	  free (temp);

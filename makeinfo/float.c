@@ -232,7 +232,7 @@ cm_listoffloats (void)
                   add_word ("\">");
 
                   if (strlen (float_type) > 0)
-                    execute_string (float_type);
+                    execute_string ("%s", float_type);
 
                   if (strlen (temp->id) > 0)
                     {
@@ -248,7 +248,7 @@ cm_listoffloats (void)
                           || strlen (temp->id) > 0)
                         insert_string (": ");
 
-                      execute_string (temp->title);
+                      execute_string ("%s", temp->title);
                     }
 
                   add_word ("</a>");
