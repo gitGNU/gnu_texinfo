@@ -116,6 +116,8 @@ element texinfoml_element_list [] = {
   { "i",                   0, 1, 0 },
   { "b",                   0, 1, 0 },
   { "r",                   0, 1, 0 },
+  { "slanted",             0, 1, 0 },
+  { "sansserif",           0, 1, 0 },
 
   { "exdent",              0, 0, 0 },
 

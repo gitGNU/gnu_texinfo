@@ -100,7 +100,7 @@
 <!-- ****** -->
 <!ENTITY % Inline.emphasize "strong | emph">
 <!ENTITY % Inline.smallcaps "sc">
-<!ENTITY % Inline.fonts "i | b | tt | r | titlefont">
+<!ENTITY % Inline.fonts "b | i | r | sansserif | slanted | titlefont | tt">
 <!ENTITY % Inline.markup "code | command | env | file | option | samp | dfn | cite | key | kbd | var | acronym | url">
 <!ENTITY % Inline.reference "xref | inforef | indexterm | email | uref">
 

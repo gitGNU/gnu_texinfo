@@ -310,9 +310,13 @@ rel=\"generator-home\" title=\"Texinfo Homepage\">\n");
 #define CSS_FONT_SMALL_CAPS "font-variant:small-caps"
     add_word_args ("  span.sc    { %s }\n", CSS_FONT_SMALL_CAPS);
 
-    /* Roman font class, closest we can come.  */
+    /* Roman (default) font class, closest we can come.  */
 #define CSS_FONT_ROMAN "font-family:serif; font-weight:normal;"
     add_word_args ("  span.roman { %s } \n", CSS_FONT_ROMAN);
+
+    /* Sans serif font class.  */
+#define CSS_FONT_SANSSERIF "font-family:sans-serif; font-weight:normal;"
+    add_word_args ("  span.sansserif { %s } \n", CSS_FONT_SANSSERIF);
 
     /* Write out any css code from the user's --css-file.  */
     if (css_inline)

@@ -25,7 +25,8 @@ convenience, here's a url to one of the relevant sections:
   . new command @euro for the Euro currency symbol, and
     @documentencoding has some support for ISO-8859-15.
   . new command @abbr for general abbreviations.
-  . new command @slanted to typeset text with a slanted font.
+  . new command @slanted to typeset text in a slanted font,
+    and @sansserif to typeset in a sans serif font.
 * texi2dvi:
   . calls recode if installed and @documentencoding is specified.
 * Distribution:
