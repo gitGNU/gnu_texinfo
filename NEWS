@@ -26,6 +26,7 @@ convenience, here's a url to one of the relevant sections:
   . if the input file includes thumbpdf.sty (for LaTeX), then run thumbpdf.
   . more output if --debug.
 * Distribution:
+  . New translation: nb.
   . automake 1.7.6.
 
 
