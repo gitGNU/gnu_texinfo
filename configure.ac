@@ -206,7 +206,7 @@ AM_CONDITIONAL(INSTALL_WARNINGS,
 
 # i18n support.  To update to a new version of gettext, run:
 # gettextize -f -c --intl
-AM_GNU_GETTEXT_VERSION(0.14.2)
+AM_GNU_GETTEXT_VERSION([0.14.3])
 AM_GNU_GETTEXT()
 
 AC_CONFIG_FILES([
