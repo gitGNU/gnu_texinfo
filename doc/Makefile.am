@@ -24,7 +24,7 @@ MAKEINFO = ../makeinfo/makeinfo
 INSTALL_INFO = ../util/install-info
 
 TXI_XLATE = txi-cs.tex txi-de.tex txi-en.tex txi-es.tex txi-fr.tex \
-	    txi-it.tex txi-nl.tex txi-no.tex txi-pt.tex
+	    txi-it.tex txi-nl.tex txi-no.tex txi-pt.tex txi-tr.tex
 
 # Include our texinfo.tex, not Automake's.
 EXTRA_DIST = epsf.tex pdfcolor.tex texinfo.tex \
