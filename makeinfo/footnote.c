@@ -329,6 +329,7 @@ output_pending_notes ()
 
   /* Handle the footnotes in reverse order. */
   {
+    int save_in_fixed_width_font = in_fixed_width_font;
     FN **array = xmalloc ((footnote_count + 1) * sizeof (FN *));
     array[footnote_count] = NULL;
 
@@ -340,6 +341,7 @@ output_pending_notes ()
 
     filling_enabled = 1;
     indented_fill = 1;
+    in_fixed_width_font = 0;
 
     while ((footnote = array[++footnote_count]))
       {
@@ -378,7 +380,9 @@ output_pending_notes ()
       add_word ("<hr></div>");
     close_paragraph ();
     free (array);
+
+    in_fixed_width_font = save_in_fixed_width_font;
   }
-  
+
   free_pending_notes ();
 }
