@@ -6741,7 +6741,7 @@ Indicate an acronym.
 @item @@indicateurl@{@var{uniform-resource-locator}@}
 Indicate an example (nonfunctional) uniform resource locator.
 @xref{indicateurl,,@code{@@indicateurl}}.  (Use @code{@@url}
-(@pxref{url,,@code{url}}) for live url's.)
+(@pxref{uref,,@code{@@url}}) for live url's.)
 
 @item @@email@{@var{email-address}[, @var{displayed-text}]@}
 Indicate an electronic mail address.
