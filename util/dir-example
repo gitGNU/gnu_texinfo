@@ -109,6 +109,7 @@ Software development
 * Gperf: (gperf).               Perfect hash function generator.
 * Gprof: (gprof).               Profiler.
 * Guile Reference: (guile).     The Guile reference manual.
+* Guile Tutorial: (guile-tut).	The Guile Tutorial.
 * help2man: (help2man).         Automatic manual page generation from --help.
 * Identifier DB: (id-utils).    Identifier database utilities.
 * Indent: (indent).             Prettyprinter for programs.
