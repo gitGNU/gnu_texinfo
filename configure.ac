@@ -11,7 +11,7 @@ dnl implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 dnl
 AC_PREREQ(2.57)dnl Minimum Autoconf version required.
 dnl
-AC_INIT([GNU Texinfo], [4.5])
+AC_INIT([GNU Texinfo], [4.5.90])
 AC_CONFIG_SRCDIR([makeinfo/makeinfo.c])
 AM_CONFIG_HEADER(config.h:config.in)dnl Keep filename to 8.3 for MS-DOS.
 AM_INIT_AUTOMAKE([dist-bzip2])
@@ -92,14 +92,14 @@ dnl Checks for variables.
 # HP-UX 9 (at least) needs -lncurses which defines termcap variables PC etc.
 AC_MSG_CHECKING(for library with termcap variables)
 AC_CACHE_VAL(ac_cv_var_ospeed,
-oldLIBS=$LIBS 
+oldLIBS=$LIBS
 for trylib in $termlib ${TERMLIB_VARIANTS}; do
    if test "x$trylib" != "x$termlib"; then
      LIBS="$oldLIBS -l$termlib -l$trylib"
    else
      LIBS="$oldLIBS -l$termlib"
    fi
-   AC_TRY_LINK(, 
+   AC_TRY_LINK(,
 [#ifdef HAVE_NCURSES_TERMCAP_H
 #include <ncurses/termcap.h>
 #else
@@ -109,8 +109,8 @@ for trylib in $termlib ${TERMLIB_VARIANTS}; do
 #undef PC
 char *BC;
 char **UP;
-char PC;      
-short ospeed; 
+char PC;
+short ospeed;
 #endif
 #endif
 /* Make sure all variables actually exist.  AIX 4.3 has ospeed but no BC.
