@@ -93,7 +93,7 @@ DECLARE (int, current_indent, 0);
 
 /* Nonzero means that we suppress the indentation of the first paragraph
    following any section heading.  */
-DECLARE (int, do_first_par_indent, 1);
+DECLARE (int, do_first_par_indent, 0);
 
 /* Amount by which @example indentation increases/decreases. */
 DECLARE (int, default_indentation_increment, 5);

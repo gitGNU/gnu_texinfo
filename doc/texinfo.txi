@@ -3854,19 +3854,18 @@ of @var{word}:
 
 @table @asis
 @item @code{none}
-Prevents the first paragraph from being indented (default for @TeX{}).
-This option is ignored if @code{@@paragraphindent asis} is in effect.
+Prevents the first paragraph from being indented (default).
+This option is ignored by @command{makeinfo} if
+@code{@@paragraphindent asis} is in effect.
 
 @item @code{insert}
-Include normal paragraph indentation (default for @code{makeinfo}).
-This respects the paragraph indentation set by a
-@code{@@paragraphindent} command (@pxref{paragraphindent}).
+Include normal paragraph indentation.  This respects the paragraph
+indentation set by a @code{@@paragraphindent} command
+(@pxref{paragraphindent}).
 @end table
 
-An explicit specification of @code{@@firstparagraphindent} is obeyed
-by all Texinfo processors, even though the defaults are different.
-Except that for HTML and XML output, the @code{@@firstparagraphindent}
-setting is ignored.
+For HTML and XML output, the @code{@@firstparagraphindent} setting is
+ignored.
 
 It is best to write the @code{@@paragraphindent} command before the
 end-of-header line at the beginning of a Texinfo file, so the region
