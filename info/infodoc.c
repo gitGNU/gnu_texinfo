@@ -1007,7 +1007,7 @@ replace_in_documentation (string, help_is_only_window_p)
 	      rep = command ? where_is (info_keymap, command) : NULL;
 	      if (!rep)
 	        rep = "N/A";
-	      replen = (argstr ? strlen (argstr) + 1 : 0) + strlen (rep);
+	      replen = (argstr ? strlen (argstr) : 0) + strlen (rep) + 1;
 	      repstr = (char *)xmalloc (replen);
 	      repstr[0] = '\0';
 	      if (argstr)
