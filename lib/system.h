@@ -25,6 +25,15 @@
 
 #include <config.h>
 
+#ifdef MIKTEX
+#include <gnu-miktex.h>
+#define S_ISDIR(x) ((x)&_S_IFDIR) 
+#else
+/* Annoyingly, substring is defined in a Microsoft DLL, so it has its
+   own __declspec declaration.  */
+extern char *substring ();
+#endif
+
 /* <unistd.h> should be included before any preprocessor test
    of _POSIX_VERSION.  */
 #ifdef HAVE_UNISTD_H
@@ -244,7 +253,6 @@ struct passwd *getpwnam ();
 extern void *xmalloc (), *xrealloc ();
 extern char *xstrdup ();
 extern void xexit ();
-extern char *substring ();
 
 /* For convenience.  */
 #define STREQ(s1,s2) (strcmp (s1, s2) == 0)
