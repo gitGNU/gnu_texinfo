@@ -123,10 +123,10 @@ extern int vi_keys_p;
 /* Non-zero means don't remove ANSI escape sequences from man pages.  */
 extern int raw_escapes_p;
 
-/* Print FORMAT with ARG1 and ARG2.  If the window system was initialized,
-   then the message is printed in the echo area.  Otherwise, a message is
+/* Print FORMAT with args.  If the window system was initialized, then
+   the message is printed in the echo area.  Otherwise, a message is
    output to stderr. */
-extern void info_error ();
+extern void info_error (const char *format, ...);
 
 /* Error message defines. */
 extern const char *msg_cant_find_node;
@@ -147,16 +147,10 @@ extern const char *msg_win_too_small;
 extern const char *msg_cant_make_help;
 
 
-extern char *filename_non_directory ();	/* Found in info-utils.c. */
+extern char *filename_non_directory (char *pathname);	/* Found in info-utils.c. */
 
 #if defined(INFOKEY)
-extern void set_variable_to_value ();	/* Found in variables.c. */
+extern void set_variable_to_value (char *name, char *value);	/* Found in variables.c. */
 #endif /* INFOKEY */
-
-#if !defined (BUILDING_LIBRARY)
-extern int info_windows_initialized_p;	/* Found in session.c */
-/* Found in window.c. */
-extern void message_in_echo_area (), unmessage_in_echo_area ();
-#endif /* !BUILDING_LIBRARY */
 
 #endif /* !INFO_H */

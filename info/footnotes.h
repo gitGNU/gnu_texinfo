@@ -35,7 +35,7 @@
    and displayed.  Returns FN_UNFOUND if there were no footnotes found
    in WINDOW's node.  Returns FN_UNABLE if there were footnotes, but the
    window to show them couldn't be made. */
-extern int info_get_or_remove_footnotes ();
+extern int info_get_or_remove_footnotes (WINDOW *window);
 
 /* Non-zero means attempt to show footnotes when displaying a new window. */
 extern int auto_footnotes_p;

@@ -32,9 +32,7 @@
    name.  A return value of NULL indicates that no function name could
    be read. */
 char *
-read_function_name (prompt, window)
-     char *prompt;
-     WINDOW *window;
+read_function_name (char *prompt, WINDOW *window)
 {
   register int i;
   char *line;

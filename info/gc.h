@@ -28,10 +28,10 @@
 /* Add POINTER to the list of garbage collectible pointers.  A pointer
    is not actually garbage collected until no info window contains a node
    whose contents member is equal to the pointer. */
-extern void add_gcable_pointer ();
+extern void add_gcable_pointer (char *pointer);
 
 /* Grovel the list of info windows and gc-able pointers finding those
    node->contents which are collectible, and free them. */
-extern void gc_pointers ();
+extern void gc_pointers (void);
 
 #endif /* not INFO_GC_H */

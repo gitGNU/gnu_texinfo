@@ -67,15 +67,15 @@ extern Keymap echo_area_keymap;
 
 /* Return a new keymap which has all the uppercase letters mapped to run
    the function info_do_lowercase_version (). */
-extern Keymap keymap_make_keymap ();
+extern Keymap keymap_make_keymap (void);
 
 /* Return a new keymap which is a copy of MAP. */
-extern Keymap keymap_copy_keymap ();
+extern Keymap keymap_copy_keymap (Keymap map, Keymap rootmap, Keymap newroot);
 
 /* Free MAP and it's descendents. */
-extern void keymap_discard_keymap ();
+extern void keymap_discard_keymap (Keymap map, Keymap rootmap);
 
 /* Initialize the info keymaps. */
-extern void initialize_info_keymaps ();
+extern void initialize_info_keymaps (void);
 
 #endif /* not INFOMAP_H */
