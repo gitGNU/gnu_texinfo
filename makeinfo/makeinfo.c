@@ -2822,7 +2822,7 @@ insert (int character)
 
 /* Insert the null-terminated string STRING into `output_paragraph'.  */
 void
-insert_string (char *string)
+insert_string (const char *string)
 {
   while (*string)
     insert (*string++);
@@ -4015,7 +4015,6 @@ char *
 maybe_escaped_expansion (char *str, int implicit_code, int do_html_escape)
 {
   char *result;
-  extern int xml_in_para;
 
   /* Inhibit indentation and filling, so that extra newlines
      are not added to the expansion.  (This is undesirable if
@@ -4024,10 +4023,6 @@ maybe_escaped_expansion (char *str, int implicit_code, int do_html_escape)
   int saved_indented_fill = indented_fill;
   int saved_no_indent = no_indent;
   int saved_escape_html = escape_html;
-  int saved_xml_in_para;
-
-  if (xml)
-    saved_xml_in_para = xml_in_para;
 
   filling_enabled = 0;
   indented_fill = 0;
@@ -4040,9 +4035,6 @@ maybe_escaped_expansion (char *str, int implicit_code, int do_html_escape)
   indented_fill = saved_indented_fill;
   no_indent = saved_no_indent;
   escape_html = saved_escape_html;
-
-  if (xml)
-    xml_in_para = saved_xml_in_para;
 
   return result;
 }

@@ -46,6 +46,7 @@ element texinfoml_element_list [] = {
   { "setfilename",         0, 0, 0 },
   { "titlefont",           0, 0, 0 },
   { "settitle",            0, 0, 0 },
+  { "documentdescription", 1, 0, 0 },
 
   { "node",                1, 0, 0 },
   { "nodenext",            0, 0, 0 },
@@ -256,6 +257,7 @@ element docbook_element_list [] = {
   { "",                    0, 0, 0 }, /* SETFILENAME */
   { "",                    0, 0, 0 }, /* TITLEINFO */
   { "title",               0, 0, 0 }, /* SETTITLE */
+  { "",                    1, 0, 0 }, /* DOCUMENTDESCRIPTION (?) */
 
   { "",                    1, 0, 0 }, /* NODE */
   { "",                    0, 0, 0 }, /* NODENEXT */
