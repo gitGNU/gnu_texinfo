@@ -78,5 +78,6 @@ dist-info:
 # since we don't distribute them.
 .texi.info:
 	$(MAKEINFO) -I$(srcdir) `echo $< | sed 's,.*/,,'`
-texinfo: $(srcdir)/texinfo.txi
+texinfo: $(srcdir)/texinfo.txi version.texi
 	$(MAKEINFO) -I$(srcdir) texinfo.txi
+info-stnd.info: version-stnd.texi
