@@ -506,7 +506,13 @@ for command_line_filename in ${1+"$@"}; do
       texindex=${TEXINDEX:-texindex}
       textra_cmd='/^@setfilename/a'
       if test $oformat = dvi; then
-        tex=$TEX
+        # MetaPost also uses the TEX environment variable.  If the user
+        # has set TEX=latex for that reason, don't bomb out.
+        if echo $TEX | grep 'latex$' >/dev/null; then
+          tex=tex  # don't bother trying to find etex
+        else
+          tex=$TEX
+        fi
       else
         tex=$PDFTEX
       fi
