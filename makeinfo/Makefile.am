@@ -18,7 +18,7 @@ LDADD = ../lib/libtxi.a $(LIBINTL)
 
 makeinfo_SOURCES = \
   cmds.c cmds.h defun.c defun.h \
-  files.c files.h footnote.c footnote.h \
+  files.c files.h float.c float.h footnote.c footnote.h \
   html.c html.h index.c index.h insertion.c insertion.h lang.c lang.h \
   macro.c macro.h makeinfo.c makeinfo.h multi.c node.c node.h \
   sectioning.c sectioning.h toc.c toc.h xml.c xml.h
