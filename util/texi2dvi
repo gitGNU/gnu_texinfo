@@ -730,11 +730,12 @@ $textra" "$filename_input" >"$filename_xtr"
     then
       # If using the bibunits package, we might have to run bibtex
       # on subfiles.
-      for f in `(ls "$filename_noext".aux bu[0-9]*.aux) 2>&6`
+      for f in "$filename_noext".aux bu[0-9]*.aux
       do
-	if (grep '^\\bibstyle[{]' $f   \
-	    && grep '^\\bibdata[{]' $f \
-	    && grep '^\\citation[{]' $f) >&6 2>&1; then
+	if test -s "$f" && \
+	   (grep '^\\bibstyle[{]' "$f"   \
+	    && grep '^\\bibdata[{]' "$f" \
+	    && grep '^\\citation[{]' "$f") >&6 2>&1; then
           verbose "Running $bibtex $f ..."
           $bibtex "$f" >&5 ||
             fatal 1 "$bibtex exited with bad status, quitting."
