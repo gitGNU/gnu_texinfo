@@ -20,7 +20,11 @@ formats.  The manual has detailed explanations and examples.  For
 convenience, here's a url to one of the relevant sections:
   http://texinfo.org/manual/Document-Permissions.html
 
+-------------------------------------------------------------------------------
 
+* makeinfo:
+  . html output uses <br />, <hr />, and <meta />, for the sake of XHTML
+    compatibility.  (We're still not completely XHTML compatible, though.)
 * texinfo.tex:
   . new Italian translations, txi-it.tex.
   . pdf bookmarks for unnumbered sections work.
@@ -29,7 +33,7 @@ convenience, here's a url to one of the relevant sections:
 * install-info:
   . support for bzip2-compressed files.
 * Distribution:
- . sources now available under CVS, see
+ . development sources now available under CVS, see
    http://savannah.gnu.org/projects/texinfo/
  . gettext 0.11.5, autoconf 2.54, automake 1.7.
 
