@@ -506,8 +506,8 @@ initialize_vi_like_keymaps ()
   map['b'].function = ea_backward_word;
   map['d'].function = ea_kill_word;
   map['f'].function = ea_forward_word;
-  map['h'].function = ea_forward;
-  map['l'].function = ea_backward;
+  map['h'].function = ea_backward;
+  map['l'].function = ea_forward;
   map['w'].function = ea_forward_word;
   map['x'].function = ea_delete;
   map['X'].function = ea_kill_word;
