@@ -16907,8 +16907,6 @@ copying, rather than the FDL.  @xref{Verbatim Copying License}.
 
 Here is the sample document:
 
-@c We do the first part of this with @example instead of @verbatim
-@c because the literal @setfilename and @include confuse Automake.  Argh.
 @verbatim
 \input texinfo   @c -*-texinfo-*-
 @comment $Id$
