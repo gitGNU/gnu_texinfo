@@ -8,7 +8,7 @@ Texinfo authors.
   notice and this notice are preserved.
 
 Akim Demaille		texi2dvi.
-Alper Ersoy		makeinfo: xml-, html, and docbook-related code
+Alper Ersoy		makeinfo: html-, xml-, and docbook-related code
                           in all files.
 Andreas Schwab		texinfo.tex, configure.ac, most makeinfo files.
 Bob Chassell		texinfo.tex, original texinfo.txi.
