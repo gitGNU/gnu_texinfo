@@ -7827,7 +7827,10 @@ You can include the exact contents of a file in the document with the
 
 The contents of @var{filename} is printed in a verbatim environment
 (@pxref{verbatim,,@code{@@verbatim}}).  Generally, the file is printed
-exactly as it is, with all special characters and white space retained.
+exactly as it is, with all special characters and white space
+retained.  No indentation is added; if you want indentation, enclose
+the @code{@@verbatiminclude} within @code{@@example}
+(@pxref{example,,@code{@@example}}).
 
 The name of the file is taken literally, with a single exception:
 @code{@@value@{@var{var}@}} references are expanded.  This makes it
