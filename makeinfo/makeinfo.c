@@ -2751,7 +2751,7 @@ close_paragraph ()
               /* Don't need anything extra for HTML in usual case of no
                  extra paragraph spacing.  */
               if (html && i > 0)
-                insert_string ("<br>");
+                insert_string ("<br />");
             }
         }
 
