@@ -291,6 +291,9 @@ sectioning_underscore (cmd)
 	  xml_insert_element (TITLE, START);
 	  xml_open_section (level, secname);
 	  get_rest_of_line (0, &temp);
+          /* Use @settitle value if @top parameter is empty.  */
+          if (STREQ (command, "top") && strlen(temp) == 0)
+            temp = xstrdup (title);
 	  execute_string ("%s\n", temp);
 	  free (temp);
 	  xml_insert_element (TITLE, END);
