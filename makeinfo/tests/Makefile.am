@@ -11,6 +11,7 @@
 
 TESTS = accent accentenc \
   cond \
+  defxcond \
   html-docdesc html-extrali html-min html-manuals html-para html-title \
   include-value \
   macro-at menu-whitespace \
@@ -24,6 +25,7 @@ noinst_SCRIPTS = $(TESTS)
 EXTRA_DIST = $(noinst_SCRIPTS) \
   accent.txi accentenc.txi accent-text.txi \
   cond.txi \
+  defxcond.txi \
   html-docdesc.txi html-extrali.txi html-min.txi html-para.txi html-title.txi \
   include-value.txi incl-incl.txi \
   macro-at.txi menu-whitespace.txi \
