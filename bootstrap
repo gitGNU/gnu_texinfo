@@ -3,12 +3,18 @@
 # Created 2003-08-29, Karl Berry.  Public domain.
 # (Thanks to Akim Demaille.)
 
-echo "Nothing to do to bootstrap CVS Texinfo (I think)."
-exit 0
-
 echo "Bootstrapping CVS Texinfo with:"
 
-cmd="autoreconf --verbose --force --install --include=m4"
-echo $cmd
-$cmd
+# This overwrites lots of files with older versions.
+# I keep the newest versions of files common between distributions up to
+# date in CVS (see util/srclist.txt), because it's not trivial for every
+# developer to do this.
+#cmd="autoreconf --verbose --force --install --include=m4"
 
+# So instead:
+cmd="automake && autoconf"
+echo $cmd
+$cmd || exit 1
+
+echo "Now run configure with your desired options, for instance:"
+echo "  configure CFLAGS=-g --enable-maintainer-mode"
