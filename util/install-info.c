@@ -312,6 +312,11 @@ strip_info_suffix (fname)
       len -= 3;
       ret[len] = 0;
     }
+  else if (len > 4 && FILENAME_CMP (ret + len - 4, ".bz2") == 0)
+    {
+      len -= 4;
+      ret[len] = 0;
+    }
 
   if (len > 5 && FILENAME_CMP (ret + len - 5, ".info") == 0)
     {
@@ -509,6 +514,13 @@ open_possibly_compressed_file (filename, create_callback,
     {
       *opened_filename = concat (filename, ".gz", "");
       f = fopen (*opened_filename, FOPEN_RBIN);
+  if (!f)
+    {
+      free (*opened_filename);
+      *opened_filename = concat (filename, ".bz2", "");
+      f = fopen (*opened_filename, FOPEN_RBIN);
+    }
+
 #ifdef __MSDOS__
       if (!f)
         {
@@ -563,6 +575,18 @@ open_possibly_compressed_file (filename, create_callback,
     *compression_program = "gzip.exe";
 #else
     *compression_program = "gzip";
+#endif
+  else if(data[0] == 'B' && data[1] == 'Z' && data[2] == 'h')
+#ifndef STRIP_DOT_EXE
+    *compression_program = "bzip2.exe";
+#else
+    *compression_program = "bzip2";
+#endif
+  else if(data[0] == 'B' && data[1] == 'Z' && data[2] == '0')
+#ifndef STRIP_DOT_EXE
+    *compression_program = "bzip.exe";
+#else
+    *compression_program = "bzip";
 #endif
   else
     *compression_program = NULL;
