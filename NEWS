@@ -24,6 +24,8 @@ convenience, here's a url to one of the relevant sections:
 
 * makeinfo:
   . under --html, @cartouche outputs a <table> with a border.
+* Distribution:
+  . automake 1.7.3.
 
 
 4.5 (4 February 2003)
