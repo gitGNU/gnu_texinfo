@@ -33,6 +33,7 @@ convenience, here's a url to one of the relevant sections:
 * install-info:
   . bug fix: don't translate the `* Menu' info keyword.
 * Distribution:
+  . update to GNU FDL 1.2 (http://www.gnu.org/licenses/fdl.html).
   . getopt and other common library files updated from gnulib
     (http://savannah.gnu.org/projects/gnulib/).
   . autoconf 2.57, automake 1.7.2.
