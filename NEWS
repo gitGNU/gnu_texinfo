@@ -32,7 +32,7 @@ convenience, here's a url to one of the relevant sections:
     conversion of node names to HTML names, so that external references
     to them can continue to work.
 * texi2dvi:
-  . calls recode if installed and @documentencoding is specified.
+  . new option --recode, to call recode for input character translation.
 * Distribution:
   . new convenience script texi2pdf, equivalent to texi2dvi --pdf (from tetex).
   . some cross-compiling support in configure && make.

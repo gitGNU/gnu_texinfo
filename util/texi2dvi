@@ -65,7 +65,8 @@ TeX tuning:
   -I DIR               search DIR for Texinfo files
   -l, --language=LANG  specify the LANG of FILE (LaTeX or Texinfo)
   -p, --pdf            use pdftex or pdflatex for processing
-  -t, --command=CMD    insert CMD in copy of input file;
+  -r, --recode         call recode before TeX to translate input characters
+  -t, --command=CMD    insert CMD in copy of input file
    or --texinfo=CMD    multiple values accumulate
 
 The values of the BIBTEX, LATEX (or PDFLATEX), MAKEINDEX, MAKEINFO,
@@ -89,6 +90,7 @@ miincludes=     # makeinfo include path
 oformat=dvi
 oname=          # --output
 quiet=          # by default let the tools' message be displayed
+recode=false
 set_language=
 textra=         # Extra TeX commands to insert in the input file.
 textra_cmd=     # sed command to insert TEXTRA where appropriate
@@ -170,7 +172,6 @@ while test x"$1" != x"$arg_sep"; do
     -@ ) escape=@;;
     # Silently and without documentation accept -b and --b[atch] as synonyms.
     -b | --b*) batch=true;;
-    -q | -s | --q* | --s*) quiet=t; batch=true;;
     -c | --c*) clean=t;;
     -D | --d*) debug=t;;
     -e | -E | --e*) expand=t;;
@@ -189,6 +190,8 @@ while test x"$1" != x"$arg_sep"; do
                 *) oname="$orig_pwd/$1";;
       esac;;
     -p | --p*) oformat=pdf;;
+    -q | -s | --q* | --s*) quiet=t; batch=true;;
+    -r | --r*) recode=true;;
     -t | --tex* | --com* ) shift; textra="$textra\\
 "`echo "$1" | sed 's/\\\\/\\\\\\\\/g'`;;
     -v | --vers*) echo "$version"; exit 0;;
@@ -608,7 +611,7 @@ $textra" "$filename_input" >"$filename_xtr"
 	:found                                               
 	q'
     encoding=`sed -e "$pgm" "$filename_input"`
-    if test -n "$encoding" && findprog recode; then
+    if $recode && test -n "$encoding" && findprog recode; then
       $verbose "Recoding from $encoding to Texinfo."
       if recode "$encoding"..texinfo <"$filename_input" >"$filename_rcd" \
          && test -s "$filename_rcd"; then
