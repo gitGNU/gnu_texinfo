@@ -61,10 +61,6 @@ extern char *substring ();
 #define _(String) gettext (String)
 #define N_(String) (String)
 
-#if !defined (HAVE_LC_MESSAGES) && !defined (LC_MESSAGES)
-#define LC_MESSAGES (-1)
-#endif
-
 #ifdef STDC_HEADERS
 #define getopt system_getopt
 #include <stdlib.h>
