@@ -363,17 +363,42 @@ for command_line_filename in ${1+"$@"}; do
   # Convert relative paths to absolute paths, so we can run in another
   # directory (e.g., in --clean mode, or during the macro-support
   # detection.)
+  #
+  # Empty path components are meaningful to tex.  We rewrite them
+  # as `EMPTY' so they don't get lost when we split on $path_sep.
+   TEXINPUTS=`echo $TEXINPUTS  |sed 's/^:/EMPTY:/;s/:$/:EMPTY/;s/::/:EMPTY:/g'`
+  INDEXSTYLE=`echo $INDEXSTYLE |sed 's/^:/EMPTY:/;s/:$/:EMPTY/;s/::/:EMPTY:/g'`
   save_IFS=$IFS
   IFS=$path_sep
   set x $TEXINPUTS; shift
   TEXINPUTS=.
   for dir; do
-    abs=`cd "$dir" && pwd` && TEXINPUTS=$TEXINPUTS$path_sep$abs
+    case $dir in
+      EMPTY)
+        TEXINPUTS=$TEXINPUTS$path_sep
+	;;
+      [\\/]* | ?:[\\/]*)	# Absolute paths don't need to be expansed.
+        TEXINPUTS=$TEXINPUTS$path_sep$dir
+	;;
+      *)
+        abs=`cd "$dir" && pwd` && TEXINPUTS=$TEXINPUTS$path_sep$abs
+	;;
+    esac
   done
   set x $INDEXSTYLE; shift
   INDEXSTYLE=.
   for dir; do
-    abs=`cd "$dir" && pwd` && INDEXSTYLE=$INDEXSTYLE$path_sep$abs
+    case $dir in
+      EMPTY)
+        INDEXSTYLE=$INDEXSTYLE$path_sep
+	;;
+      [\\/]* | ?:[\\/]*)	# Absolute paths don't need to be expansed.
+        INDEXSTYLE=$INDEXSTYLE$path_sep$dir
+	;;
+      *)
+        abs=`cd "$dir" && pwd` && INDEXSTYLE=$INDEXSTYLE$path_sep$abs
+	;;
+    esac
   done
   IFS=$save_IFS
 
