@@ -127,6 +127,7 @@ element texinfoml_element_list [] = {
   { "smalldisplay",        0, 0, 1 },
   { "verbatim",            0, 0, 1 },
   { "footnote",            0, 1, 0 },
+  { "",                    0, 1, 0 }, /* LINEANNOTATION (docbook) */
 
   { "itemize",             0, 0, 0 },
   { "itemfunction",        0, 0, 0 },
@@ -300,6 +301,7 @@ element docbook_element_list [] = {
   { "screen",              0, 1, 0 }, /* SMALLDISPLAY */
   { "screen",              0, 0, 0 }, /* VERBATIM */
   { "footnote",            0, 1, 0 },
+  { "lineannotation",      0, 1, 0 },
 
   { "itemizedlist",        0, 0, 0 }, /* ITEMIZE */
   { "",                    0, 0, 0 }, /* ITEMFUNCTION */
@@ -421,6 +423,7 @@ replace_element replace_elements [] = {
   { CODE, I, EMPH},
   { FORMAT, BOOKINFO, ABSTRACT },
   { QUOTATION, ABSTRACT, -1},
+  { LINEANNOTATION, LINEANNOTATION, -1 },
   /* Add your elements to replace here */
   {-1, 0, 0}
 };
