@@ -1,8 +1,8 @@
 /* makeinfo.h -- declarations for Makeinfo.
    $Id$
 
-   Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003 Free Software
-   Foundation, Inc.
+   Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003 Free
+   Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -153,7 +153,7 @@ DECLARE (char *, command, NULL);
 DECLARE (char *, copying_text, NULL);
 
 /* @documentdescription ... @end documentdescription. */
-DECLARE (char *, document_description, NULL);
+DECLARE (const char *, document_description, NULL);
 
 /* Nonzero if the last character inserted has the syntax class of NEWLINE. */
 DECLARE (int, last_char_was_newline, 1);

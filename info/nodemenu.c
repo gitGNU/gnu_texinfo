@@ -1,7 +1,7 @@
 /* nodemenu.c -- produce a menu of all visited nodes.
    $Id$
 
-   Copyright (C) 1993, 1997, 1998, 2002 Free Software Foundation, Inc.
+   Copyright (C) 1993, 1997, 1998, 2002, 2003 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
 #include "info.h"
 
 /* Return a line describing the format of a node information line. */
-static char *
+static const char *
 nodemenu_format_info ()
 {
   return (_("\n\
