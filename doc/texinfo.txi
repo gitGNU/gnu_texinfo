@@ -8719,7 +8719,7 @@ a two-column table.)@refill
 
 
 @node Multi-column Tables
-@section Multi-column Tables
+@section @code{@@multitable}: Multi-column Tables
 @cindex Tables, making multi-column
 @findex multitable
 
@@ -8811,7 +8811,7 @@ emacs, The GNU Emacs Manual}):
 
 @example
 @@multitable @@columnfractions .15 .45 .4
-@@item Key @@tab Command @@tab Description
+@@headitem Key @@tab Command @@tab Description
 @@item C-x 2
 @@tab @@code@{split-window-vertically@}
 @@tab Split the selected window into two windows,
@@ -8830,7 +8830,7 @@ split that window.
 @noindent produces:
 
 @multitable @columnfractions .15 .45 .4
-@item Key @tab Command @tab Description
+@headitem Key @tab Command @tab Description
 @item C-x 2
 @tab @code{split-window-vertically}
 @tab Split the selected window into two windows,
