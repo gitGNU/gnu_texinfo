@@ -113,11 +113,13 @@ CDPATH=${ZSH_VERSION+.}$path_sep
 # In case someone crazy insists on using grep -E.
 : ${EGREP=egrep}
 
-# Save this so we can construct a new TEXINPUTS path for each file.
-TEXINPUTS_orig="$TEXINPUTS"
-# Unfortunately makeindex does not read TEXINPUTS.
-INDEXSTYLE_orig="$INDEXSTYLE"
-export TEXINPUTS INDEXSTYLE
+# Save TEXINPUTS so we can construct a new TEXINPUTS path for each file.
+# Unfortunately bibtex and makeindex do not read TEXINPUTS.
+tex_envvars="BIBINPUTS BSTINPUTS INDEXSTYLE TEXINPUTS"
+for var in $tex_envvars; do
+  eval ${var}_orig=\$$var
+  export $var
+done
 
 # Push a token among the arguments that will be used to notice when we
 # ended options/arguments parsing.
@@ -364,8 +366,10 @@ for command_line_filename in ${1+"$@"}; do
   # files in `.'.  Include orig_pwd in case we are in clean mode, where
   # we've cd'd to a temp directory.
   common="$orig_pwd$path_sep$filename_dir$path_sep$txincludes"
-   TEXINPUTS="$common$TEXINPUTS_orig"
-  INDEXSTYLE="$common$INDEXSTYLE_orig"
+  for var in $tex_envvars; do
+    eval ${var}="\$common\$${var}_orig"
+    export $var
+  done
 
   # Convert relative paths to absolute paths, so we can run in another
   # directory (e.g., in --clean mode, or during the macro-support detection.)
