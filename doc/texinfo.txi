@@ -9413,6 +9413,10 @@ braces around their argument (which is taken to be the next character).
 This is so as to make the source as convenient to type and read as
 possible, since accented characters are very common in some languages.
 
+To get the true accented characters output in Info, and not just the
+ASCII transliterations, you can use the @option{--enable-encoding}
+option to @command{makeinfo} (@pxref{makeinfo options}).
+
 @findex " @r{(umlaut accent)}
 @cindex Umlaut accent
 @findex ' @r{(umlaut accent)}
@@ -14130,6 +14134,7 @@ Generate DocBook output rather than Info.
 @opindex --enable-encoding
 Output accented and special characters in Info or plain text output
 based on @samp{@@documentencoding}.
+@xref{documentencoding,,@code{documentencoding}}, and @ref{Inserting Accents}.
 
 @item --error-limit=@var{limit}
 @itemx -e @var{limit}
