@@ -22,6 +22,8 @@ convenience, here's a url to one of the relevant sections:
 
 -------------------------------------------------------------------------------
 
+* Language:
+  . new command @tie{} to do a real tie (unbreakable interword space).
 * makeinfo:
   . html output uses <br />, <hr />, and <meta />, for the sake of XHTML
     compatibility.  (We're still not completely XHTML compatible, though.)
