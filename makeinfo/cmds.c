@@ -91,6 +91,7 @@ COMMAND command_table[] = {
   { "afourpaper", cm_ignore_line, NO_BRACE_ARGS },
   { "afourwide", cm_ignore_line, NO_BRACE_ARGS },
   { "alias", cm_alias, NO_BRACE_ARGS },
+  { "allowcodebreaks", cm_ignore_line, NO_BRACE_ARGS },
   { "anchor", cm_anchor, BRACE_ARGS },
   { "appendix", cm_appendix, NO_BRACE_ARGS },
   { "appendixsection", cm_appendixsec, NO_BRACE_ARGS },

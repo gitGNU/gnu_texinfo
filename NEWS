@@ -23,6 +23,7 @@ convenience, here's a url to one of the relevant sections:
 
 -------------------------------------------------------------------------------
 * Language:
+  . new command @allowcodebreaks to control breaks at _ and - within @code.
   . new command @frenchspacing to control spacing after sentences.
 * texinfo.tex:
   . section names with \ characters work properly in pdf outlines.
