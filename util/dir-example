@@ -77,12 +77,12 @@ GNU programming tools
 * As: (as).                     Assembler.
 * Autoconf: (autoconf).         Create source code configuration scripts
 * Binutils: (binutils).         ar/copy/objdump/nm/size/strip/ranlib.
-* Bison: (bison).               LALR(1) parser generator.
 * CVS: (cvs).                   Concurrent versions system for source control.
 * Cpp: (cpp).		        The GNU C preprocessor.
 * Cpplib: (cppinternals).       Cpplib internals.
 * DejaGnu: (dejagnu).           Testing framework.
 * automake: (automake).		Making Makefile.in's
+* bison: (bison).	GNU parser generator (yacc replacement).
 * egcs: (egcs).                 Experimental GNU C compiler.
 * Flex: (flex).                 A fast scanner generator.
 * g77: (g77).                   GNU Fortran 77 compiler.
