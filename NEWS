@@ -28,6 +28,7 @@ convenience, here's a url to one of the relevant sections:
   . bug fix: html @verb arg is quoted properly, and does not imply
     a paragraph break.
 * texinfo.tex:
+  . new translation txi-tr.tex.
   . bug fix: <>| and other characters do not disappear when they are
     first on a line in @verbatim.
 * install-info:
