@@ -433,6 +433,8 @@ multitable_item ()
         add_word ("<thead>\n");
       else if (after_headitem)
         add_word ("\n</thead><tbody>\n");
+      else if (first_row)
+        add_word ("<tbody>\n");
 
       if (seen_column_fractions)
         add_word_args ("<tr align=\"left\"><td valign=\"top\" width=\"%d%%\">",
