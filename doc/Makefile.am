@@ -16,7 +16,7 @@ DISTCLEANFILES = texinfo texinfo-* info*.info*
 
 man_MANS = info.1 infokey.1 install-info.1 makeinfo.1 texindex.1 texi2dvi.1 \
            info.5 texinfo.5
-HELP2MAN = help2man
+HELP2MAN = $(srcdir)/help2man
 noinst_SCRIPTS = $(HELP2MAN)
 
 # Use the programs built in our distribution.
