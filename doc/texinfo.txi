@@ -9300,6 +9300,13 @@ will cause @code{makeinfo} to look for @file{foo.xpm} before any others.
 The @var{width} and @var{height} arguments are described in the next
 section.
 
+For @TeX{} output, if an image is the first thing in a paragraph, for
+example if you want two images side-by-side, you must precede it with
+@code{@@noindent} (@pxref{noindent,,@code{@@noindent}}).  Otherwise it
+will be displayed on a line by itself.  If you want it centered, 
+use @code{@@center} (@pxref{titlefont center sp,,@code{@@titlefont
+@@center @@sp}}).
+
 @cindex Alt attribute for images
 @cindex Images, alternate text for
 When producing html, @code{makeinfo} sets the @dfn{alt attribute} for
