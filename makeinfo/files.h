@@ -36,6 +36,7 @@ extern FSTACK *filestack;
 
 extern void pushfile (), popfile ();
 extern void flush_file_stack ();
+extern char *get_file_info_in_path ();
 extern char *find_and_load ();
 extern char *output_name_from_input_name ();
 extern char *expand_filename ();

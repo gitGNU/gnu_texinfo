@@ -83,7 +83,7 @@ extract_colon_unit (string, index)
    When found, return the stat () info for FILENAME in FINFO.
    If PATH is NULL, only the current directory is searched.
    If the file could not be found, return a NULL pointer. */
-static char *
+char *
 get_file_info_in_path (filename, path, finfo)
      char *filename, *path;
      struct stat *finfo;
