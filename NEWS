@@ -25,6 +25,8 @@ convenience, here's a url to one of the relevant sections:
 * Language:
   . @value constructs are now expanded in the filename arguments to
     @include and @verbatiminclude.
+  . @smallexample and the like now output in a smaller font (9pt) in all
+    paper formats, not just @smallbook and @afourpaper.
 * makeinfo:
   . bug fix: @copying text is now reflected in tag table positions;
     before, nodes may not have been found with a long-enough @copying.
