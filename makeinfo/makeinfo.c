@@ -2031,7 +2031,7 @@ reader_loop ()
              we can ignore its partner. */
           if (!only_macro_expansion)
             {
-              if (!STREQ (command, "math"))
+              if (command && !STREQ (command, "math"))
                 {
                   line_error (_("Misplaced %c"), '{');
                   remember_brace (misplaced_brace);
