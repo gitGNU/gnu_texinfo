@@ -53,8 +53,8 @@ html_output_head ()
   /* When splitting, add current node's name to title if it's available and not
      Top.  */
   if (splitting && current_node && !STREQ (current_node, "Top"))
-    add_word_args ("<title>%s - %s</title>\n", html_title,
-        escape_string (xstrdup (current_node)));
+    add_word_args ("<title>%s - %s</title>\n",
+        escape_string (xstrdup (current_node)), html_title);
   else
     add_word_args ("<title>%s</title>\n",  html_title);
 
