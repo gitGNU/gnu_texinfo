@@ -2327,6 +2327,27 @@ add_html_elt (string)
   in_html_elt--;
 }
 
+/* Here is another awful kludge, used in add_char.  Ordinarily, macro
+   expansions take place in the body of the document, and therefore we
+   should html_output_head when we see one.  But there's an exception: a
+   macro call might take place within @copying, and that does not start
+   the real output, even though we fully expand the copying text.
+
+   So we need to be able to check if we are defining the @copying text.
+   We do this by looking back through the insertion stack.  */
+static int
+defining_copying ()
+{
+  INSERTION_ELT *i;
+  for (i = insertion_stack; i; i = i->next)
+    {
+      if (i->insertion == copying)
+        return 1;
+    }
+  return 0;
+}
+
+
 /* Add the character to the current paragraph.  If filling_enabled is
    nonzero, then do filling as well. */
 void
@@ -2443,7 +2464,7 @@ add_char (character)
            any order and with any omissions, and we'll still output
            the html <head> `just in time'.  */
         if ((executing_macro || !executing_string)
-            && html && !html_output_head_p)
+            && html && !html_output_head_p && !defining_copying ())
           html_output_head ();
 
         if (!paragraph_is_open)
