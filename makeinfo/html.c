@@ -308,10 +308,10 @@ rel=\"generator-home\" title=\"Texinfo Homepage\">\n");
     /* Since HTML doesn't have a sc element, we use span with a bit of
        CSS spice instead.  */
 #define CSS_FONT_SMALL_CAPS "font-variant:small-caps"
-    add_word_args ("  span.sc { %s }\n", CSS_FONT_SMALL_CAPS);
+    add_word_args ("  span.sc    { %s }\n", CSS_FONT_SMALL_CAPS);
 
-    /* Roman font class.  */
-#define CSS_FONT_ROMAN "font-family: serif; font-weight: normal;"
+    /* Roman font class, closest we can come.  */
+#define CSS_FONT_ROMAN "font-family:serif; font-weight:normal;"
     add_word_args ("  span.roman { %s } \n", CSS_FONT_ROMAN);
 
     /* Write out any css code from the user's --css-file.  */
