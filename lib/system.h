@@ -61,7 +61,7 @@ extern char *substring ();
 #define _(String) gettext (String)
 #define N_(String) (String)
 
-#ifndef HAVE_LC_MESSAGES
+#if !defined (HAVE_LC_MESSAGES) && !defined (LC_MESSAGES)
 #define LC_MESSAGES (-1)
 #endif
 
