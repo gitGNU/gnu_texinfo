@@ -947,6 +947,8 @@ cm_b (arg)
   /* See cm_i comments.  */
   if (docbook && !filling_enabled)
     xml_insert_element (LINEANNOTATION, arg);
+  else if (docbook && arg == START)
+    xml_insert_element_with_attribute (B, arg, "role=\"bold\"");
   else if (xml)
     xml_insert_element (B, arg);
   else if (html)

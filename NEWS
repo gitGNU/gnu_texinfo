@@ -26,6 +26,7 @@ convenience, here's a url to one of the relevant sections:
   . new commands @docbook, @ifdocbook, @ifnotdocbook
     for conditional Docbook text.
   . new command @registeredsymbol for the r-in-a-circle symbol.
+  . @quotation now accepts an optional parameter.
 * makeinfo:
   . improved XML, Docbook and HTML output.
 * texi2dvi:
