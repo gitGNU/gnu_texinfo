@@ -403,7 +403,7 @@ void
 cm_asterisk ()
 {
   if (html)
-    add_word ("<br />");
+    add_word ("<br>");
   else if (xml && !docbook)
     xml_insert_entity ("linebreak");
   else if (docbook) 
@@ -1055,7 +1055,7 @@ cm_sp ()
       while (lines--)
 	{
 	  if (html)
-	    insert_string ("<br /><p>\n");
+	    insert_string ("<br><p>\n");
 	  else
 	    add_char ('\n');
 	}
@@ -1247,7 +1247,7 @@ cm_exdent ()
   kill_self_indent (default_indentation_increment);
 
   if (html)
-    add_word ("<br />");
+    add_word ("<br>");
 
   /* Can't close_single_paragraph, then we lose preceding blank lines.  */
   flush_output ();
@@ -1255,7 +1255,7 @@ cm_exdent ()
   free (line);
 
   if (html)
-    add_word ("<br />");
+    add_word ("<br>");
   close_single_paragraph ();
 
   current_indent = save_indent;

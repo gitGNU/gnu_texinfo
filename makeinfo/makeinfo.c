@@ -134,7 +134,7 @@ int do_justification = 0;
 /* Nonzero means don't replace whitespace with &nbsp; in HTML mode.  */
 int in_html_elt = 0;
 
-/* True when expanding an macro definition.  */
+/* True when expanding a macro definition.  */
 static int executing_macro = 0;
 
 typedef struct brace_element
@@ -2757,7 +2757,7 @@ close_paragraph ()
               /* Don't need anything extra for HTML in usual case of no
                  extra paragraph spacing.  */
               if (html && i > 0)
-                insert_string ("<br />");
+                insert_string ("<br>");
             }
         }
 

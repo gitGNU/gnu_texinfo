@@ -1599,7 +1599,7 @@ cm_item ()
                   && strncmp ((char *) output_paragraph
                               + output_paragraph_offset - sizeof (dl_tag) + 1, 
                               dl_tag, sizeof (dl_tag) - 1) != 0)
-                add_word ("<br />");
+                add_word ("<br>");
    
               add_word ("<dt>");
               if (item_func && *item_func)

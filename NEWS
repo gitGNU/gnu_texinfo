@@ -25,8 +25,6 @@ convenience, here's a url to one of the relevant sections:
 * Language:
   . new command @tie{} to do a real tie (unbreakable interword space).
 * makeinfo:
-  . html output uses <br /> and <hr />, for the sake of HTML 4.01
-    compatibility.  (We're still not completely compatible, though.)
   . html output for @defun and friends now has font changes.
 * texinfo.tex:
   . new Italian translations, txi-it.tex.

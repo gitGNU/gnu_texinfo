@@ -294,7 +294,7 @@ output_pending_notes ()
          out there doesn't use numbers by default.  Since we rely on the
          browser to produce the footnote numbers, we need to make sure
          they ARE indeed numbers.  Pre-HTML4 browsers seem to not care.  */
-      add_word ("<hr /><h4>");
+      add_word ("<hr><h4>");
       add_word (_("Footnotes"));
       add_word ("</h4>\n<ol type=\"1\">\n");
     }
@@ -372,7 +372,7 @@ output_pending_notes ()
       }
 
     if (html)
-      add_word ("</ol><hr />");
+      add_word ("</ol><hr>");
     close_paragraph ();
     free (array);
   }
