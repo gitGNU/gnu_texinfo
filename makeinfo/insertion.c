@@ -1267,10 +1267,10 @@ handle_verbatim_environment (find_end_verbatim)
       for (i = current_indent; i > 0; i--)
         add_char (' ');
     }
-  else if (xml && !docbook)
+  else if (xml)
     {
-      escape_html = 0;
       xml_insert_element (VERBATIM, START);
+      escape_html = 0;
       add_word ("<![CDATA[");
     }
 
@@ -1310,7 +1310,7 @@ handle_verbatim_environment (find_end_verbatim)
       kill_self_indent (default_indentation_increment);
       add_word ("</pre>");
     }
-  else if (xml && !docbook)
+  else if (xml)
     {
       add_word ("]]>");
       xml_insert_element (VERBATIM, END);
