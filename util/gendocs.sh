@@ -29,6 +29,12 @@ srcdir=`pwd`
 scripturl="http://savannah.gnu.org/cgi-bin/viewcvs/texinfo/texinfo/util/gendocs.sh"
 templateurl="http://savannah.gnu.org/cgi-bin/viewcvs/texinfo/texinfo/util/gendocs_template"
 
+: ${MAKEINFO="makeinfo"}
+: ${TEXI2DVI="texi2dvi"}
+: ${DVIPS="dvips"}
+: ${GENDOCS_TEMPLATE_DIR="."}
+unset CDPATH
+
 rcs_revision='$Revision$'
 rcs_version=`set - $rcs_revision; echo $2`
 program=`echo $0 | sed -e 's!.*/!!'`
@@ -64,8 +70,8 @@ http://www.gnu.org/prep/maintain_toc.html
 MANUAL-TITLE is included as part of the HTML <title> of the overall
 manual/index.html file.  It should include the name of the package being
 documented.  manual/index.html is created by substitution from the file
-$GENDOCS_TEMPLATE_DIR/gendocs_template; you can modify this generic
-version for your own purposes, if you like.
+$GENDOCS_TEMPLATE_DIR/gendocs_template.  (Feel free to modify the
+generic template for your own purposes.)
 
 If you have several manuals, you'll need to run this script several
 times with different YOURMANUAL values, specifying a different output
@@ -75,13 +81,9 @@ with links to them all.
 You can set the environment variables MAKEINFO, TEXI2DVI, and DVIPS to
 control the programs that get executed, and GENDOCS_TEMPLATE_DIR to
 control where the gendocs_template file is looked for.
-"
 
-: ${MAKEINFO="makeinfo"}
-: ${TEXI2DVI="texi2dvi"}
-: ${DVIPS="dvips"}
-: ${GENDOCS_TEMPLATE_DIR="."}
-unset CDPATH
+Email bug reports or enhancement requests to bug-texinfo@gnu.org.
+"
 
 calcsize()
 {
