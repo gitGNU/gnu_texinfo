@@ -86,7 +86,7 @@ escape='\'
 expand=         # t for expansion via makeinfo
 miincludes=     # makeinfo include path
 oformat=dvi
-oname=		# --output
+oname=          # --output
 quiet=          # by default let the tools' message be displayed
 set_language=
 textra=
@@ -376,13 +376,13 @@ for command_line_filename in ${1+"$@"}; do
     case $dir in
       EMPTY)
         TEXINPUTS=$TEXINPUTS$path_sep
-	;;
-      [\\/]* | ?:[\\/]*)	# Absolute paths don't need to be expansed.
+        ;;
+      [\\/]* | ?:[\\/]*)        # Absolute paths don't need to be expansed.
         TEXINPUTS=$TEXINPUTS$path_sep$dir
-	;;
+        ;;
       *)
         abs=`cd "$dir" && pwd` && TEXINPUTS=$TEXINPUTS$path_sep$abs
-	;;
+        ;;
     esac
   done
   set x $INDEXSTYLE; shift
@@ -391,13 +391,13 @@ for command_line_filename in ${1+"$@"}; do
     case $dir in
       EMPTY)
         INDEXSTYLE=$INDEXSTYLE$path_sep
-	;;
-      [\\/]* | ?:[\\/]*)	# Absolute paths don't need to be expansed.
+        ;;
+      [\\/]* | ?:[\\/]*)        # Absolute paths don't need to be expansed.
         INDEXSTYLE=$INDEXSTYLE$path_sep$dir
-	;;
+        ;;
       *)
         abs=`cd "$dir" && pwd` && INDEXSTYLE=$INDEXSTYLE$path_sep$abs
-	;;
+        ;;
     esac
   done
   IFS=$save_IFS
