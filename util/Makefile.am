@@ -24,6 +24,6 @@ LDADD = ../lib/libtxi.a @LIBINTL@
 # install-info will be built on every make, and make distcleancheck will
 # fail.  (These bugs have been reported [several times] to bug-automake.)
 # 
-EXTRA_DIST = README automake.diff deref.c fix-info-dir fixfonts \
+EXTRA_DIST = README automake.diff deref.c dir-example fix-info-dir fixfonts \
   fixref.gawk gen-dir-node install-info-html outline.gawk prepinfo.awk \
-  tex3patch texi-docstring-magic.el texi2dvi 
+  tex3patch texi-docstring-magic.el texi2dvi

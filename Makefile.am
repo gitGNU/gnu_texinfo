@@ -14,8 +14,7 @@
 AUTOMAKE_OPTIONS = 1.4 readme-alpha
 
 # Additional files to distribute.
-EXTRA_DIST = COPYING.DOC INSTALL.generic INTRODUCTION config.rpath \
-             dir-example djgpp 
+EXTRA_DIST = COPYING.DOC INSTALL.generic INTRODUCTION config.rpath djgpp 
 
 # This is to prevent texinfo.tex from being included in the top-level
 # distribution directory.
