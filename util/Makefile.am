@@ -34,6 +34,6 @@ LDADD = ../lib/libtxi.a $(LIBINTL)
 # fail.  (These bugs have been reported [several times] to bug-automake.)
 # 
 EXTRA_DIST = README deref.c dir-example fix-info-dir fixfonts \
-  fixref.gawk gen-dir-node gendocs.sh gendocs_template infosrch \
+  fixref.gawk gdoc gen-dir-node gendocs.sh gendocs_template infosrch \
   install-info-html outline.gawk \ 
   prepinfo.awk tex3patch texi-docstring-magic.el texi2dvi txitextest
