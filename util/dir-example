@@ -153,9 +153,9 @@ Emacs
 * Speedbar: (speedbar).        File/Tag summarizing utility.
 * VIP: (vip).		An older VI-emulation for Emacs.
 * VIPER: (viper).       The newest Emacs VI-emulation mode.
-                          (also, A VI Plan for Emacs Rescue
-                           or the VI PERil.)
-* Widget: (widget).      Documenting the "widget" package used by the
+                          (also, A VI Plan for Emacs Rescue or the VI PERil.)
+* VM: (vm).             View Mail for Emacs.
+* Widget: (widget).     Documenting the "widget" package used by the
                            Emacs Custom facility.
 * WoMan: (woman).       Browse UN*X Manual Pages `Wo (without) Man'.
 
