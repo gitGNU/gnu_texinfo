@@ -1825,6 +1825,13 @@ read_command ()
         if (!(def->flags & ME_RECURSE))
           def->inhibited = 1;
 
+        /* If we're expanding a macro, we better get the HTML output
+           started, in case the macro produces something.  The normal
+           condition in add_char doesn't apply because macro expansion
+           sets executing_string.  */
+        if (html && !html_output_head_p)
+          html_output_head ();        
+
         execute_macro (def);
 
         if (!(def->flags & ME_RECURSE))
