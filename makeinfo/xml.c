@@ -730,6 +730,17 @@ xml_section *last_section = NULL;
 void
 xml_begin_node ()
 {
+  first_section_opened = 1;
+  if (xml_in_abstract)
+    {
+      xml_insert_element (ABSTRACT, END);
+      xml_in_abstract = 0;
+    }
+  if (xml_in_bookinfo)
+    {
+      xml_insert_element (BOOKINFO, END);
+      xml_in_bookinfo = 0;
+    }
   if (xml_node_open && ! docbook)
     {
       if (xml_node_level != -1)
@@ -864,7 +875,7 @@ xml_add_char (character)
     int character;
 {
   if (!book_started)
-    return;
+      return;
   if (docbook && !only_macro_expansion && (in_menu || in_detailmenu))
     return;
   
