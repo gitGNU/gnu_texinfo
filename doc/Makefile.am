@@ -16,8 +16,6 @@ DISTCLEANFILES = texinfo texinfo-* info*.info*
 
 man_MANS = info.1 infokey.1 install-info.1 makeinfo.1 texindex.1 texi2dvi.1 \
            info.5 texinfo.5
-HELP2MAN = $(srcdir)/help2man
-noinst_SCRIPTS = $(HELP2MAN)
 
 # Use the programs built in our distribution.
 MAKEINFO = ../makeinfo/makeinfo
@@ -58,7 +56,7 @@ install-tex:
 
 # The man pages depend on the --help strings and the version number.
 if MAINTAINER_MODE
-common_mandeps = $(top_srcdir)/configure.ac $(HELP2MAN)
+common_mandeps = $(top_srcdir)/configure.ac
 info.1: $(top_srcdir)/info/info.c $(common_mandeps)
 	$(HELP2MAN) --name="read Info documents" `basename $< .c` >$@
 infokey.1: $(top_srcdir)/info/infokey.c $(common_mandeps)
