@@ -3768,7 +3768,10 @@ cm_value (arg, start_pos, end_pos)
       if (value)
         execute_string ("%s", value);
       else
+	{
+	  warning (_("undefined flag: %s"), name);
         add_word_args (_("{No value for `%s'}"), name);
+	}
 
       free (name);
     }

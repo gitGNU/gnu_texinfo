@@ -38,6 +38,7 @@ convenience, here's a url to one of the relevant sections:
   . search for image files in the include file search path.
   . --html output now uses <h3> at the smallest.
   . under --html, @cartouche now outputs a <table> with a border.
+  . warns if @value is used on an undefined variable.
 * texinfo.tex:
   . new Polish translation txi-pl.tex.
 * info:
