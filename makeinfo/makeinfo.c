@@ -2612,6 +2612,7 @@ add_char (int character)
            any order and with any omissions, and we'll still output
            the html <head> `just in time'.  */
         if ((executing_macro || !executing_string)
+            && !only_macro_expansion
             && html && !html_output_head_p && !defining_copying ())
           html_output_head ();
 
