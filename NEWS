@@ -31,6 +31,8 @@ convenience, here's a url to one of the relevant sections:
   . @quotation now accepts an optional parameter for labelling the text
       as a `Note', `Tip', etc.
 * makeinfo:
+  . All outputs:
+    - sections are numbered by default.
   . HTML output:
     - include node name in <title> with split output.
     - @multicolumn fractions become percentages.
