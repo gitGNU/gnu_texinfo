@@ -81,6 +81,7 @@ If you are interested in working on any of these, email bug-texinfo@gnu.org.
 
 * Makeinfo:
   - Support @`{@dotless{i}} et al. in HTML.
+  - Support image scaling, at least in HTML.
   - Try directory of main source file.
   - Include node name in HTML <title> in split-node output.
   - Make makeinfo -E just do macro expansion, avoiding all error checks.
