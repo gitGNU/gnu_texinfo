@@ -413,6 +413,8 @@
 <!ENTITY iquest "">
 <!ENTITY AElig "">
 <!ENTITY aelig "">
+<!ENTITY OElig "">
+<!ENTITY oelig "">
 <!ENTITY Aring "">
 <!ENTITY aring "">
 <!ENTITY szlig "">

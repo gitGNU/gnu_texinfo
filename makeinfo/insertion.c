@@ -1118,9 +1118,7 @@ cm_insert_copying (docbook_dont_fix_tags)
          full expansion on copying_text when we saved it.  */
       insert_string (copying_text);
       if (docbook && !docbook_dont_fix_tags)
-	insert_string ("</para></abstract>");
-      else if (xml && !docbook_dont_fix_tags)
-	insert_string ("</para>");
+        insert_string ("</para></abstract>");
       insert ('\n');
       
       /* Update output_position so that the node positions in the tag

@@ -930,7 +930,8 @@ cm_i (arg)
 {
   /* Make use of <lineannotation> of Docbook, if we are
      inside an @example or similar.  */
-  if (docbook && !filling_enabled)
+  extern int printing_index;
+  if (docbook && !filling_enabled && !printing_index)
     xml_insert_element (LINEANNOTATION, arg);
   else if (xml)
     xml_insert_element (I, arg);
@@ -945,7 +946,8 @@ cm_b (arg)
      int arg;
 {
   /* See cm_i comments.  */
-  if (docbook && !filling_enabled)
+  extern int printing_index;
+  if (docbook && !filling_enabled && !printing_index)
     xml_insert_element (LINEANNOTATION, arg);
   else if (docbook && arg == START)
     xml_insert_element_with_attribute (B, arg, "role=\"bold\"");
@@ -962,7 +964,8 @@ cm_r (arg)
      int arg;
 {
   /* See cm_i comments.  */
-  if (docbook && !filling_enabled)
+  extern int printing_index;
+  if (docbook && !filling_enabled && !printing_index)
     xml_insert_element (LINEANNOTATION, arg);
   else if (xml)
     xml_insert_element (R, arg);
