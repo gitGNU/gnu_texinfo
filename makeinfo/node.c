@@ -633,7 +633,7 @@ cm_node ()
   /* Check for defaulting of this node's next, prev, and up fields. */
   defaulting = (*next == 0 && *prev == 0 && *up == 0);
 
-  this_section = what_section (input_text + input_text_offset);
+  this_section = what_section (input_text + input_text_offset, NULL);
 
   /* If we are defaulting, then look at the immediately following
      sectioning command (error if none) to determine the node's
