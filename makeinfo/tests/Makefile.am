@@ -16,7 +16,8 @@ TESTS = accent accentenc \
   macro-at menu-whitespace \
   no-headers \
   node-expand node-value node-whitespace \
-  top top2
+  top top2 \
+  twofiles
 
 noinst_SCRIPTS = $(TESTS)
 
