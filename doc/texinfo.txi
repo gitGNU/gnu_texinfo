@@ -2947,10 +2947,10 @@ The @code{@@settitle} command should precede everything that generates
 actual output in @TeX{}.
 
 @cindex <title> HTML tag
-In the HTML file produced by @command{makeinfo}, @var{title} also serves
-as the document @samp{<title>} and the default document description in
-the @samp{<head>} part; see @ref{documentdescription}, for how to change
-that.
+In the HTML file produced by @command{makeinfo}, @var{title} serves as
+the document @samp{<title>}.  It also becomes default document
+description in the @samp{<head>} part; see @ref{documentdescription},
+for how to change that.
 
 The title in the @code{@@settitle} command does not affect the title as
 it appears on the title page.  Thus, the two do not need not match
@@ -3238,6 +3238,10 @@ Use the @code{@@titlefont} command to select a large font suitable for
 the title itself.  You can use @code{@@titlefont} more than once if you
 have an especially long title.
 
+For HTML output, each @code{@@titlefont} command produces an
+@code{<h1>} heading, but the HTML document @code{<title>} is not
+affected.  For that, you have to use @code{@@settitle} (@pxref{settitle})
+
 @need 700
 For example:
 
@@ -3285,6 +3289,9 @@ A template for this method looks like this:
 
 The spacing of the example fits an 8.5 by 11 inch manual.
 
+You can in fact use these commands anywhere, not just on a title page,
+but since they are not logical markup commands, we don't recommend
+them.
 
 @node title subtitle author
 @subsection @code{@@title}, @code{@@subtitle}, and @code{@@author}
