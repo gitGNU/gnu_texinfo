@@ -383,7 +383,7 @@ insert_html_tag (start_or_end, tag)
     }
 
   if (start_or_end != START)
-    pop_tag (tag);
+    pop_tag ();
 
   if (htmlstack)
     old_tag = htmlstack->tag;
