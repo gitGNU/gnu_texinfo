@@ -3934,7 +3934,7 @@ execute_string (format, va_alist)
 
   /* If insertion stack level changes during execution, that means a multiline
      command is used inside braces or @section ... kind of commands.  */
-  if (insertion_level_at_start != insertion_level)
+  if (insertion_level_at_start != insertion_level && !executing_macro)
     {
       line_error (_("Multiline command %c%s used improperly"),
           COMMAND_PREFIX,
