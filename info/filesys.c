@@ -281,12 +281,12 @@ extract_colon_unit (char *string, int *idx)
   if (!string || i >= strlen (string))
     return NULL;
 
+  if (!string[i]) /* end of string */
+    return NULL;
+
   /* Advance to next PATH_SEP.  */
   while (string[i] && string[i] != PATH_SEP[0])
     i++;
-
-  if (!string[i] && i == start) /* end of string, and didn't advance */
-    return NULL;
 
   {
     char *value = xmalloc ((i - start) + 1);
