@@ -20,6 +20,13 @@
 #ifndef HTML_H
 #define HTML_H
 
+/* A stack of font tags.  */
+typedef struct hstack
+{
+  struct hstack *next;
+  char *tag;
+} HSTACK;
+
 /* Nonzero if we have output the <head>.  */
 extern int html_output_head_p;
 

@@ -424,8 +424,9 @@ multitable_item ()
   /* start at column 1 */
   select_output_environment (1);
   if (!output_paragraph) {
-    line_error (_("Cannot select column #%d in multitable"), current_env_no);
-    exit (1);
+    line_error (_("[unexpected] cannot select column #%d in multitable"),
+                current_env_no);
+    xexit (1);
   }
 
   init_column ();

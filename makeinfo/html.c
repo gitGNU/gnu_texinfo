@@ -24,6 +24,8 @@
 #include "makeinfo.h"
 #include "sectioning.h"
 
+HSTACK *htmlstack = NULL;
+
 /* See html.h.  */
 int html_output_head_p = 0;
 
@@ -137,6 +139,34 @@ escape_string (string)
   free (string);
   return newstring - newlen;
 }
+
+/* Save current tag.  */
+void
+push_tag (tag)
+     char *tag;
+{
+  HSTACK *newstack = xmalloc (sizeof (HSTACK));
+
+  newstack->tag = tag;
+  newstack->next = htmlstack;
+  htmlstack = newstack;
+}
+
+/* Get last tag.  */
+void
+pop_tag ()
+{
+  HSTACK *tos = htmlstack;
+
+  if (!tos)
+    {
+      line_error (_("[unexpected] no html tag to pop"));
+      return;
+    }
+
+  htmlstack = htmlstack->next;
+  free (tos);
+}
 
 /* Open or close TAG according to START_OR_END. */
 void
@@ -152,11 +182,52 @@ insert_html_tag (start_or_end, tag)
       adjust_braces_following (output_paragraph_offset, 3);
       add_word ("<p>");
     }
-  add_char ('<');
+
+  if (start_or_end == START)
+    {
+      if (htmlstack
+          && (strcmp (htmlstack->tag, tag) == 0))
+        return;
+    }
+  else
+    {
+      if (htmlstack && htmlstack->next
+          && (strcmp (htmlstack->next->tag, tag) == 0))
+        return;
+    }
+
+  if (start_or_end == START)
+    {
+      /* texinfo.tex doesn't support more than one font attribute
+         at the same time.  */
+      if (htmlstack && *(htmlstack->tag))
+        {
+          add_word ("</");
+          add_word (htmlstack->tag);
+          add_char ('>');
+        }
+      push_tag (tag);
+    }
+
+  if (*tag)
+    {
+      add_char ('<');
+      if (start_or_end != START)
+        add_char ('/');
+      add_word (tag);
+      add_char ('>');
+    }
+
   if (start_or_end != START)
-    add_char ('/');
-  add_word (tag);
-  add_char ('>');
+    {
+      pop_tag ();
+      if (htmlstack && *(htmlstack->tag))
+        {
+          add_char ('<');
+          add_word (htmlstack->tag);
+          add_char ('>');
+        }
+    }
 }
 
 /* Output an HTML <link> to the filename for NODE, including the
@@ -297,8 +368,8 @@ nodename_to_filename_1 (nodename, href)
 	  p = strchr (nodename, ')');
 	  if (p == NULL)
 	    {
-	      line_error (_("Invalid node name: `%s'"), nodename);
-	      exit (1);
+	      line_error (_("[unexpected] invalid node name: `%s'"), nodename);
+	      xexit (1);
 	    }
 
 	  length = p - nodename - 1;

@@ -695,7 +695,7 @@ There is NO warranty.  You may redistribute this software\n\
 under the terms of the GNU General Public License.\n\
 For more information about these matters, see the files named COPYING.\n"),
                   "2002");
-          exit (0);
+          xexit (0);
           break;
 
         case 'w': /* --html */
@@ -1370,7 +1370,7 @@ insert_toplevel_subdirectory (output_filename)
 	    errmsg = _("File exists, but is not a directory");
           line_error (_("Can't create directory `%s': %s"),
                       output_filename, errmsg);
-          exit (1);
+          xexit (1);
         }
       strcat (output_filename, "/");
     }
