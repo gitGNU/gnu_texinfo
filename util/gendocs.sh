@@ -149,8 +149,8 @@ echo Generating output formats for $srcfile
 echo Generating info files...
 ${MAKEINFO} -o $PACKAGE.info $srcfile
 mkdir -p $outdir/
-tar czf $outdir/$PACKAGE-info.tar.gz $PACKAGE.info*
-info_tgz_size="`calcsize $outdir/$PACKAGE-info.tar.gz`"
+tar czf $outdir/$PACKAGE.info.tar.gz $PACKAGE.info*
+info_tgz_size="`calcsize $outdir/$PACKAGE.info.tar.gz`"
 # do not mv the info files, there's no point in having them available
 # separately on the web.
 
@@ -194,9 +194,9 @@ ${MAKEINFO} --html -o $PACKAGE.html $html $srcfile
 split_html_dir=$PACKAGE.html
 (
   cd ${split_html_dir} || exit 1
-  tar -czf ../$outdir/${PACKAGE}_html_node.tar.gz -- *.html
+  tar -czf ../$outdir/${PACKAGE}.html_node.tar.gz -- *.html
 )
-html_node_tgz_size="`calcsize $outdir/${PACKAGE}_html_node.tar.gz`"
+html_node_tgz_size="`calcsize $outdir/${PACKAGE}.html_node.tar.gz`"
 rm -f $outdir/html_node/*.html
 mkdir -p $outdir/html_node/
 mv ${split_html_dir}/*.html $outdir/html_node/
@@ -220,9 +220,9 @@ if test -n "$docbook"; then
   ${DOCBOOK2HTML} -o $split_html_db_dir ${outdir}/$PACKAGE-db.xml
   (
     cd ${split_html_db_dir} || exit 1
-    tar -czf ../$outdir/${PACKAGE}_html_node_db.tar.gz -- *.html
+    tar -czf ../$outdir/${PACKAGE}.html_node_db.tar.gz -- *.html
   )
-  html_node_db_tgz_size="`calcsize $outdir/${PACKAGE}_html_node_db.tar.gz`"
+  html_node_db_tgz_size="`calcsize $outdir/${PACKAGE}.html_node_db.tar.gz`"
   rm -f $outdir/html_node_db/*.html
   mkdir -p $outdir/html_node_db
   mv ${split_html_db_dir}/*.html $outdir/html_node_db/
