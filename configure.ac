@@ -9,7 +9,7 @@ dnl This program is distributed in the hope that it will be useful, but
 dnl WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 dnl implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 dnl
-AC_PREREQ(2.57)dnl Minimum Autoconf version required.
+AC_PREREQ(2.58)dnl Minimum Autoconf version required.
 dnl
 AC_INIT([GNU Texinfo], [4.6])
 AC_CONFIG_SRCDIR([makeinfo/makeinfo.c])
