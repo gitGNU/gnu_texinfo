@@ -33,6 +33,6 @@ typedef struct float_elt
 
 /* Information retrieval about the current float env.  */
 extern char *current_float_id (), *current_float_title (),
-  *current_float_number ();
+  *current_float_number (), *get_float_ref ();
 
 #endif /* not FLOAT_H */

@@ -98,3 +98,23 @@ current_float_id ()
 {
   return float_stack->id;
 }
+
+char *
+get_float_ref (id)
+    char *id;
+{
+  FLOAT_ELT *temp = float_stack;
+
+  while (temp)
+    {
+      if (STREQ (id, temp->id))
+        {
+          char *s = xmalloc (strlen (temp->type) + strlen (temp->number) + 2);
+          sprintf (s, "%s %s", temp->type, temp->number);
+          return s;
+        }
+      temp = temp->next;
+    }
+
+  return NULL;
+}
