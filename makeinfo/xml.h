@@ -94,5 +94,6 @@ enum xml_element
 
 extern void xml_insert_element (/* int name, int arg */);
 extern char *xml_id (/* char *id */);
+extern char *xml_get_assoc_for_id (/* char *id */);
 
 #endif /* XML_H */

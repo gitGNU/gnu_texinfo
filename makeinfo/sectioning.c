@@ -326,6 +326,13 @@ sectioning_underscore (cmd)
           if (STREQ (command, "top") && strlen(temp) == 0)
             temp = xstrdup (title);
 	  execute_string ("%s\n", temp);
+
+          /* Keep track of @unnumbered sections for proper @xrefs.  */
+          if (docbook && current_node
+              && section_alist[search_sectioning (cmd)].num == ENUM_SECT_NO
+              && section_alist[search_sectioning (cmd)].toc == TOC_YES)
+            xml_associate_title_with_id (current_node, temp);
+
 	  free (temp);
 	  xml_insert_element (TITLE, END);
 	}

@@ -3120,11 +3120,21 @@ cm_xref (arg)
       if (!*arg1)
         line_error (_("First argument to cross-reference may not be empty"));
 
-      if (xml && docbook)
+      if (docbook)
         {
           if (!*arg4 && !*arg5)
             {
               char *arg1_id = xml_id (arg1);
+
+              if (!*arg2 && !*arg3)
+                {
+                  arg3 = xml_get_assoc_for_id (arg1_id);
+
+                  if (*arg3)
+                    warning (_("%cxref{%s} to ``%cunnumbered %s'' causes dubious references with Docbook"),
+                        COMMAND_PREFIX, arg1, COMMAND_PREFIX, arg3);
+                }
+
               if (*arg2 || *arg3)
                 {
                   xml_insert_element_with_attribute (XREFNODENAME, START,
