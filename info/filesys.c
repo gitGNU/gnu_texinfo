@@ -287,7 +287,7 @@ extract_colon_unit (string, idx)
   while (string[i] && string[i] != PATH_SEP[0])
     i++;
 
-  if (!string[i]) /* end of string */
+  if (!string[i] && i == start) /* end of string, and didn't advance */
     return NULL;
 
   {
