@@ -22,6 +22,7 @@ convenience, here's a url to one of the relevant sections:
 
 -------------------------------------------------------------------------------
 
+4.6 (10 June 2003)
 * Language:
   . new command @/ specifies an allowable breakpoint within a line.
   . new command @dofirstparagraphindent to control whether the first

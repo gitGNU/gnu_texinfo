@@ -11,7 +11,7 @@ dnl implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 dnl
 AC_PREREQ(2.57)dnl Minimum Autoconf version required.
 dnl
-AC_INIT([GNU Texinfo], [4.5.93])
+AC_INIT([GNU Texinfo], [4.6])
 AC_CONFIG_SRCDIR([makeinfo/makeinfo.c])
 AM_CONFIG_HEADER(config.h:config.in)dnl Keep filename to 8.3 for MS-DOS.
 AM_INIT_AUTOMAKE([dist-bzip2])
