@@ -1330,16 +1330,16 @@ static char *
 insert_toplevel_subdirectory (output_filename)
      char *output_filename;
 {
+  static const char index_name[] = "index.html";
   char *dir, *subdir, *base, *basename, *p;
   char buf[PATH_MAX];
   struct stat st;
-  static const char index_name[] = "index.html";
   const int index_len = sizeof (index_name) - 1;
 
   strcpy (buf, output_filename);
-  dir = pathname_part (buf);
-  base = filename_part (buf);
-  basename = xstrdup (base); /* remember real @setfilename name */
+  dir = pathname_part (buf);   /* directory of output_filename */
+  base = filename_part (buf);  /* strips suffix, too */
+  basename = xstrdup (base);   /* remember real @setfilename name */
   p = dir + strlen (dir) - 1;
   if (p > dir && IS_SLASH (*p))
     *p = 0;
@@ -1348,15 +1348,11 @@ insert_toplevel_subdirectory (output_filename)
     *p = 0;
 
   /* Split html output goes into subdirectory of toplevel name. */
-  subdir = "";
-  if (FILENAME_CMP (base, filename_part (dir)) != 0)
-    {
-      if (save_command_output_filename
-          && STREQ (output_filename, save_command_output_filename))
-        subdir = basename;  /* from user, use unchanged */
-      else
-        subdir = base;      /* implicit, omit suffix */
-    }
+  if (save_command_output_filename
+      && STREQ (output_filename, save_command_output_filename))
+    subdir = basename;  /* from user, use unchanged */
+  else
+    subdir = base;      /* implicit, omit suffix */
 
   free (output_filename);
   output_filename = xmalloc (strlen (dir) + 1
