@@ -26,7 +26,7 @@ convenience, here's a url to one of the relevant sections:
   . new commands @docbook, @ifdocbook, @ifnotdocbook
       for conditional Docbook text.
   . new command @registeredsymbol for the r-in-a-circle symbol.
-  . new command @headitem to make column heads in multitable environments.
+  . new command @headitem to make a heading in @multitable.
   . @quotation now accepts an optional parameter for labelling the text.
 * makeinfo:
   . HTML output: include node name in <title> with split output;
