@@ -495,7 +495,7 @@ cm_uref (int arg)
       if (docbook)
         {
           xml_insert_element_with_attribute (UREF, START, "url=\"%s\"",
-              text_expansion (url));
+					     maybe_escaped_expansion (url, 0, 1));
           if (*replacement)
             execute_string ("%s", replacement);
           else if (*desc)
