@@ -140,6 +140,7 @@ convenience, here's a url to one of the relevant sections:
   . ANSI escape sequences (as produced by groff) removed from man output
     by default; use --raw-escapes to let them through if your terminal
     supports them.
+  . RET terminates incremental search normally.
 * texinfo.tex:
   . @math implies @tex, so all the usual plain TeX math is supported.
   . smaller fonts for @smallexample, in all page sizes.
