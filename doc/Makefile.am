@@ -27,7 +27,7 @@ TXI_XLATE = txi-cs.tex txi-de.tex txi-en.tex txi-es.tex txi-fr.tex \
 # Include our texinfo.tex, not Automake's.
 EXTRA_DIST = epsf.tex pdfcolor.tex texinfo.tex \
              fdl.texi \
-	     $(man_MANS) $(noinst_SCRIPTS) $(TXI_XLATE)
+	     $(man_MANS) $(TXI_XLATE)
 
 install-data-local:
 	@echo
