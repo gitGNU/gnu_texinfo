@@ -57,7 +57,7 @@ convenience, here's a url to one of the relevant sections:
 * Distribution:
   . new Romanian (ro) translation.
   . variables now declared const where appropriate.
-  . automake 1.7.3.
+  . automake 1.7.5.
 
 
 4.5 (4 February 2003)
