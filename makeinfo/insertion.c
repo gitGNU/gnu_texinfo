@@ -1136,7 +1136,7 @@ cm_smalldisplay ()
 void
 cm_direntry ()
 {
-  if (html || xml)
+  if (html || xml || no_headers)
     command_name_condition ();
   else
     begin_insertion (direntry);
