@@ -274,6 +274,8 @@ extern void xexit (int);
 
 /* For convenience.  */
 #define STREQ(s1,s2) (strcmp (s1, s2) == 0)
+#define STRCASEEQ(s1,s2) (strcasecmp (s1, s2) == 0)
+#define STRNCASEEQ(s1,s2,n) (strncasecmp (s1, s2, n) == 0)
 
 /* We don't need anything fancy.  If we did need something fancy, gnulib
    has it.  */
