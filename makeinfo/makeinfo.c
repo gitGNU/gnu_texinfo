@@ -183,7 +183,8 @@ remember_error (void)
     {
       fprintf (stderr, _("Too many errors!  Gave up.\n"));
       flush_file_stack ();
-      cm_bye ();
+      if (errors_printed - max_error_level < 2)
+	cm_bye ();
       xexit (1);
     }
 }
