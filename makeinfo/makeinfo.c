@@ -755,6 +755,10 @@ For more information about these matters, see the files named COPYING.\n"),
 
   if (no_headers)
     {
+      /* If the user did not specify an output file, use stdout. */
+      if (!command_output_filename)
+        command_output_filename = xstrdup ("-");
+
       if (html && splitting && !STREQ (command_output_filename, "-"))
         { /* --no-headers --no-split --html indicates confusion. */
           fprintf (stderr,
@@ -765,10 +769,6 @@ For more information about these matters, see the files named COPYING.\n"),
 
       /* --no-headers implies --no-split.  */
       splitting = 0;
-
-      /* If the user did not specify an output file, use stdout. */
-      if (!command_output_filename)
-        command_output_filename = xstrdup ("-");
     }
 
   if (process_info == -1)
