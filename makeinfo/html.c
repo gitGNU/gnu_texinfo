@@ -143,6 +143,8 @@ init_buffer ()
   buf->length = 0;
   buf->size = 0;
   buf->buffer = NULL;
+
+  return buf;
 }
 
 
