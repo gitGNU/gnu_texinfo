@@ -16280,10 +16280,11 @@ in.  @xref{HTML Xref Mismatch}.
 
 As mentioned in the previous section, the key part of the HTML
 cross-reference algorithm is the conversion of node names in the
-Texinfo source into strings suitable for HTML identifiers and
+Texinfo source into strings suitable for XHTML identifiers and
 filenames.  The restrictions are similar for each: plain ASCII
 letters, numbers, and the @samp{-} and @samp{_} characters are all
-that can be used.
+that can be used.  (Although HTML anchors can contain most characters,
+XHTML is more restrictive.)
 
 Cross-references in Texinfo can actually refer either to nodes or
 anchors (@pxref{anchor}), but anchors are treated identically to nodes
