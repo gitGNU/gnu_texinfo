@@ -424,7 +424,7 @@ ensure_dirfile_exists (dirfile)
           fprintf (f, _("This is the file .../info/dir, which contains the\n\
 topmost node of the Info hierarchy, called (dir)Top.\n\
 The first time you invoke Info you start off looking at this node.\n\
-\n\
+\x1f\n\
 %s\tThis is the top of the INFO tree\n\
 \n\
   This (the Directory node) gives a menu of major topics.\n\
