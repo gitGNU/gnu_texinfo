@@ -914,12 +914,18 @@ end_insertion (type)
           break;
         case smallexample:
           xml_insert_element (SMALLEXAMPLE, END);
+          if (docbook && is_in_insertion_of_type (floatenv))
+            xml_insert_element (FLOATEXAMPLE, END);
           break;
         case lisp:
           xml_insert_element (LISP, END);
+          if (docbook && is_in_insertion_of_type (floatenv))
+            xml_insert_element (FLOATEXAMPLE, END);
           break;
         case smalllisp:
           xml_insert_element (SMALLLISP, END);
+          if (docbook && is_in_insertion_of_type (floatenv))
+            xml_insert_element (FLOATEXAMPLE, END);
           break;
         case cartouche:
           xml_insert_element (CARTOUCHE, END);
@@ -1212,18 +1218,8 @@ void
 cm_example ()
 {
   if (docbook && is_in_insertion_of_type (floatenv))
-    {
-      if (strlen (current_float_id ()) == 0)
-        xml_insert_element_with_attribute (FLOATEXAMPLE, START, "label=\"\"");
-      else
-        xml_insert_element_with_attribute (FLOATEXAMPLE, START,
-            "id=\"%s\" label=\"%s\"", xml_id (current_float_id ()),
-            current_float_number ());
+    xml_begin_docbook_float (FLOATEXAMPLE);
 
-      xml_insert_element (TITLE, START);
-      execute_string ("%s", current_float_title ());
-      xml_insert_element (TITLE, END);
-    }
   if (xml)
     xml_insert_element (EXAMPLE, START);
   begin_insertion (example);
@@ -1232,6 +1228,9 @@ cm_example ()
 void
 cm_smallexample ()
 {
+  if (docbook && is_in_insertion_of_type (floatenv))
+    xml_begin_docbook_float (FLOATEXAMPLE);
+
   if (xml)
     xml_insert_element (SMALLEXAMPLE, START);
   begin_insertion (smallexample);
@@ -1240,6 +1239,9 @@ cm_smallexample ()
 void
 cm_lisp ()
 {
+  if (docbook && is_in_insertion_of_type (floatenv))
+    xml_begin_docbook_float (FLOATEXAMPLE);
+
   if (xml)
     xml_insert_element (LISP, START);
   begin_insertion (lisp);
@@ -1248,6 +1250,9 @@ cm_lisp ()
 void
 cm_smalllisp ()
 {
+  if (docbook && is_in_insertion_of_type (floatenv))
+    xml_begin_docbook_float (FLOATEXAMPLE);
+
   if (xml)
     xml_insert_element (SMALLLISP, START);
   begin_insertion (smalllisp);
