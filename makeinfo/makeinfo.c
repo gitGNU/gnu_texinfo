@@ -4225,6 +4225,7 @@ execute_string (format, va_alist)
 #ifdef VA_FPRINTF
   va_list ap;
 #endif
+  int xml_element_stack_start;
 
   es = get_execution_string (EXECUTE_STRING_MAX);
   temp_string = es->string;
@@ -4243,10 +4244,16 @@ execute_string (format, va_alist)
   input_text = temp_string;
   input_filename = xstrdup (input_filename);
   input_text_length = strlen (temp_string);
+  if (xml)
+    xml_element_stack_start = xml_current_stack_index ();
 
   executing_string++;
   reader_loop ();
   free (input_filename);
+
+  if (xml)
+    while (xml_current_stack_index () > xml_element_stack_start)
+      xml_end_current_element ();
 
   popfile ();
   executing_string--;
