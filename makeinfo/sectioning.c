@@ -215,6 +215,11 @@ void
 sectioning_underscore (cmd)
      char *cmd;
 {
+  /* If we're not indenting the first paragraph, we shall make it behave
+     like @noindent is called directly after the section heading. */
+  if (! do_first_par_indent)
+    cm_noindent ();
+
   if (xml)
     {
       char *temp;
