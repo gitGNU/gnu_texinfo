@@ -4283,8 +4283,8 @@ execute_string (format, va_alist)
         pop_insertion ();
     }
 
-  /* Similar thing is also applicable to also XML and Docbook output.  Though
-     we silently balance the tags instead of complaining.  */
+  /* A similar check is also applicable to XML and Docbook formats.  Though we
+     silently balance the tags instead of complaining.  */
   if (xml)
     {
       while (xml_current_stack_index () > xml_element_stack_start)
