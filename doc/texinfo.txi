@@ -17967,7 +17967,6 @@ headers or footers.@refill
 @findex oddfooting
 @item @@evenheading @var{left} @@| @var{center} @@| @var{right}
 @itemx @@oddheading  @var{left} @@| @var{center} @@| @var{right}
-
 @itemx @@evenfooting @var{left} @@| @var{center} @@| @var{right}
 @itemx @@oddfooting  @var{left} @@| @var{center} @@| @var{right}
 

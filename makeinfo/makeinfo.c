@@ -1990,7 +1990,6 @@ reader_loop ()
 {
   int character;
   int done = 0;
-  int dash_count = 0;
 
   while (!done)
     {
@@ -2005,22 +2004,68 @@ reader_loop ()
           && (character == '\'' || character == '`')
           && input_text[input_text_offset + 1] == character)
         {
-          input_text_offset++;
-          character = '"'; /* html fixxme */
+          if (html)
+            {
+              input_text_offset += 2;
+              add_word (character == '`' ? "&ldquo;" : "&rdquo;");
+              continue;
+            }
+          else if (xml)
+            {
+              input_text_offset += 2;
+              xml_insert_entity (character == '`' ? "ldquo" : "rdquo");
+              continue;
+            }
+          else
+            {
+              input_text_offset++;
+              character = '"';
+            }
         }
 
       /* Convert --- to --.  */
-      if (!only_macro_expansion && character == '-')
+      if (!only_macro_expansion && character == '-' && !in_fixed_width_font)
         {
-          dash_count++;
-          if (dash_count == 2 && !in_fixed_width_font)
+          int dash_count = 0;
+
+          /* Get the number of consequtive dashes.  */
+          while (input_text[input_text_offset] == '-')
             {
+              dash_count++;
               input_text_offset++;
-              continue;
             }
+
+          /* Eat one dash.  */
+          dash_count--;
+
+          if (html || xml)
+            {
+              if (dash_count == 0)
+                add_char ('-');
+              else
+                while (dash_count > 0)
+                  {
+                    if (dash_count >= 2)
+                      {
+                        html ? add_word ("&mdash;") : xml_insert_entity ("mdash");
+                        dash_count -= 2;
+                      }
+                    else if (dash_count >= 1)
+                      {
+                        html ? add_word ("&ndash;") : xml_insert_entity ("ndash");
+                        dash_count--;
+                      }
+                  }
+            }
+          else
+            {
+              add_char ('-');
+              while (--dash_count > 0)
+                add_char ('-');
+            }
+
+          continue;
         }
-      else if (dash_count > 0)
-        dash_count = 0;
 
       /* If this is a whitespace character, then check to see if the line
          is blank.  If so, advance to the carriage return. */

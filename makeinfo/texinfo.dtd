@@ -214,6 +214,8 @@
 <!ATTLIST verbatim     xml:space (preserve) #FIXED 'preserve'>
 
 <!ELEMENT para         (#PCDATA | %Inline.phrase; | footnote | %lang;)*>
+<!ATTLIST para
+	  role CDATA #IMPLIED>
 
 <!ELEMENT menu ((menuentry | para)*)>
 <!ELEMENT menuentry (menunode?, menutitle?, menucomment?)>
@@ -327,18 +329,23 @@
 
 
 
-<!ENTITY tex       "TeX">
-<!ENTITY ellipsis  "">
-<!ENTITY lt        "">
-<!ENTITY gt        "">
-<!ENTITY bullet    "">
-<!ENTITY copyright "">
-<!ENTITY minus     "">
-<!ENTITY linebreak "">
-<!ENTITY space     "">
-<!ENTITY dots      "">
-<!ENTITY enddots   "">
-<!ENTITY amp       "">
+<!ENTITY tex        "TeX">
+<!ENTITY ellipsis   "">
+<!ENTITY lt         "">
+<!ENTITY gt         "">
+<!ENTITY bullet     "">
+<!ENTITY copyright  "">
+<!ENTITY registered "">
+<!ENTITY minus      "">
+<!ENTITY linebreak  "">
+<!ENTITY space      "">
+<!ENTITY dots       "">
+<!ENTITY enddots    "">
+<!ENTITY amp        "">
+<!ENTITY ldquo      "">
+<!ENTITY rdquo      "">
+<!ENTITY mdash      "">
+<!ENTITY ndash      "">
 
 <!ENTITY auml "">
 <!ENTITY ouml "">

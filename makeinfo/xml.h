@@ -28,6 +28,8 @@
 extern int xml_index_divisions;
 extern int xml_sort_index;
 
+extern int xml_no_indent;
+
 extern int xml_node_open;
 extern int xml_no_para;
 extern char *xml_node_id;

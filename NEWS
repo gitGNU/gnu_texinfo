@@ -23,9 +23,9 @@ convenience, here's a url to one of the relevant sections:
 -------------------------------------------------------------------------------
 
 * Language:
-  . new commands @docbook, @ifdocbook, @ifnotdocbook.
+  . new commands @docbook, @ifdocbook, @ifnotdocbook, @registeredsymbol.
 * makeinfo:
-  . improved XML output.
+  . improved XML, Docbook and HTML output.
 * texi2dvi:
   . if the input file includes thumbpdf.sty (for LaTeX), then run thumbpdf.
   . more output if --debug.
