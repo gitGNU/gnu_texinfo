@@ -103,6 +103,7 @@ Software development
 * gccinstall: (gccinstall).     Installing the GNU Compiler Collection.
 * gccint: (gccint).             Internals of the GNU Compiler Collection.
 * Gnats: (gnats).               Cygnus bug tracking system.
+* Gnulib: (gnulib).             Source files to share among distributions.
 * Gperf: (gperf).               Perfect hash function generator.
 * Gprof: (gprof).               Profiler.
 * Guile Reference: (guile).     The Guile reference manual.
