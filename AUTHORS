@@ -12,6 +12,7 @@ Brian Fox		all makeinfo/* and info/* files, info-stnd.texi.
 Dave Love		original makeinfo/html.[ch].
 Eli Zaretskii		all files.
 Karl Berry		all files.
+Karl Heinz Marbaise	original makeinfo language support, most files.
 Noah Friedman		original texi2dvi.
 Paul Rubin		original makeinfo/multi.c.
 Philippe Martin		original makeinfo xml/docbook output.
