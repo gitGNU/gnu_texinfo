@@ -1058,6 +1058,10 @@ cm_insert_copying ()
          full expansion on copying_text when we saved it.  */
       insert_string (copying_text);
       insert ('\n');
+      
+      /* Update output_position so that the node positions in the tag
+         tables will take account of the copying text.  */
+      flush_output ();
     }
 }
 
