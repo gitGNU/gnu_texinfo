@@ -2861,9 +2861,6 @@ void
 indent (amount)
      int amount;
 {
-  if (html)
-    return;
-
   /* For every START_POS saved within the brace stack which will be affected
      by this indentation, bump that start pos forward. */
   adjust_braces_following (output_paragraph_offset, amount);
