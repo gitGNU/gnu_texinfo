@@ -75,7 +75,7 @@ rel=\"generator-home\">\n");
 
   add_word ("</head>\n<body>\n");
 
-  if (title && !html_title_written)
+  if (title && !html_title_written && titlepage_cmd_present)
     {
       add_word_args ("<h1 class=\"settitle\">%s</h1>\n", html_title);
       html_title_written = 1;
