@@ -133,7 +133,10 @@ keymap_bind_keyseq (map, keyseq, keyentry)
               m[c].type = ISKMAP;
               /* Here we are casting the Keymap pointer returned from
                  keymap_make_keymap to an InfoCommand pointer.  Ugh.
-                 Should really be using a union.  */
+                 This makes the `function' structure garbage
+                 if it's actually interpreted as an InfoCommand.
+                 Should really be using a union, and taking steps to
+                 avoid the possible error.  */
               m[c].function = (InfoCommand *)keymap_make_keymap ();
             }
           break;
