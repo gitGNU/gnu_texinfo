@@ -9183,7 +9183,19 @@ The @code{@@shortcaption} command likewise may be used only within
 @code{@@float}, and takes a single argument in braces.  The short
 caption text is used instead of the caption text in a list of floats
 (see the next section).  Thus, you can write a long caption for the
-main document, and a short title to appear in the list of floats.
+main document, and a short title to appear in the list of floats.  For
+example:
+
+@example
+@@float
+... as above ...
+@@shortcaption{Text for list of floats.}
+@@end float
+@end example
+
+The text for @code{@@caption} and @code{@@shortcaption} may not
+contain comments (@code{@@c}), verbatim text (@text{@@verb}),
+environments such as @code{@@example}, or other complex constructs.
 
 
 @node listoffloats
