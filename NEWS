@@ -36,6 +36,7 @@ convenience, here's a url to one of the relevant sections:
   . RET now goes to the nearest xref (rather like Emacs Info),
     instead of the next xref starting on the current line.
 * Distribution:
+  . new Romanian (ro) translation.
   . Variables now declared const where appropriate.
   . automake 1.7.3.
 
