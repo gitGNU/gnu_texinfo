@@ -3926,12 +3926,16 @@ cm_value (arg, start_pos, end_pos)
          popped the brace stack, which restored in_fixed_width_font,
          among other things.  */
 
+      /* Docbook does not have menus, so the warnings about undefined flags
+         inside menus are bogus (makeinfo warns even if they are defined.)
+         So just skip them.  */
+
       if (value)
         execute_string ("%s", value);
-      else
+      else if (!(docbook && in_menu))
 	{
-	  warning (_("undefined flag: %s"), name);
-        add_word_args (_("{No value for `%s'}"), name);
+          warning (_("undefined flag: %s"), name);
+          add_word_args (_("{No value for `%s'}"), name);
 	}
 
       free (name);
