@@ -65,7 +65,7 @@ void
   cm_defcodeindex (), cm_result (), cm_expansion (), cm_equiv (),
   cm_print (), cm_error (), cm_point (), cm_today (), cm_flushleft (),
   cm_flushright (), cm_finalout (), cm_cartouche (), cm_detailmenu (),
-  cm_multitable (), cm_settitle (), cm_titlefont (), cm_tie (), cm_tt (),
+  cm_multitable (), cm_settitle (), cm_titlefont (), cm_titlepage (), cm_tie (), cm_tt (),
   cm_verbatim (), cm_verbatiminclude ();
 
 /* Conditionals. */
@@ -327,7 +327,7 @@ COMMAND command_table[] = {
   { "tieaccent", cm_accent, MAYBE_BRACE_ARGS },
   { "tindex", cm_tindex, NO_BRACE_ARGS },
   { "titlefont", cm_titlefont, BRACE_ARGS },
-  { "titlepage", command_name_condition, NO_BRACE_ARGS },
+  { "titlepage", cm_titlepage, NO_BRACE_ARGS },
   { "today", cm_today, BRACE_ARGS },
   { "top", cm_top, NO_BRACE_ARGS  },
   { "u", cm_accent, MAYBE_BRACE_ARGS },
@@ -905,6 +905,16 @@ cm_titlefont (arg)
 	    add_word ("</h1>\n");
 	}
    }
+}
+
+int titlepage_cmd_present = 0;
+
+void
+cm_titlepage (arg)
+     int arg;
+{
+  titlepage_cmd_present = 1;
+  command_name_condition ();
 }
 
 /* Various commands are no-op's. */
