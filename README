@@ -134,6 +134,7 @@ if they exist.
 
 Here's the order in which to run the tools for a fresh build:
   autoheader   # creates config.in, not necessarily needed every time
+  aclocal      # for a new version of automake
   automake
   autoconf
   configure CFLAGS=-g
