@@ -1177,7 +1177,9 @@ cm_sp ()
   int lines;
   char *line;
 
-  get_rest_of_line (1, &line);
+  /* Due to tricky stuff in execute_string(), @value{} can't be expanded.
+     So there is really no reason to enable expansion for @sp parameters.  */
+  get_rest_of_line (0, &line);
 
   if (sscanf (line, "%d", &lines) != 1 || lines <= 0)
     line_error (_("@sp requires a positive numeric argument, not `%s'"), line);
