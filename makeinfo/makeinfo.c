@@ -2090,7 +2090,7 @@ remember_brace (proc)
      COMMAND_FUNCTION *proc;
 {
   if (curchar () != '{')
-    line_error (_("%c%s expected `{...}'"), COMMAND_PREFIX, command);
+    line_error (_("%c%s expected braces"), COMMAND_PREFIX, command);
   else
     input_text_offset++;
   remember_brace_1 (proc, output_paragraph_offset);
