@@ -354,6 +354,8 @@ int xml_no_para = 0;
 char *xml_node_id = NULL;
 int xml_sort_index = 0;
 
+int xml_in_xref_token = 0;
+
 static int xml_after_table_term = 0;
 static int book_started = 0;
 static int first_section_opened = 0;
@@ -375,13 +377,14 @@ xml_id (id)
   char *tem = xmalloc (strlen (id) + 1);
   char *p = tem;
   strcpy (tem, id);
-  while (*p++)
+  while (*p)
     {
-      if (*p == ' ' || *p == '&' || *p == '/' || *p == '+')
+      if (strchr ("~ &/+^;?()%<>\"", *p))
         *p = '-';
+      p++;
     }
   p = tem;
-  while (*p == '-')
+  if (*p == '-')
     *p = 'i';
   return tem;
 }
@@ -830,7 +833,7 @@ xml_add_char (character)
       in_abstract = 1;
     }
 
-  if (xml_after_table_term && !xml_sort_index)
+  if (xml_after_table_term && !xml_sort_index && !xml_in_xref_token)
     {
       xml_after_table_term = 0;
       xml_insert_element (ITEM, START);

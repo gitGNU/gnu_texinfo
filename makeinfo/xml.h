@@ -33,6 +33,8 @@ extern int xml_no_para;
 extern char *xml_node_id;
 extern int xml_last_section_output_position;
 
+extern int xml_in_xref_token;
+
 enum xml_element
 {
   TEXINFO=0, SETFILENAME, TITLEFONT, SETTITLE, 

@@ -2910,6 +2910,9 @@ get_xref_token (expand)
 {
   char *string;
 
+  if (docbook)
+    xml_in_xref_token = 1;
+
   if (expand)
     {
       int old_offset = input_text_offset;
@@ -2935,6 +2938,10 @@ get_xref_token (expand)
   if (curchar () == ',')
     input_text_offset++;
   fix_whitespace (string);
+
+  if (docbook)
+    xml_in_xref_token = 0;
+
   return string;
 }
 
