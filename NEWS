@@ -42,6 +42,7 @@ convenience, here's a url to one of the relevant sections:
 * Distribution:
  . development sources now available under CVS, see
    http://savannah.gnu.org/projects/texinfo/
+ . Turkish message translation.
  . gettext 0.11.5, autoconf 2.54, automake 1.7.1.
 
 
