@@ -31,6 +31,8 @@ convenience, here's a url to one of the relevant sections:
   . new translation txi-tr.tex.
   . bug fix: <>| and other characters do not disappear when they are
     first on a line in @verbatim.
+* info:
+  . arrow keys once again work in isearch contexts under Solaris.
 * install-info:
   . bug fix: don't translate the `* Menu' info keyword.
 * Distribution:
