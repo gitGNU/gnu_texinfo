@@ -760,7 +760,8 @@ cm_node (void)
                         search_forward ("\n* ", input_text_offset);
 
                       if (input_text_offset != -1)
-                        nodename_from_menu = glean_node_from_menu (0, 0);
+                        nodename_from_menu = glean_node_from_menu (0, 
+						     (enum reftype) 0);
 
                       if (nodename_from_menu)
                         {
