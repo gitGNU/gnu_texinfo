@@ -415,6 +415,7 @@ Miscellaneous
 * Mmalloc: (mmalloc).		The GNU mapped-malloc package.
 * Stabs: (stabs).                 The "stabs" debugging information format.
 * Standards: (standards).        GNU coding standards.
+* grep: (grep).                   print lines matching a pattern.
 
 Programming & development tools.
 * Gdb: (gdb).                     The GNU debugger.

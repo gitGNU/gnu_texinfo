@@ -35,4 +35,4 @@ LDADD = ../lib/libtxi.a @LIBINTL@
 # 
 EXTRA_DIST = README deref.c dir-example fix-info-dir fixfonts \
   fixref.gawk gen-dir-node infosrch install-info-html outline.gawk \
-  prepinfo.awk tex3patch texi-docstring-magic.el texi2dvi
+  prepinfo.awk tex3patch texi-docstring-magic.el texi2dvi txitextest
