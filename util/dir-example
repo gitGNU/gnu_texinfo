@@ -161,6 +161,7 @@ Emacs
 Typesetting
 * Font utilities: (fontu).      Programs for font manipulation.
 * Groff: (groff).               The GNU troff document formatting system.
+* GV: (gv).                     The GNU PostScript and PDF viewer.
 
 GNU Gettext Utilities
 * ISO3166: (gettext)Country Codes.             ISO 3166 country codes.
