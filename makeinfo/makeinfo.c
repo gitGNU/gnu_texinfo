@@ -3284,18 +3284,20 @@ cm_image (int arg)
       else
         {
           sprintf (fullname, "%s.png", name_arg);
-          if (access (fullname, R_OK) != 0)
-            {
-              pathname = get_file_info_in_path (fullname,
-                                               include_files_path, &file_info);
-              if (pathname == NULL)
-                {
-                  sprintf (fullname, "%s.jpg", name_arg);
-                  if (access (fullname, R_OK) != 0)
-                    pathname = get_file_info_in_path (fullname,
+          if (access (fullname, R_OK) != 0) {
+            pathname = get_file_info_in_path (fullname,
+                                              include_files_path, &file_info);
+            if (pathname == NULL) {
+              sprintf (fullname, "%s.jpg", name_arg);
+              if (access (fullname, R_OK) != 0) {
+                sprintf (fullname, "%s.gif", name_arg);
+                if (access (fullname, R_OK) != 0) {
+                  pathname = get_file_info_in_path (fullname,
                                                include_files_path, &file_info);
                 }
+              }
             }
+          }
         }
 
       if (html)
