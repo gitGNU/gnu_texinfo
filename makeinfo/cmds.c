@@ -22,6 +22,7 @@
 #include "defun.h"
 #include "files.h"
 #include "footnote.h"
+#include "html.h"
 #include "insertion.h"
 #include "lang.h"
 #include "macro.h"
@@ -893,7 +894,17 @@ cm_titlefont (arg)
   if (xml)
     xml_insert_element (TITLEFONT, arg);
   else
-  not_fixed_width (arg);
+   {
+     not_fixed_width (arg);
+     if (html)
+	{
+	  html_title_written = 1; /* suppress title from @settitle */
+	  if (arg == START)
+	    add_word ("<h1><span class=\"titlefont\">");
+	  else
+	    add_word ("</span></h1>\n");
+	}
+   }
 }
 
 /* Various commands are no-op's. */
