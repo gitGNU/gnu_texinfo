@@ -4636,7 +4636,6 @@ Write each @code{@@raisesections} and @code{@@lowersections} command
 on a line of its own.
 
 
-
 @node Nodes
 @chapter Nodes
 
