@@ -924,7 +924,7 @@ cm_node ()
           add_word ("<div class=\"node\">\n");
           /* The <p> avoids the links area running on with old Lynxen. */
           add_word_args ("<p>%s\n", splitting ? "" : "<hr>");
-          add_word_args ("%s<a name=\"", _("Node:"));
+          add_word_args ("%s<a name=\"", _("Node: "));
           tem = expand_node_name (node);
           add_anchor_name (tem, 0);
           add_word_args ("\">%s</a>", tem);
@@ -934,7 +934,7 @@ cm_node ()
             {
               tem = expansion (next, 0);
 	      add_word (",\n");
-	      add_word (_("Next:"));
+	      add_word (_("Next: "));
 	      add_word ("<a rel=\"next\" accesskey=\"n\" href=\"");
 	      add_anchor_name (tem, 1);
 	      add_word_args ("\">%s</a>", tem);
@@ -944,7 +944,7 @@ cm_node ()
             {
               tem = expansion (prev, 0);
 	      add_word (",\n");
-	      add_word (_("Previous:"));
+	      add_word (_("Previous: "));
 	      add_word ("<a rel=\"previous\" accesskey=\"p\" href=\"");
 	      add_anchor_name (tem, 1);
 	      add_word_args ("\">%s</a>", tem);
@@ -954,7 +954,7 @@ cm_node ()
             {
               tem = expansion (up, 0);
 	      add_word (",\n");
-	      add_word (_("Up:"));
+	      add_word (_("Up: "));
 	      add_word ("<a rel=\"up\" accesskey=\"u\" href=\"");
 	      add_anchor_name (tem, 1);
 	      add_word_args ("\">%s</a>", tem);
