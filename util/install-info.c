@@ -462,8 +462,10 @@ The first time you invoke Info you start off looking at this node.\n\
   In Emacs, you can click mouse button 2 on a menu item or cross reference\n\
   to select it.\n\
 \n\
-* Menu:\n\
-"), "File: dir,\tNode: Top"); /* This part must not be translated.  */
+%s\n\
+"), "File: dir,\tNode: Top",  /* These keywords must not be translated.  */
+    "* Menu:"
+); /* This part must not be translated.  */
           if (fclose (f) < 0)
             pfatal_with_name (dirfile);
         }
