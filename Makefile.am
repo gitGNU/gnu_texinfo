@@ -11,7 +11,7 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 # Be sure we're using the right version of Automake.
-AUTOMAKE_OPTIONS = 1.7.5 readme-alpha
+AUTOMAKE_OPTIONS = 1.7.8 readme-alpha
 
 # Additional files to distribute.
 EXTRA_DIST = INSTALL.generic INTRODUCTION config.rpath djgpp 
