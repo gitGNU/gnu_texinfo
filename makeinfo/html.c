@@ -49,7 +49,7 @@ html_output_head ()
   add_word ("<meta http-equiv=\"Content-Type\" content=\"text/html");
   if (document_encoding_code != no_encoding)
     add_word_args ("; charset=%s",
-                   encoding_table[document_encoding_code].ecname);
+                   encoding_table[document_encoding_code].encname);
   add_word ("\">\n");
 
   if (!document_description)
