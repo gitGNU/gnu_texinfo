@@ -14,8 +14,10 @@
 AUTOMAKE_OPTIONS = 1.8 readme-alpha
 
 # Additional files to distribute.
-EXTRA_DIST = INSTALL.generic INTRODUCTION config.rpath \
-  djgpp/README djgpp/config.bat djgpp/config.sed djgpp/config.site
+EXTRA_DIST = ChangeLog.46 INSTALL.generic INTRODUCTION README.dev \
+  config.rpath \
+  djgpp/README djgpp/config.bat djgpp/config.sed djgpp/config.site \
+  po/Makevars.template
 
 # This is to prevent texinfo.tex from being included in the top-level
 # distribution directory.
