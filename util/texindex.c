@@ -160,6 +160,9 @@ main (argc, argv)
   bindtextdomain (PACKAGE, LOCALEDIR);
   textdomain (PACKAGE);
 
+  /* In case we write to a redirected stdout that fails.  */
+  /* not ready atexit (close_stdout); */
+  
   /* Describe the kind of sorting to do. */
   /* The first keyfield uses the first braced field and folds case. */
   keyfields[0].braced = 1;
