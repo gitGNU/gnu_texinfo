@@ -446,8 +446,11 @@ cm_synindex ()
     }
   else
     {
-      name_index_alist[target]->write_index
-        = name_index_alist[source]->write_index;
+      if (xml && !docbook)
+        xml_synindex (abbrev1, abbrev2);
+      else
+        name_index_alist[target]->write_index
+          = name_index_alist[source]->write_index;
     }
 
   free (abbrev1);
