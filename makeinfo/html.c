@@ -62,8 +62,12 @@ html_output_head ()
                  document_description);
   add_word_args ("<meta name=\"generator\" content=\"makeinfo %s\">\n",
                  VERSION);
+#if 0
+  /* let's not do this now, since it causes mozilla to put up a
+     navigation bar.  */
   add_word ("<link href=\"http://www.gnu.org/software/texinfo/\" \
 rel=\"generator-home\">\n");
+#endif
 
   if (copying_text)
     { /* copying_text has already been fully expanded in
@@ -437,7 +441,7 @@ add_link (nodename, attributes)
       add_word_args ("%s", attributes);
       add_word_args (" href=\"");
       add_anchor_name (nodename, 1);
-      add_word ("\"></a>\n");
+      add_word ("\">\n");
     }
 }
 

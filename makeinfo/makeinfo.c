@@ -181,7 +181,6 @@ void inhibit_output_flushing (), uninhibit_output_flushing ();
 int set_paragraph_indent ();
 int self_delimiting (), search_forward ();
 int multitable_item (), number_of_node ();
-extern void add_link (), add_escaped_anchor_name ();
 
 void me_execute_string_keep_state ();
 void maybe_update_execution_strings ();
@@ -189,7 +188,6 @@ void maybe_update_execution_strings ();
 extern char *escape_string ();
 extern void insert_html_tag ();
 extern void sectioning_html ();
-extern void add_link ();
 
 #if defined (VA_FPRINTF) && __STDC__
 /* Unfortunately we must use prototypes if we are to use <stdarg.h>.  */
