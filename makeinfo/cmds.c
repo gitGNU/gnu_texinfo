@@ -900,9 +900,9 @@ cm_titlefont (arg)
 	{
 	  html_title_written = 1; /* suppress title from @settitle */
 	  if (arg == START)
-	    add_word ("<h1><span class=\"titlefont\">");
+	    add_word ("<h1 class=\"titlefont\">");
 	  else
-	    add_word ("</span></h1>\n");
+	    add_word ("</h1>\n");
 	}
    }
 }
