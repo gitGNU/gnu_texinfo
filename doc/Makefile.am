@@ -73,10 +73,3 @@ endif
 
 # Do not create info files for distribution, but do create man pages.
 dist-info:
-
-# Do not try to build the info files in $(srcdir),
-# since we don't distribute them.
-.texi.info:
-	$(MAKEINFO) -I$(srcdir) `echo $< | sed 's,.*/,,'`
-texinfo: $(srcdir)/texinfo.txi version.texi
-	$(MAKEINFO) -I$(srcdir) texinfo.txi
