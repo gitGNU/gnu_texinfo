@@ -167,7 +167,7 @@ the menu lists all the lower level nodes in the document.
 * Catching Mistakes::             How to find formatting mistakes.
 * Copying This Manual::           The GNU Free Documentation License.
 * Command and Variable Index::    A menu containing commands and variables.
-* Concept Index::                 A menu covering many topics.
+* General Index::                 A menu covering many topics.
 
 @detailmenu
  --- The Detailed Node Listing ---
@@ -3760,7 +3760,7 @@ For example, the master menu for this manual looks like the following
 @end group
 @group
 * Command and Variable Index::
-* Concept Index::
+* General Index::
 @end group
 
 @group
@@ -20586,8 +20586,8 @@ commands are listed without their preceding @samp{@@}.@refill
 @printindex fn
 
 
-@node Concept Index
-@unnumbered Concept Index
+@node General Index
+@unnumbered General Index
 
 @printindex cp
 
