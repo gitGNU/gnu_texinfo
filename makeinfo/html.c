@@ -153,7 +153,8 @@ append_char (buf, c)
     buffer_type *buf;
     int c;
 {
-  char str[2] = { c, 0 };
+  char str[2] = { 0, 0 };
+  str[0] = c;  /* appease SGI compiler */
 
   if (buf->length + 1 >= buf->size)
     {
