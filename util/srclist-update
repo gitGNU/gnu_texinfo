@@ -4,8 +4,11 @@
 destdir=${1-/u/texinfo/src}
 cd $destdir || exit 1
 
-quiet=true
+verbose=false
 #chicken="echo (would)"
+
+srctmp=${TMPDIR-/tmp}/srclist.src
+dsttmp=${TMPDIR-/tmp}/srclist.dst
 
 : ${EMACSSRC=$HOME/gnu/src/emacs}
 : ${GETTEXT=/usr/local/gnu/share/gettext}
@@ -28,14 +31,19 @@ cat | while read src dst; do
   dst=`eval echo $dst`
   test -d $dst && dst=$dst/`basename $src`
   
-  $quiet || printf "$src -> $dst "
+  # $Id$ lines will differ.
+  fgrep -v '$Id$src >$srctmp
+  test -r $dst && fgrep -v '$Id$dst >$dsttmp
+
   if test ! -e $dst; then
-    $quiet || echo "(new)"
+    echo "$src -> $dst (new)"
     $chicken cp -p $src $dst
-  elif cmp -s $src $dst; then
-    $quiet || echo "(unchanged)"
+  elif cmp -s $srctmp $dsttmp; then
+    $verbose && echo "$src -> $dst (unchanged)"
   else
-    $quiet || echo "(changes)"
+    echo "$src -> $dst (changes)"
     diff -c2 $src $dst
   fi
 done
+
+rm -f $srctmp $dsttmp
