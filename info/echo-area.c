@@ -1499,13 +1499,14 @@ pause_or_input (void)
    for input or a couple of seconds, whichever comes first.  Then flush the
    informational message that was printed. */
 void
-inform_in_echo_area (char *message)
+inform_in_echo_area (const char *message)
 {
-  register int i;
+  int i;
   char *text;
+  int avail = EA_MAX_INPUT + 1 - input_line_end;
 
   text = xstrdup (message);
-  for (i = 0; text[i] && text[i] != '\n'; i++)
+  for (i = 0; text[i] && text[i] != '\n' && i < avail; i++)
     ;
   text[i] = 0;
 
