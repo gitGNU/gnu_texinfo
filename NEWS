@@ -27,6 +27,8 @@ convenience, here's a url to one of the relevant sections:
 * texinfo.tex:
   . section names with \ characters work properly in pdf outlines.
   . .toc files use @ as the escape character, instead of \.
+* info:
+  . look for info files in the current directory first, by default.
 * Distribution:
   . automake 1.9.5.
 
