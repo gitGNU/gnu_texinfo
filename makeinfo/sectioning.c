@@ -34,6 +34,7 @@ section_alist_type section_alist[] = {
   { "unnumberedsubsec",    4, ENUM_SECT_NO,  TOC_YES },
   { "unnumberedsec",       3, ENUM_SECT_NO,  TOC_YES },
   { "unnumbered",          2, ENUM_SECT_NO,  TOC_YES },
+  { "centerchap",          2, ENUM_SECT_NO,  TOC_YES },
 
   { "appendixsubsubsec",   5, ENUM_SECT_APP, TOC_YES },  /* numbered like A.X.X.X */
   { "appendixsubsec",      4, ENUM_SECT_APP, TOC_YES },
