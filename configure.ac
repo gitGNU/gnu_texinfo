@@ -200,7 +200,7 @@ AC_ARG_ENABLE(install-warnings,
       no) install_warnings=false ;;
        *) AC_MSG_ERROR(bad value ${enableval} for --enable-install-warnings) ;;
    esac],
-   [install_warnings=${enable_install_warnings-true}])
+   [install_warnings=true])
 AM_CONDITIONAL(INSTALL_WARNINGS,
    test x"$install_warnings" = xtrue || test x"$install_warnings" = xyes)
 
