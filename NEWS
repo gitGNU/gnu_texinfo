@@ -33,6 +33,8 @@ convenience, here's a url to one of the relevant sections:
 * info:
   . crash when MALLOC_CHECK_=2 fixed.
 * install-info:
+  . new option --infodir synonym for --info-dir, for compatibility with
+    the Debian install-info.
   . support for bzip2-compressed files.
 * Distribution:
  . development sources now available under CVS, see
