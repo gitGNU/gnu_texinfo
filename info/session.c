@@ -2025,12 +2025,6 @@ DECLARE_INFO_COMMAND (info_menu_digit, _("Select this menu item"))
    searching backwards to searching forwards, and has a hardwired search
    limit of 200 chars (in Emacs 21.2).  */
 
-/* We don't need anything fancy.  */
-#ifdef MIN
-#undef MIN
-#endif
-#define MIN(a,b) ((a) < (b) ? (a) : (b))
-
 static REFERENCE **
 nearest_xref (xref_list, pos)
     REFERENCE **xref_list;
