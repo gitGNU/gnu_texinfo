@@ -13668,7 +13668,7 @@ As mentioned earlier, macro names must consist entirely of letters.
 @item
 It is not advisable to redefine any @TeX{} primitive, plain, or
 Texinfo command name as a macro. Unfortunately this is a very large
-set of names, and the possible resulting errors are completely random.
+set of names, and the possible resulting errors are unpredictable.
 
 @item
 All macros are expanded inside at least one @TeX{} group.  This means
@@ -13676,18 +13676,43 @@ that @code{@@set} and other such commands have no effect inside a
 macro.
 
 @item
-Macros containing a command which must be on a line by itself, such as a
-conditional, cannot be invoked in the middle of a line.
-
-@item
 Commas in macro arguments, even if escaped by a backslash, don't
 always work.
 
 @item
-It is best to avoid comments inside macro definitions.
+Macro arguments cannot cross lines.
 
 @item
-Macro arguments cannot cross lines.
+It is (usually) best to avoid comments inside macro definitions, but
+see the next item.
+
+@item
+Macros containing a command which must be on a line by itself, such as
+a conditional, cannot be invoked in the middle of a line.  In general,
+the interaction of newlines in the macro definitions and invocations
+depends on the precise commands and context.  You may be able to work
+around some problems with judicious use of @code{@@c}.  Suppose you
+define a macro that is always intended to be used on a line by itself:
+
+@example
+@@macro linemac
+@@cindex whatever
+@@c
+@@end macro
+...
+foo
+@@linemac
+bar
+@end example
+
+Without the @code{@@c}, there will be an unwanted blank line between
+the @samp{@@cindex whatever} and the @samp{bar} (one newline comes
+from the macro definition, one from after the invocation), causing a
+paragraph break.
+
+On the other hand, you wouldn't want the @code{@@c} if the macro was
+sometimes invoked in the middle of a line (the text after the
+invocation would be treated as a comment).
 
 @item
 In general, you can't arbitrarily substitute a macro call for Texinfo
