@@ -14482,9 +14482,10 @@ that does not support @code{@@macro}.
 @cindex Node separators, omitting
 @cindex Menus, omitting
 For Info output, do not include menus or node separator lines in the
-output.  This results in a simple plain text file that you can (for
-example) send in email without complications, or include in a
-distribution (as in an @file{INSTALL} file).
+output, and implicitly @option{--enable-encoding} (see above).  This
+results in a simple plain text file that you can (for example) send in
+email without complications, or include in a distribution (as in an
+@file{INSTALL} file).
 
 @cindex Navigation links, omitting
 For HTML output, likewise omit menus.  And if @samp{--no-split} is also
@@ -14492,8 +14493,8 @@ specified, do not include a navigation links at the top of each node
 (these are never included in the default case of split output).
 @xref{Generating HTML}.
 
-In both cases, write to standard output by default (can still be
-overridden by @option{-o}).
+In both cases, ignore @code{@@setfilename} and write to standard
+output by default---can be overridden with @option{-o}.
 
 @item --no-ifhtml
 @itemx --no-ifinfo
