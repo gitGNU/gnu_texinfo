@@ -224,7 +224,7 @@ DECLARE (int, verbose_mode, 0);
 
 /* Nonzero means prefix each @chapter, ... with a number like
    1, 1.1, etc.  (--number-sections) */
-DECLARE (int, number_sections, 0);
+DECLARE (int, number_sections, 1);
 
 /* Nonzero means split size.  When zero, DEFAULT_SPLIT_SIZE is used. */
 DECLARE (int, split_size, 0);
