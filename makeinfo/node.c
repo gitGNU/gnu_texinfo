@@ -1666,7 +1666,7 @@ static char *
 enumerate_filename (char *pathname, char *basename, int number)
 {
   /* Do we need to generate names of subfiles which don't exceed 8+3 limits? */
-  static const int dos_file_names = !HAVE_LONG_FILENAMES (pathname ? pathname : ".");
+  const int dos_file_names = !HAVE_LONG_FILENAMES (pathname ? pathname : ".");
   unsigned name_len = strlen (basename);
   char *filename = xmalloc (10 + strlen (pathname) + name_len);
   char *base_filename = xmalloc (10 + name_len);
