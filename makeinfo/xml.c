@@ -913,7 +913,7 @@ xml_add_char (character)
 
   if (xml_element_list[xml_current_element()].contains_para
       && !xml_in_para && !only_macro_expansion && !xml_no_para
-      && !cr_or_whitespace (character))
+      && !cr_or_whitespace (character) && !in_fixed_width_font)
     {
       xml_indent ();
       insert_string ("<para>\n");
