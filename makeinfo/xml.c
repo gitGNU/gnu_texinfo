@@ -1554,6 +1554,10 @@ xml_begin_index ()
     p++;
   while (*p != ' ')
     p++;
+  /* ... and its label attribute.  */
+  p++;
+  while (*p != ' ')
+    p++;
 
   output_paragraph_offset = xml_last_section_output_position;
   xml_last_section_output_position = 0;
