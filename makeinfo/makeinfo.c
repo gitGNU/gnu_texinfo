@@ -959,6 +959,8 @@ discard_until (char *string)
 
   if (temp < 0)
     {
+      /* not found, move current position to end of string */
+      input_text_offset = input_text_length;
       if (strcmp (string, "\n") != 0)
         { /* Give a more descriptive feedback, if we are looking for ``@end ''
              during macro execution.  That means someone used a multiline
@@ -969,18 +971,14 @@ discard_until (char *string)
             line_error (_("Multiline command %c%s used improperly"), 
                 COMMAND_PREFIX, command);
           else
-            {
-              line_error (_("Expected `%s'"), string);
-              input_text_offset = input_text_length - strlen (string);
-            }
+            line_error (_("Expected `%s'"), string);
           free (end_block);
           return;
         }
     }
   else
-    input_text_offset = temp;
-
-  input_text_offset += strlen (string);
+    /* found, move current position to after the found string */
+    input_text_offset = temp + strlen (string);
 }
 
 /* Read characters from the file until we are at MATCH.
