@@ -34,7 +34,8 @@ convenience, here's a url to one of the relevant sections:
       entities used for bullets, quotes, dashes, and others;
       accented dotless i supported.
   . XML output: new tags to preserve more source features.
-  . Docbook output: improved translation in general; for instance,
+  . Docbook output: upgraded DTD to Docbook XML 4.2.
+      improved translation in general; for instance,
       line annotations and marked quotations.
 * texi2dvi:
   . if the input file includes thumbpdf.sty (for LaTeX), then run thumbpdf.
