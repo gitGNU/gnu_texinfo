@@ -49,7 +49,7 @@ add_xref_punctuation (void)
         add_char ('.');
       else if (next_char != ',' && next_char != '.')
         /* period and comma terminate xrefs, and nothing else.  Instead
-           of generating an Info references that can't be followed,
+           of generating an Info reference that can't be followed,
            though, just insert a period.  Not pretty, but functional.  */
         add_char ('.');
     }
