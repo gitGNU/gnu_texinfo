@@ -3936,7 +3936,7 @@ incremental_search (window, count, ignore)
       key = info_get_input_char ();
       window_get_state (window, &mystate);
 
-      if (key == DEL)
+      if (key == DEL || key == Control ('h'))
         {
           /* User wants to delete one level of search? */
           if (!isearch_states_index)
