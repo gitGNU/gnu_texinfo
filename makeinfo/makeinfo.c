@@ -699,7 +699,7 @@ main (argc, argv)
 There is NO warranty.  You may redistribute this software\n\
 under the terms of the GNU General Public License.\n\
 For more information about these matters, see the files named COPYING.\n"),
-                  "2002");
+                  "2003");
           xexit (0);
           break;
 
