@@ -483,7 +483,7 @@ sectioning_html (level, cmd)
   if (outstanding_node)
     outstanding_node = 0;
 
-  add_word_args ("</h%d>", level + 2);
+  add_word_args ("</h%d>", MIN (3, level + 2));
   close_paragraph();
   filling_enabled = 1;
   no_indent = old_no_indent;
