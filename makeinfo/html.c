@@ -77,7 +77,7 @@ rel=\"generator-home\">\n");
 
   if (title && !html_title_written)
     {
-      add_word_args ("<h1>%s</h1>\n", html_title);
+      add_word_args ("<h1 class=\"settitle\">%s</h1>\n", html_title);
       html_title_written = 1;
     }
 }
