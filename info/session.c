@@ -3877,8 +3877,10 @@ show_isearch_prompt (dir, string, failing_p)
       p_rep_index += strlen (rep);
     }
 
-  prompt_len = strlen (prefix) + p_rep_index + 20;
-  prompt = (char *)xmalloc (prompt_len);
+  prompt_len = strlen (prefix) + p_rep_index + 1;
+  if (failing_p)
+    prompt_len += strlen (_("Failing "));
+  prompt = xmalloc (prompt_len);
   sprintf (prompt, "%s%s%s", failing_p ? _("Failing ") : "", prefix,
            p_rep ? p_rep : "");
 
