@@ -984,7 +984,7 @@ cm_node (void)
             }
           /* html fixxme: we want a `top' or `contents' link here.  */
 
-          add_word_args ("\n%s<br>\n", splitting ? "<hr>" : "");
+          add_word_args ("\n%s\n", splitting ? "<hr>" : "");
       	  add_word ("</div>\n");
         }
     }
