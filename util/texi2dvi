@@ -491,10 +491,14 @@ for command_line_filename in ${1+"$@"}; do
       ;;
   esac
 
+  # Go to $tmpdir to try --help, since old versions that don't accept
+  # --help will generate a texput.log.
+  tex_help=`cd $tmpdir >/dev/null && $tex --help </dev/null 2>&1`
+
   # If possible, make TeX report error locations in GNU format.
   tex_args=
-  case `$tex --help </dev/null 2>&1` in
-   *file-line-error-style*) tex_args='--file-line-error-style';;
+  case $tex_help in
+    *file-line-error-style*) tex_args="$tex_args --file-line-error-style";;
   esac
 
   # Tell TeX to be batch if requested.  (\batchmode does not show
