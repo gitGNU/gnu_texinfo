@@ -3129,13 +3129,7 @@ cm_xref (arg)
               char *arg1_id = xml_id (arg1);
 
               if (!*arg2 && !*arg3)
-                {
-                  arg3 = xml_get_assoc_for_id (arg1_id);
-
-                  if (*arg3)
-                    warning (_("%cxref{%s} to ``%cunnumbered %s'' causes dubious references with Docbook"),
-                        COMMAND_PREFIX, arg1, COMMAND_PREFIX, arg3);
-                }
+                arg3 = xml_get_assoc_for_id (arg1_id);
 
               if (*arg2 || *arg3)
                 {

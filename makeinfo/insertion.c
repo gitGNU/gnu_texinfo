@@ -1608,8 +1608,6 @@ cm_detailmenu ()
 
 /* Title page commands. */
 
-int titlepage_cmd_present = 0;
-
 void
 cm_titlepage (arg)
      int arg;
