@@ -98,7 +98,7 @@ set_termsig (sig, old)
   int sig;
   signal_info *old;
 {
-  sigaction (sig, info_signal_handler, old);
+  sigaction (sig, &info_signal_handler, old);
 }
 
 static void
