@@ -38,7 +38,7 @@ convenience, here's a url to one of the relevant sections:
     --no-raw-escapes overrides.
 * Distribution:
   . New translation: nb.
-  . automake 1.7.8.
+  . automake 1.7.8, autoconf 2.58.
 
 
 4.6 (10 June 2003)
