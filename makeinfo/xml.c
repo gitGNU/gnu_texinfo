@@ -821,7 +821,8 @@ xml_add_char (character)
   if (docbook && !only_macro_expansion && (in_menu || in_detailmenu))
     return;
 
-  if (!first_section_opened && !in_abstract && xml_current_element () == TEXINFO
+  if (!executing_string && !first_section_opened && !in_abstract
+      && xml_current_element () == TEXINFO
       && !xml_no_para && character != '\r' && character != '\n' && character != ' ')
     {
       xml_insert_element (BOOKINFO, START);
