@@ -22,6 +22,9 @@ convenience, here's a url to one of the relevant sections:
 
 -------------------------------------------------------------------------------
 
+* Language:
+  . @value constructs are now expanded in the filename arguments to
+    @include and @verbatiminclude.
 * makeinfo:
   . bug fix: @copying text is now reflected in tag table positions;
     before, nodes may not have been found with a long-enough @copying.
