@@ -10546,6 +10546,15 @@ it is necessary to specify @code{@@documentencoding ISO-8859-15}.
 is in ISO 8859-15 (aka Latin@tie{}9), and is @emph{not} in the more
 widely-used and supported ISO 8859-1 (Latin@tie{}1).
 
+@pindex feymr10
+The Euro symbol does not exist in the standard @TeX{} fonts (which
+were designed before the Euro was legislated into existence).
+Therefore, @TeX{} uses an additional font, named @code{feymr10} (along
+with other variables).  It is freely available, of course; you can
+download it from @url{http://www.ctan.org/tex-archive/fonts/eurosym},
+among other places.  The distribution includes installation
+instructions.
+
 
 @node pounds
 @section @code{@@pounds}@{@} (@pounds{}): Pounds Sterling
