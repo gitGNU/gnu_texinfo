@@ -374,7 +374,7 @@ usage (exit_value)
   else
   {
     printf (_("Usage: %s [OPTION]... TEXINFO-FILE...\n"), progname);
-    puts ("\n");
+    puts ("");
 
     puts (_("\
 Translate Texinfo source documentation to various other formats, by default\n\
