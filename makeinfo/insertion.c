@@ -639,7 +639,7 @@ begin_insertion (type)
         start_enumerating (*enumeration_arg, ENUM_ALPHA);
       break;
 
-      /* @group does nothing special in makeinfo. */
+      /* @group produces no output in info. */
     case group:
       /* Only close the paragraph if we are not inside of an
          @example-like environment. */
@@ -661,7 +661,7 @@ begin_insertion (type)
 
     case cartouche:
       if (html)
-	add_word ("<table class=\"cartouche\" border=1><tr><td>\n");
+	add_word ("<p><table class=\"cartouche\" border=1><tr><td>\n");
       if (in_menu)
         no_discard++;
       break;
