@@ -85,7 +85,7 @@ GNU programming tools
 * Cpplib: (cppinternals).       Cpplib internals.
 * DejaGnu: (dejagnu).           Testing framework.
 * automake: (automake).		Making Makefile.in's
-* bison: (bison).	GNU parser generator (yacc replacement).
+* bison: (bison).       GNU parser generator (Yacc replacement).
 * egcs: (egcs).                 Experimental GNU C compiler.
 * Flex: (flex).                 A fast scanner generator.
 * g77: (g77).                   GNU Fortran 77 compiler.
