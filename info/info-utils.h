@@ -1,7 +1,7 @@
 /* info-utils.h -- Exported functions and variables from info-utils.c.
    $Id$   
 
-   Copyright (C) 1993, 1996, 1998, 2002 Free Software Foundation, Inc.
+   Copyright (C) 1993, 1996, 1998, 2002, 2003 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -82,6 +82,9 @@ extern REFERENCE **info_menu_items ();
    REFERENCE ** which is the concatenation of REF1 and REF2.  The REF1
    and REF2 arrays are freed, but their contents are not. */
 REFERENCE **info_concatenate_references ();
+
+/* Copy an existing reference into new memory.  */
+extern REFERENCE *info_copy_reference ();
 
 /* Free the data associated with REFERENCES. */
 extern void info_free_references ();
