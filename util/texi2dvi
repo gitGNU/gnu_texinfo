@@ -326,12 +326,13 @@ for this_file in "$1".?o? "$1".aux "$1".?? "$1".idx; do
   test -s "$this_file" || continue
   # If the file is not suitable to be an index or xref file, don't
   # process it.  It's suitable if the first character is a
-  # backslash or right quote, as long as the first line isn't
+  # backslash or right quote or at, as long as the first line isn't
   # \input texinfo.
   first_character=`sed -n '1s/^\(.\).*$/\1/p;q' $this_file`
   if (test "x$first_character" = "x\\" \
       && sed 1q $this_file | grep -v '^\\input *texinfo' >/dev/null) \
-     || test "x$first_character" = "x'"; then
+     || test "x$first_character" = "x'" \
+     || test "x$first_character" = "x@"; then
     xref_files="$xref_files ./$this_file"
   fi
 done
