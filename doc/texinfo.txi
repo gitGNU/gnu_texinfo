@@ -9607,7 +9607,7 @@ command.  Write the mathematical expression between braces, like this:
 @end example
 
 Thus, the @code{@@math} command has no effect on the Info output;
-@program{makeinfo} just reproduces the input, it does not try to
+@command{makeinfo} just reproduces the input, it does not try to
 interpret the mathematics in any way.
 
 @code{@@math} implies @code{@@tex}.  This not only makes it possible to
