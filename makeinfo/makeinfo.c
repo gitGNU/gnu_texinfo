@@ -393,9 +393,9 @@ General options:\n\
      /* xgettext: no-wrap */
      puts (_("\
 Output format selection (default is to produce Info):\n\
-      --docbook             output DocBook rather than Info.\n\
+      --docbook             output DocBook XML rather than Info.\n\
       --html                output HTML rather than Info.\n\
-      --xml                 output XML (TexinfoML) rather than Info.\n\
+      --xml                 output Texinfo XML rather than Info.\n\
 "));
 
      puts (_("\
@@ -445,10 +445,12 @@ Conditional processing in input:\n\
   --ifinfo          process @ifinfo even if not generating Info.\n\
   --ifplaintext     process @ifplaintext even if not generating plain text.\n\
   --iftex           process @iftex and @tex; implies --no-split.\n\
+  --ifxml           process @ifxml and @xml.\n\
   --no-ifhtml       do not process @ifhtml and @html text.\n\
   --no-ifinfo       do not process @ifinfo text.\n\
   --no-ifplaintext  do not process @ifplaintext text.\n\
   --no-iftex        do not process @iftex and @tex text.\n\
+  --no-ifxml        do not process @ifxml and @xml text.\n\
 "));
 
      puts (_("\
@@ -462,7 +464,7 @@ Conditional processing in input:\n\
 Examples:\n\
   makeinfo foo.texi                     write Info to foo's @setfilename\n\
   makeinfo --html foo.texi              write HTML to @setfilename\n\
-  makeinfo --xml foo.texi               write XML to @setfilename\n\
+  makeinfo --xml foo.texi               write Texinfo XML to @setfilename\n\
   makeinfo --docbook foo.texi           write DocBook XML to @setfilename\n\
   makeinfo --no-headers foo.texi        write plain text to standard output\n\
 \n\
