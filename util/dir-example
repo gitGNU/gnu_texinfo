@@ -23,7 +23,6 @@ Not all of the topics shown below may be available on this system.
 * Menu:
 
 GNU Packages
-* accounting: (psacct).         GNU process accounting suite.
 * Bash: (bash).                 Bourne-Again SHell.
 * Coreutils: (coreutils).	Core (file, text, shell) utilities.
 * Cpio: (cpio).                 Copy-in-copy-out archiver.
