@@ -32,6 +32,7 @@ convenience, here's a url to one of the relevant sections:
   . look for info files in the current directory first, by default.
 * Distribution:
   . automake 1.9.5, gettext 0.14.3.
+  . new translation: rw (Kinyarwandan).
 
 
 4.8 (31 December 2004)
