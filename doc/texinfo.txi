@@ -6300,16 +6300,13 @@ Sea surges are described in Section 6.7 [Hurricanes], page 72.
 Sea surges are described in *Note Hurricanes::.
 @end example
 
-@quotation Caution
-You should write a period or comma immediately after an @code{@@ref}
-command with two or more arguments.  Otherwise, Info will generate a
-(grammatically incorrect) period, just so the cross-reference doesn't
-fail completely.
-@end quotation
+As a general rule, you should write a period or comma immediately
+after an @code{@@ref} command with two or more arguments.
 
-As a general rule, you should write a period or comma after every
-@code{@@ref} command.  This works best in both the printed and the
-Info output.
+If there is no such following punctuation, @command{makeinfo} will
+generate a (grammatically incorrect) period in the Info output;
+otherwise, the cross-reference would fail completely, due to the
+current syntax of Info format.
 
 
 @node pxref
