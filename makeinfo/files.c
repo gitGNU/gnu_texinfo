@@ -1,7 +1,8 @@
 /* files.c -- file-related functions for makeinfo.
    $Id$
 
-   Copyright (C) 1998, 1999, 2000, 2001, 2002 Free Software Foundation, Inc.
+   Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003 Free Software
+   Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -322,9 +323,7 @@ filename_part (filename)
 #ifdef REMOVE_OUTPUT_EXTENSIONS
   /* See if there is an extension to remove.  If so, remove it. */
   {
-    char *temp;
-
-    temp = strrchr (basename, '.');
+    char *temp = strrchr (basename, '.');
     if (temp)
       *temp = 0;
   }
