@@ -806,7 +806,19 @@ cm_code (int arg)
       if (STREQ (command, "code"))
         insert_html_tag (arg, "code");
       else
-        insert_html_tag_with_attribute (arg, "span", "class=\"%s\"", command);
+        { /* Use <samp> tag in general to get typewriter.  */
+          if (arg == START)
+            { /* If @samp specifically, add quotes a la TeX output.  */
+              if (STREQ (command, "samp")) add_char ('`');
+              add_word ("<samp>");
+            }
+          insert_html_tag_with_attribute (arg, "span", "class=\"%s\"",command);
+          if (arg == END)
+            {
+              add_word ("</samp>");
+              if (STREQ (command, "samp")) add_char ('\'');
+            }
+        }
     }
   else
     {
