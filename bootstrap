@@ -13,7 +13,7 @@ echo "Bootstrapping CVS Texinfo with:"
 
 # So instead:
 cmd="autoheader && aclocal -I m4 && automake && autoconf"
-echo $cmd
+echo "  $cmd"
 eval $cmd || exit 1
 
 echo "Now run configure with your desired options, for instance:"
