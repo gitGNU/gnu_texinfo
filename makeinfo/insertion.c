@@ -447,14 +447,23 @@ begin_insertion (type)
            the Top node (for info/html).  */
         char *text;
         int start_of_end;
+	int save_paragraph_indentation;
 
         discard_until ("\n"); /* ignore remainder of @copying line */
         start_of_end = get_until ("\n@end copying", &text);
 
         /* include all the output-format-specific markup.  */
+	if (docbook)
+	  {
+	    save_paragraph_indentation = inhibit_paragraph_indentation;
+	    inhibit_paragraph_indentation = 1;
+	  }
         copying_text = full_expansion (text, 0);
         free (text);
 
+	if (docbook)
+	  inhibit_paragraph_indentation = save_paragraph_indentation;
+	
         input_text_offset = start_of_end; /* go back to the @end to match */
       }
       
@@ -465,8 +474,12 @@ begin_insertion (type)
          For html, we output it specifically in html_output_head. 
          For plain text, there's no way to hide it, so the author must
           use @insertcopying in the desired location.  */
-      if (!html && !no_headers && !docbook)
+      if (docbook)
+	insert_string ("<!--\n");
+      if (!html && !no_headers)
         cm_insert_copying ();
+      if (docbook)
+	insert_string ("-->");
       break;
       
     case quotation:
@@ -1023,8 +1036,12 @@ cm_insert_copying ()
   if (copying_text)
     { /* insert_string rather than add_word because we've already done
          full expansion on copying_text when we saved it.  */
+      if (docbook)
+	xml_insert_element (PARA, START);
       insert_string (copying_text);
       insert ('\n');
+      if (docbook)
+	xml_insert_element (PARA, END);
     }
 }
 
