@@ -18529,8 +18529,7 @@ Here is the sample document:
 @syncodeindex pg cp
 @comment %**end of header
 @copying
-This manual is for GNU Sample
-(version @value{VERSION}, @value{UPDATED}),
+This manual is for GNU Sample (version @value{VERSION}, @value{UPDATED}),
 which is an example in the Texinfo documentation.
 
 Copyright @copyright{} 2005 Free Software Foundation, Inc.
@@ -18570,7 +18569,7 @@ Software Foundation raise funds for GNU development.''
 @node Top
 @top GNU Sample
 
-@insertcopying
+This manual is for GNU Sample (version @value{VERSION}, @value{UPDATED}).
 @end ifnottex
 
 @menu
