@@ -73,29 +73,28 @@ extern language_type language_table[];
 
 
 
-/* The document encoding. This is usefull if we working e.g.
- * with german Texinfo so we can produce correct german umlaut
- * while creating output (--no-headers ASCII like).
- */
+/* The document encoding. This is useful to produce true 8-bit
+   characters according to the @documentencoding.  */
+
 typedef enum {
-    no_encoding,
-    US_ASCII,
-    ISO_8859_1,
-    ISO_8859_2,
-    ISO_8859_3,    /* this and none of the rest are supported. */
-    ISO_8859_4,
-    ISO_8859_5,
-    ISO_8859_6,
-    ISO_8859_7,
-    ISO_8859_8,
-    ISO_8859_9,
-    ISO_8859_10,
-    ISO_8859_11,
-    ISO_8859_12,
-    ISO_8859_13,
-    ISO_8859_14,
-    ISO_8859_15,
-    last_encoding_code
+  no_encoding,
+  US_ASCII,
+  ISO_8859_1,
+  ISO_8859_2,
+  ISO_8859_3,    /* this and none of the rest are supported. */
+  ISO_8859_4,
+  ISO_8859_5,
+  ISO_8859_6,
+  ISO_8859_7,
+  ISO_8859_8,
+  ISO_8859_9,
+  ISO_8859_10,
+  ISO_8859_11,
+  ISO_8859_12,
+  ISO_8859_13,
+  ISO_8859_14,
+  ISO_8859_15,
+  last_encoding_code
 } encoding_code_type;
 
 /* The current document encoding, or null if not set.  */
@@ -118,7 +117,8 @@ typedef struct
 typedef struct
 {
   encoding_code_type ec; /* document encoding type (see above enum) */
-  char *encname;         /* encoding name like "ISO-8859-1", valid in Emacs */
+  char *encname;         /* encoding name like "iso-8859-1", valid in
+                            HTML and Emacs */
   iso_map_type *isotab;  /* address of ISO translation table */
 } encoding_type;
 
