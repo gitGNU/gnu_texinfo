@@ -279,8 +279,8 @@ sectioning_underscore (cmd)
 	  flush_output ();
 	  xml_last_section_output_position = output_paragraph_offset;
 
-          if (STREQ (cmd, "unnumbered") || STREQ (cmd, "chapter")
-              || enum_marker == UNNUMBERED_MAGIC)
+          if (docbook && (STREQ (cmd, "unnumbered") || STREQ (cmd, "chapter")
+              || enum_marker == UNNUMBERED_MAGIC))
             {
               xml_insert_element_with_attribute (xml_element (secname), START, "label=\"%s\"",
                   handle_enum_increment (level, search_sectioning (cmd)));
