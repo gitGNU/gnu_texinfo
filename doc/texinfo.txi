@@ -1576,7 +1576,7 @@ relationships between nodes.
 @@node Top
 @@top Short Sample
 
-This is a short sample.
+This is a short sample Texinfo file.
 @@end ifnottex
 
 @group
