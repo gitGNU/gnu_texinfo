@@ -21,10 +21,6 @@ dnl (NetBSD and TeX Live), timestamps are generally not preserved.  This
 dnl causes lots of annoyance, so --enable-maintainer-mode.  Sorry.
 AM_MAINTAINER_MODE
 
-dnl We use this in doc/Makefile.am to avoid running help2man unless
-dnl explicitly desired.  (I set TEXINFO_MAINT in my .bash_login.)
-AM_CONDITIONAL(TEXINFO_MAINT, test -n "$TEXINFO_MAINT")
-
 dnl
 dnl Checks for programs.
 AC_PROG_CC
