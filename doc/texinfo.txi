@@ -15057,12 +15057,16 @@ listed incorrectly or incompletely, please report the situation to the
 directory maintainers (@email{bug-directory@@gnu.org}) so that the
 category names can be kept in sync.
 
-Here are a few examples:
+Here are a few examples (see the @file{util/dir-example} file in the
+Texinfo distribution for large sample @code{dir} file):
+
 @display
 Emacs
 Localization
 Printing
-Software Libraries
+Software development
+Software libraries
+Text creation and manipulation
 @end display
 
 @cindex Invoking nodes, including in dir file
