@@ -362,6 +362,9 @@ static int book_started = 0;
 static int first_section_opened = 0;
 static int in_abstract = 0;
 
+static int xml_in_item[256];
+static int xml_table_level = 0;
+
 static int xml_current_element ();
 
 void
@@ -815,6 +818,7 @@ xml_end_menu ()
 }
 
 static int xml_last_character;
+static int in_table_title = 0;
 
 void
 xml_add_char (character)
@@ -824,6 +828,12 @@ xml_add_char (character)
     return;
   if (docbook && !only_macro_expansion && (in_menu || in_detailmenu))
     return;
+
+  if (xml_table_level && !xml_in_item[xml_table_level] && !in_table_title && !cr_or_whitespace (character))
+    {
+      in_table_title = 1;
+      xml_insert_element (TITLE, START);
+    }
 
   if (!executing_string && !first_section_opened && !in_abstract
       && xml_current_element () == TEXINFO
@@ -907,9 +917,6 @@ xml_insert_footnote (note)
 /*
  * Lists and Tables
  */
-static int xml_in_item[256];
-static int xml_table_level = 0;
-
 void
 xml_begin_table (type, item_function)
     enum insertion_type type;
@@ -1008,6 +1015,11 @@ xml_begin_table_item ()
           xml_insert_element (ITEM, END);
           xml_insert_element (TABLEITEM, END);
         }
+      if (in_table_title)
+	{
+	  in_table_title = 0;
+	  xml_insert_element (TITLE, END);
+	}
       xml_insert_element (TABLEITEM, START);
     }
   xml_insert_element (TABLETERM, START);
