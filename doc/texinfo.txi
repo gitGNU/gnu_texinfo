@@ -99,6 +99,7 @@ Software Foundation raise funds for GNU development.''
 @vskip 0pt plus 1filll
 @insertcopying
 
+@sp 1
 Published by the Free Software Foundation @*
 59 Temple Place Suite 330 @*
 Boston, MA 02111-1307 @*
@@ -108,6 +109,7 @@ ISBN 1-882114-67-1 @c for version 4.0, September 1999.
 @c ISBN 1-882114-64-7 is for edition 2.24 of November 1996.
 @c ISBN 1-882114-63-9 is for edition 2.20 of 28 February 1995
 
+@sp 1
 Cover art by Etienne Suvasa.
 @end titlepage
 
