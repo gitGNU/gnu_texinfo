@@ -40,6 +40,7 @@ extern int set_top_section_level ();
 
 extern void sectioning_html ();
 extern int what_section ();
+extern char *current_chapter_number ();
 
 /* The argument of @settitle, used for HTML. */
 extern char *title;

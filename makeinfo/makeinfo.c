@@ -3047,6 +3047,23 @@ search_forward (string, from)
     }
   return -1;
 }
+
+/* search_forward until n characters.  */
+int
+search_forward_until_pos (string, from, end_pos)
+    char *string;
+    int from;
+    int end_pos;
+{
+  int save_input_text_length = input_text_length;
+  input_text_length = end_pos;
+
+  from = search_forward (string, from);
+
+  input_text_length = save_input_text_length;
+
+  return from;
+}
 
 /* Cross references.  */
 
@@ -4409,12 +4426,15 @@ text_expansion (str)
   char *ret;
   int save_html = html;
   int save_xml = xml;
+  int save_docbook = docbook;
 
   html = 0;
   xml = 0;
+  docbook = 0;
   ret = expansion (str, 0);
   html = save_html;
   xml = save_xml;
+  docbook = save_docbook;
 
   return ret;
 }
