@@ -100,6 +100,7 @@ Software development
 * g77: (g77).                   GNU Fortran 77 compiler.
 * Gasp: (gasp).                 GNU Assembler preprocessor.
 * gcc: (gcc).                   The GNU Compiler Collection.
+* gccinstall: (gccinstall).     Installing the GNU Compiler Collection.
 * gccint: (gccint).             Internals of the GNU Compiler Collection.
 * Gnats: (gnats).               Cygnus bug tracking system.
 * Gperf: (gperf).               Perfect hash function generator.
@@ -209,7 +210,7 @@ C++ libraries
 
 GNU organization
 * Maintain: (maintain).         GNU maintainer guidelines.
-* Standards: (standards).        GNU coding standards.
+* Standards: (standards).       GNU coding standards.
 * Tasks: (tasks).               GNU task list.
 
 GNU music project
