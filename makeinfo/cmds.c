@@ -863,12 +863,14 @@ cm_strong (arg, start_pos, end_pos)
   else
     add_char ('*');
   
-  if (arg == END
+  if (!xml && !html && !docbook && !no_headers
+      && arg == END
       && end_pos - start_pos >= 6
       && strncmp (output_paragraph + start_pos, "*Note:*", 6) == 0)
     /* Translators: "Note:" is literal here and should not be
        translated.  @strong{Nota}, say, does not cause the problem.  */
     warning (_("@strong{Note:} produces a spurious cross-reference in Info; reword to avoid that"));
+
 }
 
 void
