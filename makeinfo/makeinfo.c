@@ -1839,7 +1839,7 @@ init_internals (void)
 void
 init_paragraph (void)
 {
-  free_and_clear ((char **) &output_paragraph);
+  free (output_paragraph);
   output_paragraph = xmalloc (paragraph_buffer_len);
   output_paragraph[0] = 0;
   output_paragraph_offset = 0;

@@ -962,7 +962,7 @@ forward_move_node_structure (WINDOW *window, int behaviour)
                      same as the first menu item found in this node. */
                   window_message_in_echo_area
                     ((char *) _("Moving Up %d time(s), then Next."),
-                     (void *) (up_counter), NULL);
+                     (void *) (long) up_counter, NULL);
 
                   info_handle_pointer ("Next", window);
                   return;
@@ -1975,7 +1975,7 @@ DECLARE_INFO_COMMAND (info_menu_digit, _("Select this menu item"))
     }
   else
     info_error ((char *) _("There aren't %d items in this menu."),
-                (void *) (item), NULL);
+                (void *) (long) item, NULL);
 
   info_free_references (menu);
   return;
