@@ -27,6 +27,7 @@
 #include "makeinfo.h"
 #include "cmds.h"
 #include "files.h"
+#include "float.h"
 #include "footnote.h"
 #include "html.h"
 #include "index.h"
@@ -3315,7 +3316,14 @@ cm_xref (arg)
                   add_anchor_name (tem, 1);
                   free (tem);
                   add_word ("\">");
-                  execute_string ("%s", *arg2 ? arg2 : arg1);
+                  if (*arg2)
+                    execute_string ("%s", arg2);
+                  else
+                    {
+                      char *fref = get_float_ref (arg1);
+                      execute_string ("%s", fref ? fref : arg1);
+                      free (fref);
+                    }
                   add_word ("</a>");
                 }
               else
@@ -3329,9 +3337,20 @@ cm_xref (arg)
                     }
                   else
                     {
-                      in_fixed_width_font++;
-                      execute_string ("%s::", arg1);
-                      in_fixed_width_font--;
+                      char *fref = get_float_ref (arg1);
+                      if (fref)
+                        { /* Reference is being made to a float.  */
+                          execute_string ("%s:", fref);
+                          in_fixed_width_font++;
+                          execute_string (" %s%s", arg1, px_ref_flag ? "." : "");
+                          in_fixed_width_font--;
+                        }
+                      else
+                        {
+                          in_fixed_width_font++;
+                          execute_string ("%s::", arg1);
+                          in_fixed_width_font--;
+                        }
                     }
                 }
             }
