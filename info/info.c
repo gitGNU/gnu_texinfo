@@ -1,7 +1,7 @@
 /* info.c -- Display nodes of Info files in multiple windows.
    $Id$
 
-   Copyright (C) 1993, 1996, 1997, 1998, 1999, 2000, 2001, 2002
+   Copyright (C) 1993, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003
    Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
@@ -280,7 +280,7 @@ main (argc, argv)
 There is NO warranty.  You may redistribute this software\n\
 under the terms of the GNU General Public License.\n\
 For more information about these matters, see the files named COPYING.\n"),
-		  "2002");
+		  "2003");
       xexit (0);
     }
 
