@@ -391,9 +391,9 @@ insert_space (arg)
   if (arg == START)
     {
       if (xml && !docbook)
-	xml_insert_entity ("space");
+        xml_insert_entity ("space");
       else
-	add_char (' ');
+        add_char (' ');
     }
 }
 
@@ -422,11 +422,12 @@ cm_dots (arg)
   if (arg == START)
     {
       if (xml && !docbook)
-	xml_insert_entity ("dots");
+        xml_insert_entity ("dots");
       else if (docbook)
-	xml_insert_entity ("hellip");
+        xml_insert_entity ("hellip");
       else
-	add_word (html ? "<small>...</small>" : "...");
+        add_word (html && !in_fixed_width_font
+                  ? "<small>...</small>" : "...");
     }
 }
 
@@ -445,7 +446,8 @@ cm_enddots (arg)
 	  add_char ('.');
 	}
       else
-	add_word (html ? "<small>...</small>." : "....");
+	add_word (html && !in_fixed_width_font 
+                  ? "<small>...</small>." : "....");
     }
 }
 
