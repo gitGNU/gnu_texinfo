@@ -13173,7 +13173,9 @@ The @command{makeinfo} implementation also has limitations:
 @itemize
 @item
 @code{@@verbatim} and macros do not mix; for instance, you can't start
-a verbatim block inside a macro and end it outside.  (@xref{verbatim}.)
+a verbatim block inside a macro and end it outside. 
+(@xref{verbatim}.)  Starting any environment inside a macro and ending
+it outside may or may not work, for that matter.
 
 @item
 Macros that completely define macros are ok, but it's not possible to
@@ -13188,7 +13190,8 @@ within a macro, and then end the nested definition outside the macro.
 @end itemize
 
 One more limitation is common to both implementations: white space is
-ignored at the beginnings of 
+ignored at the beginnings of lines.
+
 Future major revisions of Texinfo may ease some of these limitations
 (by introducing a new macro syntax).
 
