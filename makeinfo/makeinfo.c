@@ -363,24 +363,24 @@ General options:\n\
      /* xgettext: no-wrap */
     puts (_("\
 Output format selection (default is to produce Info):\n\
-      --docbook             output Docbook XML rather than Info.\n\
-      --html                output HTML rather than Info.\n\
-      --xml                 output Texinfo XML rather than Info.\n\
-      --plaintext           output plain text rather than Info.\n\
+      --docbook               output Docbook XML rather than Info.\n\
+      --html                  output HTML rather than Info.\n\
+      --xml                   output Texinfo XML rather than Info.\n\
+      --plaintext             output plain text rather than Info.\n\
 "));
 
     puts (_("\
 General output options:\n\
-  -E, --macro-expand FILE   output macro-expanded source to FILE.\n\
-                            ignoring any @setfilename.\n\
-      --no-headers          suppress node separators, Node: lines, and menus\n\
-                              from Info output (thus producing plain text)\n\
-                              or from HTML (thus producing shorter output);\n\
-                              also, write to standard output by default.\n\
-      --no-split            suppress splitting of Info or HTML output,\n\
-                            generate only one output file.\n\
-      --number-sections     output chapter and sectioning numbers.\n\
-  -o, --output=FILE         output to FILE (directory if split HTML),\n\
+  -E, --macro-expand FILE     output macro-expanded source to FILE.\n\
+                              ignoring any @setfilename.\n\
+      --no-headers            suppress node separators, Node: lines, and menus\n\
+                                from Info output (thus producing plain text)\n\
+                                or from HTML (thus producing shorter output);\n\
+                                also, write to standard output by default.\n\
+      --no-split              suppress splitting of Info or HTML output,\n\
+                              generate only one output file.\n\
+      --number-sections       output chapter and sectioning numbers.\n\
+  -o, --output=FILE           output to FILE (directory if split HTML),\n\
 "));
 
     printf (_("\
@@ -402,14 +402,14 @@ Options for Info and plain text:\n\
 
     puts (_("\
 Options for HTML:\n\
-      --css-include=FILE        include FILE in HTML <style> output;\n\
-                                  read stdin if FILE is -.\n\
+      --css-include=FILE      include FILE in HTML <style> output;\n\
+                                read stdin if FILE is -.\n\
 "));
 
     printf (_("\
 Options for XML and Docbook:\n\
-      --output-indent=VAL       indent XML elements by VAL spaces (default %d).\n\
-                                  If VAL is 0, ignorable whitespace is dropped.\n\
+      --output-indent=VAL     indent XML elements by VAL spaces (default %d).\n\
+                                If VAL is 0, ignorable whitespace is dropped.\n\
 "), xml_indentation_increment);
     puts ("");
 
@@ -451,15 +451,15 @@ Conditional processing in input:\n\
 
     fputs (_("\
 Examples:\n\
-  makeinfo foo.texi                     write Info to foo's @setfilename\n\
-  makeinfo --html foo.texi              write HTML to @setfilename\n\
-  makeinfo --xml foo.texi               write Texinfo XML to @setfilename\n\
-  makeinfo --docbook foo.texi           write DocBook XML to @setfilename\n\
-  makeinfo --no-headers foo.texi        write plain text to standard output\n\
+  makeinfo foo.texi                      write Info to foo's @setfilename\n\
+  makeinfo --html foo.texi               write HTML to @setfilename\n\
+  makeinfo --xml foo.texi                write Texinfo XML to @setfilename\n\
+  makeinfo --docbook foo.texi            write DocBook XML to @setfilename\n\
+  makeinfo --no-headers foo.texi         write plain text to standard output\n\
 \n\
-  makeinfo --html --no-headers foo.texi write html without node lines, menus\n\
-  makeinfo --number-sections foo.texi   write Info with numbered sections\n\
-  makeinfo --no-split foo.texi          write one Info file however big\n\
+  makeinfo --html --no-headers foo.texi  write html without node lines, menus\n\
+  makeinfo --number-sections foo.texi    write Info with numbered sections\n\
+  makeinfo --no-split foo.texi           write one Info file however big\n\
 "), stdout);
 
     puts (_("\n\
