@@ -10519,6 +10519,9 @@ figures.  Therefore, if you intend it to be displayed, be sure to leave
 a blank line before the command, or the output will run into the
 preceding text.
 
+Image scaling is presently implemented only in @TeX{}, not in HTML or
+any other sort of output.
+
 
 @node Breaks
 @chapter Making and Preventing Breaks
