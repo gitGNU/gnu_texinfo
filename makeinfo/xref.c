@@ -206,7 +206,7 @@ cm_xref (int arg)
             add_word_args ("%s", px_ref_flag ? _("see ") : _("See "));
         }
       else
-        add_word_args ("%s", px_ref_flag ? "*note " : "*Note ");
+        add_word_args ("%s", px_ref_flag || ref_flag ? "*note " : "*Note ");
 
       if (!xml)
         {
