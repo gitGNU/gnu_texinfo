@@ -260,9 +260,11 @@ DECLARE (int, expensive_validation, 0);
 
 #define END_VERBATIM "end verbatim"
 
-/* Stuff for splitting large files. */
-#define SPLIT_SIZE_THRESHOLD 70000  /* What's good enough for Stallman... */
-#define DEFAULT_SPLIT_SIZE 50000    /* Is probably good enough for me. */
+/* Stuff for splitting large files.  The numbers for Emacs
+   texinfo-format-buffer are much smaller, but memory capacities have
+   increased so much, 50k info files seems a bit tiny these days.  */
+#define SPLIT_SIZE_THRESHOLD 500000
+#define DEFAULT_SPLIT_SIZE 300000
 DECLARE (int, splitting, 1);    /* Defaults to true for now. */
 
 #define skip_whitespace() \
