@@ -206,8 +206,7 @@ extern int strcoll ();
 #  define HAVE_LONG_FILENAMES(dir)   (1)
 #  define NULL_DEVICE	"NUL"
 # endif  /* O_BINARY && !__MSDOS__ */
-# ifdef __unix__
-#  /* i.e., cygwin */
+# ifdef __CYGWIN__
 #  define DEFAULT_TMPDIR	"/tmp/"
 #  define PATH_SEP	":"
 # else  /* O_BINARY && !__unix__ */
