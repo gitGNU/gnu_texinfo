@@ -36,6 +36,7 @@ Basics
 * File permissions: (coreutils)File permissions.  Access modes.
 * Finding files: (find).        Operating on files matching certain criteria.
 * Gcal: (gcal).                 GNU calendar program.
+* Hello: (hello).               Hello, GNU world.
 * Time: (time).                 Measuring program resource usage.
 
 Text creation and manipulation
