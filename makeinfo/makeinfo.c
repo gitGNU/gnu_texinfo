@@ -729,6 +729,9 @@ For more information about these matters, see the files named COPYING.\n"),
         }
     }
 
+  if (macro_expansion_output_stream)
+    validating = 0;
+
   if (!validating)
     expensive_validation = 0;
 
