@@ -25,7 +25,10 @@ convenience, here's a url to one of the relevant sections:
 * texi2dvi:
   . if the input file includes thumbpdf.sty (for LaTeX), then run thumbpdf.
   . more output if --debug.
+* Distribution:
+  . automake 1.7.6.
 
+
 4.6 (10 June 2003)
 * Language:
   . new command @/ specifies an allowable breakpoint within a line.
