@@ -207,7 +207,7 @@ element docbook_element_list [] = {
   { "chapter",             1, 0 }, /* CHAPHEADING */
   { "sect1",               1, 0 }, /* HEADING */
   { "sect2",               1, 0 }, /* SUBHEADING */
-  { "sect3",               1, 0 }, /* SUBSUBHEADING */
+  { "simplesect",               1, 0 }, /* SUBSUBHEADING */
 
   { "",                    1, 0 }, /* MENU */
   { "",                    1, 0 }, /* MENUENTRY */
@@ -339,6 +339,7 @@ replace_element replace_elements [] = {
   { CODE, DFN, -1 },
   { CODE, VAR, -1 },
   { EMPH, CODE, REPLACEABLE },
+  { VAR, VAR, -1},
   /* Add your elements to replace here */
   {-1, 0, 0}
 };
