@@ -126,6 +126,7 @@ GNU programming support
 * Gnats: (gnats).               Cygnus bug tracking system.
 * Remsync: (remsync).           Remote synchronization of directory trees.
 * Send PR: (send-pr).           Cygnus bug reporting for Gnats.
+* help2man: (help2man).      Automatic manual page generation.
 
 GNU libraries
 * Annotate: (annotate).         High-level GDB to GUI's.
@@ -169,7 +170,6 @@ GNU music project
 * mup2ly: (lilypond)Invoking mup2ly::          Importing MUP.
 
 GNU admin
-* help2man: (help2man).      Automatic manual page generation.
 
 Linux
 * dosemu: (dosemu).             Linux DOS emulator.
