@@ -1257,9 +1257,6 @@ hyphens in the source remain as they are in literal contexts, such as
 @code{@@code} and @code{@@example}.
 
 @item
-@iftex
-@vskip -@baselineskip
-@end iftex
 @cindex Tabs; don't use!
 @strong{Caution:} Last and most important, do not use tab characters
 in a Texinfo file (except in verbatim modes)!  @TeX{} uses
