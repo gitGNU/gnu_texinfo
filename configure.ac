@@ -12,8 +12,8 @@ dnl
 AC_PREREQ(2.58)dnl Minimum Autoconf version required.
 dnl
 AC_INIT([GNU Texinfo], [4.6])
+AC_CONFIG_HEADERS(config.h:config.in)dnl Keep filename to 8.3 for MS-DOS.
 AC_CONFIG_SRCDIR([makeinfo/makeinfo.c])
-AM_CONFIG_HEADER(config.h:config.in)dnl Keep filename to 8.3 for MS-DOS.
 AM_INIT_AUTOMAKE([dist-bzip2])
 
 dnl When the Texinfo source is imported into other repositories
