@@ -761,6 +761,7 @@ cm_printindex ()
                   expanded_index = expansion (index_node, 0);
                   in_fixed_width_font--;
                   add_anchor_name (expanded_index, 1);
+		  expanded_index = escape_string (expanded_index);
                   add_word_args ("\">%s</a>", expanded_index);
                   free (expanded_index);
                 }

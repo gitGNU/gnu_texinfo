@@ -15408,8 +15408,8 @@ each usage specifies the `current' category; any subsequent
 @cindex Dir categories, choosing
 @cindex Categories, choosing
 When choosing a category name for the @code{@@dircategory} command, we
-recommend consulting the @uref{Free Sofware Directory,
-http://www.gnu.org/directory}.  If your program is not listed there,
+recommend consulting the @uref{http://www.gnu.org/directory,
+Free Software Directory}.  If your program is not listed there,
 or listed incorrectly or incompletely, please report the situation to
 the directory maintainers (@email{bug-directory@@gnu.org}) so that the
 category names can be kept in sync.
@@ -15587,7 +15587,7 @@ Insert a discretionary hyphenation point.  @xref{- and hyphenation}.
 Produce a period that really does end a sentence (usually after an
 end-of-sentence capital letter).  @xref{Ending a Sentence}.
 
-@item @/
+@item @@/
 Produces no output, but allows a line break.  @xref{Line Breaks}.
 
 @item @@:

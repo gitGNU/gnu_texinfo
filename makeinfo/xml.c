@@ -476,13 +476,16 @@ xml_id (id)
   char *p = tem;
   strcpy (tem, id);
   while (*p)
-    {
-      if (strchr ("~ &/+^;?()%<>\"'$¿", *p))
+    { /* Check if a character is allowed in ID attributes.  This list differs
+         slightly from XML specs that it doesn't contain underscores.
+         See http://xml.coverpages.org/sgmlsyn/sgmlsyn.htm, ``9.3 Name''  */
+      if (!strchr ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-.", *p))
         *p = '-';
       p++;
     }
   p = tem;
-  if (*p == '-')
+  /* First character can only be a letter.  */
+  if (!strchr ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", *p))
     *p = 'i';
   return tem;
 }

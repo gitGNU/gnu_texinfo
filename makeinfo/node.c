@@ -927,6 +927,7 @@ cm_node ()
           add_word_args ("%s%s<a name=\"", _("Node:"), "&nbsp;");
           tem = expand_node_name (node);
           add_anchor_name (tem, 0);
+	  tem = escape_string (tem);
           add_word_args ("\">%s</a>", tem);
           free (tem);
 
@@ -939,6 +940,7 @@ cm_node ()
               
 	      add_word ("<a rel=\"next\" accesskey=\"n\" href=\"");
 	      add_anchor_name (tem, 1);
+              tem = escape_string (tem);
 	      add_word_args ("\">%s</a>", tem);
 	      
 	      /* <link> produces a navigation bar in mozilla.  */
@@ -956,6 +958,7 @@ cm_node ()
               add_word ("&nbsp;");
 	      add_word ("<a rel=\"previous\" accesskey=\"p\" href=\"");
 	      add_anchor_name (tem, 1);
+              tem = escape_string (tem);
 	      add_word_args ("\">%s</a>", tem);
 	      add_word ("<link rel=\"prev\" accesskey=\"p\" href=\"");
 	      add_anchor_name (tem, 1);
@@ -970,6 +973,7 @@ cm_node ()
               add_word ("&nbsp;");
 	      add_word ("<a rel=\"up\" accesskey=\"u\" href=\"");
 	      add_anchor_name (tem, 1);
+              tem = escape_string (tem);
 	      add_word_args ("\">%s</a>", tem);
 	      add_word ("<link rel=\"up\" accesskey=\"u\" href=\"");
 	      add_anchor_name (tem, 1);
