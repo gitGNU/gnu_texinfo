@@ -107,7 +107,8 @@ verb=false      # echo for verbose mode
 orig_pwd=`pwd`
 
 # Systems which define $COMSPEC or $ComSpec use semicolons to separate
-# directories in TEXINPUTS -- except for Cygwin, where it might be inherited.
+# directories in TEXINPUTS -- except for Cygwin, where COMSPEC might be
+# inherited, but : is used.
 if test -n "$COMSPEC$ComSpec" && uname | grep -iv cygwin >/dev/null; then
   path_sep=";"
 else
@@ -135,6 +136,12 @@ findprog ()
     if test -x "$dir/$1" && test ! -d "$dir/$1"; then
       foundprog=true
       break
+
+    # But on cygwin, test -x foo will not find foo.exe.  So also check
+    # for that.
+    elif test -x "$dir/$1.exe"; then
+      foundprog=true
+      break      
     fi
   done
   IFS=$saveIFS
