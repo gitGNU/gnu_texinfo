@@ -179,6 +179,9 @@ DECLARE (char *, include_files_path, NULL);
 /* The filename of the current input file.  This is never freed. */
 DECLARE (char *, node_filename, NULL);
 
+/* Name of CSS file to include, if any.  (--css-include).  */
+DECLARE (char *, css_include, NULL);
+
 /* Nonzero means do not output "Node: Foo" for node separations, that
    is, generate plain text.  (--no-headers) */
 DECLARE (int, no_headers, 0);
