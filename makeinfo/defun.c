@@ -245,9 +245,13 @@ process_defun_args (defun_args, auto_var_p)
         {
           /* Within @deffn and friends, texinfo.tex makes parentheses
              sans serif and brackets bold.  We use roman instead.  */
-          insert_html_tag (START, "");
+          if (html)
+            insert_html_tag (START, "");
+            
           add_char (defun_arg[0]);
-          insert_html_tag (END, "");
+          
+          if (html)
+            insert_html_tag (END, "");
         }
       else if (defun_arg[0] == '&')
         if (html)
