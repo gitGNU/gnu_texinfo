@@ -50,12 +50,12 @@ xexit (exit_status)
 {
   if (ferror (stdout))
     {
-      fputs (stderr, "ferror on stdout");
+      fputs (stderr, _("ferror on stdout"));
       exit_status = 1;
     }
   else if (fflush (stdout) != 0)
     {
-      fputs (stderr, "fflush error on stdout");
+      fputs (stderr, _("fflush error on stdout"));
       exit_status = 1;
     }
 
