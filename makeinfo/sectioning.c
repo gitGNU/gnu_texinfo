@@ -263,20 +263,33 @@ sectioning_underscore (cmd)
 
   if (xml)
     {
-      xml_close_sections (level);
-      /* Mark the beginning of the section
-         If the next command is printindex, we will remove
-         the section and put an Index instead */
-      flush_output ();
-      xml_last_section_output_position = output_paragraph_offset;
+      /* If the section appears in the toc, it means it's a real section
+	 unlike majorheading, chapheading etc. */
+      if (section_alist[search_sectioning (cmd)].toc == TOC_YES || docbook)
+	{
+	  xml_close_sections (level);
+	  /* Mark the beginning of the section
+	     If the next command is printindex, we will remove
+	     the section and put an Index instead */
+	  flush_output ();
+	  xml_last_section_output_position = output_paragraph_offset;
 
-      xml_insert_element (xml_element (secname), START);
-      xml_insert_element (TITLE, START);
-      xml_open_section (level, secname);
-      get_rest_of_line (0, &temp);
-      execute_string ("%s\n", temp);
-      free (temp);
-      xml_insert_element (TITLE, END);
+	  xml_insert_element (xml_element (secname), START);
+	  xml_insert_element (TITLE, START);
+	  xml_open_section (level, secname);
+	  get_rest_of_line (0, &temp);
+	  execute_string ("%s\n", temp);
+	  free (temp);
+	  xml_insert_element (TITLE, END);
+	}
+      else
+	{
+	  xml_insert_element (xml_element (secname), START);
+	  get_rest_of_line (0, &temp);
+	  execute_string ("%s", temp);
+	  free (temp);
+	  xml_insert_element (xml_element (secname), END);
+	}
     }
   else if (html)
     sectioning_html (level, secname);

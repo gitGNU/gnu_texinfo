@@ -30,6 +30,7 @@
 #include "makeinfo.h"
 #include "sectioning.h"
 #include "toc.h"
+#include "xml.h"
 
 
 
@@ -500,6 +501,14 @@ cm_contents (arg)
           insert_string (contents_placebo); /* just mark it, for now */
         }
     }
+  else
+    {
+      if (xml && arg == START)
+	{
+	  xml_insert_element (CONTENTS, START);
+	  xml_insert_element (CONTENTS, END);
+	}
+    }
 }
 
 void
@@ -528,5 +537,13 @@ cm_shortcontents (arg)
           shortcontents_filename = xstrdup (current_output_filename);
           insert_string (shortcontents_placebo); /* just mark it, for now */
         }
+    }
+  else
+    {
+      if (xml && arg == START)
+	{
+	  xml_insert_element (SHORTCONTENTS, START);
+	  xml_insert_element (SHORTCONTENTS, END);
+	}
     }
 }
