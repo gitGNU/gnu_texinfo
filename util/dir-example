@@ -28,6 +28,7 @@ Basics
 * Cpio: (cpio).                 Copy-in-copy-out archiver to tape or disk.
 * DC: (dc).                     Postfix desk calculator.
 * Finding files: (find).        Operating on files matching certain criteria.
+* Gcal: (gcal).                 GNU calendar program.
 
 * Common options: (coreutils)Common options.      Common options.
 * File permissions: (coreutils)File permissions.  Access modes.
@@ -35,7 +36,6 @@ Basics
 
 GNU Packages
 * File utilities: (fileutils).  GNU file utilities.
-* Gcal: (gcal).                 GNU calendar program.
 * Groff: (groff).               The GNU troff document formatting system.
 * Gzip: (gzip).                 General (de)compression.
 * Identifier DB: (id-utils).    Identifier database utilities.
