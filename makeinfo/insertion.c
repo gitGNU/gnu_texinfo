@@ -267,7 +267,7 @@ is_in_insertion_of_type (type)
     if (temp->insertion == type)
       return 1;
 
-  return 1;
+  return 0;
 }
 
 
