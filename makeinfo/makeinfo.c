@@ -2148,7 +2148,7 @@ reader_loop (void)
                     if (dash_count >= 2)
                       {
                         if (html)
-                          add_word ("&mdash;<wbr>");
+                          add_word ("&mdash;");
                         else
                           xml_insert_entity ("mdash");
                         dash_count -= 2;
