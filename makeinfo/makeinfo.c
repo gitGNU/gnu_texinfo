@@ -4225,7 +4225,9 @@ execute_string (format, va_alist)
 #ifdef VA_FPRINTF
   va_list ap;
 #endif
+  extern int xml_in_para;
   int xml_element_stack_start;
+  int xml_para_at_start = xml_in_para;
 
   es = get_execution_string (EXECUTE_STRING_MAX);
   temp_string = es->string;
@@ -4255,7 +4257,7 @@ execute_string (format, va_alist)
     {
       while (xml_current_stack_index () > xml_element_stack_start)
         xml_end_current_element ();
-      if (xml_in_copying)
+      if (!xml_para_at_start)
         xml_end_para ();
     }
 
