@@ -1493,7 +1493,7 @@ fetch_user_maps()
 #endif
 	if (filename == NULL || (f = open(filename, O_RDONLY)) == (-1))
 	{
-		if (filename)
+		if (filename && errno != ENOENT)
 		{
 			info_error(filesys_error_string(filename, errno));
 			free(filename);
