@@ -31,9 +31,9 @@ cat | while read src dst; do
   dst=`eval echo $dst`
   test -d $dst && dst=$dst/`basename $src`
   
-  # $Id$ lines will differ.
-  fgrep -v '$Id$src >$srctmp
-  test -r $dst && fgrep -v '$Id$dst >$dsttmp
+  # $ Id: lines will differ.
+  fgrep -v '$'"Id:" $src >$srctmp
+  test -r $dst && fgrep -v '$'"Id:" $dst >$dsttmp
 
   if test ! -e $dst; then
     echo "$src -> $dst (new)"

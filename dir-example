@@ -124,7 +124,6 @@ GNU programming support
 * Autoconf: (autoconf).         Automatic generation of package configuration.
 * Configure: (configure).       Cygnus configure.
 * Gnats: (gnats).               Cygnus bug tracking system.
-* help2man: (help2man).         Automatic manual page generation.
 * Remsync: (remsync).           Remote synchronization of directory trees.
 * Send PR: (send-pr).           Cygnus bug reporting for Gnats.
 
@@ -168,6 +167,9 @@ GNU music project
 * pmx2ly: (lilypond)Invoking pmx2ly::          Importing PMX.
 * musedata2ly: (lilypond)Invoking musedata2ly::Importing Musedata.
 * mup2ly: (lilypond)Invoking mup2ly::          Importing MUP.
+
+GNU admin
+* help2man: (help2man).      Automatic manual page generation.
 
 Linux
 * dosemu: (dosemu).             Linux DOS emulator.
