@@ -61,7 +61,7 @@ AC_FUNC_VPRINTF
 dnl in theory only pre-sysvr3 systems needed this and it's not likely
 dnl that anyone compiling new texinfo still has such a thing? we'll see.
 dnl AC_FUNC_SETVBUF_REVERSED
-AC_CHECK_FUNCS(bzero getcwd memset setvbuf sigaction sigprocmask
+AC_CHECK_FUNCS(bzero getcwd memset setvbuf sigaction sigprocmask \
                sigsetmask strchr)
 dnl strerror, xmalloc, xrealloc, probably others should be added.
 AC_REPLACE_FUNCS(memcpy memmove strdup strcasecmp strerror strncasecmp)
