@@ -1886,7 +1886,7 @@ split_file (char *filename, int size)
       /* preserve local variables in info output.  */
       if (trailer)
         {
-          insert_string (trailer);
+          fwrite (trailer, 1, trailer_len, output_stream);
           free (trailer);
         }
 
