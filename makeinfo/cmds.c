@@ -1242,7 +1242,7 @@ cm_exdent ()
   int save_indent = current_indent;
   int save_in_fixed_width_font = in_fixed_width_font;
 
-  /* Read argument  */
+  /* Read argument.  */
   get_rest_of_line (0, &line);
 
   /* Exdent the output.  Actually this may be a no-op.   */
