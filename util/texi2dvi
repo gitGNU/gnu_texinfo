@@ -589,7 +589,7 @@ $textra" "$filename_input" >$filename_xtr
 
     # Finally, run TeX.  Prevent $escape from being interpreted by the
     # shell, and need an extra set of quotes for the eval, if --batch.
-    $batch tex_args="\"$tex_args \\${escape}nonstopmode\ \\${escape}input\""
+    $batch tex_args="\"$tex_args \\${escape}nonstopmode \\${escape}input\""
     cmd="$tex $tex_args $filename_input"
     $verbose "Running $cmd ..."
     if $cmd >&5; then :; else
