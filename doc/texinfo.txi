@@ -16499,6 +16499,7 @@ according to the other rules.
 @item @code{@@enddots}          @tab @samp{...}
 @item @code{@@equiv}            @tab U+2261
 @item @code{@@error}            @tab @samp{error-->}
+@item @code{@@euro}             @tab U+20AC
 @item @code{@@exclamdown}       @tab U+00A1
 @item @code{@@expansion}        @tab U+2192
 @item @code{@@minus}            @tab U+2212
