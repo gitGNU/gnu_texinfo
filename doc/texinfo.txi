@@ -9189,12 +9189,12 @@ example:
 @example
 @@float
 ... as above ...
-@@shortcaption{Text for list of floats.}
+@@shortcaption@{Text for list of floats.@}
 @@end float
 @end example
 
 The text for @code{@@caption} and @code{@@shortcaption} may not
-contain comments (@code{@@c}), verbatim text (@text{@@verb}),
+contain comments (@code{@@c}), verbatim text (@code{@@verb}),
 environments such as @code{@@example}, or other complex constructs.
 
 
