@@ -34,6 +34,9 @@ extern char *xml_node_id;
 extern int xml_last_section_output_position;
 
 extern int xml_in_xref_token;
+extern int xml_in_bookinfo;
+extern int xml_in_book_title;
+extern int xml_in_abstract;
 
 enum xml_element
 {
@@ -73,7 +76,7 @@ enum xml_element
     IMAGEDATA, TEXTOBJECT,  
   INDEXENTRY, PRIMARYIE, SECONDARYIE, INDEXDIV,
   MULTITABLE, TGROUP, COLSPEC, TBODY, ENTRY, ROW,
-  BOOKINFO, ABSTRACT, REPLACEABLE, ENVAR, COMMENT, FUNCTION,
+  BOOKINFO, ABSTRACT, REPLACEABLE, ENVAR, COMMENT, FUNCTION, LEGALNOTICE,
   PARA
 };
 

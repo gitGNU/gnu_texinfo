@@ -1004,9 +1004,16 @@ cm_settitle ()
     {
       xml_begin_document (current_output_filename);
       xml_insert_element (SETTITLE, START);
+      xml_in_book_title = 1;
       get_rest_of_line (0, &title);
       execute_string ("%s", title);
+      xml_in_book_title = 0;
       xml_insert_element (SETTITLE, END);
+      if (docbook && !xml_in_bookinfo)
+	{
+	  xml_insert_element (BOOKINFO, START);
+	  xml_in_bookinfo = 1;
+	}
     }
   else
     get_rest_of_line (0, &title);
