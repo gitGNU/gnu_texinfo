@@ -2165,10 +2165,13 @@ info_menu_or_ref_item (window, count, key, builder, ask_p)
                         else if (window->point < refs[which]->start)
                           break;
                       }
-                    if (closest == -1)
-                      which--;
-                    else
-                      which = closest;
+		    if (which > 0)
+		      {
+			if (closest == -1)
+			  which--;
+			else
+			  which = closest;
+		      }
                   }
 
                 defentry = (REFERENCE *)xmalloc (sizeof (REFERENCE));
