@@ -144,7 +144,7 @@ if test "x$termlib" = xncurses; then
 fi
 
 # gnulib.
-UTILS_FUNC_MKSTEMP
+gl_FUNC_MKSTEMP
 
 # For teTeX and TeX Live.
 AC_CANONICAL_HOST
