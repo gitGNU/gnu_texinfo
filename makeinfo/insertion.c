@@ -1583,13 +1583,13 @@ cm_end ()
   char *temp;
   enum insertion_type type;
 
+  get_rest_of_line (0, &temp);
+
   if (!insertion_level)
     {
       line_error (_("Unmatched `%c%s'"), COMMAND_PREFIX, command);
       return;
     }
-
-  get_rest_of_line (0, &temp);
 
   if (temp[0] == 0)
     line_error (_("`%c%s' needs something after it"), COMMAND_PREFIX, command);
