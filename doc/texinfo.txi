@@ -81,7 +81,7 @@ Software Foundation raise funds for GNU development.''
 @c nwnode          (Same as node, but no warnings; for `makeinfo'.)
 
 
-@shorttitlepage Texinfo
+@shorttitlepage GNU Texinfo
 
 @titlepage
 @title Texinfo
