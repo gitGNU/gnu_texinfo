@@ -27,9 +27,11 @@ convenience, here's a url to one of the relevant sections:
 * makeinfo:
   . html output uses <br /> and <hr />, for the sake of HTML 4.01
     compatibility.  (We're still not completely compatible, though.)
+  . html output for @defun and friends now has font changes.
 * texinfo.tex:
   . new Italian translations, txi-it.tex.
   . pdf bookmarks for unnumbered sections work.
+  . type name for @defun and friends no longer extends into margin.
 * info:
   . crash when MALLOC_CHECK_=2 fixed.
 * install-info:
