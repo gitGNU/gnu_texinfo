@@ -955,9 +955,9 @@ begin_insertion (enum insertion_type type)
    of the stack.  Otherwise, if TYPE doesn't match the top of the
    insertion stack, give error. */
 static void
-end_insertion (int type)
+end_insertion (enum insertion_type type)
 {
-  int temp_type;
+  enum insertion_type temp_type;
 
   if (!insertion_level)
     return;
@@ -1576,7 +1576,7 @@ cm_itemize (void)
 /* Start an enumeration insertion of type TYPE.  If the user supplied
    no argument on the line, then use DEFAULT_STRING as the initial string. */
 static void
-do_enumeration (int type, char *default_string)
+do_enumeration (enum insertion_type type, char *default_string)
 {
   get_until_in_line (0, ".", &enumeration_arg);
   canon_white (enumeration_arg);
@@ -2050,7 +2050,7 @@ void
 cm_end (void)
 {
   char *temp;
-  int type;
+  enum insertion_type type;
 
   get_rest_of_line (0, &temp);
 
