@@ -4010,7 +4010,8 @@ beginning of a line followed by either @samp{asis} or a number:
 @@exampleindent @var{indent}
 @end example
 
-The indentation is according to the value of @var{indent}:
+@code{@@exampleindent} is ignored for HTML output.  Otherwise, the
+indentation is according to the value of @var{indent}:
 
 @table @asis
 @item @code{asis}
@@ -4025,8 +4026,9 @@ Indent environments by @var{n} space characters in Info output, by
 
 @end table
 
-The default value of @var{indent} is 5.  @code{@@exampleindent} is
-ignored for HTML output.
+The default value of @var{indent} is 5 spaces in Info, and 0.4@dmn{in}
+in @TeX{}, which is somewhat less.  (The reduction is to help @TeX{}
+fit more characters onto physical lines.)
 
 It is best to write the @code{@@exampleindent} command before the
 end-of-header line at the beginning of a Texinfo file, so the region
