@@ -14386,11 +14386,9 @@ Format the current buffer for Info.@refill
 @findex makeinfo-buffer
 @end table
 
-When you invoke either @code{makeinfo-region} or
-@code{makeinfo-buffer}, Emacs prompts for a file name, offering the
-name of the visited file as the default.  You can edit the default
-file name in the minibuffer if you wish, before pressing @key{RET} to
-start the @code{makeinfo} process.@refill
+When you invoke @code{makeinfo-region} the output goes to a temporary
+buffer.  When you invoke @code{makeinfo-buffer} output goes to the
+file set with @code{@@setfilename} (@pxref{setfilename}).
 
 The Emacs @code{makeinfo-region} and @code{makeinfo-buffer} commands
 run the @code{makeinfo} program in a temporary shell buffer.  If
