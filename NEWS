@@ -38,7 +38,7 @@ convenience, here's a url to one of the relevant sections:
   . Info output:
     - default --split-size now 300,000 bytes, up from 50,000.
     - with --enable-encoding and a given @documentencoding,
-      output a Local Variables: section specifying that encoding, for use
+      output a Local Variables section specifying that encoding, for use
       with Emacs.
   . HTML output:
     - uses <h3> at the smallest.
