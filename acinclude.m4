@@ -1,4 +1,3 @@
-# $Id$
 # Source file used by aclocal in generating aclocal.m4.
 
 #serial 3
