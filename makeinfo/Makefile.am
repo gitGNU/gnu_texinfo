@@ -14,7 +14,7 @@ bin_PROGRAMS = makeinfo
 
 localedir = $(datadir)/locale
 INCLUDES = -I$(top_srcdir)/lib -I../intl -DLOCALEDIR=\"$(localedir)\"
-LDADD = ../lib/libtxi.a @LIBINTL@
+LDADD = ../lib/libtxi.a $(LIBINTL)
 
 makeinfo_SOURCES = \
   cmds.c cmds.h defun.c defun.h \
