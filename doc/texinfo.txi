@@ -1120,11 +1120,11 @@ an @samp{@@} character in front of it, like this: @samp{@@@@},
 @cindex Blank lines, as paragraph separator
 @cindex Newlines, as blank lines
 Separate paragraphs with one or more blank lines.  Currently Texinfo
-recognizes only newline characters as line endings, not the CRLF
+only recognizes newline characters as end of line, not the CRLF
 sequence used on some systems; so a @dfn{blank line} means exactly two
 consecutive newlines.  Sometimes blank lines are useful or convenient
 in other cases as well; you can use the @code{@@noindent} to inhibit
-paragraph indentation if necessary (@pxref{noindent,,@code{@@noindent}}).
+paragraph indentation if required (@pxref{noindent,,@code{@@noindent}}).
 
 @item
 @cindex Quotation characters (`'), in source
