@@ -706,7 +706,8 @@ xml_insert_entity (char *entity_name)
     return;
 
   if (!xml_in_para && !xml_no_para && !only_macro_expansion
-      && xml_element_list[xml_current_element ()].contains_para)
+      && xml_element_list[xml_current_element ()].contains_para
+      && !in_fixed_width_font)
     {
       insert_string ("<para>");
       xml_in_para = 1;
