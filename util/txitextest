@@ -53,24 +53,24 @@ for manual in $manuals; do
 
   if $full; then
     # instead of comparing, do full test of just the new texinfo.tex.
-    echo "$0: testing $manual_base... (tex)"
+    echo "$0: testing $manual_base... (tex)" | tee /dev/stderr
     texi2dvi $manual
-    echo "$0: testing $manual_base... (pdf)"
+    echo "$0: testing $manual_base... (pdf)" | tee /dev/stderr
     texi2dvi --pdf $manual
    
   else
-    echo "$0: testing $manual_base... (new)"
+    echo "$0: testing $manual_base... (new)" | tee /dev/stderr
     run_tex
     dvips $manual_base -o || exit 1
     mv $manual_base.ps new.$manual_base.ps
 
-    echo "$0: testing $manual_base... (old)"
+    echo "$0: testing $manual_base... (old)" | tee /dev/stderr
     rm -f $manual_base.* texinfo.tex
     ln -s $olddir/texinfo.tex texinfo.tex
     run_tex
     dvips $manual_base -o || exit 1
     mv $manual_base.ps old.$manual_base.ps
 
-    diff -u0 old.$manual_base.ps new.$manual_base.ps
+    diff -U0 old.$manual_base.ps new.$manual_base.ps
   fi
 done
