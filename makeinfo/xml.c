@@ -493,6 +493,9 @@ xml_end_document ()
 	}
       xml_insert_element (NODE, END);
     }
+  else
+    xml_close_sections (xml_node_level);
+
   xml_insert_element (TEXINFO, END);
   insert_string ("\n");
   insert_string ("<!-- Keep this comment at the end of the file\n\

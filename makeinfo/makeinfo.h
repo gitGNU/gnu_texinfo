@@ -195,6 +195,9 @@ DECLARE (int, process_plaintext, -1);
 /* Nonzero means that we process @tex and @iftex.  (--iftex) */
 DECLARE (int, process_tex, 0);
 
+/* Nonzero means that we process @xml and @ifxml.  (--ifxml) */
+DECLARE (int, process_xml, 0);
+
 /* Maximum number of references to a single node before complaining.
    (--reference-limit) */
 DECLARE (int, reference_warning_limit, 1000);
