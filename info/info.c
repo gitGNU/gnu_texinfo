@@ -77,7 +77,7 @@ int dump_subnodes = 0;
 /* Non-zero means make default keybindings be loosely modeled on vi(1).  */
 int vi_keys_p = 0;
 
-/* Non-zero means don't remove ANSI escape sequences from man pages.  */
+/* Non-zero means don't remove ANSI escape sequences.  */
 int raw_escapes_p = 0;
 
 #ifdef __MSDOS__
@@ -580,7 +580,7 @@ Options:\n\
       --index-search=STRING    go to node pointed by index entry STRING.\n\
   -n, --node=NODENAME          specify nodes in first visited Info file.\n\
   -o, --output=FILENAME        output selected nodes to FILENAME.\n\
-  -R, --raw-escapes            don't remove ANSI escapes from man pages.\n\
+  -R, --raw-escapes            don't remove ANSI escapes.\n\
       --restore=FILENAME       read initial keystrokes from FILENAME.\n\
   -O, --show-options, --usage  go to command-line options node.\n%s\
       --subnodes               recursively output menu items.\n\
