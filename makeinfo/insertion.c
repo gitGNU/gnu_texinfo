@@ -465,7 +465,7 @@ begin_insertion (type)
          For html, we output it specifically in html_output_head. 
          For plain text, there's no way to hide it, so the author must
           use @insertcopying in the desired location.  */
-      if (!html && !no_headers)
+      if (!html && !no_headers && !docbook)
         cm_insert_copying ();
       break;
       
