@@ -30,6 +30,9 @@ typedef struct hstack
 /* Nonzero if we have output the <head>.  */
 extern int html_output_head_p;
 
+/* Nonzero if we have output a title, from @titlefont or @settitle.  */
+extern int html_title_written;
+
 /* Perform the <head> output.  */
 extern void html_output_head ();
 
