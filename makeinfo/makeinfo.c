@@ -3129,8 +3129,8 @@ cm_xref (arg)
                 {
                   xml_insert_element_with_attribute (XREF, START,
                                                      "linkend=\"%s\"", arg1_id);
+                  xml_insert_element (XREF, END);
                   free (arg1_id);
-                  xml_pop_current_element ();
                 }
             }
           else if (*arg5)

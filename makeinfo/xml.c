@@ -541,7 +541,7 @@ xml_begin_document (output_filename)
   book_started = 1;
   if (docbook)
     {
-      insert_string ("<!DOCTYPE Book PUBLIC \"-//OASIS//DTD DocBook V3.1//EN\">");
+      insert_string ("<!DOCTYPE book PUBLIC \"-//OASIS//DTD DocBook XML V4.2//EN\" \"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd\">");
       xml_element_list = docbook_element_list;
     }
   else
@@ -1427,12 +1427,12 @@ xml_insert_docbook_image (name_arg)
 
   xml_insert_element (IMAGEOBJECT, START);
   xml_insert_element_with_attribute (IMAGEDATA, START, "fileref=\"%s.eps\" format=\"eps\"", name_arg);
-  xml_pop_current_element ();
+  xml_insert_element (IMAGEDATA, END);
   xml_insert_element (IMAGEOBJECT, END);
 
   xml_insert_element (IMAGEOBJECT, START);
   xml_insert_element_with_attribute (IMAGEDATA, START, "fileref=\"%s.jpg\" format=\"jpg\"", name_arg);
-  xml_pop_current_element ();
+  xml_insert_element (IMAGEDATA, END);
   xml_insert_element (IMAGEOBJECT, END);
 
   xml_insert_text_file (name_arg);
@@ -1664,7 +1664,7 @@ xml_insert_indexentry (entry, node)
     }
   add_word_args (", %s", _("see "));
   xml_insert_element_with_attribute (XREF, START, "linkend=\"%s\"", xml_id (node));
-  xml_pop_current_element ();
+  xml_insert_element (XREF, END);
 
   if (primary)
     {
@@ -1724,7 +1724,7 @@ xml_begin_multitable (ncolumns, column_widths)
       for (i=0; i<ncolumns; i++)
         {
           xml_insert_element_with_attribute (COLSPEC, START, "colwidth=\"%d*\"", column_widths[i]);
-          xml_pop_current_element ();
+          xml_insert_element (COLSPEC, END);
         }
       xml_no_para = 1;
     }
