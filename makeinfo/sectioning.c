@@ -398,12 +398,6 @@ insert_and_underscore (level, with_char, cmd)
    line as an HTML heading element of the appropriate `level' and
    tagged as an anchor for the current node.. */
 
-/* We don't need anything fancy.  */
-#ifdef MIN
-#undef MIN
-#endif
-#define MIN(a,b) ((a) < (b) ? (a) : (b))
-
 void
 sectioning_html (level, cmd)
      int level;
