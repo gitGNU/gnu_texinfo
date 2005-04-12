@@ -442,11 +442,11 @@ Conditional processing in input:\n\
 "));
 
     puts (_("\
-  The defaults for the @if... conditionals depend on the output format:\n\
-  if generating HTML, --ifhtml is on and the others are off;\n\
-  if generating Info, --ifinfo is on and the others are off;\n\
-  if generating plain text, --ifplaintext is on and the others are off;\n\
-  if generating XML, --ifxml is on and the others are off.\n\
+The defaults for the @if... conditionals depend on the output format:\n\
+  if generating HTML,         --ifhtml is on and the others are off;\n\
+  if generating Info,         --ifinfo is on and the others are off;\n\
+  if generating plain text,   --ifplaintext is on and the others are off;\n\
+  if generating XML,          --ifxml is on and the others are off.\n\
 "));
 
     fputs (_("\
