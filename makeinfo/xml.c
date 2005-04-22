@@ -398,7 +398,7 @@ element docbook_element_list [] = {
   { "",                    0, 1, 0 }, /* UREFREPLACEMENT */
 
   { "ulink",               0, 1, 0 }, /* EMAIL */
-  { "",                    0, 1, 0 }, /* EMAILADDRESS */
+  { "email",               0, 1, 0 }, /* EMAILADDRESS */
   { "",                    0, 1, 0 }, /* EMAILNAME */
 
   { "",                    0, 0, 0 }, /* GROUP */
