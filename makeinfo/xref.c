@@ -574,10 +574,20 @@ cm_email (int arg)
 
       if (xml && docbook)
         {
-          xml_insert_element_with_attribute (EMAIL, START, "url=\"mailto:%s\"", addr);
-          if (*name)
+	  if (*name)
+	    {
+	      xml_insert_element_with_attribute (EMAIL, START,
+						 "url=\"mailto:%s\"",
+						 maybe_escaped_expansion (addr, 0, 1));
               execute_string ("%s", name);
-          xml_insert_element (EMAIL, END);
+	      xml_insert_element (EMAIL, END);
+	    }
+	  else
+	    {
+	      xml_insert_element (EMAILADDRESS, START);
+	      execute_string ("%s", addr);
+	      xml_insert_element (EMAILADDRESS, END);
+	    }
         }
       else if (xml)
         {
