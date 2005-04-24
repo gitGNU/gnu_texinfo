@@ -1,7 +1,7 @@
 $Id$
 Texinfo authors.
 
-  Copyright (C) 2003 Free Software Foundation, Inc.
+  Copyright (C) 2003, 2005 Free Software Foundation, Inc.
   
   Copying and distribution of this file, with or without modification,
   are permitted in any medium without royalty provided the copyright
@@ -19,6 +19,7 @@ Karl Berry		all files.
 Karl Heinz Marbaise	original makeinfo language support, most files.
 Noah Friedman		original texi2dvi.
 Paul Rubin		original makeinfo/multi.c.
+Per Bothner		makeinfo/xml.c, makeinfo/docbook.c updates.
 Philippe Martin		original makeinfo xml/docbook output.
 Richard Stallman	original texinfo.tex, install-info.c,
 			texindex.c, texinfo.txi.
