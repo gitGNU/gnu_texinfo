@@ -27,10 +27,10 @@ if TOOLS_ONLY
   SUBDIRS = lib info makeinfo util
 else
   # All subdirectories.
-  # Do intl, m4, and lib first since the C programs depend on them.
+  # Do lib first since the C programs depend on it.
   # Do doc last so makeinfo will be built when we get there.
   # Others are alphabetical.
-  SUBDIRS = $(native_tools) intl m4 lib info makeinfo po util doc
+  SUBDIRS = $(native_tools) lib info makeinfo po util doc
 endif
 
 ACLOCAL_AMFLAGS = -I m4
