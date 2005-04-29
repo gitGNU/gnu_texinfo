@@ -407,7 +407,6 @@ Individual utilities
 * pr-edit: (gnats)pr-edit.                      The edit-pr driver.
 * printenv: (coreutils)printenv invocation.     Print environment variables.
 * printf: (coreutils)printf invocation.         Format and print data.
-* protoize: (gcc)Running Protoize.		Add prototypes to sources.
 * ptx: (coreutils)ptx invocation.               Produce permuted indexes.
 * pwd: (coreutils)pwd invocation.               Print working directory.
 * query-pr: (gnats)Invoking query-pr.           Bug searching/reporting.
@@ -458,7 +457,6 @@ Individual utilities
 * unify: (wdiff)unify invocation.               Diff format converter.
 * uniq: (coreutils)uniq invocation.             Uniquify files.
 * unlink: (coreutils)unlink invocation.         Removal via unlink(2).
-* unprotoize: (gcc)Running Protoize.		Remove prototypes from sources.
 * unshar: (sharutils)unshar invocation.         Extract from shell archive.
 * updatedb: (find)Invoking updatedb.            Building the locate database.
 * users: (coreutils)users invocation.           Print current user names.
