@@ -1,7 +1,7 @@
 /* node.c -- nodes for Texinfo.
    $Id$
 
-   Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003, 2004 Free Software
+   Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 Free Software
    Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
@@ -403,7 +403,7 @@ isolate_nodename (char *nodename)
       if (c == '\t' ||
           c == '\n' ||
           c == ','  ||
-          ((paren_seen && nodename[i - 1] == ')') &&
+          ((paren_seen && i > 0 && nodename[i - 1] == ')') &&
            (c == ' ' || c == '.')) ||
           (c == '.' &&
            ((!nodename[i + 1] ||

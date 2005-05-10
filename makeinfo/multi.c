@@ -348,7 +348,8 @@ do_multitable (void)
   if (xml)
     {
       xml_no_para = 1;
-      if (output_paragraph[output_paragraph_offset-1] == '\n')
+      if (output_paragraph_offset > 0
+	  && output_paragraph[output_paragraph_offset-1] == '\n')
         output_paragraph_offset--;
     }
 

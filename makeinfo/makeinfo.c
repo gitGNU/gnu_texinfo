@@ -2202,6 +2202,7 @@ reader_loop (void)
              menu swallows its newline, so check here instead.  */
           if (!only_macro_expansion && in_menu
               && input_text_offset + 1 < input_text_length
+	      && input_text_offset > 0
               && input_text[input_text_offset-1] == '\n')
             handle_menu_entry ();
           else

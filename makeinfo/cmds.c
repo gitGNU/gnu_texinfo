@@ -627,6 +627,7 @@ cm_comment (void)
           /* Use insert for HTML, and XML when indentation is enabled.
              For Docbook, use add_char.  */
           if (xml && xml_indentation_increment > 0
+	      && output_paragraph_offset > 0
               && output_paragraph[output_paragraph_offset-1] != '\n')
             insert ('\n');
 
@@ -1843,7 +1844,8 @@ cm_colon (void)
         {
           /* Erase literal character that's there, except `>', which is
              part of the XML tag.  */
-          if (output_paragraph[output_paragraph_offset-1] != '>')
+          if (output_paragraph_offset > 0
+	      && output_paragraph[output_paragraph_offset-1] != '>')
             output_paragraph_offset--;
 
           switch (input_text[input_text_offset-3])
@@ -1870,7 +1872,7 @@ cm_colon (void)
 void
 cm_punct (int arg)
 {
-  if (xml && !docbook)
+  if (xml && !docbook && input_text_offset > 0)
     {
       switch (input_text[input_text_offset-1])
         {
