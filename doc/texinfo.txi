@@ -5135,28 +5135,20 @@ short for @samp{(dir)top}, and specifies the Top node in the @file{dir}
 file, which contains the main menu for the Info system as a whole.
 
 @item
-@cindex Previous node of Top node
-On the other hand, do not define the `Previous' node of the Top node to
-be @samp{(dir)}, as it causes confusing behavior for users: if you are
-in the Top node and hits @key{DEL} to go backwards, you wind up in the
-middle of the some other entry in the @file{dir} file, which has nothing
-to do with what you were reading.
+@cindex Prev node of Top node
+The `Prev' node of the Top node should also be your @samp{(dir)} file.
 
 @item
 @cindex Next node of Top node
 The `Next' node of the Top node should be the first chapter in your
-document.
 
 @end itemize
 
 @xref{Installing an Info File}, for more information about installing
 an Info file in the @file{info} directory.
 
-For concreteness, here is an example with explicit pointers (which you
-can maintain automatically with the texinfo mode commands):
-
-Or you can leave the pointers off entirely and let the tools implicitly
-define them.  This is recommended.  Thus:
+It is usually best to leave the pointers off entirely and let the
+tools implicitly define them, with this simple result:
 
 @example
 @@node Top
