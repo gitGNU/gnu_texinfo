@@ -5141,6 +5141,7 @@ The `Prev' node of the Top node should also be your @samp{(dir)} file.
 @item
 @cindex Next node of Top node
 The `Next' node of the Top node should be the first chapter in your
+document.
 
 @end itemize
 
