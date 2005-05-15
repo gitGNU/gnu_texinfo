@@ -102,7 +102,7 @@ Software Foundation raise funds for GNU development.''
 @sp 1
 Published by the Free Software Foundation @*
 59 Temple Place Suite 330 @*
-Boston, MA 02111-1307 @*
+Boston, MA 02110-1301 @*
 USA @*
 ISBN 1-882114-67-1 @c for version 4.0, September 1999.
 @c ISBN 1-882114-65-5 is for version 3.12, March 1998.
@@ -14969,7 +14969,7 @@ Code CD-ROM suitable for printing Texinfo manuals.  To order it, contact:
 @group
 Free Software Foundation, Inc.
 59 Temple Place Suite 330
-Boston, MA @ @ 02111-1307
+Boston, MA @ @ 02110-1301
 USA
 Telephone: @w{+1-617-542-5942}
 Fax: (including Japan) @w{+1-617-542-2652}
