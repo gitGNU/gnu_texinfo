@@ -206,7 +206,7 @@ AM_CONDITIONAL(INSTALL_WARNINGS,
    test x"$install_warnings" = xtrue || test x"$install_warnings" = xyes)
 
 # i18n support.  To update to a new version of gettext, run:
-# gettextize -f -c --intl
+# gettextize -f -c
 AM_GNU_GETTEXT_VERSION([0.14.3])
 AM_GNU_GETTEXT([external])
 
