@@ -130,20 +130,22 @@ findprog ()
   saveIFS=$IFS
   IFS=$path_sep  # break path components at the path separator
   for dir in $PATH; do
+    IFS=$saveIFS
     # The basic test for an executable is `test -f $f && test -x $f'.
-    # `test -x' is not enough, because it can also be true for directories.
+    # (`test -x' is not enough, because it can also be true for directories.)
+    # We have to try this both for $1 and $1.exe.
     #
-    # On Cygwin and DJGPP, `test -x' also looks for .exe.  On Cygwin, also
-    # `test -f' has this enhancement, bot not on DJGPP.  (Both are design
-    # decisions, so there is little chance to make them consistent.)
-    # Thus we have to try `test -f' twice.
-    if  test -x "$dir/$1" &&
-	{ test -f "$dir/$1" || test -f "$dir/$1.exe"; }; then
+    # Note: On Cygwin and DJGPP, `test -x' also looks for .exe.  On Cygwin,
+    # also `test -f' has this enhancement, bot not on DJGPP.  (Both are
+    # design decisions, so there is little chance to make them consistent.)
+    # Thusly, it seems to be difficult to make use of these enhancements.
+    #
+    if  { test -f "$dir/$1"	&& test -x "$dir/$1"; } ||
+	{ test -f "$dir/$1.exe"	&& test -x "$dir/$1.exe"; }; then
       foundprog=true
       break
     fi
   done
-  IFS=$saveIFS
   $foundprog
 }
 
