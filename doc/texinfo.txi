@@ -6973,7 +6973,7 @@ Space
 Return
 @item LFD
 Linefeed (however, since most keyboards nowadays do not have a Linefeed key,
-it might be better to call this character @kbd{C-j}.
+it might be better to call this character @kbd{C-j})
 @item TAB
 Tab
 @item BS
@@ -7726,7 +7726,7 @@ produces
 
 In general, you should avoid using the other font commands.  Some of
 them are only useful when documenting functionality with specific font
-effects, such as in \TeX\ and related packages.
+effects, such as in @TeX{} and related packages.
 
 
 @node Quotations and Examples
