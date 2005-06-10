@@ -81,12 +81,12 @@ Build modes:
   -c, --clean   same as --build=clean
 
 The MODE specifies where the TeX compilation takes place, and, as a
-consequence, how auxiliary files are treated.  The default build mode
+consequence, how auxiliary files are treated.  The build mode
 can also be set using the environment variable TEXI2DVI_BUILD_MODE.
 
 Valid MODEs are:
   \`local'  compile in the current directory, leaving all the auxiliary
-             files around.  This is the default.
+             files around.
   \`tidy'   compile in a local *.t2d directory, where the auxiliary files
              are left.  Output files are copied back to the original file.
   \`clean'  same as \`tidy', but remove the auxiliary directory afterwards.
@@ -349,12 +349,13 @@ run_tex ()
 
   verbose "Running $cmd ..."
   if eval "$cmd" >&5; then
-    if $tidy; then
-      # Update the actual output.
-      case $oname in
-	'') dest=$orig_pwd;;
-	 *) dest=$oname;;
-      esac
+    # Update the actual output.
+    case $tidy:$oname in
+      true:)  dest=$orig_pwd;;
+      false:) dest=;;
+      *:*)    dest=$oname;;
+    esac
+    if test -n "$dest"; then
       verbose "Copying $oformat file from `pwd` to $dest"
       cp -p "./$filename_noext.$oformat" "$dest"
     fi
