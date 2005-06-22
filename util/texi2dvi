@@ -76,7 +76,7 @@ TeX tuning:
    or --texinfo=CMD    multiple values accumulate
 
 Build modes:
-  --build=MODE  specify the treatment of auxialiary files [$build_mode]
+  --build=MODE  specify the treatment of auxiliary files [$build_mode]
       --tidy    same as --build=tidy
   -c, --clean   same as --build=clean
 
