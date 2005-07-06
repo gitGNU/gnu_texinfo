@@ -11646,7 +11646,9 @@ enclose it in braces.  For example:
 Otherwise, the second word will be mistaken for the name of the
 entity.  As a general rule, when any of the arguments in the heading
 line @emph{except} the last one are more than one word, you need to
-enclose them in braces.
+enclose them in braces.  This may also be necessary if the text
+contains commands, for example, @samp{@{declaraci@@'on@}} if you are
+writing in Spanish.
 
 Some of the definition commands are more general than others.  The
 @code{@@deffn} command, for example, is the general definition command
