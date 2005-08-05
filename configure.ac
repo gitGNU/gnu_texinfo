@@ -135,15 +135,14 @@ fi
 # HP-UX 9 (at least) needs -lncurses which defines termcap variables PC etc.
 AC_MSG_CHECKING(for library with termcap variables)
 AC_CACHE_VAL(ac_cv_var_ospeed,
-oldLIBS=$LIBS
+[oldLIBS=$LIBS
 for trylib in $termlib ${TERMLIB_VARIANTS}; do
    if test "x$trylib" != "x$termlib"; then
      LIBS="$oldLIBS -l$termlib -l$trylib"
    else
      LIBS="$oldLIBS -l$termlib"
    fi
-   AC_TRY_LINK(,
-[#ifdef HAVE_NCURSES_TERMCAP_H
+   AC_LINK_IFELSE([AC_LANG_PROGRAM([], [[#ifdef HAVE_NCURSES_TERMCAP_H
 #include <ncurses/termcap.h>
 #else
 #ifdef HAVE_TERMCAP_H
@@ -162,10 +161,10 @@ BC++;
 UP++;
 PC++;
 return ospeed != 0;
-], ac_cv_var_ospeed=$trylib; break)
+]])], [ac_cv_var_ospeed=$trylib; break])
 done
 LIBS=$oldLIBS
-)
+])
 AC_MSG_RESULT($ac_cv_var_ospeed)
 if test -n "$ac_cv_var_ospeed" \
    && test "x$termlib" != "x$ac_cv_var_ospeed"; then

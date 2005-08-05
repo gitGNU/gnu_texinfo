@@ -13,7 +13,7 @@
 bin_PROGRAMS = makeinfo
 
 localedir = $(datadir)/locale
-INCLUDES = -I$(top_srcdir)/lib -I../intl -DLOCALEDIR=\"$(localedir)\"
+AM_CPPFLAGS = -I$(top_srcdir)/lib -DLOCALEDIR=\"$(localedir)\"
 LDADD = ../lib/libtxi.a $(LIBINTL)
 
 makeinfo_SOURCES = \

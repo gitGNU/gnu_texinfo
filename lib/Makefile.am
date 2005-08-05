@@ -11,7 +11,6 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 noinst_LIBRARIES = libtxi.a
-INCLUDES = -I../intl
 
 # Don't need to list alloca.c, etc., Automake includes them.
 libtxi_a_SOURCES = getopt.c getopt.h getopt1.c getopt_.h getopt_int.h \

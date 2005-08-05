@@ -22,7 +22,7 @@ infodir2 = $(datadir)/info
 # -I. for funs.h.
 # Automake puts -I.. and -I$(srcdir) into DEFS by default, but
 # we need to override it, so include them ourselves.
-INCLUDES = -I. -I$(top_srcdir)/lib -I../intl -I.. -I$(srcdir)
+AM_CPPFLAGS = -I. -I$(top_srcdir)/lib -I.. -I$(srcdir)
 DEFS += -DLOCALEDIR=\"$(localedir)\" -DINFODIR=\"$(infodir)\" \
 	-DINFODIR2=\"$(infodir2)\"
 LDADD = ../lib/libtxi.a $(TERMLIBS) $(LIBINTL)
