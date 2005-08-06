@@ -869,11 +869,7 @@ cm_printindex (void)
             }
           else if (xml && docbook)
             {
-              /* In the DocBook case, the expanded index entry is not
-                 good for us, since it was expanded for non-DocBook mode
-                 inside sort_index.  So we send the original entry text
-                 to be used with execute_string.  */
-              xml_insert_indexentry (index->entry_text, index_node);
+	      /* Let DocBook processor generate the index. */
             }
           else
             {

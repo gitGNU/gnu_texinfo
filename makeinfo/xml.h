@@ -22,11 +22,10 @@
 #ifndef XML_H
 #define XML_H
 
-/* Options. */
-
-/* Separate index entries into divisions for each letters. */
-extern int xml_index_divisions;
+/* Currently sorting the index. */
 extern int xml_sort_index;
+
+/* Options. */
 
 extern int xml_no_indent;
 
@@ -110,7 +109,6 @@ extern void xml_add_char (int character),
   xml_insert_entity (char *entity_name),
   xml_insert_footnote (char *note),
   xml_insert_quotation (char *type, int arg),
-  xml_insert_indexentry (char *entry, char *node),
   xml_insert_indexterm (char *indexterm, char *index),
   xml_insert_docbook_image (char *name_arg),
   xml_synindex (char *from, char *to),
