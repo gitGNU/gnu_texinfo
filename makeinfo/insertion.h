@@ -35,6 +35,8 @@ enum insertion_type
   table, tex, vtable, titlepage, bad_type
 };
 
+extern const char default_item_function[];
+
 typedef struct istack_elt
 {
   struct istack_elt *next;
