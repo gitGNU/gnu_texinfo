@@ -26,7 +26,8 @@ MAKEINFO = $(top_builddir)/$(native_tools)/makeinfo/makeinfo
 ## INSTALL_INFO = $(top_builddir)/$(native_tools)/util/ginstall-info
 
 TXI_XLATE = txi-cs.tex txi-de.tex txi-en.tex txi-es.tex txi-fr.tex \
-	    txi-it.tex txi-nl.tex txi-no.tex txi-pl.tex txi-pt.tex txi-tr.tex
+	    txi-it.tex txi-nl.tex txi-no.tex txi-pl.tex txi-pt.tex \
+	    txi-sr.tex txi-tr.tex 
 
 # Include our texinfo.tex, not Automake's.
 EXTRA_DIST = epsf.tex pdfcolor.tex texinfo.tex \
