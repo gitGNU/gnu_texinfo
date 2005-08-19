@@ -2,7 +2,7 @@
    $Id$
 
    Copyright (C) 1993, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
-   2004 Free Software Foundation, Inc.
+   2004, 2005 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -15,8 +15,8 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+   along with this program; if not, write to the Free Software Foundation,
+   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
    Written by Brian Fox (bfox@ai.mit.edu). */
 
@@ -289,12 +289,15 @@ main (int argc, char **argv)
   /* If the user specified --version, then show the version and exit. */
   if (print_version_p)
     {
-      printf ("%s (GNU %s) %s\n", program_name, PACKAGE, VERSION);
+      printf ("info (GNU %s) %s\n", PACKAGE, VERSION);
       puts ("");
-      puts ("Copyright (C) 2004 Free Software Foundation, Inc.");
-      printf (_("There is NO warranty.  You may redistribute this software\n\
+      printf (_("\
+Copyright (C) %s Free Software Foundation, Inc.\n\
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A\n\
+PARTICULAR PURPOSE.  You may redistribute copies of GNU %s\n\
 under the terms of the GNU General Public License.\n\
-For more information about these matters, see the files named COPYING.\n"));
+For more information about these matters, see the file named COPYING.\n"),
+              "2005", PACKAGE);
       xexit (0);
     }
 
