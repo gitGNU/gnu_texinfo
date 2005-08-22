@@ -38,7 +38,7 @@ convenience, here's a url to one of the relevant sections:
   . look for info files in the current directory first, by default.
   . when calling man, use -a if no explicit section is found.
 * Distribution:
-  . automake 1.9.5, gettext 0.14.5.
+  . automake 1.9.6, gettext 0.14.5.
   . gettext support now [external].
   . new translation: rw (Kinyarwandan).
 
