@@ -1,5 +1,5 @@
 #! /bin/sh
-# texi2dvi --- produce DVI (or PDF) files from Texinfo (or LaTeX) sources.
+# texi2dvi --- produce DVI (or PDF) files from Texinfo (or (La)TeX) sources.
 # $Id$
 #
 # Copyright (C) 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2001,
@@ -48,10 +48,11 @@ build_mode=${TEXI2DVI_BUILD_MODE:-local}
 
 usage="Usage: $program [OPTION]... FILE...
 
-Run each Texinfo or LaTeX FILE through TeX in turn until all
+Run each Texinfo or (La)TeX FILE through TeX in turn until all
 cross-references are resolved, building all indices.  The directory
 containing each FILE is searched for included files.  The suffix of FILE
-is used to determine its language (LaTeX or Texinfo).
+is used to determine its language ((La)TeX or Texinfo).  To process
+(e)plain TeX files, set the environment variable LATEX=tex.
 
 Makeinfo is used to perform Texinfo macro expansion before running TeX
 when needed.
@@ -103,7 +104,7 @@ Using the \`tidy' mode brings several advantages:
   - PDF and DVI compilation are kept in separate subdirectories
     preventing any possibility of auxiliary file incompatibility.
 
-On the other, because \`tidy' compilation takes place in another
+On the other hand, because \`tidy' compilation takes place in another
 directory, occasionally TeX won't be able to find some files (e.g., when
 using \\graphicspath): in that case use -I to specify the additional
 directories to consider.
@@ -451,10 +452,12 @@ run_bibtex ()
     texinfo) bibtex=;;
   esac
 
+  # "Citation undefined" is for LaTeX, "Undefined citation" for btxmac.tex.
   if test -n "$bibtex" \
      && test -r "$filename_noext.aux" \
      && test -r "$filename_noext.log" \
      && (grep 'Warning:.*Citation.*undefined' "$filename_noext.log" \
+          || grep '.*Undefined citation' "$filename_noext.log" \
           || grep 'No file .*\.bbl\.' "$filename_noext.log") \
         >&6 2>&1; \
   then
