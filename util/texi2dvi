@@ -1023,18 +1023,20 @@ for command_line_filename in ${1+"$@"}; do
   # and TeX one last time.
   run_thumbpdf
 
-  # Return to the original directory so that
-  # - the next file is processed in correct conditions
-  # - the temporary file can be removed
-  cd / # in case $orig_pwd is on a different drive (for DOS)
-  cd "$orig_pwd" || exit 1
+  # Both to make sure we can remove $t2ddir (we might have cd'd into
+  # it), and in case $orig_pwd is on a different drive (for DOS).
+  cd /
 
   # Remove temporary files.
   if $clean; then
     verbose "Removing $t2ddir"
-    cd /
     rm -rf "$t2ddir"
   fi
+
+  # Return to the original directory so that
+  # - the next file is processed in correct conditions
+  # - the temporary file can be removed
+  cd "$orig_pwd" || exit 1
 done
 
 verbose "done."
