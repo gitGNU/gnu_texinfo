@@ -11,7 +11,10 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 bin_PROGRAMS = ginstall-info texindex
-bin_SCRIPTS = texi2dvi texi2pdf
+bin_SCRIPTS = texi2dvi texi2pdf pdftexi2dvi
+
+pdftexi2dvi: texi2dvi
+	cp -f $< $@
 
 # Use `ginstall-info' in the definition of PROGRAMS and in dependencies
 # because automake generates an install-info target in every Makefile (a
