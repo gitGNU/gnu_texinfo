@@ -13,8 +13,9 @@
 bin_PROGRAMS = ginstall-info texindex
 bin_SCRIPTS = texi2dvi texi2pdf pdftexi2dvi
 
+# for auctex.
 pdftexi2dvi: texi2dvi
-	cp -f $< $@
+	cp -f $(srcdir)/texi2dvi $@
 
 # Use `ginstall-info' in the definition of PROGRAMS and in dependencies
 # because automake generates an install-info target in every Makefile (a
@@ -30,7 +31,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/lib -DLOCALEDIR=\"$(localedir)\"
 LDADD = ../lib/libtxi.a $(LIBINTL)
 
 dist_pkgdata_DATA = texinfo.dtd texinfo.xsl
-pkgdata_DATA = texinfo.cat
+pkgdata_DATA = texinfo.catx
 
 # we don't actually use version.texi in the rule, but it's one way of
 # noticing when the version changes.
