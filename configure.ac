@@ -83,7 +83,7 @@ AC_CANONICAL_BUILD
 # We need to run some of our own binaries, most notably makedoc, but as
 # long as we have this process, we also use our own makeinfo and
 # install-info.
-# 
+#
 # This means that if we are cross compiling, we have to configure the
 # package twice: once with the native compiler (this is done in a
 # subdirectory $native_tools), and once with the cross compiler.
@@ -208,6 +208,8 @@ AM_CONDITIONAL(INSTALL_WARNINGS,
 # gettextize -f -c
 AM_GNU_GETTEXT_VERSION([0.14.5])
 AM_GNU_GETTEXT([external])
+
+dnl util/defs
 
 AC_CONFIG_FILES([
   Makefile

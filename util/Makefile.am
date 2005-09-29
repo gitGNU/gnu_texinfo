@@ -47,3 +47,21 @@ EXTRA_DIST = README deref.c dir-example fix-info-dir fixfonts \
   prepinfo.awk tex3patch texi-docstring-magic.el texi2dvi texi2pdf txitextest \
   $(dist_pkgdata_DATA) texinfo-cat.in
 CLEANFILES = $(pkgdata_DATA)
+
+
+## ------- ##
+## Tests.  ##
+## ------- ##
+
+XFAIL_TESTS =
+
+TESTS =	\
+local.test texi2dvi.test
+
+EXTRA_DIST += $(TESTS)
+
+# Each test case depends on defs.
+check_SCRIPTS = defs
+
+distclean-local:
+	-rm -rf testSubDir
