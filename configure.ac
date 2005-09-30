@@ -209,8 +209,6 @@ AM_CONDITIONAL(INSTALL_WARNINGS,
 AM_GNU_GETTEXT_VERSION([0.14.5])
 AM_GNU_GETTEXT([external])
 
-dnl util/defs
-
 AC_CONFIG_FILES([
   Makefile
   doc/Makefile
@@ -219,6 +217,6 @@ AC_CONFIG_FILES([
   makeinfo/Makefile
   makeinfo/tests/Makefile
   po/Makefile.in
-  util/Makefile
+  util/Makefile util/defs
 ])
 AC_OUTPUT
