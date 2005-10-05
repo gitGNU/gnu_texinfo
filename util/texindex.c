@@ -406,7 +406,7 @@ maketempname (int count)
 
   sprintf (tempsuffix, ".%d", count);
   name =  concat3 (tempdir, tempbase, tempsuffix);
-  fd = open (name, O_CREAT|O_EXCL|O_WRONLY, 0666);
+  fd = open (name, O_CREAT|O_EXCL|O_WRONLY, 0600);
   if (fd == -1)
     return NULL;
   else
