@@ -848,8 +848,9 @@ while test x"$1" != x"$arg_sep"; do
     -@ ) escape=@;;
     # Silently and without documentation accept -b and --b[atch] as synonyms.
     -b | --batch) batch=true;;
-    -c | --clean) build_mode=clean;;
+         --build)      shift; build_mode=$1;;
          --build-dir)  shift; build_dir=$1; build_mode=tidy;;
+    -c | --clean) build_mode=clean;;
     -D | --debug) debug=true;;
     -e | -E | --expand) expand=t;;
     -h | --help) echo "$usage"; exit 0;;
