@@ -745,9 +745,10 @@ run_makeinfo ()
 insert_commands ()
 {
   local textra_cmd
-  case language in
+  case $language in
     latex)   textra_cmd=1i;;
     texinfo) textra_cmd='/^@setfilename/a';;
+    *)       echo "$0: internal error, unknown language: $language" >&2;
   esac
 
   if test -n "$textra"; then
