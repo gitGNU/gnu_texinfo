@@ -11626,7 +11626,7 @@ produces
 
 @quotation
 @deffn Command forward-word count
-This function moves point forward @var{count} words
+This command moves point forward @var{count} words
 (or backward if @var{count} is negative). @dots{}
 @end deffn
 @end quotation
