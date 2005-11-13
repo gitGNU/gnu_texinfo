@@ -3674,7 +3674,7 @@ none of it should appear in printed output, so enclose it between
 @code{@@ifnottex} and @code{@@end ifnottex} commands.  (@TeX{} does not
 print either an @code{@@node} line or a menu; they appear only in Info;
 strictly speaking, you are not required to enclose these parts between
-@code{@@ifnottex} and @code{@@end ifnottext}, but it is simplest to do
+@code{@@ifnottex} and @code{@@end ifnottex}, but it is simplest to do
 so.  @xref{Conditionals, , Conditionally Visible Text}.)
 
 @menu
@@ -3697,6 +3697,7 @@ Here is an example of a Top node.
 @@top Sample Title
 
 @@insertcopying
+@@end ifnottex
 @end group
 
 Additional general information.
