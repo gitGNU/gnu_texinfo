@@ -49,8 +49,6 @@ If you are interested in working on any of these, email bug-texinfo@gnu.org.
   - Support reference card creation, perhaps by only paying attention to
     sectioning and @def... commands.
   - Allow @end (and other?) commands to be indented in the source.
-  - Test for memory leaks, e.g., with valgrind:
-    http://developer.kde.org/~sewardj/
   - Extend and improve the tests.
 
 * Language:
