@@ -6982,7 +6982,7 @@ Tab
 Backspace
 @item ESC
 Escape
-@item DEL
+@item DELETE
 Delete
 @item SHIFT
 Shift
