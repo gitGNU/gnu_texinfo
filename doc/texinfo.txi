@@ -4881,9 +4881,10 @@ subsubsection.
 To create a node, write an @code{@@node} command at the beginning of a
 line, and follow it with up to four arguments, separated by commas, on
 the rest of the same line.  The first argument is required; it is the
-name of this node.  The subsequent arguments are the names of the
-`Next', `Previous', and `Up' pointers, in that order, and may be omitted
-if your Texinfo document is hierarchically organized (@pxref{makeinfo
+name of this node (for details of node names, @pxref{Node Line
+Requirements}).  The subsequent arguments are the names of the `Next',
+`Previous', and `Up' pointers, in that order, and may be omitted if
+your Texinfo document is hierarchically organized (@pxref{makeinfo
 Pointer Creation}).
 
 You may insert spaces before each name if you wish; the spaces are
@@ -4924,8 +4925,9 @@ see @ref{Cross References}.)
 @subsection Choosing Node and Pointer Names
 
 @cindex Node names, choosing
-The name of a node identifies the node.  The pointers enable
-you to reach other nodes and consist simply of the names of those nodes.
+The name of a node identifies the node (for details of node names,
+@pxref{Node Line Requirements}).  The pointers enable you to reach
+other nodes and consist simply of the names of those nodes.
 
 Normally, a node's `Up' pointer contains the name of the node whose menu
 mentions that node.  The node's `Next' pointer contains the name of the
