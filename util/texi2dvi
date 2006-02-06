@@ -920,8 +920,12 @@ run_makeinfo ()
       in_src=$work_src/$in_base
       local miincludes=`list_prefix includes -I`
       verbose "Macro-expanding $command_line_filename to $in_src ..."
+      # eval $makeinfo because it might be defined as something complex
+      # (running missing) and then we end up with things like '"-I"',
+      # and "-I" (including the quotes) is not an option name.  This
+      # happens with gettext 0.14.5, at least.
       sed "$comment_iftex" "$command_line_filename" \
-        | $makeinfo --footnote-style=end -I "$in_dir" $miincludes \
+        | eval $makeinfo --footnote-style=end -I "$in_dir" $miincludes \
           -o /dev/null --macro-expand=- \
         | sed "$uncomment_iftex" >"$in_src"
       # Continue only if everything succeeded.
