@@ -235,7 +235,7 @@
 <!ELEMENT menuentry (menunode?, menutitle?, menucomment?)>
 <!ELEMENT menunode (#PCDATA)>
 <!ELEMENT menutitle (#PCDATA)>
-<!ELEMENT menucomment (#PCDATA | para)*>
+<!ELEMENT menucomment (#PCDATA | %Inline.phrase;)*>
 
 <!-- Floating displays -->
 <!ELEMENT float (floattype, floatpos, (%block;)*,
@@ -252,12 +252,11 @@
 
 <!-- Lists -->
 <!ELEMENT itemize (itemfunction, (item | itemize | enumerate | indexterm)*)>
-<!ELEMENT enumerate (enumarg?, (item | itemize | enumerate)*)>
+<!ELEMENT enumerate (item | itemize | enumerate | indexterm)*>
 <!ATTLIST enumerate
           first CDATA #IMPLIED>
 
 <!ELEMENT item (%block;)*>
-<!ELEMENT enumarg (#PCDATA)>
 
 <!ELEMENT itemfunction (#PCDATA | %Inline.phrase;)*>
 
