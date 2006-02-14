@@ -1185,7 +1185,7 @@ the rest of the line.  (@code{@@chapter} creates chapter titles.)@refill
 
 @item
 Write a command such as @code{@@dots@{@}} wherever you wish but usually
-within a sentence. (@code{@@dots@{@}} creates dots @dots{})@refill
+within a sentence. (@code{@@dots@{@}} creates an ellipsis @dots{})@refill
 
 @item
 Write a command such as @code{@@code@{@var{sample-code}@}} wherever you
@@ -10530,7 +10530,7 @@ end-of-sentence ellipsis, which has different spacing afterwards,
 Here is an ellipsis: @dots{}
 Here are three periods in a row: ...
 
-In printed output, the three periods in a row are closer together than
+In printed output, the three periods in a row are much closer together than
 the dots in the ellipsis.
 @end iftex
 
