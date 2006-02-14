@@ -1,8 +1,8 @@
 /* cmds.c -- Texinfo commands.
    $Id$
 
-   Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 Free
-   Software Foundation, Inc.
+   Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006
+   Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -454,9 +454,9 @@ cm_enddots (int arg)
 	}
       else
 	if (html && !in_fixed_width_font)
-	  insert_string ("<small class=\"enddots\">....</small>");
+	  insert_string ("<small class=\"enddots\">...</small>");
 	else
-	  add_word ("....");
+	  add_word ("...");
     }
 }
 
