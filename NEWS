@@ -55,7 +55,7 @@ convenience, here's a url to one of the relevant sections:
 * Distribution:
   . automake 1.9.6, gettext 0.14.5.
   . gettext support now [external].
-  . new translations: rw (Kinyarwandan), vi (Vietnamese).
+  . new translations: hu (Hungarian), rw (Kinyarwandan), vi (Vietnamese).
 
 
 4.8 (31 December 2004)
