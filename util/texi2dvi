@@ -234,9 +234,12 @@ absolute ()
       # Absolute paths don't need to be expanded.
       echo "$1"
       ;;
-   *)
-      (cd "$orig_pwd/`func_dirname $1`" 2>/dev/null &&
-       echo `pwd`/`basename "$1"`)
+   *) local rel="$orig_pwd/`func_dirname $1`"
+      if test -d "$rel"; then
+        (cd "$rel" 2>/dev/null && echo `pwd`/`basename "$1"`);
+      else
+        fatal 1 "not a directory: $rel"
+      fi
       ;;
   esac
 }
@@ -645,7 +648,7 @@ run_tex ()
   # subdirectory to exist.
   case $language:$tidy in
     latex:true)
-       sed -n 's|^[ ]*\\include{\(.*\)/.*}.*|\1|p' $in_input |
+       sed -n 's|^[ ]*\\include{\(.*\)/.*}.*|\1|p' "$in_input" |
        sort -u |
        while read d
        do
@@ -1097,7 +1100,7 @@ compile ()
     # directory (e.g., in clean build mode, or during the macro-support
     # detection).
     val=`absolute_filenames "$val"`
-    eval $var="$val"
+    eval $var="\"$val\""
     eval export $var
     eval verbose "$var=\'\$${var}\'"
   done
