@@ -26,6 +26,7 @@ AM_CPPFLAGS = -I. -I$(top_srcdir)/lib -I.. -I$(srcdir)
 DEFS += -DLOCALEDIR=\"$(localedir)\" -DINFODIR=\"$(infodir)\" \
 	-DINFODIR2=\"$(infodir2)\"
 LDADD = ../lib/libtxi.a $(TERMLIBS) $(LIBINTL)
+infokey_LDADD = ../lib/libtxi.a $(LIBINTL)
 
 EXTRA_DIST = README pcterm.c
 
