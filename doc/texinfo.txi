@@ -3099,10 +3099,11 @@ The copyright owner (or owners) is whoever holds legal copyright on the
 work.  In the case of works assigned to the FSF, the owner is `Free
 Software Foundation, Inc.'.
 
-The copyright `line' may actually be split across multiple
-lines, both in the source document and in the output.  This often
-happens for documents with a long history, having many different years
-of publication.
+The copyright `line' may actually be split across multiple lines, both
+in the source document and in the output.  This often happens for
+documents with a long history, having many different years of
+publication.  If you do use several lines, do not indent any of them
+(or anything else in the @code{@@copying} block) in the source file.
 
 @xref{Copyright Notices,,,maintain,GNU Maintenance Instructions}, for
 additional information.
