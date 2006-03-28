@@ -16658,9 +16658,9 @@ according to the other rules.
 @item @code{@@minus}            @tab U+2212
 @item @code{@@ordf}             @tab U+00AA
 @item @code{@@ordm}             @tab U+00BA
-@item @code{@@point}            @tab U+2217
+@item @code{@@point}            @tab U+2605
 @item @code{@@pounds}           @tab U+00A3
-@item @code{@@print}            @tab @samp{-|}
+@item @code{@@print}            @tab U+22A3
 @item @code{@@questiondown}     @tab U+00BF
 @item @code{@@registeredsymbol} @tab U+00AE
 @item @code{@@result}           @tab U+21D2
