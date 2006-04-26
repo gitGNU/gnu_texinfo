@@ -45,9 +45,10 @@ convenience, here's a url to one of the relevant sections:
     for sake of AUC-TeX which prepends `pdf' to the compilation command
     when requested to produce PDF.
 * texinfo.tex:
-  . new Serbian translation file for texinfo.tex, txi-sr.tex.
+  . new Russian, Serbian, and Ukrainian translations for texinfo.tex:
+    txi-ru.tex, txi-sr.tex, txi-uk.tex.
   . section names with \ characters work properly in pdf outlines.
-  . .toc files use @ as the escape character, instead of \.
+  . have .toc files use @ as the escape character, instead of \.
 * info:
   . look for info files in the current directory first, by default.
   . when calling man, use -a if no explicit section is found.
