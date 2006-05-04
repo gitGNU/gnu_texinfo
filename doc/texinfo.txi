@@ -794,13 +794,7 @@ better to include too much than to leave out something important.
 Patches are most welcome; if possible, please make them with
 @samp{@w{diff -c}} (@pxref{Top,, Overview, diff, Comparing and Merging
 Files}) and include @file{ChangeLog} entries (@pxref{Change Log,,,
-emacs, The GNU Emacs Manual}).
-
-When sending patches, if possible please do not encode or split them in
-any way; it's much easier to deal with one plain text message, however
-large, than many small ones.  @uref{ftp://ftp.gnu.org/gnu/sharutils/,
-GNU shar} is a convenient way of packaging multiple and/or binary files
-for email.
+emacs, The GNU Emacs Manual}), and follow the existing coding style.
 
 
 @node Using Texinfo
