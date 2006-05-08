@@ -9,7 +9,7 @@ else
   chicken=
 fi
 
-echo "Bootstrapping CVS Texinfo with:"
+echo "Preparing CVS Texinfo infrastructure:"
 
 # This overwrites lots of files with older versions.
 # I keep the newest versions of files common between distributions up to
