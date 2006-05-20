@@ -902,7 +902,7 @@ run_makeinfo ()
          echo '\input texinfo.tex @bye' >txiversion.tex
          # Be sure that if tex wants to fail, it is not interactive:
          # close stdin.
-         tex txiversion.tex </dev/null >txiversion.out 2>txiversion.err
+         $TEX txiversion.tex </dev/null >txiversion.out 2>txiversion.err
       )
       if test $? != 0; then
         cat $version_test_dir/txiversion.out
