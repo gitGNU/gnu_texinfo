@@ -164,6 +164,13 @@ recode_from=    # if not empty, recode from this encoding to @documentencoding
 
 orig_pwd=`pwd`
 
+# We have to initialize IFS to space tab newline since we save and
+# restore IFS and apparently POSIX allows stupid/broken behavior with
+# empty-but-set IFS.
+# http://lists.gnu.org/archive/html/automake-patches/2006-05/msg00008.html
+IFS=" 	
+"
+
 # Systems which define $COMSPEC or $ComSpec use semicolons to separate
 # directories in TEXINPUTS -- except for Cygwin, where COMSPEC might be
 # inherited, but : is used.
@@ -178,7 +185,6 @@ CDPATH=${ZSH_VERSION+.}$path_sep
 
 # In case someone crazy insists on using grep -E.
 : ${EGREP=egrep}
-
 
 ## --------------------- ##
 ## Auxiliary functions.  ##
