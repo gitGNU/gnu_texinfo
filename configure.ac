@@ -209,6 +209,11 @@ AM_CONDITIONAL(INSTALL_WARNINGS,
 AM_GNU_GETTEXT_VERSION([0.14.5])
 AM_GNU_GETTEXT([external])
 
+# The test suite.
+AC_CONFIG_FILES([util/defs])
+AC_CHECK_PROGS([HEVEA], [hevea], [])
+AC_CHECK_PROGS([TEX], [tex], [])
+
 AC_CONFIG_FILES([
   Makefile
   doc/Makefile
@@ -217,6 +222,6 @@ AC_CONFIG_FILES([
   makeinfo/Makefile
   makeinfo/tests/Makefile
   po/Makefile.in
-  util/Makefile util/defs
+  util/Makefile
 ])
 AC_OUTPUT

@@ -56,7 +56,7 @@ CLEANFILES = $(pkgdata_DATA)
 XFAIL_TESTS =
 
 TESTS =	\
-local.test texi2dvi.test
+latex2html.test local.test texi2dvi.test
 
 EXTRA_DIST += $(TESTS)
 
