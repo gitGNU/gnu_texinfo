@@ -34,7 +34,7 @@ AC_ISC_POSIX
 AC_MINIX
 
 # Needed on sysV68 for sigblock, sigsetmask.  But check for it in libc first.
-AC_CHECK_FUNC(sigblock, , AC_CHECK_LIB(bsd, sigblock))
+AC_CHECK_FUNC(sigblock, , [AC_CHECK_LIB(bsd, sigblock)])
 
 # Checks for header files.
 AC_HEADER_STAT
