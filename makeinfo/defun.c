@@ -400,28 +400,28 @@ defun_internal (enum insertion_type type, int x_p)
     {
     case defun:
     case deftypefun:
-      category = _("Function");
+      category = __("Function");
       break;
     case defmac:
-      category = _("Macro");
+      category = __("Macro");
       break;
     case defspec:
-      category = _("Special Form");
+      category = __("Special Form");
       break;
     case defvar:
     case deftypevar:
-      category = _("Variable");
+      category = __("Variable");
       break;
     case defopt:
-      category = _("User Option");
+      category = __("User Option");
       break;
     case defivar:
     case deftypeivar:
-      category = _("Instance Variable");
+      category = __("Instance Variable");
       break;
     case defmethod:
     case deftypemethod:
-      category = _("Method");
+      category = __("Method");
       break;
     default:
       category = next_nonwhite_defun_arg (&scan_args);
@@ -497,24 +497,24 @@ defun_internal (enum insertion_type type, int x_p)
         execute_string (" --- %s: %s %s", category, type_name, defined_name);
         break;
       case defcv:
-        execute_string (" --- %s %s %s: %s", category, _("of"), type_name,
+        execute_string (" --- %s %s %s: %s", category, __("of"), type_name,
                         defined_name);
         break;
       case deftypecv:
       case deftypeivar:
-        execute_string (" --- %s %s %s: %s %s", category, _("of"), type_name,
+        execute_string (" --- %s %s %s: %s %s", category, __("of"), type_name,
                         type_name2, defined_name);
         break;
       case defop:
-        execute_string (" --- %s %s %s: %s", category, _("on"), type_name,
+        execute_string (" --- %s %s %s: %s", category, __("on"), type_name,
                         defined_name);
         break;
       case deftypeop:
-        execute_string (" --- %s %s %s: %s %s", category, _("on"), type_name,
+        execute_string (" --- %s %s %s: %s %s", category, __("on"), type_name,
                         type_name2, defined_name);
         break;
       case deftypemethod:
-        execute_string (" --- %s %s %s: %s %s", category, _("on"), type_name,
+        execute_string (" --- %s %s %s: %s %s", category, __("on"), type_name,
                         type_name2, defined_name);
         break;
       }
@@ -542,13 +542,13 @@ defun_internal (enum insertion_type type, int x_p)
         case defcv:
         case deftypecv:
         case deftypeivar:
-	  execute_string ("--- %s %s %s: ", category, _("of"), type_name);
+	  execute_string ("--- %s %s %s: ", category, __("of"), type_name);
 	  break;
 
         case defop:
         case deftypemethod:
         case deftypeop:
-	  execute_string ("--- %s %s %s: ", category, _("on"), type_name);
+	  execute_string ("--- %s %s %s: ", category, __("on"), type_name);
 	  break;
 	} /* switch (base_type)... */
 
@@ -641,13 +641,13 @@ defun_internal (enum insertion_type type, int x_p)
 	execute_string ("@vindex %s\n", defined_name);
 	break;
       case deftypeivar:
-	execute_string ("@vindex %s %s %s\n", defined_name, _("of"),
+	execute_string ("@vindex %s %s %s\n", defined_name, __("of"),
                         type_name);
 	break;
       case defop:
       case deftypeop:
       case deftypemethod:
-	execute_string ("@findex %s %s %s\n", defined_name, _("on"),
+	execute_string ("@findex %s %s %s\n", defined_name, __("on"),
                         type_name);
 	break;
       case deftp:

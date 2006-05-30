@@ -15175,6 +15175,16 @@ input.
 @opindex --docbook
 Generate Docbook output rather than Info.
 
+@item --document-language=@var{lang}
+@opindex --document-language
+@vindex LANG
+Use @var{lang} for translations of Texinfo keywords which end up in
+the output document.  The default is (xxshould be) the locale
+specified by the @code{@@documentlanguage} command if there is one
+(@pxref{documentlanguage}), else the locale used for translations of
+@code{makeinfo}'s diagnostic messages, i.e., the @env{LANG}
+environment variable.
+
 @item --enable-encoding
 @opindex --enable-encoding
 Output accented and special characters in Info or plain text output

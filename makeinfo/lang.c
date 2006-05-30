@@ -35,6 +35,9 @@ encoding_code_type document_encoding_code = no_encoding;
 /* Current language code; default is English.  */
 language_code_type language_code = en;
 
+/* Language to use for translations that end up in the output. */
+char *document_language = "C";
+
 /* By default, unsupported encoding is an empty string.  */
 char *unknown_encoding = NULL;
 
