@@ -45,6 +45,7 @@ convenience, here's a url to one of the relevant sections:
     while preserving auxiliary files.
   . new support for AUC-TeX: texi2dvi (weakly) supports arguments a la
     TeX such as `\nonstopmode\input{file.tex}'.
+  . new option --src-specials, passed to TeX.
   . pdftexi2dvi is a new wrapper to `texi2dvi --pdf', equal to texi2pdf,
     for sake of AUC-TeX which prepends `pdf' to the compilation command
     when requested to produce PDF.
