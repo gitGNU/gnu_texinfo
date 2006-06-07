@@ -380,7 +380,7 @@ output_pending_notes (void)
       }
 
     if (html)
-      add_word ("<hr></div>");
+      add_html_block_elt ("<hr></div>");
     close_paragraph ();
     free (array);
 
