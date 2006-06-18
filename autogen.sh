@@ -23,7 +23,7 @@ echo "Preparing CVS Texinfo infrastructure:"
 : ${AUTOCONF=autoconf}
 
 # So instead:
-cmd="$ACLOCAL -I m4 && $AUTOHEADER && $AUTOMAKE && $AUTOCONF"
+cmd="$ACLOCAL -I gnulib/m4 && $AUTOHEADER && $AUTOMAKE && $AUTOCONF"
 echo "  $cmd"
 $chicken eval $cmd || exit 1
 

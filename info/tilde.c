@@ -2,7 +2,7 @@
    $Id$
 
    Copyright (C) 1988, 1989, 1990, 1991, 1992, 1993, 1996, 1998, 1999,
-   2002, 2004 Free Software Foundation, Inc.
+   2002, 2004, 2006 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -20,7 +20,6 @@
 
    Written by Brian Fox (bfox@ai.mit.edu). */
 
-/* Include config.h before doing alloca.  */
 #include "info.h"
 #include "tilde.h"
 

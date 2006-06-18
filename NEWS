@@ -62,6 +62,7 @@ convenience, here's a url to one of the relevant sections:
   . automake 1.9.6, gettext 0.14.5.
   . gettext support now [external].
   . new translations: hu (Hungarian), rw (Kinyarwandan), vi (Vietnamese).
+  . most common functionality imported from gnulib.
 
 
 4.8 (31 December 2004)
