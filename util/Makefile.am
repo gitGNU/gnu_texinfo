@@ -59,6 +59,7 @@ XFAIL_TESTS =
 
 TESTS =	\
 bibtex.test \
+dvipdf.test \
 latex2html.test \
 local.test \
 texi2dvi.test
