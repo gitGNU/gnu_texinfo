@@ -19,9 +19,14 @@ transform = s/ginfo/info/; $(program_transform_name)
 localedir = $(datadir)/locale
 infodir2 = $(datadir)/info
 
-AM_CPPFLAGS = -I$(top_srcdir)/gnulib/lib -I$(top_builddir)/gnulib/lib
-DEFS =  -DLOCALEDIR=\"$(localedir)\" -DINFODIR=\"$(infodir)\" \
-        -DINFODIR2=\"$(infodir2)\"
+AM_CPPFLAGS = 					\
+  -I$(top_srcdir)				\
+  -I$(top_srcdir)/gnulib/lib			\
+  -I$(top_builddir)/gnulib/lib			\
+  -DLOCALEDIR=\"$(localedir)\" 			\
+  -DINFODIR=\"$(infodir)\"			\
+  -DINFODIR2=\"$(infodir2)\"
+
 LDADD = ../lib/libtxi.a $(top_builddir)/gnulib/lib/libgnu.a \
         $(TERMLIBS) $(LIBINTL)
 infokey_LDADD = ../lib/libtxi.a $(top_builddir)/gnulib/lib/libgnu.a $(LIBINTL)

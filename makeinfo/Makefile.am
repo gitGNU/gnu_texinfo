@@ -13,8 +13,11 @@
 bin_PROGRAMS = makeinfo
 
 localedir = $(datadir)/locale
-AM_CPPFLAGS = -I$(top_srcdir)/gnulib/lib -I$(top_builddir)/gnulib/lib
-DEFS = -DLOCALEDIR=\"$(localedir)\"
+AM_CPPFLAGS = 					\
+  -I$(top_srcdir)				\
+  -I$(top_srcdir)/gnulib/lib 			\
+  -I$(top_builddir)/gnulib/lib			\
+  -DLOCALEDIR=\"$(localedir)\"
 LDADD = ../lib/libtxi.a $(top_builddir)/gnulib/lib/libgnu.a $(LIBINTL)
 
 makeinfo_SOURCES = \

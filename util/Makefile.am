@@ -27,8 +27,11 @@ ginstall_info_SOURCES = install-info.c
 transform = s/ginstall-info/install-info/; $(program_transform_name)
 
 localedir = $(datadir)/locale
-AM_CPPFLAGS = -I$(top_srcdir)/gnulib/lib -I$(top_builddir)/gnulib/lib
-DEFS = -DLOCALEDIR=\"$(localedir)\"
+AM_CPPFLAGS = 					\
+  -I$(top_srcdir)				\
+  -I$(top_srcdir)/gnulib/lib			\
+  -I$(top_builddir)/gnulib/lib			\
+  -DLOCALEDIR=\"$(localedir)\"
 LDADD = ../lib/libtxi.a $(top_builddir)/gnulib/lib/libgnu.a $(LIBINTL)
 
 dist_pkgdata_DATA = texinfo.dtd texinfo.xsl
