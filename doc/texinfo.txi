@@ -5284,6 +5284,9 @@ given similar treatment in some ways; for example, the @code{goto-node}
 command in standalone Info takes either an anchor name or a node name as
 an argument.  (@xref{goto-node,,,info-stnd,GNU Info}.)
 
+Also, like node names, anchor names cannot include some characters
+(@pxref{Node Line Requirements}).
+
 
 @node Menus
 @chapter Menus
