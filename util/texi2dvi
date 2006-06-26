@@ -637,7 +637,9 @@ generated_files_get ()
       echo $file
     fi
   done |
-  sort
+  sort |
+  # Some files are opened several times, e.g., listings.sty's *.vrb.
+  uniq
 }
 
 
