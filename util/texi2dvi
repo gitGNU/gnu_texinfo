@@ -1155,6 +1155,10 @@ compute_language ()
 # Don't pass `-noiso' to hevea: it's useless in HTML since anyway the
 # charset is set to latin1, and troublesome in other modes since
 # accented characters loose their accents.
+#
+# Don't pass `-o DEST' to hevea because in that case it leaves all its
+# auxiliary files there too...  Too bad, because it means we will need
+# to handle images some day.
 run_hevea ()
 {
   local hevea=${HEVEA:-hevea}
