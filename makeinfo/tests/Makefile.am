@@ -19,6 +19,7 @@ TESTS = accent accentenc \
   macro-at menu-whitespace \
   no-headers \
   node-expand node-value node-whitespace \
+  quote-args \
   top \
   twofiles
 
@@ -33,4 +34,5 @@ EXTRA_DIST = $(noinst_SCRIPTS) \
   include-value.txi incl-incl.txi \
   macro-at.txi menu-whitespace.txi \
   node-expand.txi node-value.txi node-whitespace.txi \
+  quote-args.txi \
   top.txi # top2.txi

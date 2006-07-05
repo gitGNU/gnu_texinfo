@@ -3640,7 +3640,7 @@ cm_ifeq (void)
 {
   char **arglist;
 
-  arglist = get_brace_args (0);
+  arglist = get_brace_args (quote_none);
 
   if (arglist)
     {
