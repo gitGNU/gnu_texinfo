@@ -36,6 +36,8 @@ convenience, here's a url to one of the relevant sections:
   . the Local Variables coding: setting written by --enable-encoding now
     comes at the very end, after the tags table, so that Emacs can find
     it in more cases.
+  . @allow-recursion (never documented) is deprecated and produces a warning.
+  . @quote-args (never documented) is now the default behavior.
   . improvements to XML and Docbook output and the DTD.
 * texi2dvi:
   . new mode --build=tidy which supports compilation in a separate
