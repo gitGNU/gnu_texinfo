@@ -13,6 +13,7 @@ TESTS = accent accentenc \
   cond \
   copying \
   defxcond \
+  emph-option \
   html-docdesc html-extrali html-min html-manuals html-para html-title \
   html-top \
   include-value \
@@ -29,6 +30,7 @@ EXTRA_DIST = $(noinst_SCRIPTS) \
   accent.txi accentenc.txi accent-text.txi \
   cond.txi copying.txi \
   defxcond.txi \
+  emph-option.txi \
   html-docdesc.txi html-extrali.txi html-min.txi html-para.txi html-title.txi \
   html-top.txi \
   include-value.txi incl-incl.txi \

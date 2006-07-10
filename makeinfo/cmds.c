@@ -837,12 +837,12 @@ cm_code (int arg)
             { /* If @samp specifically, add quotes a la TeX output.  */
               if (STREQ (command, "samp"))
 		add_word ("&lsquo;");
-              add_word ("<samp>");
+	      insert_html_tag (arg, "samp");
             }
           insert_html_tag_with_attribute (arg, "span", "class=\"%s\"",command);
           if (arg == END)
             {
-              add_word ("</samp>");
+	      insert_html_tag (arg, "samp");
               if (STREQ (command, "samp"))
 		add_word ("&rsquo;");
             }

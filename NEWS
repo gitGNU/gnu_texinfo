@@ -62,7 +62,7 @@ convenience, here's a url to one of the relevant sections:
   . when calling man, use -a if no explicit section is found.
   . avoid showing the top(1) man page for nonexistent info files.
 * Distribution:
-  . automake 1.9.6, gettext 0.14.5.
+  . autoconf 2.60, automake 1.9.6, gettext 0.14.6.
   . gettext support now [external].
   . new translations: hu (Hungarian), rw (Kinyarwandan), vi (Vietnamese).
   . most common functionality imported from gnulib.

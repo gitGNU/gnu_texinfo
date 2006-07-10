@@ -557,6 +557,7 @@ insert_html_tag_with_attribute (start_or_end, tag, format, va_alist)
   /* texinfo.tex doesn't support more than one font attribute
      at the same time.  */
   if ((start_or_end == START) && old_tag && *old_tag
+      && !STREQ (old_tag, "samp")
       && !rollback_empty_tag (old_tag))
     add_word_args ("</%s>", old_tag);
 
@@ -564,13 +565,13 @@ insert_html_tag_with_attribute (start_or_end, tag, format, va_alist)
     {
       if (start_or_end == START)
         add_word_args (format ? "<%s %s>" : "<%s>", tag, formatted_attribs);
-      else if (!rollback_empty_tag (tag))
+      else if (STREQ (tag, "samp") || !rollback_empty_tag (tag))
         /* Insert close tag only if we didn't rollback,
            in which case the opening tag is removed.  */
         add_word_args ("</%s>", tag);
     }
 
-  if ((start_or_end != START) && old_tag && *old_tag)
+  if ((start_or_end != START) && old_tag && *old_tag && !STREQ (old_tag, "samp"))
     add_word_args (strlen (old_attribs) > 0 ? "<%s %s>" : "<%s>",
         old_tag, old_attribs);
 
