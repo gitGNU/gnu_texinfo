@@ -13814,9 +13814,16 @@ And indeed, it can.  Namely, @command{makeinfo}
 does not control number of arguments passed to one-argument
 macros, so be careful when you invoke them.
 
-@item If a macro calls another macro (possibly itself), any commas in
-the nested macro invocations are quoted by default.  Thus, the
-following example:
+@item If a macro invocation includes another command (including a
+recursive invocation of itself), any commas in the nested command
+invocation(s) are quoted by default.  For example, in
+
+@example
+@@say@{@@strong@{Yes, I do@}, person one@}
+@end example
+
+the comma after @samp{Yes} is implicitly quoted.  Here's another
+example, with a recursive macro:
 
 @example
 @group
