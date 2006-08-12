@@ -35,9 +35,6 @@ AC_PROG_CC
 # keep everything together.
 gl_EARLY
 
-dnl Must be after gl_EARLY but before gl_INIT.
-AC_MINIX
-
 dnl Rest of Gnulib.
 gl_INIT
 

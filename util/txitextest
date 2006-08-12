@@ -7,15 +7,15 @@
 # Another option is to run the manuals all the way through using
 # texi2dvi, which tests in another way.
 
-tsrc=/u/texinfo/src
+tsrc=`dirname $0`/..
 PATH=$tsrc/util:$PATH
 
 tdoc=$tsrc/doc
 default_manuals="$tdoc/texinfo.txi $tdoc/info.texi $tdoc/info-stnd.texi"
 
-olddir=$HOME/gnu/src/gnulib/config
+olddir=$tsrc/../gnulib/config
 newdir=$tdoc
-tempdir=/u/texinfo/@tests/testdir
+tempdir=$tsrc/@tests
 full=false
 manuals=
 

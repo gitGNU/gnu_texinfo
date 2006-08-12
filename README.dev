@@ -19,8 +19,8 @@ All of these programs are available from ftp://ftp.gnu.org/gnu.
 
 This distribution also uses Gnulib (http://www.gnu.org/software/gnulib)
 to share common files, with the files being checked in to CVS.  If you
-want to update from the current gnulib, do a cvs checkout of gnulib, and
-then run
+want to update from the current gnulib, then do a cvs checkout of
+gnulib, and run
   gnulib-tool --update
 in the top-level directory.
 
