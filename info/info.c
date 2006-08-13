@@ -154,6 +154,10 @@ main (int argc, char **argv)
 #ifdef HAVE_SETLOCALE
   /* Set locale via LC_ALL.  */
   setlocale (LC_ALL, "");
+  /* But don't use translated messages in the case when
+     string width and length can differ */
+  if (MB_CUR_MAX > 1)
+    setlocale(LC_MESSAGES, "C");
 #endif
 
 #ifdef ENABLE_NLS

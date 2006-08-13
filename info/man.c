@@ -327,6 +327,17 @@ get_manpage_contents (char *pagename)
       freopen (NULL_DEVICE, "r", stdin);
       dup2 (pipes[1], fileno (stdout));
 
+      if (MB_CUR_MAX > 1)
+        {
+          /* Info has trouble wrapping man output if it contains
+             multibyte characters */
+          setenv("LANGUAGE", "C", 1);
+          setenv("LANG", "C", 1);
+          setenv("LC_MESSAGES", "C", 1);
+          setenv("LC_CTYPE", "C", 1);
+          setenv("LC_ALL", "C", 1);
+        }
+
       execv (formatter_args[0], formatter_args);
 
       /* If we get here, we couldn't exec, so close out the pipe and
