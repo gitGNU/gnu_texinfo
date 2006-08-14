@@ -15,7 +15,7 @@ default_manuals="$tdoc/texinfo.txi $tdoc/info.texi $tdoc/info-stnd.texi"
 
 olddir=$tsrc/../gnulib/config
 newdir=$tdoc
-tempdir=$tsrc/@tests
+tempdir=$tsrc/@tests/test
 full=false
 manuals=
 
