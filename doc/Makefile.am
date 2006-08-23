@@ -81,8 +81,8 @@ man_rule_bin = echo "Updating man page $@" && \
 	$(man_rule_0) && \
 	echo cd "$$dir" '&&' $(MAKE) $(AM_MAKEFLAGS) $$program$(EXEEXT) && \
 	    (cd "$$dir"  &&  $(MAKE) $(AM_MAKEFLAGS) $$program$(EXEEXT)) && \
-	echo $(HELP2MAN) --name=\""$$name"\" "$$dir/$$program" '>$@' && \
-	     $(HELP2MAN) --name="$$name"     "$$dir/$$program"  >$@
+	echo $(HELP2MAN) --name=\""$$name"\" "$$dir/$$program" -o '$@' && \
+	     $(HELP2MAN) --name="$$name"     "$$dir/$$program" -o '$@'
 
 $(srcdir)/info.1: $(top_srcdir)/info/info.c $(common_mandeps)
 	@name="read Info documents" && $(man_rule_bin)
