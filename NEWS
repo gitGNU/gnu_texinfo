@@ -26,6 +26,7 @@ one of the relevant sections:
   . new command @allowcodebreaks to control breaks at _ and - within @code.
   . new command @frenchspacing to control spacing after sentences.
   . new command @fonttextsize to allow changing body text font size to 10pt.
+  . new command @textdegree{} for the normal degrees symbol.
   . new command @thischapternum for use in TeX headers/footers.
   . new option @set codequoteundirected to use an undirected quote in
     code and example output, instead of the regular right quote.

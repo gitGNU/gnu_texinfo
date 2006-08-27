@@ -1094,6 +1094,8 @@ cm_special_char (int arg)
         add_encoded_char ("ordf" , "a");
       else if (strcmp (command, "ordm") == 0)
         add_encoded_char ("ordm" , "o");
+      else if (strcmp (command, "textdegree") == 0)
+        add_encoded_char ("deg" , "o");
       else if (strcmp (command, "AE") == 0)
         add_encoded_char ("AElig", command);
       else if (strcmp (command, "ae") == 0)

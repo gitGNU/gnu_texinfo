@@ -321,6 +321,7 @@ COMMAND command_table[] = {
   { "tab", cm_tab, NO_BRACE_ARGS },
   { "table", cm_table, NO_BRACE_ARGS },
   { "tex", cm_tex, NO_BRACE_ARGS },
+  { "textdegree", cm_special_char, BRACE_ARGS },
   { "tie", cm_tie, BRACE_ARGS },
   { "tieaccent", cm_accent, MAYBE_BRACE_ARGS },
   { "tindex", cm_tindex, NO_BRACE_ARGS },
