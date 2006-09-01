@@ -9058,7 +9058,9 @@ input lines in your source file as necessary.
 @cindex <thead> HTML tag
 You can also use @code{@@headitem} instead of @code{@@item} to produce
 a @dfn{heading row}.  The @TeX{} output for such a row is in bold, and
-the HTML, XML, and Docbook output uses the @code{<thead>} tag.
+the HTML, XML, and Docbook output uses the @code{<thead>} tag.  In
+Info, the heading row is followed by a separator line made of dashes
+(@samp{-} characters).
 
 Here is a complete example of a multi-column table (the text is from
 @cite{The GNU Emacs Manual}, @pxref{Split Window,, Splitting Windows,
