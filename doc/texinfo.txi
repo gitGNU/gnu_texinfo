@@ -6807,8 +6807,6 @@ should rearrange the sentence.
 In the printed manual, @code{@@code} causes @TeX{} to typeset the
 argument in a typewriter face.  In the Info file, it causes the Info
 formatting commands to use single quotation marks around the text.
-
-@need 700
 For example,
 
 @example
@@ -6816,7 +6814,7 @@ The function returns @@code@{nil@}.
 @end example
 
 @noindent
-produces this in the printed manual:
+produces this:
 
 @quotation
 The function returns @code{nil}.
