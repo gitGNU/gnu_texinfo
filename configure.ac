@@ -112,10 +112,11 @@ else
   AC_MSG_NOTICE([[Doing configure of native tools (${build}).]])
   cd "$native_tools" || exit 1
   # Run secondary configure in alternate environment or
-  # it gets the wrong CC etc.  env -i gives this build host configure
-  # a clean environment.
-  env -i CC="${BUILD_CC}" AR="${BUILD_AR}" RANLIB="${BUILD_RANLIB}" \
-      PATH="${PATH}" \
+  # it gets the wrong CC etc.
+  # env -i gives this build host configure a clean environment;
+  # consequently, we have to re-initialize $PATH.
+  env -i CC="$BUILD_CC" AR="$BUILD_AR" RANLIB="$BUILD_RANLIB" \
+      PATH="$PATH" \
       tools_only=1 \
     ${confdir}/configure --build=${build} --host=${build} \
                          --disable-rpath --disable-nls
