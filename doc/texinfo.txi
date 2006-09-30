@@ -10107,7 +10107,7 @@ output.
 output.
 
 Do not put braces after either an @code{@@@{} or an @code{@@@}}
-command.ppp
+command.
 
 
 @node Inserting a Comma
