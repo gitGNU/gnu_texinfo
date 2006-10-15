@@ -89,8 +89,8 @@ Printing Tools
 Software development
 * As: (as).                     Assembler.
 * Autoconf: (autoconf).         Create source code configuration scripts.
+* Automake: (automake).         Making GNU standards-compliant Makefiles.
 * Binutils: (binutils).         ar/copy/objdump/nm/size/strip/ranlib.
-* automake: (automake).         Making Makefile.in's.
 * Cpp: (cpp).		        The GNU C preprocessor.
 * Cpplib: (cppinternals).       Cpplib internals.
 * CVS: (cvs).                   Concurrent Versions System
@@ -272,6 +272,7 @@ Individual utilities
                                 How to create configuration templates
 * autom4te: (autoconf)autom4te Invocation.
                                 The Autoconf executables backbone
+* automake: (automake)Invoking Automake.        Generating Makefile.in.
 * autoreconf: (autoconf)autoreconf Invocation.
                                 Remaking multiple `configure' scripts
 * autoscan: (autoconf)autoscan Invocation.
