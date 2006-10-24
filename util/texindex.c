@@ -856,7 +856,7 @@ readline (struct linebuffer *linebuffer, FILE *stream)
         {
           buffer = (char *) xrealloc (buffer, linebuffer->size *= 2);
           p += buffer - linebuffer->buffer;
-          end += buffer - linebuffer->buffer;
+          end = buffer + linebuffer->size;
           linebuffer->buffer = buffer;
         }
       if (c < 0 || c == '\n')
