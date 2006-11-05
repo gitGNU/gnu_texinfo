@@ -9383,14 +9383,12 @@ the full file name of the image being displayed.  If you want an empty
 Texinfo text, so special characters such as @samp{"} and @samp{<} and
 @samp{&} are escaped in the HTML and XML output.
 
-@cindex GIF images, unsupported due to patents
 @cindex PNG image format
 @cindex JPEG image format
 If you do not supply the optional @var{extension} (fifth) argument,
 @code{makeinfo} first tries @file{@var{filename}.png}; if that does
 not exist, it tries @file{@var{filename}.jpg}.  If that does not exist
-either, it complains.  (We cannot support GIF format directly due to
-software patents.)
+either, it complains.
 
 In Info output, @code{makeinfo} writes a reference to the binary image
 file (trying @var{filename} suffixed with @file{@var{extension}},
