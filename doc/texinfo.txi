@@ -9341,11 +9341,18 @@ extension, because the different processors support different formats:
 
 @itemize @bullet
 @item
+@pindex eps image format
 @TeX{} reads the file @file{@var{filename}.eps} (Encapsulated PostScript
 format).
 @item
 @pindex pdftex@r{, and images}
-PDF@TeX{} reads @file{@var{filename}.pdf} (Adobe's Portable Document Format).
+@pindex png image format
+@pindex jpeg image format
+@pindex pdf image inclusions
+pdf@TeX{} reads @file{@var{filename}.png}, @file{@var{filename}.jpg},
+@file{@var{filename}.jpeg}, or @file{@var{filename}.pdf} (in that
+order).  The PDF format cannot support EPS images, so they must be
+converted first.
 @item
 @code{makeinfo} includes @file{@var{filename}.txt} verbatim for
 Info output (more or less as if it was an @code{@@example}).
