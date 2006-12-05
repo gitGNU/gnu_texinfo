@@ -13617,6 +13617,12 @@ given (@pxref{HTML Xref 8-bit Character Expansion}), the names of HTML
 files are formed by transliteration of the corresponding node names,
 using the specified encoding. 
 
+In @TeX{} output, the characters which are supported in the standard
+Computer Modern fonts are output accordingly.  (For example, this
+means using constructed accents rather than precomposed glyphs.)
+Using a missing character generates a warning message, as does
+specifying an unimplemented encoding.
+
 In all other cases, it is accepted but ignored.
 
 
