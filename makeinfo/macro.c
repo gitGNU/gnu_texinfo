@@ -888,13 +888,12 @@ me_execute_string (char *execution_string)
 void
 me_execute_string_keep_state (char *execution_string, char *append_string)
 {
-  int op_orig, opcol_orig, popen_orig;
+  int op_orig, popen_orig;
   int fill_orig, newline_orig, indent_orig, meta_pos_orig;
 
   remember_itext (input_text, input_text_offset);
   op_orig = output_paragraph_offset;
   meta_pos_orig = meta_char_pos;
-  opcol_orig = output_column;
   popen_orig = paragraph_is_open;
   fill_orig = filling_enabled;
   newline_orig = last_char_was_newline;
@@ -906,7 +905,6 @@ me_execute_string_keep_state (char *execution_string, char *append_string)
     write_region_to_macro_output (append_string, 0, strlen (append_string));
   output_paragraph_offset = op_orig;
   meta_char_pos = meta_pos_orig;
-  output_column = opcol_orig;
   paragraph_is_open = popen_orig;
   filling_enabled = fill_orig;
   last_char_was_newline = newline_orig;

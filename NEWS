@@ -41,6 +41,7 @@ one of the relevant sections:
     it in more cases.
   . @allow-recursion (never documented) is deprecated and produces a warning.
   . @quote-args (never documented) is now the default behavior.
+  . centering and such take account of character widths.
   . improvements to XML and Docbook output and the DTD.
 * texi2dvi:
   . new mode --build=tidy which supports compilation in a separate

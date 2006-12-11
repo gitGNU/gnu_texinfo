@@ -375,7 +375,7 @@ enumerate_item (void)
   else
     sprintf (temp, "%d. ", current_enumval);
 
-  indent (output_column += (current_indent - strlen (temp)));
+  indent (current_output_column () + (current_indent - strlen (temp)));
   add_word (temp);
   current_enumval++;
 }
@@ -2207,8 +2207,7 @@ cm_item (void)
 
                   if (current_item_function ())
                     {
-                      output_column = current_indent - 2;
-                      indent (output_column);
+                      indent (current_indent - 2);
 
                       /* The item marker can be given with or without
                          braces -- @bullet and @bullet{} are both ok.
@@ -2227,7 +2226,6 @@ cm_item (void)
                             execute_string ("%s", item_func);
                         }
                       insert (' ');
-                      output_column++;
                     }
                   else
                     enumerate_item ();

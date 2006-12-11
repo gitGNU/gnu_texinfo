@@ -1516,7 +1516,7 @@ cm_center (void)
     }
   else
     {
-      int i, start, length;
+      int i, start, length, width;
       char *line;
       int save_indented_fill = indented_fill;
       int save_filling_enabled = filling_enabled;
@@ -1545,13 +1545,14 @@ cm_center (void)
 
            output_paragraph_offset = ++i;
            length = output_paragraph_offset - start;
+	   width = string_width ((char *)(output_paragraph + start), length);
 
-           if (length < (fill_column - fudge_factor))
+           if (width < (fill_column - fudge_factor))
              {
                line = xmalloc (1 + length);
                memcpy (line, (char *)(output_paragraph + start), length);
 
-               i = (fill_column - fudge_factor - length) / 2;
+               i = (fill_column - fudge_factor - width) / 2;
                output_paragraph_offset = start;
 
                while (i--)
