@@ -844,10 +844,7 @@ xml_insert_element_with_attribute (elt, arg, format, va_alist)
     }
 
   if (!book_started)
-    {
-      warning (_("ignoring insertion before @settitle, etc."));
-      return;
-    }
+    return;
 
   if (!xml_dont_touch_items_defs && arg == START)
     {
