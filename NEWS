@@ -57,7 +57,8 @@ one of the relevant sections:
     for the sake of AUC-TeX which prepends `pdf' to the compilation
     command when requested to produce PDF.
 * texinfo.tex:
-  . Latin1, Latin2, and Latin9 supported as well as Computer Modern can manage.
+  . Latin1, Latin2, Latin9, and UTF-8 are supported as well as Computer
+    Modern can manage.
   . png and jpg images supported in pdf output.
   . new Russian, Serbian, and Ukrainian translations for texinfo.tex:
     txi-ru.tex, txi-sr.tex, txi-uk.tex.
