@@ -586,7 +586,7 @@ xml_id (char *id)
   strcpy (tem, id);
   while (*p)
     {
-      if (strchr (":\"", *p))
+      if (strchr (":\" \t\f\r\n", *p))
         *p = '-';
       p++;
     }
