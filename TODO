@@ -75,7 +75,8 @@ If you are interested in working on any of these, email bug-texinfo@gnu.org.
 
 * Makeinfo:
   - Translation of "Appendix" etc. should depend on @doclang not $LANG.
-  - Try directory of main source file.
+  - Really support UTF-8 instead of just passing through the bytes.
+  - Automatically do -I of directory of main source file.
   - Make makeinfo -E just do macro expansion, avoiding all error checks.
     That way, texi2dvi could run makeinfo --iftex -E.
   - A detexinfo program, like detex or delatex.  This command would
