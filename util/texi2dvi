@@ -1078,7 +1078,7 @@ insert_commands ()
   case $in_lang in
     latex)   textra_cmd=1i;;
     texinfo) textra_cmd='/^@setfilename/a';;
-    *)       echo "$0: internal error, unknown language: $in_lang" >&2;
+    *)       fatal 1 "internal error, unknown language: $in_lang";;
   esac
 
   if test -n "$textra"; then
