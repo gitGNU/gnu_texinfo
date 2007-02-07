@@ -369,7 +369,6 @@ extern int get_until (char *match, char **string),
   search_forward (char *string, int from),
   search_forward_until_pos (char *string, int from, int end_pos),
   next_nonwhitespace_character (void),
-  string_width (const char *string, size_t length),
   current_output_column (void),
   fs_error (char *filename);
 

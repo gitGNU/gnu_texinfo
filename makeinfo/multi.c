@@ -21,6 +21,7 @@
    Originally written by phr@gnu.org (Paul Rubin).  */
 
 #include "system.h"
+#include "mbswidth.h"
 #include "cmds.h"
 #include "insertion.h"
 #include "makeinfo.h"
@@ -468,7 +469,7 @@ output_multitable_row (void)
       /* Do not output trailing blanks if we're in the last column and
          there will be no trailing |.  */
       if (i < last_column && !vsep)
-        for (s = string_width ((char *)&CHAR_AT (0), j);
+        for (s = mbsnwidth ((char *)&CHAR_AT (0), j, 0);
 	     s <= envs[i].fill_column; s++)
           out_char (' ');
       if (vsep)

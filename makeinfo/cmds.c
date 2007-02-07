@@ -19,6 +19,7 @@
    Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  */
 
 #include "system.h"
+#include "mbswidth.h"
 #include "cmds.h"
 #include "defun.h"
 #include "files.h"
@@ -1545,7 +1546,7 @@ cm_center (void)
 
            output_paragraph_offset = ++i;
            length = output_paragraph_offset - start;
-	   width = string_width ((char *)(output_paragraph + start), length);
+	   width = mbsnwidth ((char *)(output_paragraph + start), length, 0);
 
            if (width < (fill_column - fudge_factor))
              {

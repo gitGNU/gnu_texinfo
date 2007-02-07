@@ -81,8 +81,8 @@ AC_FUNC_VPRINTF
 # in theory only pre-sysvr3 systems needed this and it's not likely
 # that anyone compiling new texinfo still has such a thing? we'll see.
 # AC_FUNC_SETVBUF_REVERSED
-AC_CHECK_FUNCS(bzero getcwd memset setvbuf sigaction sigprocmask \
-               sigsetmask strchr wcwidth)
+AC_CHECK_FUNCS(bzero getcwd memset setlocale setvbuf sigaction sigprocmask \
+               sigsetmask strchr)
 AC_REPLACE_FUNCS(memcpy memmove strdup strerror)
 
 # We want to recognize djgpp to avoid the useless warning about no
