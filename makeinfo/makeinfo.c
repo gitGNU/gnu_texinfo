@@ -4245,6 +4245,9 @@ getdocumenttext (const char *msgid)
   char *old_LC_ALL;
   char *old_LANGUAGE;
   const char *result;
+#ifdef HAVE_SETLOCALE
+  char *old_locale;
+#endif
 
   /* Save LC_ALL, LANGUAGE environment variables.  */
 
@@ -4258,6 +4261,7 @@ getdocumenttext (const char *msgid)
   unsetenv ("LANGUAGE");
 
 #ifdef HAVE_SETLOCALE
+  old_locale = xstrdup (setlocale (LC_ALL, NULL));
   if (setlocale (LC_ALL, "") == NULL)
     /* Nonexistent locale.  Use the original.  */
     result = msgid;
@@ -4281,7 +4285,8 @@ getdocumenttext (const char *msgid)
     unsetenv ("LANGUAGE");
 
 #ifdef HAVE_SETLOCALE
-  setlocale (LC_ALL, "");
+  setlocale (LC_ALL, old_locale);
+  free (old_locale);
 #endif
 
   return result;
