@@ -28,7 +28,7 @@
 #  include "man.h"
 #endif /* HANDLE_MAN_PAGES */
 
-static char *program_name = "info";
+char *program_name = "info";
 
 /* Non-zero means search all indices for APROPOS_SEARCH_STRING. */
 static int apropos_p = 0;

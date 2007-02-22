@@ -28,6 +28,8 @@
 #include "info.h"
 #include "infokey.h"
 
+char *program_name = "makedoc";
+
 static void fatal_file_error (char *filename);
 
 /* Name of the header file which receives the declarations of functions. */

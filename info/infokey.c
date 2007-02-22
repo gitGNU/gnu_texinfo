@@ -26,7 +26,7 @@
 #include "key.h"
 #include "getopt.h"
 
-static char *program_name = "infokey";
+char *program_name = "infokey";
 
 /* Non-zero means print version info only. */
 static int print_version_p = 0;

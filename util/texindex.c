@@ -21,7 +21,7 @@
 #include "system.h"
 #include <getopt.h>
 
-static char *program_name = "texindex";
+char *program_name = "texindex";
 
 #if defined (emacs)
 #  include "../src/config.h"
