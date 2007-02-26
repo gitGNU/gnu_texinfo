@@ -2,7 +2,7 @@
    $Id$
 
    Copyright (C) 1993, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
-   2004, 2005 Free Software Foundation, Inc.
+   2004, 2005, 2007 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -635,6 +635,7 @@ Examples:\n\
   info emacs                 start at emacs node from top-level dir\n\
   info emacs buffers         start at buffers node within emacs manual\n\
   info --show-options emacs  start at node with emacs' command line options\n\
+  info --subnodes -o out.txt emacs  dump entire manual to out.txt\n\
   info -f ./foo.info         show file ./foo.info, not searching dir\n\
 "),
   program_name, speech_friendly_string);
