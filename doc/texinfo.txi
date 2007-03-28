@@ -5303,11 +5303,12 @@ you use menus to go to such nodes.  Menus have no effect in printed
 manuals and do not appear in them.
 
 A node with a menu should not contain much text.  If you find yourself
-writing a lot of before a menu, we generally recommend moving most of
-the text into a new subnode---all but a paragraph or two.  Otherwise,
-a reader with a terminal that displays only a few lines may miss the
-menu and its associated text.  As a practical matter, it is best to
-locate a menu within 20 or so lines of the beginning of the node.
+writing a lot of text before a menu, we generally recommend moving
+most of the text into a new subnode---all but a paragraph or two.
+Otherwise, a reader with a terminal that displays only a few lines may
+miss the menu and its associated text.  As a practical matter, it is
+best to locate a menu within 20 or so lines of the beginning of the
+node.
 
 @menu
 * Menu Location::               Menus go at the ends of short nodes.
