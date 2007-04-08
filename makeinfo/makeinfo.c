@@ -3314,6 +3314,8 @@ next_nonwhitespace_character (void)
 
   return -1;
 }
+
+
 
 /* Replace " with \" and \ with \\.  Used for alt tag in Info output.
    Return a newly-malloced string in all cases.  */
@@ -3322,7 +3324,7 @@ static char *
 bs_escape_quote (const char *src)
 {
   int c;
-  char *dest = xmalloc (2 * strlen (src));  /* can't need more.  */
+  char *dest = xmalloc (2 * strlen (src) + 1);  /* can't need more.  */
   char *p = dest;
   
   for (; c = *src; src++)
@@ -3338,6 +3340,7 @@ bs_escape_quote (const char *src)
 }
 
 
+
 /* An external image is a reference, kind of.  The parsing is (not
    coincidentally) similar, anyway.  */
 void
