@@ -13017,7 +13017,9 @@ is ignored.  If @var{flag} is clear, text through the following
 
 @node set value
 @subsection @code{@@set} and @code{@@value}
+@findex set
 @findex value
+@findex clear
 
 You use the @code{@@set} command to specify a value for a flag, which
 is later expanded by the @code{@@value} command.
