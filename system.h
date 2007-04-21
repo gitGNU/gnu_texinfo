@@ -254,4 +254,9 @@ extern void xexit (int);
 #endif
 #define MAX(a,b) ((a) > (b) ? (a) : (b))
 
+#ifdef DMALLOC_DEBUG
+#define DMALLOC_FUNC_CHECK
+#include "dmalloc.h"
+#endif
+
 #endif /* TEXINFO_SYSTEM_H */
