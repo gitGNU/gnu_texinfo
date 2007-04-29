@@ -1110,15 +1110,16 @@ cm_strong (int arg, int start_pos, int end_pos)
     insert_html_tag (arg, "strong");
   else
     add_char ('*');
-  
+
   if (!xml && !html && !docbook && !no_headers
       && arg == END
       && end_pos - start_pos >= 6
       && (STRNCASEEQ ((char *) output_paragraph + start_pos, "*Note:", 6)
-          || STRNCASEEQ ((char *) output_paragraph + start_pos, "*Note ", 6)))
+          || STRNCASEEQ ((char *) output_paragraph + start_pos, "*Note ", 6))
+          )
     {
       /* Translators: "Note:" is literal here and should not be
-         translated.  @strong{Nota}, say, does not cause the problem.  */
+         translated.  A document with @strong{Nota}, say, is fine.  */
       warning (_("@strong{Note...} produces a spurious cross-reference in Info; reword to avoid that"));
       /* Adjust the output to avoid writing the bad xref.  */
       output_paragraph[start_pos + 5] = '_';
