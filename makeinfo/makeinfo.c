@@ -73,9 +73,6 @@ char *output_filename = NULL;
 char *command_output_filename = NULL;
 static char *save_command_output_filename = NULL;
 
-#define INITIAL_PARAGRAPH_SPACE 5000
-int paragraph_buffer_len = INITIAL_PARAGRAPH_SPACE;
-
 /* The amount of indentation to add at the starts of paragraphs.
    0 means don't change existing indentation at paragraph starts.
    > 0 is amount to indent new paragraphs by.

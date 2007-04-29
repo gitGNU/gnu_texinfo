@@ -47,8 +47,10 @@ DECLARE (char *, pretty_output_filename, NULL);
 /* Current output file name.  */
 DECLARE (char *, current_output_filename, NULL);
 
-/* Output paragraph buffer. */
+/* Output paragraph buffer and its length. */
+#define INITIAL_PARAGRAPH_BUFFER_LEN 5000
 DECLARE (unsigned char *, output_paragraph, NULL);
+DECLARE (int, paragraph_buffer_len, INITIAL_PARAGRAPH_BUFFER_LEN);
 
 /* Offset into OUTPUT_PARAGRAPH. */
 DECLARE (int, output_paragraph_offset, 0);
