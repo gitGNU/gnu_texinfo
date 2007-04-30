@@ -108,6 +108,7 @@ process_css_file (char *filename)
               if (nextchar == 'i' || nextchar == 'c')
                 {
                   append_char (import_text, c);
+                  append_char (import_text, nextchar);
                   state = import_state;
                 }
               else
