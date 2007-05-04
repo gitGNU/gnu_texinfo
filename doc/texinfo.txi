@@ -5282,14 +5282,14 @@ It is best to put @code{@@anchor} commands just before the position you
 wish to refer to; that way, the reader's eye is led on to the correct
 text when they jump to the anchor.  You can put the @code{@@anchor}
 command on a line by itself if that helps readability of the source.
-Spaces are always ignored after @code{@@anchor}.
+Whitespace (including newlines) is ignored after @code{@@anchor}.
 
 Anchor names and node names may not conflict.  Anchors and nodes are
 given similar treatment in some ways; for example, the @code{goto-node}
 command in standalone Info takes either an anchor name or a node name as
 an argument.  (@xref{goto-node,,,info-stnd,GNU Info}.)
 
-Also, like node names, anchor names cannot include some characters
+Also like node names, anchor names cannot include some characters
 (@pxref{Node Line Requirements}).
 
 
