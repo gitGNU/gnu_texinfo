@@ -9381,7 +9381,7 @@ sp,,@code{@@titlefont @@center @@sp}}).
 
 @cindex Alt attribute for images
 @cindex Images, alternate text for
-@findex @- (alt string)
+@findex - (in image alt string)
 For HTML output, @code{makeinfo} sets the @dfn{alt attribute} for
 inline images to the optional @var{alttext} (fourth) argument to
 @code{@@image}, if supplied.  If not supplied, @code{makeinfo} uses
