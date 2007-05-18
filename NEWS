@@ -68,6 +68,8 @@ one of the relevant sections:
   . look for info files in the current directory first, by default.
   . when calling man, use -a if no explicit section is found.
   . avoid showing the top(1) man page for nonexistent info files.
+* install-info:
+  . new options --section-regex and --remove-exactly.
 * Distribution:
   . autoconf 2.60, automake 1.10, gettext 0.16.
   . gettext support now [external].
