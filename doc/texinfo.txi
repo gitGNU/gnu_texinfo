@@ -16325,6 +16325,10 @@ open @file{@var{dir-file}.gz}.
 Options:
 
 @table @code
+@item --debug
+@opindex --debug
+Report what is being done.
+
 @item --delete
 @opindex --delete
 Delete the entries in @var{info-file} from @var{dir-file}.  The file
@@ -16366,7 +16370,9 @@ a menu item.
 
 @item --quiet
 @opindex --quiet
-Suppress warnings.
+@itemx --silent
+@opindex --silent
+Suppress warnings, etc., for silent operation.
 
 @item --remove
 @opindex --remove
@@ -16392,6 +16398,10 @@ section matching the regular expression @var{regex} (and ignoring
 case) before starting a new section.  Specify @var{regex} using 
 basic regular expression syntax, more or less as used with
 @command{grep}, for example.
+
+@item --test
+@opindex --test
+Suppress updating of the directory file.
 
 @item --version
 @opindex --version

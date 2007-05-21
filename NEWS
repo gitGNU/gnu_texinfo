@@ -69,7 +69,7 @@ one of the relevant sections:
   . when calling man, use -a if no explicit section is found.
   . avoid showing the top(1) man page for nonexistent info files.
 * install-info:
-  . new options --section-regex and --remove-exactly.
+  . new options --section-regex, --remove-exactly, --debug, --test.
 * Distribution:
   . autoconf 2.60, automake 1.10, gettext 0.16.
   . gettext support now [external].
