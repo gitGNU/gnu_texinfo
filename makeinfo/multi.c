@@ -158,8 +158,8 @@ select_output_environment (int n)
      zeros from the static declaration.  However, we don't want to try
      to malloc zero bytes when init_paragraph is called just below,
      after we return.  */
-  paragraph_buffer_len = e->paragraph_buffer_len
-                         || INITIAL_PARAGRAPH_BUFFER_LEN;
+  paragraph_buffer_len = e->paragraph_buffer_len ? e->paragraph_buffer_len
+                         : INITIAL_PARAGRAPH_BUFFER_LEN;
   paragraph_is_open = e->paragraph_is_open;
   meta_char_pos = e->meta_char_pos;
   current_indent = e->current_indent;
