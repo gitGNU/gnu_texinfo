@@ -1230,9 +1230,11 @@ cm_anchor (int arg)
 	    }
 	}
     }
-  else if (xml)
+  else if (xml || docbook)
     {
-      xml_insert_element_with_attribute (ANCHOR, START, "name=\"%s\"", anchor);
+      xml_insert_element_with_attribute (ANCHOR, START,
+					 docbook ? "id=\"%s\"" : "name=\"%s\"",
+					 anchor);
       xml_insert_element (ANCHOR, END);
     }
 

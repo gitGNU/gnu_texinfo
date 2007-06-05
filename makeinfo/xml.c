@@ -415,7 +415,7 @@ element docbook_element_list [] = {
 
   { "index",               0, 0, 0 }, /* PRINTINDEX */
   { "",                    0, 1, 0 }, /* LISTOFFLOATS */
-  { "",                    0, 1, 0 }, /* ANCHOR */
+  { "anchor",              0, 1, 0 }, /* ANCHOR */
 
   { "",                    0, 0, 0 }, /* IMAGE */
   { "inlinemediaobject",   0, 1, 0 }, /* INLINEIMAGE */
