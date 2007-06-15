@@ -4263,10 +4263,10 @@ set_paragraph_indent (char *string)
 }
 
 
-/* Translate MSGID according to the document language
-   (--document-language), rather than the environment language (LANG,
-   etc.).  This comes from the get_title function in gettext.  (xsetenv
-   and unsetenv come from the gnulib xsetenv module.)  */
+/* Translate MSGID according to the document language (@documentlanguage
+   value or --document-language), rather than the current locale
+   (LANGUAGE/LC_ALL/LANG).  This code is from the get_title function in
+   gettext.  (xsetenv and unsetenv come from the gnulib xsetenv module.)  */
 
 char *
 getdocumenttext (const char *msgid)
