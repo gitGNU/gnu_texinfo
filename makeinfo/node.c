@@ -913,8 +913,8 @@ cm_node (void)
 	  if (!tag)
 	    {
 	      output_stream = fopen (filename, "w");
-	      html_output_head_p = 0; /* so that we generate HTML preamble */
-	      html_output_head ();
+	      output_head_p = 0; /* so that we generate HTML preamble */
+	      output_head ();
 	    }
 	  else if ((tag->flags & TAG_FLAG_ANCHOR) != 0)
 	    {
@@ -931,8 +931,8 @@ cm_node (void)
 	      free (tag->html_fname);
 	      tag->html_fname = NULL;
 	      output_stream = fopen (filename, "w");
-	      html_output_head_p = 0; /* so that we generate HTML preamble */
-	      html_output_head ();
+	      output_head_p = 0; /* so that we generate HTML preamble */
+	      output_head ();
 	    }
 	  else
 	    {

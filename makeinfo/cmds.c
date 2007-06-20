@@ -607,7 +607,7 @@ cm_comment (void)
   /* For HTML, do not output comments before HTML header is written,
      otherwise comments before @settitle cause an empty <title> in the
      header.  */
-  if ((html && html_output_head_p) || xml)
+  if ((html && output_head_p) || xml)
     {
       char *line;
       get_rest_of_line (0, &line);

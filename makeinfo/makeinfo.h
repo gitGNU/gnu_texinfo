@@ -2,7 +2,7 @@
    $Id$
 
    Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004,
-   2005, 2006 Free Software Foundation, Inc.
+   2005, 2006, 2007 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -72,6 +72,9 @@ DECLARE (int, paragraph_is_open, 0);
 /* Nonzero means that `start_paragraph' MUST be called before we pay
    any attention to `close_paragraph' calls. */
 DECLARE (int, must_start_paragraph, 0);
+
+/* Nonzero if we have output the topmatter of the output file.  */
+DECLARE (int, output_head_p, 0);
 
 /* Nonzero means that we have seen "@top" once already. */
 DECLARE (int, top_node_seen, 0);
@@ -363,6 +366,7 @@ extern void free_and_clear (char **pointer),
   discard_braces (void),
   replace_with_expansion (int from, int *to),
   fix_whitespace (char *string),
+  output_head (void),
   add_html_elt (char *string);
 
 extern int get_until (char *match, char **string),

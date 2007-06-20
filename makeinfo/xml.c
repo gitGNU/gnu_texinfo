@@ -1,4 +1,4 @@
-/* xml.c -- xml output.
+/* xml.c -- xml output, both TexinfoML and Docbook.
    $Id$
 
    Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007 Free Software
@@ -15,8 +15,8 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+   along with this program; if not, write to the Free Software Foundation,
+    Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
    Originally written by Philippe Martin <feloy@free.fr>.  */
 
