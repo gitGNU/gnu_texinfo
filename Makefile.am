@@ -51,8 +51,8 @@ endif
 
 # From coreutils.
 # Verify that all source files using _() are listed in po/POTFILES.in.
-# The idea is to run this before making pretests, as well as official
-# releases, so that 
+# Run this before making pretests, as well as official releases, so that
+# translators will see changed string.
 po-check:
 	if test -f po/POTFILES.in; then					\
 	  grep -E -v '^(#|$$)' po/POTFILES.in				\
