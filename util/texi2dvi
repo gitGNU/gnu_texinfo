@@ -525,6 +525,7 @@ move_to_dest ()
       error 1 "no such file or directory: $file"
     fi
     if test -n "$dest"; then
+      test -d "$dest" && dest="$dest/$file"
       if cmp -s "$file" "$dest"; then :; else
         verbose "Copying $file to $dest"
         cp -p "$file" "$dest"
