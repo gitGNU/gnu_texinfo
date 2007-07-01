@@ -52,13 +52,7 @@ EXTRA_DIST = README deref.c dir-example fix-info-dir fixfonts \
   $(dist_pkgdata_DATA) texinfo-cat.in
 CLEANFILES = $(pkgdata_DATA)
 
-
-## ------- ##
-## Tests.  ##
-## ------- ##
-
 XFAIL_TESTS =
-
 TESTS =	\
 bibtex.test \
 dvipdf.test \
