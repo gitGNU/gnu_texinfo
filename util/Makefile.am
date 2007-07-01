@@ -47,7 +47,7 @@ texinfo.cat: texinfo-cat.in $(top_srcdir)/doc/version.texi
 #
 EXTRA_DIST = README deref.c dir-example fix-info-dir fixfonts \
   fixref.gawk gdoc gen-dir-node gendocs.sh gendocs_template infosrch \
-  install-info-html outline.gawk \
+  install-info-html outline.gawk pdftexi2dvi \
   prepinfo.awk tex3patch texi-docstring-magic.el texi2dvi texi2pdf txitextest \
   $(dist_pkgdata_DATA) texinfo-cat.in
 CLEANFILES = $(pkgdata_DATA)
