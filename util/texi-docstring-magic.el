@@ -8,7 +8,7 @@
 ;; $Id$
 ;;
 ;; This package is distributed under the terms of the 
-;; GNU General Public License, Version 2.   
+;; GNU General Public License, Version 3.
 ;; You should have a copy of the GPL with your version of 
 ;; GNU Emacs or the Texinfo distribution.
 ;; 
