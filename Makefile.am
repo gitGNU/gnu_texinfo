@@ -17,7 +17,7 @@ AUTOMAKE_OPTIONS = 1.9 readme-alpha
 ACLOCAL_AMFLAGS = -I gnulib/m4
 
 # Additional files to distribute.
-EXTRA_DIST = ChangeLog.46 INSTALL.generic INTRODUCTION README.dev \
+EXTRA_DIST = ChangeLog.46 INSTALL.generic INTRODUCTION README.dev system.h \
   djgpp/README djgpp/config.bat djgpp/config.sed djgpp/config.site
 
 # This is to prevent texinfo.tex from being included in the top-level
