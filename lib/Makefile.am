@@ -17,6 +17,6 @@ AM_CPPFLAGS = -I$(top_srcdir)			\
   -I$(top_builddir)/gnulib/lib			\
   -DLOCALEDIR=\"$(localedir)\"
 
-libtxi_a_SOURCES = substring.c system.h xexit.c
+libtxi_a_SOURCES = substring.c xexit.c
 
 EXTRA_DIST = README
