@@ -1,12 +1,12 @@
 /* files.c -- file-related functions for makeinfo.
    $Id$
 
-   Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003, 2004 Free Software
+   Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2007 Free Software
    Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
+   the Free Software Foundation; either version 3, or (at your option)
    any later version.
 
    This program is distributed in the hope that it will be useful,
@@ -656,7 +656,7 @@ register_delayed_write (char *delayed_command)
   /* We need the HTML header in the output,
      to get a proper output_position.  */
   if (!executing_string && html)
-    html_output_head ();
+    output_head ();
   /* Get output_position updated.  */
   flush_output ();
 

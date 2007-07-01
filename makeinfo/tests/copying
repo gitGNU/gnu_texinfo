@@ -10,4 +10,5 @@ LC_ALL=POSIX; export LC_ALL
 ../makeinfo -o copying.out $srcdir/copying.txi || exit 1
 fgrep 'produced by' copying.out >/dev/null || exit 2
 
+cat copying.out
 rm -f copying.out

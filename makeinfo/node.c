@@ -6,7 +6,7 @@
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
+   the Free Software Foundation; either version 3, or (at your option)
    any later version.
 
    This program is distributed in the hope that it will be useful,
@@ -1129,7 +1129,7 @@ cm_anchor (int arg)
       if (!paragraph_is_open)
 	{
 	  if (!executing_string && html)
-	    html_output_head ();
+	    output_head ();
 	  start_paragraph ();
 	  if (!in_fixed_width_font || in_menu || in_detailmenu)
 	    {
