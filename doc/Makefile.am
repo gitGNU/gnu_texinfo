@@ -30,7 +30,7 @@ TXI_XLATE = txi-cs.tex txi-de.tex txi-en.tex txi-es.tex txi-fr.tex \
 	    txi-ru.tex txi-sr.tex txi-tr.tex txi-uk.tex
 
 # Include our texinfo.tex, not Automake's.
-EXTRA_DIST = epsf.tex pdfcolor.tex texinfo.tex \
+EXTRA_DIST = epsf.tex texinfo.tex \
              fdl.texi \
 	     $(man_MANS) $(TXI_XLATE)
 
@@ -45,21 +45,18 @@ install-data-local:
 	@echo "         See doc/README for some considerations."
 	@echo "         You can run make TEXMF=/your/texmf install-tex to do this."
 	@echo
-	@echo "         You may also need to install epsf.tex and (if you"
-	@echo "         use pdftex) pdfcolor.tex in TEXMF/tex/generic/dvips"
-	@echo "         and TEXMF/pdftex/plain/misc/pdfcolor.tex respectively,"
-	@echo "         if your TeX installation did not include them."
+	@echo "         You may also need to install epsf.tex in"
+	@echo "         TEXMF/tex/generic/dvips, if your TeX"
+	@echo "         installation did not include it."
 endif
 
 texmf_texinfo = $(TEXMF)/tex/texinfo
 texmf_dvips = $(TEXMF)/tex/generic/epsf
-texmf_pdftex_misc = $(TEXMF)/pdftex/plain/pdfcolor
 install-tex:
 	test -n "$(TEXMF)" || (echo "TEXMF must be set." >&2; exit 1)
-	$(mkinstalldirs) $(DESTDIR)$(texmf_texinfo) $(DESTDIR)$(texmf_dvips) $(DESTDIR)$(texmf_pdftex_misc)
+	$(mkinstalldirs) $(DESTDIR)$(texmf_texinfo) $(DESTDIR)$(texmf_dvips)
 	$(INSTALL_DATA) $(srcdir)/texinfo.tex $(DESTDIR)$(texmf_texinfo)/texinfo.tex
 	$(INSTALL_DATA) $(srcdir)/epsf.tex $(DESTDIR)$(texmf_dvips)/epsf.tex
-	$(INSTALL_DATA) $(srcdir)/pdfcolor.tex $(DESTDIR)$(texmf_pdftex_misc)/pdfcolor.tex
 	for f in $(TXI_XLATE); do \
 	  $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(texmf_texinfo)/$$f; done
 

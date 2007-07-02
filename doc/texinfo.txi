@@ -14683,10 +14683,6 @@ Also, you should install @file{epsf.tex}, if it is not already installed
 from another distribution.  More details are at the end of the description
 of the @code{@@image} command (@pxref{Images}).
 
-@pindex pdfcolor.tex@r{, installing}
-Likewise for @file{pdfcolor.tex}, if it is not already installed and you
-use pdftex.
-
 @pindex texinfo.cnf @r{installation}
 @cindex Customizing of @TeX{} for Texinfo
 @cindex Site-wide Texinfo configuration file
