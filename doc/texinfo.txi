@@ -16153,6 +16153,11 @@ the beginning of the Texinfo input, before the first @code{@@node}
 command.  If you use them later on in the input, @code{install-info}
 will not notice them.
 
+As a matter of convention, please start the description for the main
+entry (above, @samp{The GNU documentation format}) at column 32.  This
+will make it align with most others.  Description for individual
+utilities best start in column 48, where possible.
+
 If you use @code{@@dircategory} more than once in the Texinfo source,
 each usage specifies the `current' category; any subsequent
 @code{@@direntry} commands will add to that category.
