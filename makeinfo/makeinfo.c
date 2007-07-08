@@ -360,10 +360,9 @@ General options:\n\
       --help                  display this help and exit.\n\
       --no-validate           suppress node cross-reference validation.\n\
       --no-warn               suppress warnings (but not errors).\n\
-      --reference-limit=NUM   warn about at most NUM references (default %d).\n\
   -v, --verbose               explain what is being done.\n\
       --version               display version information and exit.\n"),
-            max_error_level, reference_warning_limit);
+            max_error_level);
     puts ("");
 
      /* xgettext: no-wrap */
@@ -739,14 +738,7 @@ main (int argc, char **argv)
           prepend_to_include_path (optarg);
           break;
 
-        case 'r': /* --reference-limit */
-          if (sscanf (optarg, "%d", &reference_warning_limit) != 1)
-            {
-              fprintf (stderr,
-                     _("%s: %s arg must be numeric, not `%s'.\n"),
-                     progname, "--reference-limit", optarg);
-              usage (1);
-            }
+        case 'r': /* was --reference-limit; obsolete, ignore */
           break;
 
         case 's': /* --footnote-style */

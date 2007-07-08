@@ -1622,17 +1622,6 @@ validate_file (TAG_ENTRY *tag_table)
           continue;
         }
 
-      /* Special hack.  If the node in question appears to have
-         been referenced more than REFERENCE_WARNING_LIMIT times,
-         give a warning. */
-      if (tags->touched > reference_warning_limit)
-        {
-          input_filename = tags->filename;
-          line_number = tags->line_no;
-          warning (_("node `%s' has been referenced %d times"),
-                   tags->node, tags->touched);
-        }
-
       if (tags->touched == 0)
         {
           input_filename = tags->filename;

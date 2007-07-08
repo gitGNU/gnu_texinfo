@@ -9,7 +9,6 @@ See the manual for detailed information.
   are permitted in any medium without royalty provided the copyright
   notice and this notice are preserved.
 
-
 *** IMPORTANT NEWS FOR ALL AUTHORS OF TEXINFO MANUALS ***
 
 As of version 4.2, Texinfo has a new command @copying to define the
@@ -47,6 +46,7 @@ one of the relevant sections:
   . @allow-recursion (never documented) is deprecated and produces a warning.
   . @quote-args (never documented) is now the default behavior.
   . centering and such take account of character widths.
+  . the --reference-limit option is now a no-op.
   . improvements to XML and Docbook output and the DTD.
 * texi2dvi:
   . pdftexi2dvi is a new wrapper to `texi2dvi --pdf', equal to texi2pdf,

@@ -15467,15 +15467,6 @@ Delete any existing indentation.
 Indent each paragraph by @var{num} spaces.
 @end table
 
-@item --reference-limit=@var{limit}
-@itemx -r @var{limit}
-@opindex --reference-limit=@var{limit}
-@opindex -r @var{limit}
-Set the value of the number of references to a node that
-@code{makeinfo} will make without reporting a warning.  If a node has more
-than this number of references in it, @code{makeinfo} will make the
-references but also report a warning.  The default is 1000.
-
 @item --split-size=@var{num}
 @opindex --split-size=@var{num}
 Keep Info files to at most @var{num} characters; default is 300,000.
