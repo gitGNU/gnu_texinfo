@@ -48,6 +48,10 @@ one of the relevant sections:
   . centering and such take account of character widths.
   . the --reference-limit option is now a no-op.
   . improvements to XML and Docbook output and the DTD.
+* texinfo.tex:
+  . @thissection can now be used in custom headings, and @thischapter
+    works reliably even without @set chapternewpage.  Custom headings
+    have additional flexibility as well.
 * texi2dvi:
   . pdftexi2dvi is a new wrapper to `texi2dvi --pdf', equal to texi2pdf,
     for the sake of AUC-TeX which prepends `pdf' to the compilation
