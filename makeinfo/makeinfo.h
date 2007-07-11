@@ -133,9 +133,9 @@ DECLARE (int, xml, 0);
 /* Nonzero means that we're generating DocBook. (--docbook) */
 DECLARE (int, docbook, 0);
 
-/* Nonzero means true 8-bit output for Info and plain text.
-   (--enable-encoding) */
-DECLARE (int, enable_encoding, 0);
+/* Nonzero means 8-bit output for Info and plain text, according to
+   @documentencoding.  (--enable-encoding) */
+DECLARE (int, enable_encoding, 1);
 
 /* Nonzero means escape characters in HTML output. */
 DECLARE (int, escape_html, 1);

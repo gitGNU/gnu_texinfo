@@ -1157,7 +1157,7 @@ add_encoded_char (char *html_str, char *info_str)
     add_word_args ("&%s;", html_str);
   else if (xml)
     xml_insert_entity (html_str);
-  else if (enable_encoding)
+  else if (enable_encoding && document_encoding_code != no_encoding)
     {
       /* Look for HTML_STR in the current translation table.  */
       int rc = cm_search_iso_map (html_str);

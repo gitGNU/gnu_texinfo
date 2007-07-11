@@ -35,6 +35,8 @@ one of the relevant sections:
     code and example output, instead of the regular left quote.
 * makeinfo:
   . The @documentlanguage locale is used to translate various document strings.
+  . --enable-encoding is now the default, meaning Info and plain text
+    output use 8-bit characters given a supported @documentencoding.
   . new option --css-ref=URL for creating a stylesheet <link> in HTML output.
   . new option --transliterate-file-names to use a reduction-to-ASCII
     algorithm for split HTML file names, useful for non-Latin-based languages.

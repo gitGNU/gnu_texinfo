@@ -390,8 +390,9 @@ General output options:\n\
 
     printf (_("\
 Options for Info and plain text:\n\
-      --enable-encoding       output accented and special characters in\n\
-                                Info output based on @documentencoding.\n\
+      --disable-encoding      do not output accented and special characters\n\
+                                in Info output based on @documentencoding.\n\
+      --enable-encoding       override --disable-encoding (default).\n\
       --fill-column=NUM       break Info lines at NUM characters (default %d).\n\
       --footnote-style=STYLE  output footnotes in Info according to STYLE:\n\
                                 `separate' to put them in their own node;\n\
@@ -489,6 +490,7 @@ struct option long_options[] =
   { "css-include", 1, 0, 'C' },
   { "css-ref", 1, 0, OPT_CSSREF },
   { "docbook", 0, 0, 'd' },
+  { "disable-encoding", 0, &enable_encoding, 0 },
   { "enable-encoding", 0, &enable_encoding, 1 },
   { "document-language", 1, 0, 'l' },
   { "error-limit", 1, 0, 'e' },
