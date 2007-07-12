@@ -43,8 +43,8 @@ Basics
 Text creation and manipulation
 * Diffutils: (diff).            Comparing and merging files.
 * Gawk: (gawk).                 A text scanning and processing language.
-* grep: (grep).                 Print lines matching a pattern.
 * M4: (m4).                     A powerful macro processor.
+* grep: (grep).                 Print lines matching a pattern.
 * sed: (sed).                   Stream EDitor.
 * Wdiff: (wdiff).               Word difference finder and related tools.
 
@@ -348,7 +348,7 @@ Individual utilities
 * id: (coreutils)id invocation.                 Print user identity.
 * ifnames: (autoconf)ifnames Invocation.        Listing conditionals in source.
 * imap4d: (mailutils)imap4d.                    IMAP4 daemon.
-* inetd: (inetutils)inetd invocation.           Interner super-server.
+* inetd: (inetutils)inetd invocation.           Internet super-server.
 * inimf: (web2c)inimf invocation.               Initial Metafont.
 * inimp: (web2c)inimp invocation.               Initial MetaPost.
 * initex: (web2c)initex invocation.             Initial TeX.
