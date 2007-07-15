@@ -1453,6 +1453,12 @@ cm_special_char (int arg)
         add_encoded_char ("aring", command);
       else if (strcmp (command, "ss") == 0)
         add_encoded_char ("szlig", command);
+      else if (strcmp (command, "guillemetleft") == 0
+               || strcmp (command, "guillemotleft") == 0)
+        add_encoded_char ("laquo", "<<");
+      else if (strcmp (command, "guillemetright") == 0
+               || strcmp (command, "guillemotright") == 0)
+        add_encoded_char ("raquo", ">>");
       else
         line_error ("cm_special_char internal error: command=@%s", command);
     }

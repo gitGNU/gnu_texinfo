@@ -398,8 +398,16 @@
 <!ENTITY dots       "<punct end-of-sentence='no'>&#x2026;</punct>">
 <!ENTITY enddots    "<punct end-of-sentence='yes'>&#x2026;</punct>">
 <!ENTITY amp        "&#x26;">
+<!ENTITY lsquo      "&#x2018;">
+<!ENTITY rsquo      "&#x2019;">
+<!ENTITY sbquo      "&#x201a;">
 <!ENTITY ldquo      "&#x201c;">
 <!ENTITY rdquo      "&#x201d;">
+<!ENTITY bdquo      "&#x201e;">
+<!ENTITY laquo      "&#xab;">
+<!ENTITY raquo      "&#xbb;">
+<!ENTITY lsaquo     "&#x2039;">
+<!ENTITY rsaquo     "&#x203a;">
 <!ENTITY mdash      "&#x2014;">
 <!ENTITY ndash      "&#x2013;">
 <!ENTITY period     "<punct end-of-sentence='no'>.</punct>">
