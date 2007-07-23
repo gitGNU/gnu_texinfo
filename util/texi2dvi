@@ -36,7 +36,7 @@ set -e
 rcs_revision='$Revision$'
 rcs_version=`set - $rcs_revision; echo $2`
 program=`echo $0 | sed -e 's!.*/!!'`
-version="texi2dvi (GNU Texinfo 4.8) $rcs_version
+version="texi2dvi (GNU Texinfo 4.9) $rcs_version
 
 Copyright (C) 2007 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
