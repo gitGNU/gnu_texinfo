@@ -552,8 +552,8 @@ move_to_dest ()
         testdest="$dest"
       fi
       if cmp -s "$file" "$testdest"; then :; else
-        verbose "Copying $file to $dest"
-        cp -p "$file" "$dest"
+        verbose "Moving $file to $dest"
+        mv "$file" "$dest"
       fi
     fi
   done
