@@ -14,8 +14,8 @@ bin_PROGRAMS = ginstall-info texindex
 bin_SCRIPTS = texi2dvi texi2pdf pdftexi2dvi
 
 # for auctex.
-pdftexi2dvi: texi2dvi
-	cp -f $(srcdir)/texi2dvi $@
+pdftexi2dvi: texi2pdf
+	cp -f $(srcdir)/texi2pdf $@
 
 # Use `ginstall-info' in the definition of PROGRAMS and in dependencies
 # because automake generates an install-info target in every Makefile (a
