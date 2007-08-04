@@ -59,6 +59,8 @@ extern char *info_scroll_choices[];
 #define IS_NextOnly   1 /* Try to get "Next:" menu item. */
 #define IS_PageOnly   2 /* Simply give up at the bottom of a node. */
 
+extern int cursor_movement_scrolls_p;
+
 /* Utility functions found in session.c */
 extern void info_dispatch_on_key (unsigned char key, Keymap map);
 extern unsigned char info_get_input_char (void);

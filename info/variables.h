@@ -60,6 +60,7 @@ extern int gc_compressed_files;
 extern int show_index_match;
 extern int info_scroll_behaviour;
 extern int window_scroll_step;
+extern int cursor_movement_scrolls_p;
 extern int ISO_Latin_p;
 
 #endif /* not INFO_VARIABLES_H */
