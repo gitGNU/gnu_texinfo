@@ -289,7 +289,8 @@ info_references_internal (char *label, SEARCH_BINDING *binding)
       strncpy (entry->label, refdef, offset - 1);
       entry->label[offset - 1] = '\0';
       canonicalize_whitespace (entry->label);
-
+      entry->line_number = 0;
+      
       refdef += offset;
       entry->start = start;
       entry->end = refdef - binding->buffer;
@@ -395,6 +396,7 @@ info_copy_reference (REFERENCE *src)
   dest->nodename = src->nodename ? xstrdup (src->nodename) : NULL;
   dest->start = src->start;
   dest->end = src->end;
+  dest->line_number = 0;
   
   return dest;
 }
