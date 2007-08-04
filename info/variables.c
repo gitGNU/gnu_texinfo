@@ -60,10 +60,19 @@ VARIABLE_ALIST info_variables[] = {
       N_("Controls what happens when scrolling is requested at the end of a node"),
       &info_scroll_behaviour, (char **)info_scroll_choices },
 
+  /* Alternate spelling */
+  { "scroll-behavior",
+      N_("Same as scroll-behaviour"),
+      &info_scroll_behaviour, (char **)info_scroll_choices },
+
   { "scroll-step",
       N_("The number lines to scroll when the cursor moves out of the window"),
       &window_scroll_step, (char **)NULL },
 
+  { "cursor-movement-scrolls",
+    N_("Controls whether scroll-behavior affects cursor movement commands"),
+    &cursor_movement_scrolls_p, (char **)on_off_choices },
+  
   { "ISO-Latin",
       N_("When \"On\", Info accepts and displays ISO Latin characters"),
       &ISO_Latin_p, (char **)on_off_choices },
