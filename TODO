@@ -76,6 +76,7 @@ If you are interested in working on any of these, email bug-texinfo@gnu.org.
 * Makeinfo:
   - Translation of "Appendix" etc. should depend on @doclang not $LANG.
   - Really support UTF-8 instead of just passing through the bytes.
+  - lang.c setup doesn't support @v{S} (S with caron) -- no named entity.
   - Automatically do -I of directory of main source file.
   - Make makeinfo -E just do macro expansion, avoiding all error checks.
     That way, texi2dvi could run makeinfo --iftex -E.
