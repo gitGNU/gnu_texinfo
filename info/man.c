@@ -332,7 +332,9 @@ get_manpage_contents (char *pagename)
              multibyte characters */
           setenv("LANGUAGE", "C", 1);
           setenv("LANG", "C", 1);
+#ifdef LC_MESSAGES
           setenv("LC_MESSAGES", "C", 1);
+#endif
           setenv("LC_CTYPE", "C", 1);
           setenv("LC_ALL", "C", 1);
         }

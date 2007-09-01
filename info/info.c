@@ -153,11 +153,20 @@ main (int argc, char **argv)
 #ifdef HAVE_SETLOCALE
   /* Set locale via LC_ALL.  */
   setlocale (LC_ALL, "");
+
   /* But don't use translated messages in the case when
      string width and length can differ */
   if (MB_CUR_MAX > 1)
-    setlocale(LC_MESSAGES, "C");
+    {
+      setenv("LANGUAGE", "C", 1);
+      setenv("LANG", "C", 1);
+#ifdef LC_MESSAGES
+      setlocale (LC_MESSAGES, "C");
 #endif
+      setenv("LC_CTYPE", "C", 1);
+      setenv("LC_ALL", "C", 1);
+    }
+#endif /* HAVE_SETLOCALE */
 
 #ifdef ENABLE_NLS
   /* Set the text message domain.  */
