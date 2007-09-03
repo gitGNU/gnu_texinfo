@@ -559,7 +559,7 @@ main (int argc, char **argv)
   /* Do not use LC_ALL, because LC_NUMERIC screws up the scanf parsing
      of the argument to @multicolumn.  */
   setlocale (LC_TIME, "");
-#ifdef LC_MESSAGES /* ultrix */
+#ifdef LC_MESSAGES /* ultrix, djgpp 2.04 */
   setlocale (LC_MESSAGES, "");
 #endif
   setlocale (LC_CTYPE, "");
