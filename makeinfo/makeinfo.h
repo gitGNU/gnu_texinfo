@@ -318,10 +318,10 @@ typedef struct generic_list {
   struct generic_list *next;
 } GENERIC_LIST;
 
-/* Use __ instead of _ to translate strings that end up in the output
-   document.  */
+/* Use `gdt' instead of `_' to translate strings that end up in the
+   output document.  */
 extern char *getdocumenttext (const char *msgid);
-#define __(s) getdocumenttext(s)
+#define gdt(s) getdocumenttext(s)
 
 /* Reverse the order of a list.  */
 extern GENERIC_LIST * reverse_list (GENERIC_LIST *list);

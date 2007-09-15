@@ -200,7 +200,7 @@ html_output_head (void)
   /* The <title> should not have markup, so use text_expansion.  */
   if (!html_title)
     html_title = escape_string (title ?
-        text_expansion (title) : (char *) __("Untitled"));
+        text_expansion (title) : (char *) gdt("Untitled"));
 
   /* Make sure this is the very first string of the output document.  */
   output_paragraph_offset = 0;

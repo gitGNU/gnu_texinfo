@@ -2608,7 +2608,7 @@ defining_copying (void)
 static void
 info_output_head (void)
 {
-  add_word_args (__("This is %s, produced by makeinfo version %s from %s.\n"),
+  add_word_args (gdt("This is %s, produced by makeinfo version %s from %s.\n"),
                  output_filename, VERSION, input_filename);
 
   /* Start afresh with whatever real text we have.  */
