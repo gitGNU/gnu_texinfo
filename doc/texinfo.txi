@@ -11574,7 +11574,7 @@ the width of a normal interword space:
 
 The space from @code{@@w@{@w{ }@}}, as well as being non-breakable,
 also will not stretch or shrink.  Sometimes that is what you want, for
-instance if you're doing indenting manual.  However, usually you want
+instance if you're doing manual indenting.  However, usually you want
 a normal interword space that does stretch and shrink (in the printed
 output); see the @code{@@tie} command in the next section.
 
