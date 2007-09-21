@@ -1154,7 +1154,7 @@ parse_dir_file (struct line_data *lines, int nlines, struct node **nodes,
 }
 
 int
-main (int argc, char **argv)
+main (int argc, char *argv[])
 {
   char *opened_dirfilename;
   char *compression_program;

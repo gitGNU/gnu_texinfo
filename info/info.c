@@ -145,7 +145,7 @@ static void init_messages (void);
 /* **************************************************************** */
 
 int
-main (int argc, char **argv)
+main (int argc, char *argv[])
 {
   int getopt_long_index;        /* Index returned by getopt_long (). */
   NODE *initial_node;           /* First node loaded by Info. */

@@ -123,7 +123,7 @@ void *xmalloc (), *xrealloc ();
 static char *concat3 (const char *, const char *, const char *);
 
 int
-main (int argc, char **argv)
+main (int argc, char *argv[])
 {
   int i;
 

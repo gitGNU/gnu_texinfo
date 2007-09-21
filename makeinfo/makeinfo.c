@@ -550,7 +550,7 @@ static COMMAND_LINE_DEFINE *command_line_defines = NULL;
 /* For each file mentioned in the command line, process it, turning
    Texinfo commands into wonderfully formatted output text. */
 int
-main (int argc, char **argv)
+main (int argc, char *argv[])
 {
   int c, ind;
   int reading_from_stdin = 0;
