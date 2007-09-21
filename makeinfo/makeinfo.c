@@ -1382,13 +1382,6 @@ convert_from_file (char *name)
 
       if (find_and_load (filename, 1))
         break;
-
-      if (!suffixes[i][0] && strrchr (filename, '.'))
-        {
-          fs_error (filename);
-          free (filename);
-          return;
-        }
     }
 
   if (!suffixes[i])
