@@ -1390,7 +1390,11 @@ convert_from_file (char *name)
       return;
     }
 
-  /* Set the global recording the current file name.  */
+  /* `find_and_load' (when successful) clobbers this global with new
+     memory.  We're about to reset it, so may as well free first.  */
+  free (input_filename);
+  
+  /* Set the current filename.  */
   input_filename = filename;
 
   /* Do the main conversion.  */
