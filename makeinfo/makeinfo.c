@@ -1392,7 +1392,6 @@ convert_from_file (char *name)
 
   /* Set the global recording the current file name.  */
   input_filename = filename;
-  free (filename);  /* And we're done with our temporary.  */
 
   /* Do the main conversion.  */
   convert_from_loaded_file (name);
