@@ -1449,9 +1449,8 @@ The @dfn{Body} of the document is typically structured like a
 traditional book or encyclopedia, but it may be free form.
 
 @item 6. End
-The @dfn{End} segment contains commands for printing indices and
-generating the table of contents, and the @code{@@bye} command on a line
-of its own.
+The @dfn{End} segment may contain commands for printing indices, and
+closes with the @code{@@bye} command on a line of its own.
 @end table
 
 
