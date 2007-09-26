@@ -22,6 +22,10 @@
 #include "makeinfo.h"
 #include "cmds.h"
 
+extern int printing_index;
+extern int defined_indices;
+extern int index_counter;
+
 /* User commands are only new indices.  (Macros are handled separately.)  */
 extern COMMAND **user_command_array;
 extern int user_command_array_len;
@@ -82,10 +86,6 @@ extern INDEX_ALIST **name_index_alist;
 
 /* Initialize all indices.  */
 extern void init_indices (void);
-
-extern int defined_indices;
-extern int printing_index;
-extern int index_counter;
 
 INDEX_ELT *index_list (char *name);
 

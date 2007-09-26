@@ -24,6 +24,7 @@
 #include "files.h"
 #include "footnote.h"
 #include "html.h"
+#include "index.h"
 #include "insertion.h"
 #include "lang.h"
 #include "macro.h"
@@ -1001,8 +1002,6 @@ cm_code (int arg)
     }
   else
     {
-      extern int printing_index;
-
       if (!printing_index)
         {
           if (arg == START)
@@ -1305,7 +1304,6 @@ cm_i (int arg)
 {
   /* Make use of <lineannotation> of Docbook, if we are
      inside an @example or similar.  */
-  extern int printing_index;
   if (docbook && !filling_enabled && !printing_index)
     xml_insert_element (LINEANNOTATION, arg);
   else if (xml)
@@ -1321,7 +1319,6 @@ cm_slanted (int arg)
 {
   /* Make use of <lineannotation> of Docbook, if we are
      inside an @example or similar.  */
-  extern int printing_index;
   if (docbook && !filling_enabled && !printing_index)
     xml_insert_element (LINEANNOTATION, arg);
   else if (xml)
@@ -1336,7 +1333,6 @@ void
 cm_b (int arg)
 {
   /* See cm_i comments.  */
-  extern int printing_index;
   if (docbook && !filling_enabled && !printing_index)
     xml_insert_element (LINEANNOTATION, arg);
   else if (docbook && arg == START)
@@ -1353,7 +1349,6 @@ void
 cm_r (int arg)
 {
   /* See cm_i comments.  */
-  extern int printing_index;
   if (docbook && !filling_enabled && !printing_index)
     xml_insert_element (LINEANNOTATION, arg);
   else if (xml)
@@ -1368,7 +1363,6 @@ void
 cm_sansserif (int arg)
 {
   /* See cm_i comments.  */
-  extern int printing_index;
   if (docbook && !filling_enabled && !printing_index)
     xml_insert_element (LINEANNOTATION, arg);
   else if (xml)
