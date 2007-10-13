@@ -1631,10 +1631,14 @@ cm_dircategory (void)
 
       if (!no_headers && !html)
         {
+          /* use add_* instead of insert_* because otherwise the
+             file header ("This is ...") will end up inside the
+             dir section markers.  */
           kill_self_indent (-1); /* make sure there's no indentation */
-          insert_string ("INFO-DIR-SECTION ");
-          insert_string (line);
-          insert ('\n');
+          cm_noindent (); /* make sure again */
+          add_word ("INFO-DIR-SECTION ");
+          add_word (line);
+          add_char ('\n');
         }
 
       free (line);
