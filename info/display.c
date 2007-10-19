@@ -136,8 +136,13 @@ display_update_one_window (WINDOW *win)
   if (display_inhibited)
     display_was_interrupted_p = 1;
 
-  /* If the window has no height, or display is inhibited, quit now. */
-  if (!win->height || display_inhibited)
+  /* If the window has no height, or display is inhibited, quit now.
+     Strictly speaking, it should only be necessary to test if the
+     values are equal to zero, since window_new_screen_size should
+     ensure that the window height/width never becomes negative, but
+     since historically this has often been the culprit for crashes, do
+     our best to be doubly safe.  */
+  if (win->height <= 0 || win->width <= 0 || display_inhibited)
     return;
 
   /* If the window's first row doesn't appear in the_screen, then it
