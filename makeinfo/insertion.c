@@ -526,7 +526,7 @@ begin_insertion (enum insertion_type type)
          output it right away since xml output is never split.
          For html, we output it specifically in html_output_head. 
          For plain text, there's no way to hide it, so the author must
-          use @insertcopying in the desired location.  */
+         use @insertcopying in the desired location.  */
       if (docbook)
 	{
 	  if (!xml_in_bookinfo)
@@ -542,7 +542,6 @@ begin_insertion (enum insertion_type type)
 
       if (docbook)
         xml_insert_element (LEGALNOTICE, END);
-
       break;
 
     case quotation:

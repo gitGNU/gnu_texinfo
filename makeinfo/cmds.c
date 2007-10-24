@@ -1531,7 +1531,6 @@ cm_settitle (void)
 {
   if (xml)
     {
-      xml_begin_document (current_output_filename);
       xml_insert_element (SETTITLE, START);
       xml_in_book_title = 1;
       get_rest_of_line (0, &title);

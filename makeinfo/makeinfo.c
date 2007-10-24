@@ -1648,7 +1648,7 @@ convert_from_loaded_file (char *name)
 
   set_current_output_filename (real_output_filename);
   
-  if (xml && !docbook)
+  if (xml)
     xml_begin_document (filename_part (output_filename));
 
   if (verbose_mode)

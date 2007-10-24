@@ -656,7 +656,6 @@ cm_node (void)
   no_indent = 1;
   if (xml)
     {
-      xml_begin_document (current_output_filename);
       xml_begin_node ();
       if (!docbook)
 	{
