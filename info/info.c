@@ -568,7 +568,12 @@ info_error (char *format, void *arg1, void *arg2)
   if (!info_windows_initialized_p || display_inhibited)
     {
       fprintf (stderr, "%s: ", program_name);
-      fprintf (stderr, format, arg1, arg2);
+      if (arg1)
+        fprintf (stderr, format, arg1, arg2);
+      else
+        /* If we're passed a string, just print it.  Otherwise a % in a
+           filename gets treated as a format specifier.  */
+        fputs (format, stderr);
       fprintf (stderr, "\n");
       fflush (stderr);
     }
@@ -582,9 +587,7 @@ info_error (char *format, void *arg1, void *arg2)
         }
       else
         {
-          NODE *temp;
-
-          temp = build_message_node (format, arg1, arg2);
+          NODE *temp = build_message_node (format, arg1, arg2);
           if (info_error_rings_bell_p)
             terminal_ring_bell ();
           inform_in_echo_area (temp->contents);
