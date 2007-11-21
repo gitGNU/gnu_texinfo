@@ -23,9 +23,9 @@
 #define LANG_H
 
 /* The language code which can be changed through @documentlanguage
- * Actually we don't currently support this (may be in the future) ;-)
- * These code are the ISO-639 two letter codes.
- */
+   These code are the ISO-639 two letter codes.  */
+
+#undef hz /* AIX 4.3.3 */
 typedef enum
 { 
   aa, ab, ae, af, ak, am, an, ar, as, av, ay, az, ba, be, bg, bh, bi,
