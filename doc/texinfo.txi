@@ -3487,23 +3487,19 @@ controlled by the @code{@@setchapternewpage} command.  You need the
 @code{@@headings} command only if the @code{@@setchapternewpage} command
 does not do what you want, or if you want to turn off predefined page
 headings prior to defining your own.  Write an @code{@@headings} command
-immediately after the @code{@@end titlepage} command.@refill
+immediately after the @code{@@end titlepage} command.
 
-You can use @code{@@headings} as follows:@refill
+You can use @code{@@headings} as follows:
 
 @table @code
 @item @@headings off
-Turn off printing of page headings.@refill
+Turn off printing of page headings.
 
 @item @@headings single
 Turn on page headings appropriate for single-sided printing.
-@refill
 
 @item @@headings double
-@itemx @@headings on
-Turn on page headings appropriate for double-sided printing.  The two
-commands, @code{@@headings on} and @code{@@headings double}, are
-synonymous.@refill
+Turn on page headings appropriate for double-sided printing.  
 
 @item @@headings singleafter
 @itemx @@headings doubleafter
@@ -3524,7 +3520,7 @@ double} after the @code{@@end titlepage} command.
 
 You can stop @TeX{} from generating any page headings at all by
 writing @code{@@headings off} on a line of its own immediately after the
-line containing the @code{@@end titlepage} command, like this:@refill
+line containing the @code{@@end titlepage} command, like this:
 
 @example
 @@end titlepage
@@ -3533,11 +3529,10 @@ line containing the @code{@@end titlepage} command, like this:@refill
 
 @noindent
 The @code{@@headings off} command overrides the @code{@@end titlepage}
-command, which would otherwise cause @TeX{} to print page
-headings.@refill
+command, which would otherwise cause @TeX{} to print page headings.
 
 You can also specify your own style of page heading and footing.
-@xref{Headings, , Page Headings}, for more information.@refill
+@xref{Headings, , Page Headings}, for more information.
 
 
 @node Contents
