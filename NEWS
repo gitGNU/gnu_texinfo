@@ -22,9 +22,13 @@ one of the relevant sections:
 
 -------------------------------------------------------------------------------
 
+* Info:
+  . the precise line number specified in index entries is used if available.
+
 * Distribution:
   . language support for no removed/renamed to nb, per Norwegian translators.
   . new translation: es.
+  . bug fixes in make check (and elsewhere).
 
 
 4.11 (9 September 2007)
