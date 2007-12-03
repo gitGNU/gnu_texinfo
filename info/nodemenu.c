@@ -115,7 +115,7 @@ compare_strings (const void *entry1, const void *entry2)
   char **e1 = (char **) entry1;
   char **e2 = (char **) entry2;
 
-  return (strcasecmp (*e1, *e2));
+  return (mbscasecmp (*e1, *e2));
 }
 
 /* The name of the nodemenu node. */

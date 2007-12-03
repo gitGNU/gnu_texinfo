@@ -605,7 +605,7 @@ xml_element (char *name)
   int i;
   for (i = 0; i<=PARA; i++)
     {
-      if (strcasecmp (name, texinfoml_element_list[i].name) == 0)
+      if (mbscasecmp (name, texinfoml_element_list[i].name) == 0)
         return i;
     }
   printf ("Error xml_element\n");
@@ -1367,15 +1367,15 @@ xml_insert_quotation (char *type, int arg)
       /* Let's assume it started.  */
       quotation_started = 1;
 
-      if (strcasecmp (type, "tip") == 0)
+      if (mbscasecmp (type, "tip") == 0)
         xml_insert_element (TIP, arg);
-      else if (strcasecmp (type, "note") == 0)
+      else if (mbscasecmp (type, "note") == 0)
         xml_insert_element (NOTE, arg);
-      else if (strcasecmp (type, "important") == 0)
+      else if (mbscasecmp (type, "important") == 0)
         xml_insert_element (IMPORTANT, arg);
-      else if (strcasecmp (type, "warning") == 0)
+      else if (mbscasecmp (type, "warning") == 0)
         xml_insert_element (WARNING, arg);
-      else if (strcasecmp (type, "caution") == 0)
+      else if (mbscasecmp (type, "caution") == 0)
         xml_insert_element (CAUTION, arg);
       else
         /* Didn't find a known quotation type :\ */

@@ -249,7 +249,7 @@ info_references_internal (char *label, SEARCH_BINDING *binding)
   tmp_search.end = binding->end;
   tmp_search.flags = S_FoldCase | S_SkipDest;
 
-  searching_for_menu_items = (strcasecmp (label, INFO_MENU_ENTRY_LABEL) == 0);
+  searching_for_menu_items = (mbscasecmp (label, INFO_MENU_ENTRY_LABEL) == 0);
 
   while ((position = search_forward (label, &tmp_search)) != -1)
     {

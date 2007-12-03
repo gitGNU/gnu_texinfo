@@ -49,7 +49,7 @@ INDEX_ALIST **name_index_alist = NULL;
 static INDEX_ELT **the_indices = NULL;
 
 /* How to compare index entries for sorting.  May be set to strcoll.  */
-static int (*index_compare_fn) (const char *a, const char *b) = strcasecmp;
+static int (*index_compare_fn) (const char *a, const char *b) = mbscasecmp;
 
 /* Find which element in the known list of indices has this name.
    Returns -1 if NAME isn't found. */

@@ -118,8 +118,8 @@ info_get_node (char *filename, char *nodename)
   /* If the node not found was "Top", try again with different case,
      unless this was a man page.  */
   if (!node
-      && strcasecmp (filename, MANPAGE_FILE_BUFFER_NAME) != 0
-      && (nodename == NULL || strcasecmp (nodename, "Top") == 0))
+      && mbscasecmp (filename, MANPAGE_FILE_BUFFER_NAME) != 0
+      && (nodename == NULL || mbscasecmp (nodename, "Top") == 0))
     {
       node = info_get_node_of_file_buffer ("Top", file_buffer);
       if (!node)
@@ -294,7 +294,7 @@ info_find_file_internal (char *filename, int get_tags)
 #if defined (HANDLE_MAN_PAGES)
   /* If the name of the file that we want is our special file buffer for
      Unix manual pages, then create the file buffer, and return it now. */
-  if (strcasecmp (filename, MANPAGE_FILE_BUFFER_NAME) == 0)
+  if (mbscasecmp (filename, MANPAGE_FILE_BUFFER_NAME) == 0)
     file_buffer = create_manpage_file_buffer ();
   else
 #endif /* HANDLE_MAN_PAGES */
@@ -331,7 +331,7 @@ info_load_file_internal (char *filename, int get_tags)
      doesn't exist, then try again with the last part of the filename
      appearing in lowercase. */
   /* This is probably not needed at all on those systems which define
-     FILENAME_CMP to be strcasecmp.  But let's do it anyway, lest some
+     FILENAME_CMP to be mbscasecmp.  But let's do it anyway, lest some
      network redirector supports case sensitivity.  */
   if (retcode < 0)
     {

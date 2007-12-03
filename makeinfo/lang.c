@@ -1211,7 +1211,7 @@ default_country_for_lang (const char *ll_code)
   /* If we didn't find one to copy, warn and duplicate.  */
   if (c == principal_len)
     {
-      if (strcasecmp (ll_code, "en") == 0)
+      if (mbscasecmp (ll_code, "en") == 0)
         cc_code = xstrdup ("en_US");
       else
         {
@@ -1386,7 +1386,7 @@ cm_documentencoding (void)
       /* See if we have this encoding.  */
       for (enc = no_encoding+1; enc != last_encoding_code; enc++)
         {
-          if (strcasecmp (enc_arg, encoding_table[enc].encname) == 0)
+          if (mbscasecmp (enc_arg, encoding_table[enc].encname) == 0)
             {
               document_encoding_code = enc;
               break;

@@ -80,14 +80,6 @@ extern char *strerror ();
 #define PATH_MAX _POSIX_PATH_MAX
 #endif
 
-#ifndef HAVE_DECL_STRCASECMP
-extern int strcasecmp ();
-#endif
-
-#ifndef HAVE_DECL_STRNCASECMP
-extern int strncasecmp ();
-#endif
-
 #ifndef HAVE_DECL_STRCOLL
 extern int strcoll ();
 #endif
@@ -192,8 +184,8 @@ extern int strcoll ();
 #  define STRIP_DOT_EXE	1
 # endif /* O_BINARY && !__CYGWIN__ */
   /* Back to any O_BINARY system.  */
-# define FILENAME_CMP	strcasecmp
-# define FILENAME_CMPN	strncasecmp
+# define FILENAME_CMP	mbscasecmp
+# define FILENAME_CMPN	mbsncasecmp
 # define FOPEN_RBIN	"rb"
 # define FOPEN_WBIN	"wb"
 # define HAVE_DRIVE(n)	((n)[0] && (n)[1] == ':')

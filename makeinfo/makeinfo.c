@@ -3726,7 +3726,7 @@ cm_ifeq (void)
     {
       if (array_len (arglist) > 1)
         {
-          if ((strcasecmp (arglist[0], arglist[1]) == 0) &&
+          if ((mbscasecmp (arglist[0], arglist[1]) == 0) &&
               (arglist[2]))
             execute_string ("%s\n", arglist[2]);
         }

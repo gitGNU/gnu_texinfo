@@ -59,9 +59,9 @@ int footnote_count = 0;
 int
 set_footnote_style (char *string)
 {
-  if (strcasecmp (string, "separate") == 0)
+  if (mbscasecmp (string, "separate") == 0)
     footnote_style = separate_node;
-  else if (strcasecmp (string, "end") == 0)
+  else if (mbscasecmp (string, "end") == 0)
     footnote_style = end_node;
   else
     return -1;

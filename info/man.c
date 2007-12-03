@@ -454,7 +454,7 @@ manpage_node_of_file_buffer (FILE_BUFFER *file_buffer, char *pagename)
 
       for (i = 0; (tag = file_buffer->tags[i]); i++)
         {
-          if (strcasecmp (pagename, tag->nodename) == 0)
+          if (mbscasecmp (pagename, tag->nodename) == 0)
             break;
         }
     }

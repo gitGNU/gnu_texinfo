@@ -410,7 +410,7 @@ menu_item_equal (const char *item, char term_char, const char *name)
   }
     
   /* First, ITEM must actually match NAME (usually it won't).  */
-  ret = strncasecmp (item_basename, name, name_len) == 0;
+  ret = mbsncasecmp (item_basename, name, name_len) == 0;
   if (ret)
     {
       /* Then, `foobar' doesn't match `foo', so be sure we've got all of
@@ -428,7 +428,7 @@ menu_item_equal (const char *item, char term_char, const char *name)
         {
           char *suffix = suffixes[i];
           unsigned suffix_len = strlen (suffix);
-          ret = strncasecmp (item_basename + name_len, suffix, suffix_len) == 0
+          ret = mbsncasecmp (item_basename + name_len, suffix, suffix_len) == 0
                 && item_basename[name_len + suffix_len] == term_char;
         }
     }
