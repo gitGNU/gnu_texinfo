@@ -144,9 +144,12 @@ main (int argc, char **argv)
       key_filename = NULL_DEVICE;
     }
 
+  /* The order of these calls depends exactly on the order in the
+     Makefile.{in,am}, or they might fail on filesystems with
+     high-precision times; see also the fclose calls below.  */
   funs_stream = must_fopen (funs_filename, "w");
-  doc_stream = must_fopen (doc_filename, "w");
   key_stream = must_fopen (key_filename, "w");
+  doc_stream = must_fopen (doc_filename, "w");
 
   fprintf (funs_stream,
       "/* %s -- Generated declarations for Info commands. */\n\n\
@@ -225,9 +228,11 @@ main (int argc, char **argv)
   fprintf (key_stream, "   { (char *)NULL, 0 }\n};\n");
   fprintf (funs_stream, "\n#define A_NCOMMANDS %u\n", next_func_key());
 
+  /* The order of these calls also depends exactly on the order in the
+   * Makefile.{in,am}; see the must_fopen calls above.  */
   fclose (funs_stream);
-  fclose (doc_stream);
   fclose (key_stream);
+  fclose (doc_stream);
 
   if (tags_only)
     maybe_dump_tags (stdout);
