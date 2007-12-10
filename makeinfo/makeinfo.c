@@ -376,16 +376,16 @@ Output format selection (default is to produce Info):\n\
 
     puts (_("\
 General output options:\n\
-  -E, --macro-expand FILE     output macro-expanded source to FILE.\n\
-                              ignoring any @setfilename.\n\
+  -E, --macro-expand=FILE     output macro-expanded source to FILE,\n\
+                                ignoring any @setfilename.\n\
       --no-headers            suppress node separators, Node: lines, and menus\n\
                                 from Info output (thus producing plain text)\n\
                                 or from HTML (thus producing shorter output);\n\
                                 also, write to standard output by default.\n\
-      --no-split              suppress splitting of Info or HTML output,\n\
-                              generate only one output file.\n\
+      --no-split              suppress the splitting of Info or HTML output,\n\
+                                generate only one output file.\n\
       --number-sections       output chapter and sectioning numbers.\n\
-  -o, --output=FILE           output to FILE (directory if split HTML),\n\
+  -o, --output=FILE           output to FILE (or directory if split HTML).\n\
 "));
 
     printf (_("\
