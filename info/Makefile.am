@@ -54,6 +54,8 @@ generated_sources = doc.c key.c funs.h
 
 # We need a linear ordering to prevent race condition in parallel make.
 # See the node ``(automake)Multiple Outputs'' for an explanation.
+# Make sure this matches with order in which makedoc.c creates these
+# files.
 doc.c: key.c
 key.c: funs.h
 
