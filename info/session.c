@@ -985,8 +985,6 @@ forward_move_node_structure (WINDOW *window, int behaviour)
 	}
       else
         {
-          window_message_in_echo_area ((char *) _("Following Next node..."),
-              NULL, NULL);
           info_handle_pointer ("Next", window);
         }
       break;
@@ -1191,8 +1189,6 @@ backward_move_node_structure (WINDOW *window, int behaviour)
           /* Move to the previous node.  If this node now contains a menu,
              and we have not inhibited movement to it, move to the node
              corresponding to the last menu item. */
-          window_message_in_echo_area ((char *) _("Moving Prev in this window."),
-              NULL, NULL);
           info_handle_pointer ("Prev", window);
 
           if (!inhibit_menu_traversing)
