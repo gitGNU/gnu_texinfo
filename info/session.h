@@ -17,7 +17,7 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-   Written by Brian Fox (bfox@ai.mit.edu). */
+   Originally written by Brian Fox (bfox@ai.mit.edu). */
 
 #ifndef SESSION_H
 #define SESSION_H
@@ -135,6 +135,7 @@ extern void info_scroll_forward (WINDOW *window, int count, unsigned char key);
 extern void info_scroll_backward (WINDOW *window, int count, unsigned char key);
 extern void info_redraw_display (WINDOW *window, int count, unsigned char key);
 extern void info_toggle_wrap (WINDOW *window, int count, unsigned char key);
+extern void info_toggle_regexp (WINDOW *window, int count, unsigned char key);
 extern void info_move_to_window_line (WINDOW *window, int count,
     unsigned char key);
 extern void info_up_line (WINDOW *window, int count, unsigned char key);
