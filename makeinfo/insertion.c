@@ -488,7 +488,7 @@ begin_insertion (enum insertion_type type)
       close_single_paragraph ();
       filling_enabled = no_indent = 0;
       inhibit_paragraph_indentation = 1;
-      insert_string ("START-INFO-DIR-ENTRY\n");
+      add_word ("START-INFO-DIR-ENTRY\n");
       break;
 
     case documentdescription:
