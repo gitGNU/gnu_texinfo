@@ -1,14 +1,13 @@
 $Id$
 texinfo/util/README
 
-  Copyright (C) 2002 Free Software Foundation, Inc.
+  Copyright (C) 2002, 2008 Free Software Foundation, Inc.
 
   Copying and distribution of this file, with or without modification,
   are permitted in any medium without royalty provided the copyright
   notice and this notice are preserved.
 
-Assorted Texinfo-related programs and scripts.
+Assorted Texinfo-related files.
 
-texindex, texi2dvi, and install-info get installed.
+texindex, texi2dvi, texi2pdf, pdftexi2dvi, and the XML stuff get installed.
 The other items here are for your amusement and/or hacking pleasure.
-

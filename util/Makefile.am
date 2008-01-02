@@ -10,21 +10,13 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-bin_PROGRAMS = ginstall-info texindex
+SUBDIRS = tests
+bin_PROGRAMS = texindex
 bin_SCRIPTS = texi2dvi texi2pdf pdftexi2dvi
 
 # for auctex.
 pdftexi2dvi: texi2pdf
 	cp -f $(srcdir)/texi2pdf $@
-
-# Use `ginstall-info' in the definition of PROGRAMS and in dependencies
-# because automake generates an install-info target in every Makefile (a
-# bug, IMHO, but this is easier than patching Automake.)
-ginstall_info_SOURCES = install-info.c
-
-# Transform `ginstall-info' to `install-info' before applying any
-# user-specified name transformations.
-transform = s/ginstall-info/install-info/; $(program_transform_name)
 
 localedir = $(datadir)/locale
 AM_CPPFLAGS = 					\
