@@ -588,13 +588,6 @@ info_error (char *format, void *arg1, void *arg2)
 static void
 info_short_help (void)
 {
-#ifdef __MSDOS__
-  static const char speech_friendly_string[] = N_("\
-  -b, --speech-friendly        be friendly to speech synthesizers.\n");
-#else
-  static const char speech_friendly_string[] = "";
-#endif
-
   printf (_("\
 Usage: %s [OPTION]... [MENU-ITEM...]\n\
 \n\
@@ -620,7 +613,10 @@ Options:\n\
       --restore=FILENAME       read initial keystrokes from FILENAME.\n\
   -O, --show-options, --usage  go to command-line options node."));
 
-  printf ("%s", speech_friendly_string);
+#ifdef __MSDOS__
+  puts (_("\
+  -b, --speech-friendly        be friendly to speech synthesizers."));
+#endif
 
   puts (_("\
       --subnodes               recursively output menu items.\n\
