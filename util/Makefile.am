@@ -47,9 +47,11 @@ CLEANFILES = $(pkgdata_DATA)
 XFAIL_TESTS =
 TESTS =	\
 bibtex.test \
-dvipdf.test \
 latex2html.test \
 texi2dvi.test
+
+# Let's not stress people's TeX installations.
+#dvipdf.test
 
 EXTRA_DIST += $(TESTS)
 
