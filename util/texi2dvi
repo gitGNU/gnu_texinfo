@@ -851,7 +851,7 @@ run_tex ()
       ;;
   esac
 
-  echo "$0: Running $cmd ..."
+  verbose "$0: Running $cmd ..."
   if eval "$cmd" >&5; then
     case $out_lang in
       dvi | pdf ) move_to_dest "$in_noext.$out_lang";;
