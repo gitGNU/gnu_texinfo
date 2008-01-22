@@ -397,6 +397,12 @@ There is NO WARRANTY, to the extent permitted by law.\n"),
     const char *errstr;
     char *errarg1, *errarg2;
 
+   /* If they say info -O info, we want to show them the invocation node
+      for standalone info; there's nothing useful in info.texi.  */
+   if (goto_invocation_p && argv[optind]
+       && mbscasecmp (argv[optind], "info") == 0)
+     argv[optind] = "info-stnd";
+
     NODE *new_initial_node = info_follow_menus (initial_node, argv + optind,
         &errstr, &errarg1, &errarg2);
 

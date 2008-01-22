@@ -47,6 +47,7 @@ one of the relevant sections:
   . regular expression searches are now the default; the new R command
     toggles between regexp and literal-string searches.
   . the precise line number specified in index entries is used if available.
+  . --usage=info shows usage for standalone Info.
 
 * Distribution:
   . language support for no removed/renamed to nb, per Norwegian translators.
