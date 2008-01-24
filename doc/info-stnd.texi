@@ -106,7 +106,7 @@ interfaces, although customization and other details are different
 reader supports the X Window System and other such bitmapped
 interfaces, not just plain ASCII, so if you want the prettiest
 display for Info files, you should try it.  You can use Emacs Info
-without using Emacs for anything else.  (Type @kbd{C-x C-x} to exit;
+without using Emacs for anything else.  (Type @kbd{C-x C-c} to exit;
 this also works in the standalone Info reader.)
 
 
