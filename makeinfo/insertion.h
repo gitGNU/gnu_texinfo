@@ -1,7 +1,7 @@
 /* insertion.h -- declarations for insertion.c.
    $Id$
 
-   Copyright (C) 1998, 1999, 2001, 2002, 2003, 2007
+   Copyright (C) 1998, 1999, 2001, 2002, 2003, 2007, 2008
    Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -77,4 +77,6 @@ extern int is_in_insertion_of_type (int type);
 extern int command_needs_braces (char *cmd);
 
 extern enum insertion_type find_type_from_name (char *name);
+
+extern char *get_item_function (void);
 #endif /* !INSERTION_H */

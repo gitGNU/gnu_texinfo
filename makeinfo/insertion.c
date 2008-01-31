@@ -143,7 +143,7 @@ current_item_function (void)
    change it to "@ ", since "@" by itself is not a command.  This makes
    "@ ", "@\t", and "@\n" all the same, but their default meanings are
    the same anyway, and let's not worry about supporting redefining them.  */
-static char *
+char *
 get_item_function (void)
 {
   char *item_function;

@@ -22,6 +22,10 @@ one of the relevant sections:
 
 -------------------------------------------------------------------------------
 
+* Language:
+  . new commands @clicksequence, @click, and @clickstyle for documenting
+    GUI sequences, and @arrow for the default glyph used.
+
 * install-info:
   . Much work towards compatibility with Debian's independent
     implementation.  Changes in behavior:
@@ -53,7 +57,7 @@ one of the relevant sections:
   . language support for no removed/renamed to nb, per Norwegian translators.
   . new translation: es.
   . bug fixes in make check (and elsewhere).
-  . gettext 0.17.
+  . gettext 0.17, automake 1.10.1.
 
 
 4.11 (9 September 2007)
