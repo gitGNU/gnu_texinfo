@@ -3980,9 +3980,11 @@ show_isearch_prompt (int dir, unsigned char *string, int failing_p)
   unsigned int prompt_len, p_rep_index, p_rep_size;
 
   if (dir < 0)
-    prefix = _("I-search backward: ");
+    prefix = use_regex ? _("Regexp I-search backward: ")
+                       : _("I-search backward: ");
   else
-    prefix = _("I-search: ");
+    prefix = use_regex ? _("Regexp I-search: ")
+                       : _("I-search: ");
 
   p_rep_index = p_rep_size = 0;
   p_rep = (char *)NULL;
