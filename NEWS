@@ -48,8 +48,9 @@ one of the relevant sections:
   . New section in the Texinfo manual describing all this.
 
 * Info:
-  . regular expression searches are now the default; the new R command
-    toggles between regexp and literal-string searches.
+  . regular expression searches are now the default for both regular
+    and incremental searches.
+  . the new R command toggles between regexp and literal-string searches.
   . the precise line number specified in index entries is used if available.
   . --usage=info shows usage for standalone Info.
 
