@@ -1289,7 +1289,9 @@ cm_cite (int arg, int position)
     {
       if (arg == START)
         add_char ('`');
-      else
+      else if (!looking_at ("}'"))
+        /* In the simple case of, e.g.,  ... @cite{Foo}'s ...
+           don't output a double ''.  */
         add_char ('\'');
     }
 }
