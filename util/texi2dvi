@@ -177,7 +177,8 @@ IFS=" 	$newline"
 # Systems which define $COMSPEC or $ComSpec use semicolons to separate
 # directories in TEXINPUTS -- except for Cygwin, where COMSPEC might be
 # inherited, but : is used.
-if test -n "$COMSPEC$ComSpec" && uname | grep -iv cygwin >/dev/null; then
+if test -n "$COMSPEC$ComSpec" \
+   && uname | $EGREP -iv 'cygwin|mingw' >/dev/null; then
   path_sep=";"
 else
   path_sep=":"
