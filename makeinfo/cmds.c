@@ -1643,7 +1643,7 @@ cm_dircategory (void)
           cm_noindent (); /* make sure again */
           add_word ("INFO-DIR-SECTION ");
           add_word (line);
-          add_char ('\n');
+          close_single_paragraph ();  /* newline */
         }
 
       free (line);

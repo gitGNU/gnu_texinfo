@@ -3102,7 +3102,7 @@ close_paragraph (void)
   int i;
 
   /* We don't need these newlines in XML and Docbook outputs for
-     paragraph seperation.  We have <para> element for that.  */
+     paragraph separation.  We have the <para> element for that.  */
   if (xml)
     return;
 
