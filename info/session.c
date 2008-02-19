@@ -959,7 +959,7 @@ char *info_scroll_choices[] = {
 };
 
 /* Controls whether scroll-behavior affects line movement commands */
-int cursor_movement_scrolls_p = 0;
+int cursor_movement_scrolls_p = 1;
 
 /* Default window sizes for scrolling commands.  */
 int default_window_size = -1;   /* meaning 1 window-full */
