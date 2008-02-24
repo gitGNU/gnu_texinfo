@@ -1715,13 +1715,15 @@ munge_old_style_debian_options (int argc, char **argv,
 	
 	  /* Okay, we munge the options to look like this:
 	     --regex=REGEX --section=TITLE --add-once */
-	  if (asprintf (&opt, "--regex=%s", regex) == -1)
+          opt = xmalloc (strlen (regex) + sizeof ("--regex="));
+	  if (sprintf (opt, "--regex=%s", regex) == -1)
 	    err = 1;
 	  if (!err)
 	    err = argz_add (&argz, &argz_len, opt);
 	  free (opt); opt = NULL;
 
-	  if (asprintf (&opt, "--section=%s", title) == -1)
+          opt = xmalloc (strlen (regex) + sizeof ("--section="));
+	  if (sprintf (opt, "--section=%s", title) == -1)
 	    err = 1;
 	  if (!err)
 	    err = argz_add (&argz, &argz_len, opt);
