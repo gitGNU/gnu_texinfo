@@ -77,7 +77,7 @@ struct spec_entry
 {
   struct spec_entry *next;
   char *text;
-  int text_len;
+  size_t text_len;
   /* A pointer to the list of sections to which this entry should be
      added.  */
   struct spec_section *entry_sections;
