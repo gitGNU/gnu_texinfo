@@ -970,8 +970,9 @@ static unsigned char default_emacs_like_info_keys[] =
         CONTROL('x'), 't', NUL,         A_info_tile_windows,
         CONTROL('x'), 'w', NUL,         A_info_toggle_wrap,
 
-        /* We want help to report q, not C-x C-c.  */
+        /* We want help to report q, not C-x C-c, etc.  */
         'q', NUL,                       A_info_quit,
+        'x', NUL,                       A_info_delete_window,
 
 /*      Arrow key bindings for info keymaps.  It seems that some
         terminals do not match their termcap entries, so it's best to just
@@ -1263,8 +1264,9 @@ static unsigned char default_vi_like_info_keys[] =
         CONTROL('x'), 'w', NUL,         A_info_toggle_wrap,
         CONTROL('x'), ',', NUL,         A_info_next_index_match,
 
-        /* We want help to report q, not C-x C-c.  */
+        /* We want help to report q, not C-x C-c, etc.  */
         'q', NUL,                       A_info_quit,
+        'x', NUL,                       A_info_delete_window,
 
 /*      Arrow key bindings for info keymaps.  It seems that some
         terminals do not match their termcap entries, so it's best to just
