@@ -638,7 +638,7 @@ compile (FILE *fp, const char *filename, struct sect *sections)
 	      else
 		{
 		  syntax_error (filename, lnum,
-                      (char *) _("NUL character (^%c) not permitted"),
+                      _("NUL character (^%c) not permitted"),
                       (void *) (long) c, NULL, NULL, NULL);
 		  error = 1;
 		}
@@ -662,7 +662,7 @@ compile (FILE *fp, const char *filename, struct sect *sections)
 	      rescan = 1;
 	      if (alen == 0)
 		{
-		  syntax_error (filename, lnum, (char *) _("missing action name"),
+		  syntax_error (filename, lnum, _("missing action name"),
 				(void *) (long) c, NULL, NULL, NULL);
 		  error = 1;
 		}

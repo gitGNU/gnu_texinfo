@@ -96,7 +96,7 @@ extern char *key_documentation (char key, Keymap map);
 extern char *pretty_keyname (unsigned char key);
 extern char *pretty_keyseq (char *keyseq);
 extern char *where_is (Keymap map, InfoCommand *cmd);
-extern char *replace_in_documentation (char *string, int help_is_only_window_p);
+extern char *replace_in_documentation (const char *string, int help_is_only_window_p);
 extern void dump_map_to_message_buffer (char *prefix, Keymap map);
 
 #endif /* !DOC_H */

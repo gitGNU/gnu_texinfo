@@ -365,7 +365,7 @@ There is NO WARRANTY, to the extent permitted by law.\n"),
       if (info_recent_file_error)
         info_error (info_recent_file_error, NULL, NULL);
       else
-        info_error ((char *) msg_cant_find_node,
+        info_error (msg_cant_find_node,
                     user_nodenames ? user_nodenames[0] : "Top", NULL);
       xexit (1);
     }
@@ -430,13 +430,13 @@ There is NO WARRANTY, to the extent permitted by law.\n"),
           dump_node_to_file (initial_node, user_output_filename,
                              dump_subnodes);
         else
-          info_error ((char *) errstr, errarg1, errarg2);
+          info_error (errstr, errarg1, errarg2);
       }
     else
       {
 
         if (errstr)
-          begin_info_session_with_error (initial_node, (char *) errstr,
+          begin_info_session_with_error (initial_node, errstr,
               errarg1, errarg2);
         /* If the user specified `--index-search=STRING' or
            --show-options, start the info session in the node
@@ -553,7 +553,7 @@ int info_error_rings_bell_p = 1;
    then the message is printed in the echo area.  Otherwise, a message is
    output to stderr. */
 void
-info_error (char *format, void *arg1, void *arg2)
+info_error (const char *format, void *arg1, void *arg2)
 {
   info_error_was_printed = 1;
 

@@ -32,7 +32,7 @@
    name.  A return value of NULL indicates that no function name could
    be read. */
 char *
-read_function_name (char *prompt, WINDOW *window)
+read_function_name (const char *prompt, WINDOW *window)
 {
   register int i;
   char *line;
@@ -69,7 +69,7 @@ DECLARE_INFO_COMMAND (describe_command,
 {
   char *line;
 
-  line = read_function_name ((char *) _("Describe command: "), window);
+  line = read_function_name (_("Describe command: "), window);
 
   if (!line)
     {
@@ -136,7 +136,7 @@ DECLARE_INFO_COMMAND (info_execute_command,
         (strncmp (line, "echo-area-", 10) == 0))
       {
         free (line);
-        info_error ((char *) _("Cannot execute an `echo-area' command here."),
+        info_error (_("Cannot execute an `echo-area' command here."),
             NULL, NULL);
         return;
       }
@@ -150,7 +150,7 @@ DECLARE_INFO_COMMAND (info_execute_command,
     if (InfoFunction(command))
       (*InfoFunction(command)) (active_window, count, 0);
     else
-      info_error ((char *) _("Undefined command: %s"), line, NULL);
+      info_error (_("Undefined command: %s"), line, NULL);
   }
 }
 

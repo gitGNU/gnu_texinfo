@@ -209,7 +209,7 @@ info_get_or_remove_footnotes (WINDOW *window)
           /* If we are hacking automatic footnotes, and there are footnotes
              but we couldn't display them, print a message to that effect. */
           if (auto_footnotes_p)
-            inform_in_echo_area ((char *) _("Footnotes could not be displayed"));
+            inform_in_echo_area (_("Footnotes could not be displayed"));
           return (FN_UNABLE);
         }
     }
@@ -256,11 +256,11 @@ DECLARE_INFO_COMMAND (info_show_footnotes,
       switch (result)
         {
         case FN_UNFOUND:
-          info_error ((char *) msg_no_foot_node, NULL, NULL);
+          info_error (msg_no_foot_node, NULL, NULL);
           break;
 
         case FN_UNABLE:
-          info_error ((char *) msg_win_too_small, NULL, NULL);
+          info_error (msg_win_too_small, NULL, NULL);
           break;
         }
     }

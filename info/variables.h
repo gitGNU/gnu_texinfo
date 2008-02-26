@@ -41,7 +41,7 @@ typedef struct {
 /* Read the name of an Info variable in the echo area and return the
    address of a VARIABLE_ALIST member.  A return value of NULL indicates
    that no variable could be read. */
-extern VARIABLE_ALIST *read_variable_name (char *prompt, WINDOW *window);
+extern VARIABLE_ALIST *read_variable_name (const char *prompt, WINDOW *window);
 
 /* Make an array of REFERENCE which actually contains the names of the
    variables available in Info. */
