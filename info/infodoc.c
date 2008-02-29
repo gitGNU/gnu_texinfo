@@ -65,8 +65,8 @@ static char *info_internal_help_text[] = {
   N_("\\%-10[dir-node]  Go to the main `directory' node.\n"),
   "\n",
   N_("\\%-10[search]  Search forward for a specified string.\n"),
-  N_("\\%-10[search-next]  Repeat last search in same direction.\n"),
-  N_("\\%-10[search-previous]  Repeat last search in reverse direction.\n"),
+  N_("\\%-10[search-previous]  Search for previous occurrence.\n"),
+  N_("\\%-10[search-next]  Search for next occurrence.\n"),
   N_("\\%-10[index-search]  Search for a specified string in the index, and\n\
               select the node referenced by the first entry found.\n"),
   N_("\\%-10[abort-key]  Cancel the current operation.\n"),
