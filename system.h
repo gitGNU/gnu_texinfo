@@ -190,7 +190,7 @@ extern int strcoll ();
 # define FOPEN_WBIN	"wb"
 # define HAVE_DRIVE(n)	((n)[0] && (n)[1] == ':')
 # define IS_SLASH(c)	((c) == '/' || (c) == '\\')
-# define IS_ABSOLUTE(n)	(IS_SLASH((n)[0]) || ((n)[0] && (n)[1] == ':'))
+# define IS_ABSOLUTE(n)	(IS_SLASH((n)[0]) || HAVE_DRIVE(n))
 # define PIPE_USE_FORK	0
 # define SET_BINARY(f)  do {if (!isatty(f)) setmode(f,O_BINARY);} while(0)
 
