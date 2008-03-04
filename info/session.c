@@ -1346,11 +1346,13 @@ _scroll_backward(WINDOW *window, int count, unsigned char key, int behaviour)
         desired_top = window->pagetop - default_window_size;
       else if (!info_explicit_arg && count == 1)
         {
-          desired_top = window->pagetop - (window->height - 2);
-
+	  desired_top = window->pagetop - (window->height - 2);
+	  
           if ((desired_top < 0) && (window->pagetop == 0))
             {
               backward_move_node_structure (window, behaviour);
+	      if (cursor_movement_scrolls_p)
+		info_end_of_node (window, 1, 0);
               return;
             }
         }
