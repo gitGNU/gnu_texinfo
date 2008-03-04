@@ -961,6 +961,15 @@ char *info_scroll_choices[] = {
 /* Controls whether scroll-behavior affects line movement commands */
 int cursor_movement_scrolls_p = 1;
 
+/* Choices for the scroll-last-node variable */
+char *scroll_last_node_choices[] = {
+  "Stop", "Scroll", "Top", NULL
+};
+
+/* Controls what to do when a scrolling command is issued at the end of the
+   last node. */
+int scroll_last_node = SLN_Stop;
+
 /* Default window sizes for scrolling commands.  */
 int default_window_size = -1;   /* meaning 1 window-full */
 int default_scroll_size = -1;   /* meaning half screen size */
@@ -968,6 +977,20 @@ int default_scroll_size = -1;   /* meaning half screen size */
 #define INFO_LABEL_FOUND() \
   (info_parsed_nodename || (info_parsed_filename \
                             && !is_dir_name (info_parsed_filename)))
+
+static int
+last_node_p (NODE *node)
+{
+  int last_node = 0;
+	
+  info_next_label_of_node (node);
+  if (!INFO_LABEL_FOUND ())
+    {
+      info_up_label_of_node (node);
+      return !INFO_LABEL_FOUND () || strcmp (info_parsed_nodename, "Top") == 0;
+    }
+  return 0;
+}
 
 /* Move to 1st menu item, Next, Up/Next, or error in this window. */
 static int
@@ -994,20 +1017,41 @@ forward_move_node_structure (WINDOW *window, int behaviour)
 
     case IS_Continuous:
       {
+        if (last_node_p (window->node))
+	  {
+	    switch (scroll_last_node)
+	      {
+	      case SLN_Stop:
+		info_error (_("No more nodes within this document."),
+			    NULL, NULL);
+		return 1;
+		
+	      case SLN_Scroll:
+		break;
+		
+	      case SLN_Top:
+		info_top_node (window, 1, 0);
+		return 0;
+		
+	      default:
+		abort ();
+	      }
+	  }
+	
         /* First things first.  If this node contains a menu, move down
            into the menu. */
-        {
-          REFERENCE **menu;
+	{
+	  REFERENCE **menu;
 
-          menu = info_menu_of_node (window->node);
-
-          if (menu)
-            {
-              info_free_references (menu);
-              info_menu_digit (window, 1, '1');
-              return 0;
-            }
-        }
+	  menu = info_menu_of_node (window->node);
+	  
+	  if (menu)
+	    {
+	      info_free_references (menu);
+	      info_menu_digit (window, 1, '1');
+	      return 0;
+	    }
+	}
 
         /* Okay, this node does not contain a menu.  If it contains a
            "Next:" pointer, use that. */
