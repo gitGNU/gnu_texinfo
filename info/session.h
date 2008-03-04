@@ -61,6 +61,16 @@ extern char *info_scroll_choices[];
 
 extern int cursor_movement_scrolls_p;
 
+/* Values for scroll_last_node */
+#define SLN_Stop   0 /* Stop at the last node */
+#define SLN_Scroll 1 /* Do usual scrolling */
+#define SLN_Top    2 /* Go to the top node */
+
+extern char *scroll_last_node_choices[];
+/* Controls what to do when a scrolling command is issued at the end of the
+   last node. */
+extern int scroll_last_node;
+
 /* Utility functions found in session.c */
 extern void info_dispatch_on_key (unsigned char key, Keymap map);
 extern unsigned char info_get_input_char (void);
