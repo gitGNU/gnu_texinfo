@@ -62,5 +62,6 @@ extern int info_scroll_behaviour;
 extern int window_scroll_step;
 extern int cursor_movement_scrolls_p;
 extern int ISO_Latin_p;
+extern int scroll_last_node;
 
 #endif /* not INFO_VARIABLES_H */
