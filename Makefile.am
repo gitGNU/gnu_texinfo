@@ -10,9 +10,6 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-# Be sure we're using the right version of Automake.
-AUTOMAKE_OPTIONS = 1.10.1 readme-alpha
-
 # Find our headers and gnulib headers.
 ACLOCAL_AMFLAGS = -I gnulib/m4
 
