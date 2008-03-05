@@ -1,7 +1,7 @@
 $Id$
 Texinfo authors.
 
-  Copyright (C) 2003, 2005, 2006, 2007 Free Software Foundation, Inc.
+  Copyright (C) 2003, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
   
   Copying and distribution of this file, with or without modification,
   are permitted in any medium without royalty provided the copyright
@@ -32,7 +32,7 @@ Ralf Wildenhues		util/gendocs.sh, makeinfo/tests/*,
 			Makefile.am, configure.ac.
 Eli Zaretskii		all files.
 
-See http://www.iro.umontreal.ca/contrib/po/HTML/team-LL.html for the
+See http://translationproject.org/team/index.html for the
 translation teams for a given language LL.
 
 Many files included in the Texinfo distribution are copied from other
