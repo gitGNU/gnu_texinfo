@@ -13,7 +13,7 @@ AC_INIT([GNU Texinfo], [4.11.92], [bug-texinfo@gnu.org])
 
 dnl Must come before AM_INIT_AUTOMAKE.
 AC_CONFIG_AUX_DIR([build-aux])
-AM_INIT_AUTOMAKE([dist-lzma readme-alpha])
+AM_INIT_AUTOMAKE([1.10.1 readme-alpha dist-bzip2 dist-lzma])
 
 # Minimum Autoconf version required.
 AC_PREREQ(2.59)
