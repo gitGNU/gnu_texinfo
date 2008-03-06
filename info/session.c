@@ -3725,12 +3725,12 @@ info_search_internal (char *string, WINDOW *window,
             {
               if (i < 0)
 		{
-		  msg = N_("Restarting search from the end of the document");
+		  msg = N_("Search continued from the end of the document.");
 		  i = number_of_tags - 1;
 		}
               else if (i == number_of_tags)
 		{
-		  msg = N_("Restarting search from the beginning of the document");
+		  msg = N_("Search continued from the beginning of the document.");
 		  i = 0;
 		}
 	      
