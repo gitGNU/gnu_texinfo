@@ -1348,8 +1348,9 @@ _scroll_backward(WINDOW *window, int count, unsigned char key, int behaviour)
 	  
           if ((desired_top < 0) && (window->pagetop == 0))
             {
-              backward_move_node_structure (window, behaviour);
-	      if (cursor_movement_scrolls_p)
+              if (backward_move_node_structure (window, behaviour))
+	        move_to_new_line (0, 0, window);
+	      else if (cursor_movement_scrolls_p)
 		info_end_of_node (window, 1, 0);
               return;
             }
