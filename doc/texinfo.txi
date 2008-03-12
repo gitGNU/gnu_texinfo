@@ -8242,7 +8242,7 @@ This line follows an @@@@example command.
 @@exdent This line is exdented.
 This line follows the exdented line.
 The @@@@end example comes on the next line.
-@@end group
+@@end example
 @end group
 @end example
 
