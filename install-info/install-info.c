@@ -1355,7 +1355,7 @@ format_entry (char *name, size_t name_len, char *desc, size_t desc_len,
           while (logical_end)
             {
               --logical_end;
-              if (line_out[logical_end]) == ' '
+              if (line_out[logical_end] == ' '
                   || line_out[logical_end] == '\t')
                 {
                   found_blank = 1;
