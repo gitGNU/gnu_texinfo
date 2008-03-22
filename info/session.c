@@ -4476,7 +4476,8 @@ info_move_to_xref (WINDOW *window, int count, unsigned char key, int dir)
 
   if (firstmenu == -1 && firstxref == -1)
     {
-      info_error (msg_no_xref_node, NULL, NULL);
+      if (!cursor_movement_scrolls_p)
+        info_error (msg_no_xref_node, NULL, NULL);
       use_regex = save_use_regex;
       return cursor_movement_scrolls_p;
     }
