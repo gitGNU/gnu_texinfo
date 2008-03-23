@@ -176,7 +176,7 @@ newline='
 '
 IFS="$space$tab$newline"
 
-# In case someone crazy insists on using grep -E.
+# In case someone pedantic insists on using grep -E.
 : ${EGREP=egrep}
 
 # Systems which define $COMSPEC or $ComSpec use semicolons to separate
@@ -192,10 +192,13 @@ fi
 # Pacify verbose cds.
 CDPATH=${ZSH_VERSION+.}$path_sep
 
+# If $TEX is set to a directory, don't use it.
+test -d "$TEX" && unset TEX
+
+# 
 ## --------------------- ##
 ## Auxiliary functions.  ##
 ## --------------------- ##
-
 
 # In case `local' is not supported by the shell, provide a function
 # that simulates it by simply performing the assignments.  This means
