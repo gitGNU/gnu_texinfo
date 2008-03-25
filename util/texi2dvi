@@ -193,7 +193,7 @@ fi
 CDPATH=${ZSH_VERSION+.}$path_sep
 
 # If $TEX is set to a directory, don't use it.
-test -d "$TEX" && unset TEX
+test -n "$TEX" && test -d "$TEX" && unset TEX
 
 # 
 ## --------------------- ##
