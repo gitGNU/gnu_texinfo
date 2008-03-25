@@ -213,7 +213,8 @@ C++ libraries
 
 GNU organization
 * Maintain: (maintain).         GNU maintainer guidelines.
-* Standards: (standards).        GNU coding standards.
+* Maintaining Findutils: (find-maint).        Maintaining GNU findutils.
+* Standards: (standards).       GNU coding standards.
 
 GNU music project
 * LilyPond: (lilypond).                        The GNU music typesetter.
