@@ -3266,9 +3266,9 @@ indent (int amount)
 }
 
 /* Search forward for STRING in input_text.
-   FROM says where where to start. */
+   FROM says where to start. */
 int
-search_forward (char *string, int from)
+search_forward (const char *string, int from)
 {
   int len = strlen (string);
 
