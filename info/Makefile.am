@@ -70,8 +70,10 @@ cmd_sources = $(srcdir)/session.c $(srcdir)/echo-area.c $(srcdir)/infodoc.c \
   $(srcdir)/m-x.c $(srcdir)/indices.c $(srcdir)/nodemenu.c \
   $(srcdir)/footnotes.c $(srcdir)/variables.c
 
-# The $(EXEEXT) should be added by Automake, but isn't. Fine.
-$(generated_sources): makedoc$(EXEEXT) $(cmd_sources)
+# Make the target only funs.h even though we create all the
+# $(generated_sources) so that parallel makes won't do the rm && makedoc
+# more than once.
+funs.h: makedoc$(EXEEXT) $(cmd_sources)
 	rm -f $(generated_sources)
 	$(top_builddir)/$(native_tools)/info/makedoc $(cmd_sources)
 
