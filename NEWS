@@ -70,7 +70,7 @@ one of the relevant sections:
   . language support for no removed/renamed to nb, per Norwegian translators.
   . new translation: es.
   . bug fixes in make check (and elsewhere).
-  . gettext 0.17, automake 1.10.1.
+  . gettext 0.17, automake 1.10.1, autoconf 2.62.
 
 
 4.11 (9 September 2007)
