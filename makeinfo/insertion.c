@@ -561,8 +561,8 @@ begin_insertion (enum insertion_type type)
           last_char_was_newline = no_indent = 0;
           indented_fill = filling_enabled = 1;
           inhibit_paragraph_indentation = 1;
+          current_indent += default_indentation_increment;
         }
-      current_indent += default_indentation_increment;
       if (xml)
         xml_insert_quotation (insertion_stack->item_function, START);
       else if (strlen(insertion_stack->item_function))
@@ -1221,7 +1221,7 @@ end_insertion (enum insertion_type type)
          without a change in indentation. */
       if (type != format && type != smallformat && type != quotation)
         current_indent -= example_indentation_increment;
-      else if (type == quotation)
+      else if (type == quotation && !html)
         current_indent -= default_indentation_increment;
 
       if (html)
