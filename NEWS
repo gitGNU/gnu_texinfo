@@ -25,6 +25,7 @@ one of the relevant sections:
 * Language:
   . new commands @clicksequence, @click, and @clickstyle for documenting
     GUI sequences, and @arrow for the default glyph used.
+  . new commands @geq{} and @leq{} for the normal >= and <= relations.
 
 * install-info:
   . Much work towards compatibility with Debian's independent
