@@ -1679,11 +1679,12 @@ handle_verbatim_environment (int find_end_verbatim)
       xml_insert_element (VERBATIM, START);
     }
 
-  { /* Ignore the remainder of the @verbatim line.  */
-    char *junk;
-    get_rest_of_line (0, &junk);
-    free (junk);
-  }
+  if (find_end_verbatim)
+    { /* Ignore the remainder of the @verbatim line.  */
+      char *junk;
+      get_rest_of_line (0, &junk);
+      free (junk);
+    }
   
   while (input_text_offset < input_text_length)
     {
