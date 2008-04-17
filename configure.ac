@@ -219,6 +219,7 @@ AM_GNU_GETTEXT_VERSION([0.17])
 AM_GNU_GETTEXT([external])
 
 # The test suite.
+AC_CONFIG_FILES([install-info/tests/defs])
 AC_CONFIG_FILES([util/defs])
 AC_CHECK_PROGS([HEVEA], [hevea], [])
 AC_CHECK_PROGS([TEX], [tex], [])
