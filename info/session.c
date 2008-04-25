@@ -3790,7 +3790,7 @@ info_search_internal (char *string, WINDOW *window,
               if (!echo_area_is_active)
 		{
 		  if (msg)
-		    window_message_in_echo_area ("%s", gettext (msg), NULL);
+		    window_message_in_echo_area ("%s", (char *) _(msg), NULL);
 		  else
 		    window_clear_echo_area ();
 		}
