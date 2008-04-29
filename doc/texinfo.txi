@@ -14558,7 +14558,7 @@ information when debugging @file{texinfo.tex}.
 Several options are provided for handling documents, written in
 character sets other than ASCII. The
 @option{--translate-file=@var{file}} option instructs
-@command{texi2dv} to translate input into internal @TeX{} character
+@command{texi2dvi} to translate input into internal @TeX{} character
 set using @dfn{translation file} @var{file} (@pxref{TCX files, TCX
 files, TCX files: Character translations, web2c, Web2c: A @TeX{}
 implementation}).
