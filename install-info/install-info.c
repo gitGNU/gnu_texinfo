@@ -1457,7 +1457,7 @@ split_entry (char *entry, char **name, size_t *name_len, char **description, siz
       size_t length = strlen (entry);
       if (length == 0)
         return;
-      *name = strdup (ptr);
+      *name = strdup (entry);
       *name_len = length + 1;
       return;
     }
