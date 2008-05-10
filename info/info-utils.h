@@ -98,7 +98,8 @@ void canonicalize_whitespace (char *string);
 
 /* Return a pointer to a string which is the printed representation
    of CHARACTER if it were printed at HPOS. */
-extern char *printed_representation (unsigned char character, int hpos);
+extern char *printed_representation (const unsigned char *cp, size_t len,
+				     size_t hpos, size_t *plen);
 
 /* Return a pointer to the part of PATHNAME that simply defines the file. */
 extern char *filename_non_directory (char *pathname);

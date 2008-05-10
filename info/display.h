@@ -74,4 +74,9 @@ extern void display_scroll_display (int start, int end, int amount);
 extern void display_scroll_line_starts (WINDOW *window, int old_pagetop,
     char **old_starts, int old_count);
 
+extern size_t process_node_text
+        (WINDOW *win, char *start, int do_tags,
+         int (*fun) (void *, size_t, const char *, char *, size_t, size_t),
+	 void *closure);
+
 #endif /* not INFO_DISPLAY_H */

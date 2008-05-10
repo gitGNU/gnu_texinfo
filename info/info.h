@@ -43,6 +43,10 @@ typedef char *CFunction ();
 #include "footnotes.h"
 #include "gc.h"
 
+#include "string.h"
+#include "mbiter.h"
+#include "mbchar.h"
+
 #define info_toupper(x) (islower (x) ? toupper (x) : x)
 #define info_tolower(x) (isupper (x) ? tolower (x) : x)
 
