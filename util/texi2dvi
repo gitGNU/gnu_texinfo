@@ -79,7 +79,7 @@ TeX tuning:
       --dvi                  output a DVI file [default]
   -e, -E, --expand           force macro expansion using makeinfo
   -I DIR                     search DIR for Texinfo files
-  -l, --language=LANG        specify the LANG of FILE (LaTeX or Texinfo)
+  -l, --language=LANG        specify LANG for FILE, either latex or texinfo
       --no-line-error        do not pass --file-line-error to TeX
   -p, --pdf                  use pdftex or pdflatex for processing
   -r, --recode               call recode before TeX to translate input
