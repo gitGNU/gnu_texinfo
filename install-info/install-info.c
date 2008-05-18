@@ -1445,15 +1445,17 @@ format_entry (char *name, size_t name_len, char *desc, size_t desc_len,
    free'd.
  */
 static void
-split_entry (char *entry, char **name, size_t *name_len, char **description, size_t *description_len)
+split_entry (const char *entry, char **name, size_t *name_len,
+             char **description, size_t *description_len)
 {
   char *endptr;
 
   /* on the first line, the description starts after the first ". ";
      that's a period and space -- our heuristic to handle item names like
-     "config.status", and node names like "config.status Invocation".  */
+     "config.status", and node names like "config.status Invocation".
+     Also accept period-tab and period-newline.  */
   char *ptr = strchr (entry, '.');
-  while (ptr && ptr[1] != ' ' && ptr[1] != '\t') {
+  while (ptr && ptr[1] != ' ' && ptr[1] != '\t' && ptr[1] != '\n') {
     ptr = strchr (ptr + 1, '.');
   }
   
