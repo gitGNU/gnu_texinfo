@@ -15578,6 +15578,13 @@ For the specified format, process @samp{@@if@var{format}} and
 format.  For instance, if @option{--iftex} is specified, then
 @samp{@@iftex} and @samp{@@tex} blocks will be read.  
 
+@item --internal-links=@var{file} 
+@opindex --internal-links=@var{file}
+In HTML mode, output a tab separated file containing three columns:
+the internal link to an indexed item or item in the table of contents, 
+the name of the index (or "toc") in which it occurs, and the term
+which was indexed or entered.
+
 @item --macro-expand=@var{file}
 @itemx -E @var{file}
 @opindex --macro-expand=@var{file}
