@@ -3401,6 +3401,7 @@ bs_escape_quote (const char *src)
 
 /* An external image is a reference, kind of.  The parsing is (not
    coincidentally) similar, anyway.  */
+
 void
 cm_image (int arg)
 {
@@ -3420,7 +3421,9 @@ cm_image (int arg)
       struct stat file_info;
       char *pathname = NULL;
       unsigned ext_len = (ext_arg && *ext_arg) ? strlen (ext_arg) : 0;
-      char *fullname = xmalloc (strlen (name_arg) + MAX (ext_len, 4) + 1);
+      /* One byte for the . period separator, one byte for the null.
+         The 3 is for the max length of the hardwired extensions we try.  */
+      char *fullname = xmalloc (strlen (name_arg) + 1 + MAX (ext_len, 3) + 1);
 
       if (ext_arg && *ext_arg)
         {
