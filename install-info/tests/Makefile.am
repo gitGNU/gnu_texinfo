@@ -225,12 +225,13 @@ ii-0050-test \
 ii-0051-input-dir-file \
 ii-0051-input-info-file \
 ii-0051-expected-dir-file \
-ii-0052-test \
+ii-0051-test \
 ii-0052-input-dir-file \
 ii-0052-input-info-file \
 ii-0052-expected-dir-file \
-ii-0053-test \
+ii-0052-test \
 ii-0053-input-dir-file \
 ii-0053-input-info-file \
 ii-0053-expected-dir-file \
+ii-0053-test \
 README
