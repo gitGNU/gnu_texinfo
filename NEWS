@@ -31,7 +31,7 @@ one of the relevant sections:
   . support for multibyte encodings such as UTF-8.
 
 * install-info:
-  . bug fix: support config.status again.
+  . bug fix: support names with embedded periods (e.g., config.status) again.
 
 
 4.12 (20 April 2008)
