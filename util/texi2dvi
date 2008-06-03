@@ -1094,8 +1094,8 @@ uncomment_iftex='s/^@c texi2dvi//'
 # main info output, the user asked to run TeX, not makeinfo.
 run_makeinfo ()
 {
-  test $in_lang == texinfo ||
-    return 0
+  test $in_lang = texinfo \
+    || return 0
 
   # Unless required by the user, makeinfo expansion is wanted only
   # if texinfo.tex is too old.
