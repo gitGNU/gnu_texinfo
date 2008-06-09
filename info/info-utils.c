@@ -556,7 +556,7 @@ printed_representation (const unsigned char *cp, size_t len, size_t hpos,
     }
   
   SC(0);
-  *plen = i;
+  *plen = i - 1;
   return the_rep;
 }
 
