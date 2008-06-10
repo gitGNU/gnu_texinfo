@@ -43,7 +43,7 @@ typedef struct line_map_struct
   size_t nline;    /* Line number for which the map is computed. */
   size_t size;     /* Number of elements map can accomodate */
   size_t used;     /* Number of used map slots */
-  int *map;        /* The map itself */
+  long *map;       /* The map itself */
 } LINE_MAP;
 
 /* The exact same elements are used within the WINDOW_STATE structure and a
@@ -259,5 +259,7 @@ extern void window_compute_line_map (WINDOW *win);
 int window_point_to_column (WINDOW *win, long point, long *np);
 
 void window_line_map_init (WINDOW *win);
+
+long window_end_of_line (WINDOW *win);
 
 #endif /* not INFO_WINDOW_H */
