@@ -35,11 +35,11 @@ static int print_help_p = 0;
 
 /* String specifying the source file.  This is set by the user on the
    command line, or a default is used. */
-static char *input_filename = (char *) NULL;
+static char *input_filename = NULL;
 
 /* String specifying the name of the file to output to.  This is
    set by the user on the command line, or a default is used. */
-static char *output_filename = (char *) NULL;
+static char *output_filename = NULL;
 
 /* Structure describing the options that Infokey accepts.  We pass this
    structure to getopt_long ().  If you add or otherwise change this
