@@ -47,7 +47,8 @@ SEARCH_BINDING *copy_binding (SEARCH_BINDING *binding);
 extern long search_forward (char *string, SEARCH_BINDING *binding);
 extern long search_backward (char *input_string, SEARCH_BINDING *binding);
 extern long search (char *string, SEARCH_BINDING *binding);
-extern long regexp_search (char *regexp, SEARCH_BINDING *binding, long length);
+extern long regexp_search (char *regexp, SEARCH_BINDING *binding, long length,
+			   SEARCH_BINDING *pret);
 extern int looking_at (char *string, SEARCH_BINDING *binding);
 
 /* Note that STRING_IN_LINE () always returns the offset of the 1st character
