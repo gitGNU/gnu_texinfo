@@ -760,7 +760,9 @@ point_backward_char (WINDOW *win)
   int col;
 
   window_compute_line_map (win);
-  col = window_point_to_column (win, point, &point) - 1;
+  col = window_point_to_column (win, point, &point);
+  for (; col >= 0 && win->line_map.map[col] == point; col--)
+    ;
   if (col < 0)
     {
       if (point_prev_line (win))
