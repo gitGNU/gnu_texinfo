@@ -254,6 +254,8 @@ extern size_t process_node_text
          int (*fun) (void *, size_t, const char *, char *, size_t, size_t),
 	 void *closure);
 
+void clean_manpage (char *manpage);
+
 extern void window_compute_line_map (WINDOW *win);
 
 int window_point_to_column (WINDOW *win, long point, long *np);
