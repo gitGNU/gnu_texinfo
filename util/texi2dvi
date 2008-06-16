@@ -47,7 +47,10 @@ There is NO WARRANTY, to the extent permitted by law.
 build_mode=${TEXI2DVI_BUILD_MODE:-local}
 build_dir=${TEXI2DVI_BUILD_DIRECTORY:-.}
 
-usage="Usage: $program [OPTION]... FILE...
+usage ()
+{
+  cat <<EOF
+Usage: $program [OPTION]... FILE...
 
 Run each Texinfo or (La)TeX FILE through TeX in turn until all
 cross-references are resolved, building all indices.  The directory
@@ -137,7 +140,10 @@ after @setfilename for Texinfo input, in the first line for LaTeX input.
 
 Email bug reports to <bug-texinfo@gnu.org>,
 general questions and discussion to <help-texinfo@gnu.org>.
-Texinfo home page: http://www.gnu.org/software/texinfo/"
+Texinfo home page: http://www.gnu.org/software/texinfo/
+EOF
+  exit 0
+}
 
 # Initialize variables for option overriding and otherwise.
 # Don't use `unset' since old bourne shells don't have this command.
@@ -1471,7 +1477,7 @@ while test x"$1" != x"$arg_sep"; do
 	 --dvi)   out_lang=dvi;;
 	 --dvipdf)   out_lang=dvipdf;;
     -e | -E | --expand) expand=t;;
-    -h | --help) echo "$usage"; exit 0;;
+    -h | --help) usage;;
 	 --html) out_lang=html;;
     -I)   shift; list_concat_dirs includes "$1";;
     --info) out_lang=info;;
