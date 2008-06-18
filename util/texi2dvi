@@ -269,6 +269,15 @@ run ()
 # Display usage and exit successfully.
 usage ()
 {
+  # We used to simply have `echo "$usage"', but coping with the
+  # changing behavior of `echo' is much harder than simply using a
+  # here-doc.
+  #
+  #             echo '\noto'   echo '\\noto'   echo -e '\\noto'
+  # bash 3.1      \noto           \\noto          \noto
+  # bash 3.2       %oto           \noto           -e \noto
+  #
+  # where % denotes the eol character.
   cat <<EOF
 Usage: $program [OPTION]... FILE...
 
@@ -391,6 +400,7 @@ License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 EOF
+  exit 0
 }
 
 
