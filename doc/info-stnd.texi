@@ -272,6 +272,11 @@ previous Info session (see the description of the @samp{--dribble}
 option above).  When the keystrokes in the files are all read, Info
 reverts its input to the usual interactive operation.
 
+@item --show-malformed-multibytes
+@itemx --no-show-malformed-multibytes
+  Show malformed multibyte sequences in the output.  By default, such
+sequences are dropped.
+
 @anchor{--show-options}
 @cindex command-line options, how to find
 @cindex invocation description, how to find
