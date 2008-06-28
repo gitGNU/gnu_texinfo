@@ -221,7 +221,9 @@ executable_file_in_path (char *filename, char *path)
 static char *
 find_man_formatter (void)
 {
-  return executable_file_in_path ("man", getenv ("PATH"));
+  char *man_command = getenv ("INFO_MAN_COMMAND");
+  return man_command ? man_command :
+                       executable_file_in_path ("man", getenv ("PATH"));
 }
 
 static char *manpage_pagename = NULL;
