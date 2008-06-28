@@ -29,7 +29,11 @@ one of the relevant sections:
  
 * info:
   . support for multibyte encodings such as UTF-8.
-
+  . new option --show-malformed-multibytes, to display malformed multibyte
+  sequences.
+  . new environment variable INFO_MAN_COMMAND sets the name of man binary
+  (use it if you a need to override PATH settings).
+  
 * install-info:
   . bug fix: support names with embedded periods (e.g., config.status) again.
 
