@@ -109,6 +109,8 @@ static struct option long_options[] = {
   { "output", 1, 0, 'o' },
   { "raw-escapes", 0, &raw_escapes_p, 1 },
   { "no-raw-escapes", 0, &raw_escapes_p, 0 },
+  { "show-malformed-multibytes", 0, &show_malformed_multibyte_p, 1 },
+  { "no-show-malformed-multibytes", 0, &show_malformed_multibyte_p, 0 },
   { "restore", 1, 0, RESTORE_OPTION },
   { "show-options", 0, 0, 'O' },
   { "subnodes", 0, &dump_subnodes, 1 },
