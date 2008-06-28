@@ -107,6 +107,8 @@ extern WINDOW *active_window;   /* The currently active window. */
 extern WINDOW *the_screen;      /* The Info screen is just another window. */
 extern WINDOW *the_echo_area;   /* THE_ECHO_AREA is a window in THE_SCREEN. */
 
+extern int show_malformed_multibyte_p; /* Show malformed multibyte sequences */
+
 /* Global variable control redisplay of scrolled windows.  If non-zero, it
    is the desired number of lines to scroll the window in order to make
    point visible.  A user might set this to 1 for smooth scrolling.  If
