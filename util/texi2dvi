@@ -762,10 +762,12 @@ generated_files_get ()
        fi
        ;;
       latex)
-       # bibtex: *.aux -> *.bbl and *.blg.
 	if aux_file_p $file; then
+          # bibtex: *.aux -> *.bbl and *.blg.
 	  echo $file | sed 's/^\(.*\)\.aux$/\1.bbl/'
-	 echo $file | sed 's/^\(.*\)\.aux$/\1.blg/'
+          echo $file | sed 's/^\(.*\)\.aux$/\1.blg/'
+          # -recorder: .fls
+          echo $file | sed 's/^\(.*\)\.aux$/\1.fls/'
        fi
        ;;
     esac
