@@ -121,7 +121,7 @@ $(srcdir)/texi2pdf.1: $(common_texi2dvi_deps)
 	$(change_envvars); $(HELP2MAN) --name="convert Texinfo documents to PDF" $(util_srcdir)/texi2pdf >$@
 
 $(srcdir)/pdftexi2dvi.1:  $(common_texi2dvi_deps)
-	$(unset_envvars); $(HELP2MAN) --name="convert Texinfo documents to PDF" $(util_srcdir)/pdftexi2dvi >$@
+	$(change_envvars); $(HELP2MAN) --name="convert Texinfo documents to PDF" $(util_srcdir)/pdftexi2dvi >$@
 
 # Do not create info files for distribution.
 dist-info:
