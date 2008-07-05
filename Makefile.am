@@ -15,7 +15,8 @@ ACLOCAL_AMFLAGS = -I gnulib/m4
 
 # Additional files to distribute.
 EXTRA_DIST = ChangeLog.46 INSTALL.generic INTRODUCTION README.dev system.h \
-  djgpp/README djgpp/config.bat djgpp/config.sed djgpp/config.site
+  djgpp/README djgpp/config.bat djgpp/config.sed djgpp/config.site \
+  gnulib/m4/gnulib-cache.m4
 
 # This is to prevent texinfo.tex from being included in the top-level
 # distribution directory.
