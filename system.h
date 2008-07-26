@@ -55,9 +55,13 @@ extern char *substring (const char *, const char *);
 #define N_(String) (String)
 
 /* Additional gnulib includes.  */
+#include "mbchar.h"
 #include "mbswidth.h"
 #include "xalloc.h"
 #include "xsetenv.h"
+#if HAVE_MBRTOWC
+#include "mbiter.h"
+#endif
 
 #include <errno.h>
 #ifndef errno
