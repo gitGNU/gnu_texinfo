@@ -800,6 +800,10 @@ xref_files_save ()
     # The following line improves `cp $xref_files_orig "$work_bak"'
     # by preserving the directory parts.  Think of
     # cp chap1/main.aux chap2/main.aux $work_bak.
+    #
+    # Users may have, e.g., --keep-old-files.  Don't let this interfere.
+    # (Don't use unset for the sake of ancient shells.)
+    TAR_OPTIONS=; export TAR_OPTIONS
     tar cf - $xref_files_orig | (cd "$work_bak" && tar xf -)
   fi
 }
