@@ -579,8 +579,14 @@ absolute_filenames ()
 	res=$res$path_sep
 	;;
       *)
-	if test -d $dir; then
+	if test -d "$dir"; then
 	  res=$res$path_sep`absolute "$dir"`
+	else
+	  # Even if $dir is not a directory, preserve it in the path.
+	  # It might contain metacharacters that TeX will expand in
+	  # turn, e.g., /some/path/{a,b,c}.  This will not get the
+	  # implicit absolutification of the path, but we can't help that.
+	  res=$res$path_sep$dir
 	fi
 	;;
     esac
