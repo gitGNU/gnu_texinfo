@@ -641,8 +641,13 @@ Any remaining arguments are treated as the names of menu\n\
 items relative to the initial node visited."));
 
   puts (_("\n\
+For a summary of key bindings, type h within Info."));
+
+  puts (_("\n\
 Examples:\n\
   info                       show top-level dir menu\n\
+  info info                  show the general manual for Info readers\n\
+  info info-stnd             show the manual specific to this Info program\n\
   info emacs                 start at emacs node from top-level dir\n\
   info emacs buffers         start at buffers node within emacs manual\n\
   info --show-options emacs  start at node with emacs' command line options\n\
