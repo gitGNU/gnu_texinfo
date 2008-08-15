@@ -1043,8 +1043,9 @@ run_thumbpdf ()
      && grep 'thumbpdf\.sty'  "$in_noext.log" >&6 2>&1; \
   then
     thumbpdf=${THUMBPDF:-thumbpdf}
-    verbose "Running $thumbpdf $in_noext ..."
-    if $thumbpdf "$in_noext" >&5; then
+    thumbcmd="$thumbpdf $in_dir/$in_noext"
+    verbose "Running $thumbcmd ..."
+    if $thumbcmd >&5; then
       run_tex
     else
       report "$thumbpdf exited with bad status." \
