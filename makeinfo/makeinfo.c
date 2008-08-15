@@ -2374,7 +2374,7 @@ remember_brace_1 (COMMAND_FUNCTION (*proc), int position)
   BRACE_ELEMENT *new = xmalloc (sizeof (BRACE_ELEMENT));
   new->next = brace_stack;
   new->proc = proc;
-  new->command = command ? xstrdup (command) : "";
+  new->command = xstrdup (command ? command : "");
   new->pos = position;
   new->line = line_number;
   new->in_fixed_width_font = in_fixed_width_font;
