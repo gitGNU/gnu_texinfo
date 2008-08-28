@@ -26,7 +26,8 @@ one of the relevant sections:
   . new option --internal-links for HTML output, to write a tsv file
     mapping indexed/toc terms to links, for easy reference from external
     documents.
- 
+  . - as an input file name reads standard input. 
+
 * info:
   . support for multibyte encodings such as UTF-8.
   . new option --show-malformed-multibytes, to display malformed multibyte
