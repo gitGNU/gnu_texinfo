@@ -4111,8 +4111,7 @@ maybe_update_execution_strings (char **text, unsigned int new_len)
   abort ();
 }
 
-/* FIXME: this is an arbitrary limit.  */
-#define EXECUTE_STRING_MAX 16*1024
+#define EXECUTE_STRING_MAX (32*1024) /* FIXXME: this is an arbitrary limit.  */
 
 /* Execute the string produced by formatting the ARGs with FORMAT.  This
    is like submitting a new file with @include. */
