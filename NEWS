@@ -22,6 +22,9 @@ one of the relevant sections:
 
 -------------------------------------------------------------------------------
 
+* A reference card for Texinfo is now available, in doc/refcard.  For
+  convenience, preformatted PDF's for letter-size and A4 paper are included.
+
 * makeinfo:
   . new option --internal-links for HTML output, to write a tsv file
     mapping indexed/toc terms to links, for easy reference from external
