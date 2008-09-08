@@ -29,10 +29,15 @@ TXI_XLATE = txi-cs.tex txi-de.tex txi-en.tex txi-es.tex txi-fr.tex \
 	    txi-it.tex txi-nl.tex txi-nb.tex txi-pl.tex txi-pt.tex \
 	    txi-ru.tex txi-sr.tex txi-tr.tex txi-uk.tex
 
+refcard_files = refcard/Makefile refcard/txicmdcheck \
+                refcard/txirefcard-a4.pdf refcard/txirefcard.pdf \
+		refcard/txirefcard.tex
+
 # Include our texinfo.tex, not Automake's.
 EXTRA_DIST = epsf.tex texinfo.tex \
              fdl.texi \
 	     $(man_MANS) $(TXI_XLATE)
+	     $(refcard_files)
 
 if INSTALL_WARNINGS
 install-data-local:
