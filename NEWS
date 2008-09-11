@@ -41,6 +41,9 @@ one of the relevant sections:
 * install-info:
   . bug fix: support names with embedded periods (e.g., config.status) again.
 
+* Distribution:
+  . autoconf 2.63.
+
 
 4.12 (20 April 2008)
 
