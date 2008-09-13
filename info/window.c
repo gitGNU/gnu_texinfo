@@ -1786,8 +1786,9 @@ clean_manpage (char *manpage)
 }
 
 static void
-line_map_init (LINE_MAP *map, int line)
+line_map_init (LINE_MAP *map, NODE *node, int line)
 {
+  map->node = node;
   map->nline = line;
   map->used = 0;
 }
@@ -1916,9 +1917,10 @@ window_compute_line_map (WINDOW *win)
 {
   int line = window_line_of_point (win);
 
-  if (win->line_map.nline == line && win->line_map.used)
+  if (win->line_map.node == win->node && win->line_map.nline == line
+      && win->line_map.used)
     return;
-  line_map_init (&win->line_map, line);
+  line_map_init (&win->line_map, win->node, line);
   if (win->node)
     window_scan_line (win, line, 0, add_line_map, win);
 }
