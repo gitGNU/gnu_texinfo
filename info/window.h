@@ -40,6 +40,7 @@
    point values into columns on screen and vice versa. */
 typedef struct line_map_struct
 {
+  NODE *node;      /* Node to which this line pertains */
   size_t nline;    /* Line number for which the map is computed. */
   size_t size;     /* Number of elements map can accomodate */
   size_t used;     /* Number of used map slots */
