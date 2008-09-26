@@ -119,7 +119,7 @@ get_sectioning_number (int level, int num)
   if ((num == ENUM_SECT_APP)
       && (i == 0)
       && (enum_marker == APPENDIX_MAGIC))
-    sprintf (p, _("Appendix %c"), numbers[i] + 64);
+    sprintf (p, getdocumenttext ("Appendix %c"), numbers[i] + 64);
   else
     sprintf (p, "%d", numbers[i]);
 
