@@ -538,14 +538,18 @@ set_window_pagetop (WINDOW *window, int desired_top)
      direction.  Do this only if there would be a savings in redisplay
      time.  This is true if the amount to scroll is less than the height
      of the window, and if the number of lines scrolled would be greater
-     than 10 % of the window's height. */
+     than 10 % of the window's height.
+
+     To prevent status line blinking when keeping up or down key,
+     scrolling is disabled if the amount to scroll is 1. */
   if (old_pagetop < desired_top)
     {
       int start, end, amount;
 
       amount = desired_top - old_pagetop;
 
-      if ((amount >= window->height) ||
+      if (amount == 1 ||
+	  (amount >= window->height) ||
           (((window->height - amount) * 10) < window->height))
         return;
 
@@ -560,7 +564,8 @@ set_window_pagetop (WINDOW *window, int desired_top)
 
       amount = old_pagetop - desired_top;
 
-      if ((amount >= window->height) ||
+      if (amount == 1 ||
+	  (amount >= window->height) ||
           (((window->height - amount) * 10) < window->height))
         return;
 

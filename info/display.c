@@ -272,7 +272,7 @@ display_update_one_window (WINDOW *win)
       if (display_was_interrupted_p)
 	return;
     }
-  
+
   /* We have reached the end of the node or the end of the window.  If it
      is the end of the node, then clear the lines of the window from here
      to the end of the window. */
@@ -311,7 +311,6 @@ display_update_one_window (WINDOW *win)
           strcpy (display[line_index]->text, win->modeline);
           display[line_index]->inverse = 1;
           display[line_index]->textlen = strlen (win->modeline);
-          fflush (stdout);
         }
     }
 
