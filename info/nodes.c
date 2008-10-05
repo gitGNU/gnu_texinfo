@@ -106,14 +106,18 @@ info_get_node (char *filename, char *nodename)
   file_buffer = info_find_file (filename);
   if (!file_buffer)
     {
-      if (filesys_error_number)
-        info_recent_file_error =
-          filesys_error_string (filename, filesys_error_number);
-      return NULL;
+      node = make_manpage_node (filename);
+      if (!node)
+	{
+	  if (filesys_error_number)
+	    info_recent_file_error =
+	      filesys_error_string (filename, filesys_error_number);
+	  return NULL;
+	}
     }
-
-  /* Look for the node.  */
-  node = info_get_node_of_file_buffer (nodename, file_buffer);
+  else
+    /* Look for the node.  */
+    node = info_get_node_of_file_buffer (nodename, file_buffer);
 
   /* If the node not found was "Top", try again with different case,
      unless this was a man page.  */
