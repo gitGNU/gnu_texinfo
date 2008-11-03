@@ -22,6 +22,9 @@ one of the relevant sections:
 
 -------------------------------------------------------------------------------
 
+* Language:
+  . new environment @smallquotation.
+
 * texinfo.tex:
   . support some per-language hyphenation, when the underlying TeX
     engine does (for instance, etex/pdfetex from TeX Live 2008).  Words

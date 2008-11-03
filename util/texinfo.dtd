@@ -36,10 +36,11 @@
 <!ENTITY % titlepage_cmds "author | booktitle | booksubtitle">
 
 <!-- block -->
-<!ENTITY % block "menu | para | quotation | example | smallexample | lisp
-                  | smalllisp | cartouche | copying
-                  | format | smallformat | display
-                  | smalldisplay | itemize | enumerate | sp | center | group
+<!ENTITY % block "menu | para | quotation | smallquotation
+                  | example | smallexample | lisp | smalllisp
+                  | cartouche | copying
+                  | format | smallformat | display | smalldisplay
+                  | itemize | enumerate | sp | center | group
                   | table | multitable | definition | float | image">
 
 <!-- API definitions -->
