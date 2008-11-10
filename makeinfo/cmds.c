@@ -286,6 +286,7 @@ COMMAND command_table[] = {
   { "oddheading", cm_ignore_line, NO_BRACE_ARGS },
   { "oddheadingmarks", cm_ignore_line, NO_BRACE_ARGS },
   { "oe", cm_special_char, BRACE_ARGS },
+  { "ogonek", cm_accent, MAYBE_BRACE_ARGS },
   { "option", cm_code, BRACE_ARGS },
   { "ordf", cm_special_char, BRACE_ARGS },
   { "ordm", cm_special_char, BRACE_ARGS },

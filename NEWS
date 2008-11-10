@@ -24,6 +24,7 @@ one of the relevant sections:
 
 * Language:
   . new environment @smallquotation.
+  . new diacritic command @ogonek.
 
 * texinfo.tex:
   . support some per-language hyphenation, when the underlying TeX
