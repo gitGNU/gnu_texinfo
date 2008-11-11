@@ -31,6 +31,10 @@ one of the relevant sections:
     engine does (for instance, etex/pdfetex from TeX Live 2008).  Words
     with accented letters are still not handled properly.
 
+* Distribution:
+  . language support for no removed/renamed to nb, per Norwegian translators.
+  . new translation: id.
+
 
 4.13 (18 September 2008)
 
