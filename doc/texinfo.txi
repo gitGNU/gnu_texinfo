@@ -10193,7 +10193,7 @@ If you want these settings for only part of the document,
 @code{@@clear} will restore the normal behavior, as in
 @code{@@clear@tie{}txicodequoteundirected}.
 
-These settings affect @code{@@code}, @code{@@example}, and
+These settings affect @code{@@code}, @code{@@example}, @code{verb}, and
 @code{@@verbatim}; they do not affect @code{@@samp}.  (@xref{Useful
 Highlighting}.)
 
