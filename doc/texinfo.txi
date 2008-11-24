@@ -1311,6 +1311,14 @@ a line, and only the text that follows after the @code{@@comment} or
 cannot use @code{@@comment} or @code{@@c} in a line beginning with such
 a command.
 
+@findex DEL @r{(comment)}
+In cases of nested command invocations, complicated macro definitions,
+etc., @code{@@c} and @code{@@comment} may provoke an error when
+processing with @TeX{}.  Therefore, you can also use the @kbd{DEL}
+character (ASCII 127 decimal, 0x7f hex, 0177 octal) as a true @TeX{}
+comment character (catcode 14, in @TeX{} internals).  Everything on
+the line after the @kbd{DEL} will be ignored.
+
 @cindex Ignored text
 @cindex Unprocessed text
 @findex ignore
@@ -17513,8 +17521,8 @@ input file following @code{@@bye}.  @xref{Ending a File}.
 
 @item @@c @var{comment}
 Begin a comment in Texinfo.  The rest of the line does not appear in
-any output.  A synonym for
-@code{@@comment}.  @xref{Comments}.
+any output.  A synonym for @code{@@comment}.  @kbd{DEL} also
+starts a comment.  @xref{Comments}.
 
 @item @@caption
 Define the full caption for a @code{@@float}.  @xref{caption shortcaption}.
