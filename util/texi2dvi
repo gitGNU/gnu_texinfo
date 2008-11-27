@@ -646,7 +646,7 @@ move_to_dest ()
         destdir=$dest
         destfile=$dest/$file
       else
-        destdir="`dirname $dest`"
+        destdir=`dirname "$dest"`
         destfile=$dest
       fi
       # We want to compare the source location and the output location,
@@ -656,12 +656,12 @@ move_to_dest ()
       # directory names, canonicalized with pwd.  We can't use cmp -s
       # since the output file might not actually change from run to run;
       # e.g., TeX DVI output is timestamped to only the nearest minute.
-      destdir=`cd $destdir && pwd`
-      destbase=`basename $destfile`
+      destdir=`cd "$destdir" && pwd`
+      destbase=`basename "$destfile"`
       #
-      sourcedir=`dirname $file`
-      sourcedir=`cd $sourcedir && pwd`
-      sourcebase=`basename $file`
+      sourcedir=`dirname "$file"`
+      sourcedir=`cd "$sourcedir" && pwd`
+      sourcebase=`basename "$file"`
       #
       if test "$sourcedir/$sourcebase" != "$destdir/$destbase"; then
         verbose "Moving $file to $destfile"
