@@ -44,19 +44,22 @@ EXTRA_DIST = README deref.c dir-example fix-info-dir fixfonts \
 CLEANFILES = $(pkgdata_DATA)
 
 
-# Let's not stress people's TeX installations, etc.
-if MAINTAINER_MODE
-TESTS =						\
-bibtex.test					\
-dvipdf.test					\
-latex2html.test					\
-local.test					\
-texi2dvi.test
-
-EXTRA_DIST += $(TESTS)
-
-# Each test case depends on defs.
-check_SCRIPTS = defs
-distclean-local:
-	-rm -rf testSubDir
-endif
+# We must not stress people's TeX installations.
+# In Automake 1.11, we'll have a switchable maintainer mode.
+# Until then, just comment these out.
+## if MAINTAINER_MODE
+## TESTS =						\
+## bibtex.test					\
+## dvipdf.test					\
+## latex2html.test					\
+## local.test					\
+## texi2dvi.test
+## 
+## EXTRA_DIST += $(TESTS)
+## 
+## # Each test case depends on defs.
+## check_SCRIPTS = defs
+## distclean-local:
+## 	-rm -rf testSubDir
+## endif
+ 

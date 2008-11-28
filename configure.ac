@@ -22,11 +22,6 @@ AC_PREREQ(2.59)
 AC_CONFIG_HEADERS([config.h:config.in])dnl Keep filename to 8.3 for MS-DOS.
 AC_CONFIG_SRCDIR([makeinfo/makeinfo.c])
 
-# When the Texinfo source is imported into other repositories
-# (NetBSD and TeX Live), timestamps are generally not preserved.  This
-# causes lots of annoyance, so --enable-maintainer-mode.  Sorry.
-AM_MAINTAINER_MODE
-
 # Checks for programs.
 AC_PROG_CC
 
