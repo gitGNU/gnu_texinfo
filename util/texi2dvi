@@ -1135,36 +1135,40 @@ run_tex_suite ()
 
 # A sed script that preprocesses Texinfo sources in order to keep the
 # iftex sections only.  We want to remove non TeX sections, and comment
-# (with `@c texi2dvi') TeX sections so that makeinfo does not try to
+# (with `@c _texi2dvi') TeX sections so that makeinfo does not try to
 # parse them.  Nevertheless, while commenting TeX sections, don't
 # comment @macro/@end macro so that makeinfo does propagate them.
 # Unfortunately makeinfo --iftex --no-ifinfo doesn't work well enough
 # (yet), makeinfo can't parse the TeX commands, so work around with sed.
 #
+# We assume that `@c _texi2dvi' starting a line is not present in the
+# document.
+#
 comment_iftex=\
 '/^@tex/,/^@end tex/{
-  s/^/@c texi2dvi/
+  s/^/@c _texi2dvi/
 }
 /^@iftex/,/^@end iftex/{
-  s/^/@c texi2dvi/
-  /^@c texi2dvi@macro/,/^@c texi2dvi@end macro/{
-    s/^@c texi2dvi//
+  s/^/@c _texi2dvi/
+  /^@c _texi2dvi@macro/,/^@c _texi2dvi@end macro/{
+    s/^@c _texi2dvi//
   }
 }
 /^@ifnottex/,/^@end ifnottex/{
-  s/^/@c (texi2dvi)/
+  s/^/@c (_texi2dvi)/
 }
 /^@ifinfo/,/^@end ifinfo/{
   /^@node/p
   /^@menu/,/^@end menu/p
   t
-  s/^/@c (texi2dvi)/
+  s/^/@c (_texi2dvi)/
 }
-s/^@ifnotinfo/@c texi2dvi@ifnotinfo/
-s/^@end ifnotinfo/@c texi2dvi@end ifnotinfo/'
+s/^@ifnotinfo/@c _texi2dvi@ifnotinfo/
+s/^@end ifnotinfo/@c _texi2dvi@end ifnotinfo/'
 
-# Uncommenting is simple: Remove any leading `@c texi2dvi'.
-uncomment_iftex='s/^@c texi2dvi//'
+# Uncommenting is simpler: remove any leading `@c texi2dvi'; repeated
+# copies can sneak in via macro invocations.
+uncomment_iftex='s/^@c _texi2dvi\(@c _texi2dvi\)*//'
 
 
 # run_makeinfo ()
