@@ -1580,7 +1580,7 @@ process_node_text (WINDOW *win, char *start,
     {
       const char *carried_over_ptr;
       size_t carried_over_len, carried_over_count;
-      size_t char *cur_ptr = mbi_cur_ptr (iter);
+      const char *cur_ptr = mbi_cur_ptr (iter);
       size_t cur_len = mb_len (mbi_cur (iter));
       int replen;
       int delim = 0;
@@ -1754,7 +1754,7 @@ clean_manpage (char *manpage)
        mbi_advance (iter))
     {
       const char *cur_ptr = mbi_cur_ptr (iter);
-      int cur_len = mb_len (mbi_cur (iter));
+      size_t cur_len = mb_len (mbi_cur (iter));
 
       if (cur_len == 1)
 	{
@@ -1852,7 +1852,7 @@ window_scan_line (WINDOW *win, int line, int phys,
        mbi_advance (iter))
     {
       const char *cur_ptr = mbi_cur_ptr (iter);
-      int cur_len = mb_len (mbi_cur (iter));
+      size_t cur_len = mb_len (mbi_cur (iter));
       int replen;
 
       if (cur_ptr >= endp)
