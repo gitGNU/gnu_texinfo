@@ -1582,7 +1582,7 @@ process_node_text (WINDOW *win, char *start,
       size_t carried_over_len, carried_over_count;
       const char *cur_ptr = mbi_cur_ptr (iter);
       size_t cur_len = mb_len (mbi_cur (iter));
-      int replen;
+      size_t replen;
       int delim = 0;
       int rc;
 
@@ -1831,7 +1831,7 @@ window_line_map_init (WINDOW *win)
  */
 int
 window_scan_line (WINDOW *win, int line, int phys,
-		  void (*fun) (void *closure, long cpos, int replen),
+		  void (*fun) (void *closure, long cpos, size_t replen),
 		  void *closure)
 {
   mbi_iterator_t iter;
@@ -1853,7 +1853,7 @@ window_scan_line (WINDOW *win, int line, int phys,
     {
       const char *cur_ptr = mbi_cur_ptr (iter);
       size_t cur_len = mb_len (mbi_cur (iter));
-      int replen;
+      size_t replen;
 
       if (cur_ptr >= endp)
 	break;
@@ -1903,7 +1903,7 @@ window_scan_line (WINDOW *win, int line, int phys,
 }
 
 static void
-add_line_map (void *closure, long cpos, int replen)
+add_line_map (void *closure, long cpos, size_t replen)
 {
   WINDOW *win = closure;
 
