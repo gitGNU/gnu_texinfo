@@ -157,6 +157,9 @@ extern void cm_cartouche (void),
   cm_copying (void),
   cm_flushleft (void),
   cm_flushright (void),
+  cm_raggedcenter (void),
+  cm_raggedleft (void),
+  cm_raggedright (void),
   cm_verbatim (void),
   cm_end (void);
 

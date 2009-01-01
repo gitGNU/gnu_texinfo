@@ -40,7 +40,8 @@ static char *insertion_type_names[] =
   "ftable", "group", "ifclear", "ifdocbook", "ifhtml", "ifinfo",
   "ifnotdocbook", "ifnothtml", "ifnotinfo", "ifnotplaintext", "ifnottex",
   "ifnotxml", "ifplaintext", "ifset", "iftex", "ifxml", "itemize", "lisp",
-  "menu", "multitable", "quotation", "rawdocbook", "rawhtml", "rawtex",
+  "menu", "multitable", "quotation", "raggedcenter", "raggedleft",
+  "raggedright", "rawdocbook", "rawhtml", "rawtex",
   "rawxml", "smalldisplay", "smallexample", "smallformat", "smalllisp",
   "verbatim", "table", "tex", "vtable", "titlepage", "bad_type"
 };
@@ -946,6 +947,30 @@ begin_insertion (enum insertion_type type)
         add_html_block_elt ("<div align=\"right\">");
       break;
 
+    case raggedcenter:
+      close_single_paragraph ();
+      filling_enabled = indented_fill = 1;
+      no_indent = inhibit_paragraph_indentation = 1;
+      if (html)
+        add_html_block_elt ("<div align=\"center\">");
+      break;
+
+    case raggedleft:
+      close_single_paragraph ();
+      filling_enabled = indented_fill = 1;
+      no_indent = inhibit_paragraph_indentation = 1;
+      if (html)
+        add_html_block_elt ("<div align=\"right\">");
+      break;
+
+    case raggedright:
+      close_single_paragraph ();
+      filling_enabled = indented_fill = 1;
+      no_indent = inhibit_paragraph_indentation = 0;
+      if (html)
+        add_html_block_elt ("<div align=\"left\">");
+      break;
+
     case titlepage:
       xml_insert_element (TITLEPAGE, START);
       break;
@@ -1265,6 +1290,14 @@ end_insertion (enum insertion_type type)
 
     case flushright:
       force_flush_right--;
+      if (html)
+        add_html_block_elt ("</div>\n");
+      close_insertion_paragraph ();
+      break;
+
+    case raggedcenter:
+    case raggedleft:
+    case raggedright:
       if (html)
         add_html_block_elt ("</div>\n");
       close_insertion_paragraph ();
@@ -1993,6 +2026,25 @@ cm_detailmenu (void)
     }
   begin_insertion (detailmenu);
 }
+
+void
+cm_raggedcenter (void)
+{
+  begin_insertion (raggedcenter);
+}
+
+void
+cm_raggedleft (void)
+{
+  begin_insertion (raggedleft);
+}
+
+void
+cm_raggedright (void)
+{
+  begin_insertion (raggedright);
+}
+
 
 /* Title page commands. */
 
