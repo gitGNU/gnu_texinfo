@@ -1,7 +1,7 @@
 <!-- $Id$
    Document Type Definition for Texinfo XML output (the '-'-xml option).
 
-  Copyright (C) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008
+  Copyright 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009
   Free Software Foundation, Inc.
 
   Copying and distribution of this file, with or without modification,
@@ -39,14 +39,16 @@
 <!ENTITY % block "menu | para | quotation | smallquotation
                   | example | smallexample | lisp | smalllisp
                   | cartouche | copying
-                  | format | smallformat | display | smalldisplay
+                  | format | smallformat
+                  | display | smalldisplay
+                  | raggedright | flushleft | flushright
                   | itemize | enumerate | sp | center | group
                   | table | multitable | definition | float | image">
 
 <!-- API definitions -->
 <!ENTITY % definition.cmds "defcategory | deffunction | defvariable | defparam
-                            | defdelimiter | deftype | defparamtype | defdatatype
-                            | defclass | defclassvar | defoperation">
+                          | defdelimiter | deftype | defparamtype | defdatatype
+                          | defclass | defclassvar | defoperation">
 
 <!-- Headings -->
 <!ENTITY % headings "majorheading | chapheading | heading | subheading
