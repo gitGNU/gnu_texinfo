@@ -9874,11 +9874,31 @@ to capitalize the first word of each entry.  But do not capitalize a
 case-sensitive name such as a C or Lisp function name or a shell
 command; that would be a spelling error.
 
-Whichever case convention you use, please use it consistently!
+Whichever case convention you use, use it consistently.
 
 Entries in indices other than the concept index are symbol names in
 programming languages, or program names; these names are usually
 case-sensitive, so use upper and lower case as required for them.
+
+Index entries should precede the visible material that is being
+indexed.  For instance:
+
+@example
+@cindex hello
+Hello, there!
+@end example
+
+@noindent Among other reasons, that way following indexing links (in
+whatever context) ends up before the material, where readers want to
+be, instead of after.
+
+@c if an index command follows the material, there can be a spurious
+@c space in the output, which can end up as a whole extra blank line
+@c in TeX.  This is the glue between the last character in the
+@c paragraph and the whatsit from the index.  The solution is to
+@c comment out the space, as in:
+@c     He said, "Hello, there!".@c
+@c     @cindex hello
 
 @cindex Index font types
 By default, entries for a concept index are printed in a small roman
