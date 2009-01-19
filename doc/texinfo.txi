@@ -9109,6 +9109,14 @@ the HTML, XML, and Docbook output uses the @code{<thead>} tag.  In
 Info, the heading row is followed by a separator line made of dashes
 (@samp{-} characters).
 
+@findex headitemfont
+@cindex Font for multitable heading rows
+The command @code{@@headitemfont} can be used in templates when the
+entries in a @code{@@headitem} row need to be used in a template.  It
+is a synonym for @code{@@b}, but using @code{@@headitemfont} avoids
+any dependency on that particular font style, in case we provide a way
+to change it in the future.
+
 Here is a complete example of a multi-column table (the text is from
 @cite{The GNU Emacs Manual}, @pxref{Split Window,, Splitting Windows,
 emacs, The GNU Emacs Manual}):
