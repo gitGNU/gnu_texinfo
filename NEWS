@@ -23,7 +23,7 @@ one of the relevant sections:
 -------------------------------------------------------------------------------
 
 * Language:
-  . new environment @smallquotation.
+  . new environments @smallquotation and @raggedright.
   . new diacritic command @ogonek.
   . DEL (0x7f = 0177 = 127) is a true comment character (catcode 14 in TeX).
 
