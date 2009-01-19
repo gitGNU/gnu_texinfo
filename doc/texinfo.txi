@@ -8637,11 +8637,11 @@ a line.  Follow the command, on the same line, with a character or a
 Texinfo command that generates a mark.  Usually, you will write
 @code{@@bullet} after @code{@@itemize}, but you can use
 @code{@@minus}, or any command or character that results in a single
-character in the Info file.  If you don't want any mark at all, use
-@code{@@w}.  (When you write the mark command such as
+character in the Info file.  (When you write the mark command such as
 @code{@@bullet} after an @code{@@itemize} command, you may omit the
 @samp{@{@}}.)  If you don't specify a mark command, the default is
-@code{@@bullet}.
+@code{@@bullet}.  If you don't want any mark at all, use
+@code{@@w@{@}} (in this case the braces are required).
 
 Write the text of the indented paragraphs themselves after the
 @code{@@itemize}, up to another line that says @code{@@end
