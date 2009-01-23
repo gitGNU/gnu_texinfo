@@ -2,7 +2,7 @@
     $Id$
 
    Copyright (C) 1995, 1997, 1998, 1999, 2000, 2002, 2003, 2004, 2005, 
-   2007, 2008 Free Software Foundation, Inc.
+   2007, 2008, 2009 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -499,8 +499,8 @@ find_reference_section (NODE *node)
 
   for (i = 0; reference_section_starters[i] != NULL; i++)
     {
-      position = search_forward (reference_section_starters[i], &frs_binding);
-      if (position != -1)
+      if (search_forward (reference_section_starters[i], &frs_binding,
+			  &position) == search_success)
         break;
     }
 
@@ -544,7 +544,7 @@ xrefs_of_manpage (NODE *node)
      within parenthesis. */
   reference_section->flags = 0;
 
-  while ((position = search_forward ("(", reference_section)) != -1)
+  while (search_forward ("(", reference_section, &position) == search_success)
     {
       register int start, end;
 
