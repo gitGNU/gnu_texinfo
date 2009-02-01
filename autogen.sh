@@ -29,7 +29,4 @@ $chicken eval $cmd || exit 1
 
 echo
 echo "Now run configure with your desired options, for instance:"
-echo "  ./configure CFLAGS='-g' --enable-maintainer-mode"
-echo
-echo "You MUST use --enable-maintainer-mode when building Texinfo"
-echo "from the CVS sources, or the build will fail."
+echo "  ./configure CFLAGS='-g'"
