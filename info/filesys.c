@@ -55,6 +55,7 @@ static char *info_suffixes[] = {
 
 static COMPRESSION_ALIST compress_suffixes[] = {
   { ".gz", "gunzip" },
+  { ".xz", "unxz" },
   { ".bz2", "bunzip2" },
   { ".z", "gunzip" },
   { ".lzma", "unlzma" },

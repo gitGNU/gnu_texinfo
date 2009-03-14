@@ -32,6 +32,10 @@ one of the relevant sections:
 * info:
   . INFOPATH is determined by PATH by default, or if an element "PATH"
     is specified.
+  . xz compression supported.
+
+* install-info:
+  . xz compression supported.
 
 * texinfo.tex:
   . support some per-language hyphenation, when the underlying TeX
