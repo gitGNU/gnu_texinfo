@@ -27,6 +27,7 @@ one of the relevant sections:
   . new environments @smallquotation and @raggedright.
   . new command @headitemfont for the sake of template rows.
   . new diacritic command @ogonek.
+  . new commands for Icelandic letters eth and thorn: @DH{} @dh{} @TH{} @th{}.
   . DEL (0x7f = 0177 = 127) is a true comment character (catcode 14 in TeX).
 
 * texinfo.tex:
