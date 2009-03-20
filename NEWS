@@ -29,6 +29,12 @@ one of the relevant sections:
   . new diacritic command @ogonek.
   . DEL (0x7f = 0177 = 127) is a true comment character (catcode 14 in TeX).
 
+* texinfo.tex:
+  . support some per-language hyphenation, when the underlying TeX
+    engine does (for instance, etex/pdfetex from TeX Live 2008).  Words
+    with accented letters are still not handled properly.
+  . new Icelandic translation: txi-is.tex.
+
 * info:
   . INFOPATH is determined by PATH by default, or if an element "PATH"
     is specified.
@@ -36,11 +42,6 @@ one of the relevant sections:
 
 * install-info:
   . xz compression supported.
-
-* texinfo.tex:
-  . support some per-language hyphenation, when the underlying TeX
-    engine does (for instance, etex/pdfetex from TeX Live 2008).  Words
-    with accented letters are still not handled properly.
 
 * Distribution:
   . language support for no removed/renamed to nb, per Norwegian translators.
