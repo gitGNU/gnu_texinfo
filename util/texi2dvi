@@ -1430,9 +1430,14 @@ compile ()
   # `.' goes first to ensure that any old .aux, .cps,
   # etc. files in ${directory} don't get used in preference to fresher
   # files in `.'.  Include orig_pwd in case we are in clean build mode, where
-  # we've cd'd to a temp directory.
+  # we have cd'd to a temp directory.
+  common="$orig_pwd$path_sep$in_dir$path_sep"
+  #
+  # If we have any includes, put those at the end.
+  # Keep a final path_sep to get the default (system) TeX directories included.
   txincludes=`list_infix includes $path_sep`
-  common="$orig_pwd$path_sep$in_dir$path_sep$txincludes$path_sep"
+  test -n "$txincludes" && common="$common$txincludes$path_sep"
+  #
   for var in $tex_envvars; do
     eval val="\$common\$${var}_orig"
     # Convert relative paths to absolute paths, so we can run in another
