@@ -32,7 +32,7 @@ unset RUNNING_KSH
 # No failure shall remain unpunished.
 set -e
 
-# This string is expanded by rcs automatically when this file is checked out.
+# This string is expanded automatically when this file is checked out.
 rcs_revision='$Revision$'
 rcs_version=`set - $rcs_revision; echo $2`
 program=`echo $0 | sed -e 's!.*/!!'`
@@ -281,6 +281,8 @@ usage ()
   # where % denotes the eol character.
   cat <<EOF
 Usage: $program [OPTION]... FILE...
+       texi2pdf [OPTION]... FILE...
+       pdftexi2dvi [OPTION]... FILE...
 
 Run each Texinfo or (La)TeX FILE through TeX in turn until all
 cross-references are resolved, building all indices.  The directory
@@ -293,8 +295,8 @@ the FILE may also be composed of the following simple TeX commands.
   \`\\input{FILE}'     the actual file to compile
   \`\\nonstopmode'     same as --batch
 
-Makeinfo is used to perform Texinfo macro expansion before running TeX
-when needed.
+When invoked as \`texi2pdf' or \`pdftexi2dvi', or given the option --pdf
+or --dvipdf, generate PDF output.  Otherwise, generate DVI.
 
 General options:
   -b, --batch         no interaction
@@ -364,9 +366,9 @@ directory, occasionally TeX won't be able to find some files (e.g., when
 using \\graphicspath): in that case use -I to specify the additional
 directories to consider.
 
-The values of the BIBTEX, LATEX (or PDFLATEX), MAKEINDEX, MAKEINFO,
-TEX (or PDFTEX), TEXINDEX, and THUMBPDF environment variables are used
-to run those commands, if they are set.  Any CMD strings are added
+The values of the BIBTEX, LATEX (or PDFLATEX), MAKEINDEX, MAKEINFO, TEX
+(or PDFTEX or DVIPDF), TEXINDEX, and THUMBPDF environment variables are
+used to run those commands, if they are set.  Any CMD strings are added
 after @setfilename for Texinfo input, in the first line for LaTeX input.
 
 Report bugs to bug-texinfo@gnu.org,
