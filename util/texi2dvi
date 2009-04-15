@@ -545,7 +545,7 @@ out_lang_tex ()
     dvi | ps | dvipdf ) echo dvi;;
     pdf ) echo $out_lang;;
     html | info | text ) echo $out_lang;;
-    *)    error 1 "$0: invalid out_lang: $1";;
+    *)    error 1 "invalid out_lang: $1";;
   esac
 }
 
@@ -558,7 +558,7 @@ out_lang_ext ()
   case $out_lang in
     dvipdf ) echo pdf;;
     dvi | html | info | pdf | ps | text ) echo $out_lang;;
-    *)    error 1 "$0: invalid out_lang: $1";;
+    *)    error 1 "invalid out_lang: $1";;
   esac
 }
 
@@ -904,7 +904,7 @@ run_tex ()
 	esac;;
     texinfo:pdf) tex=$PDFTEX;;
 
-    *) error 1 "$0: $out_lang not supported for $in_lang";;
+    *) error 1 "$out_lang not supported for $in_lang";;
   esac
 
   # Beware of aux files in subdirectories that require the
@@ -1113,7 +1113,7 @@ run_dvipdf ()
   # outputting using the expected file name.
   run $dvipdf "$1"
   if test ! -f `echo "$1" | sed -e 's/\.dvi$/.pdf/'`; then
-    error 1 "$0: cannot find output file"
+    error 1 "cannot find output file"
   fi
 }
 
