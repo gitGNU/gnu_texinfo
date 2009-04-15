@@ -930,7 +930,7 @@ run_tex ()
     # don't accept --help will generate a texput.log.
     tex_help_dir=$t2ddir/tex_help
     ensure_dir "$tex_help_dir"
-    tex_help=`cd "$tex_help_dir" >&6 && $tex --help </dev/null 2>&1`
+    tex_help=`cd "$tex_help_dir" >&6 && $tex --help </dev/null 2>&1 || true`
   fi
   if $no_line_error; then :; else
     # The mk program and perhaps others want to parse TeX's
