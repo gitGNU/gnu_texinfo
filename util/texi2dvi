@@ -48,7 +48,7 @@ batch=false     # true for batch mode
 catcode_special=true
 debug=false
 escape="\\"
-expand=         # t for expansion via makeinfo
+expand=false    # true for expansion via makeinfo
 includes=
 line_error=true # Pass --file-line-error to TeX.
 oname=          # --output
@@ -1219,7 +1219,7 @@ run_makeinfo ()
 
   # Unless required by the user, makeinfo expansion is wanted only
   # if texinfo.tex is too old.
-  if test "$expand" = t; then
+  if $expand; then
     makeinfo=${MAKEINFO:-makeinfo}
   else
     # Check if texinfo.tex performs macro expansion by looking for
@@ -1559,7 +1559,7 @@ while test x"$1" != x"$arg_sep"; do
 	 --build-dir)  shift; build_dir=$1; build_mode=tidy;;
     -c | --clean) build_mode=clean;;
     -D | --debug) debug=true;;
-    -e | -E | --expand) expand=t;;
+    -e | -E | --expand) expand=true;;
     -h | --help) usage;;
     -I)   shift; list_concat_dirs includes "$1";;
     -l | --lang | --language) shift; set_language=$1;;
