@@ -698,7 +698,7 @@ move_to_dest ()
 
 # aux_file_p FILE
 # ---------------
-# Return with success with FILE is an aux file.
+# Return with success if FILE is an aux file.
 aux_file_p ()
 {
   test -f "$1" || return 1
@@ -710,7 +710,7 @@ aux_file_p ()
 
 # bibaux_file_p FILE
 # ------------------
-# Return with success with FILE is an aux file containing citation
+# Return with success if FILE is an aux file containing citation
 # requests.
 bibaux_file_p ()
 {
@@ -730,7 +730,7 @@ bibaux_file_p ()
 
 # index_file_p FILE
 # -----------------
-# Return with success with FILE is an index file.
+# Return with success if FILE is an index file.
 # When index.sty is used, there is a space before the brace.
 index_file_p ()
 {
