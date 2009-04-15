@@ -51,7 +51,6 @@ escape="\\"
 expand=         # t for expansion via makeinfo
 includes=
 line_error=true # Pass --file-line-error to TeX.
-no_line_error=false  # absolutely do not pass --file-line-error to TeX
 oname=          # --output
 out_lang=dvi
 quiet=false     # by default let the tools' message be displayed
@@ -925,18 +924,18 @@ run_tex ()
   local cmd="$tex"
 
   # If possible, make TeX report error locations in GNU format.
-  if test "${tex_help:+set}" != set; then
-    # Go to a temporary directory to try --help, since old versions that
-    # don't accept --help will generate a texput.log.
-    tex_help_dir=$t2ddir/tex_help
-    ensure_dir "$tex_help_dir"
-    tex_help=`cd "$tex_help_dir" >&6 && $tex --help </dev/null 2>&1 || true`
-  fi
-  if $no_line_error; then :; else
+  if $line_error; then
+    if test "${tex_help:+set}" != set; then
+      # Go to a temporary directory to try --help, since old versions that
+      # don't accept --help will generate a texput.log.
+      tex_help_dir=$t2ddir/tex_help
+      ensure_dir "$tex_help_dir"
+      tex_help=`cd "$tex_help_dir" >&6 && $tex --help </dev/null 2>&1 || true`
+    fi
     # The mk program and perhaps others want to parse TeX's
     # original error messages.
-    case $line_error:$tex_help in
-      true:*file-line-error*) cmd="$cmd --file-line-error";;
+    case $tex_help in
+      *file-line-error*) cmd="$cmd --file-line-error";;
     esac
   fi
 
@@ -1570,7 +1569,7 @@ while test x"$1" != x"$arg_sep"; do
     -I)   shift; list_concat_dirs includes "$1";;
     -l | --lang | --language) shift; set_language=$1;;
     --mostly-clean) action=mostly-clean;;
-    --no-line-error) no_line_error=true;;
+    --no-line-error) line_error=false;;
     -o | --out  | --output)
       shift
       # Make it absolute, just in case we also have --clean, or whatever.
