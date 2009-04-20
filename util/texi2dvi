@@ -933,7 +933,7 @@ run_tex ()
 	  *latex) tex=tex;; # don't bother trying to find etex
 	       *) tex=$TEX
 	esac;;
-    texinfo:pdf) tex=$PDFTEX;;
+    texinfo:*:pdf) tex=$PDFTEX;;
 
     *) error 1 "$out_lang not supported for $in_lang";;
   esac
